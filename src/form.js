@@ -1,7 +1,5 @@
 import React from 'react';
-import { createValidationHelper, validateRequired, validateEmail, validateMin, validateMax } from './validation/validation-helpers.js';
 import merge from 'lodash';
-import BillingInfoForm from './billing-info-form';
 
 const validationHelper = {};
 
