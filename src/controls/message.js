@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default ({ showError, showSuccess, message }) => {
+const Message = ({ showError, showSuccess, message }) => {
 	const icon = showError ? 
 					<i className="fa fa-exclamation-circle"></i>
 					: showSuccess ?
@@ -15,3 +15,4 @@ export default ({ showError, showSuccess, message }) => {
 	);
 	
 }
+export default Message;
