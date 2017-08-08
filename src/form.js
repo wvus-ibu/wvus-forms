@@ -3,7 +3,7 @@ import merge from 'lodash';
 
 const validationHelper = {};
 
-export default class WVUSForm extends React.Component {
+class WVUSForm extends React.Component {
 	constructor(props) {
 		super(props);
 		this.props = props;
@@ -195,3 +195,5 @@ export default class WVUSForm extends React.Component {
 
 
 }
+
+export default WVUSForm;
