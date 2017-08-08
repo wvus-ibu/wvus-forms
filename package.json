@@ -49,6 +49,7 @@
     },
     "dependencies": {
         "babel-runtime": "^6.6.1",
-        "lodash": "^4.17.4"
+        "lodash": "^4.17.4",
+        "validator": "^7.0.0"
     }
 }

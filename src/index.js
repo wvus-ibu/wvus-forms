@@ -1,5 +1,5 @@
 import React from 'react';
-import WVUSForm from './form';
+import WVUSForm from './form.js';
 import CheckBoxControl from './controls/checkbox-control.js';
 import InputControl from './controls/input-control';
 import InputHiddenControl from './controls/input-hidden-control';
