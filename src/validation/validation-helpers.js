@@ -20,7 +20,7 @@ const createValidationHelper = (config) => {
 				this.successBag[fieldName] = validResults;
 
 				// Clear errors if Optional and Empty
-				if(this.fieldIsOptional(fieldName) && this.fieldValueIsEmpty(fieldValue)) {
+				if (this.fieldIsOptional(fieldName) && this.fieldValueIsEmpty(fieldValue)) {
 					this.errorBag[fieldName] = [];
 				}
 
