@@ -1,34 +1,107 @@
-import React from 'react';
-import Message from './message.js';
+import React from "react";
+import PropTypes from "prop-types";
+import Message from "./message.js";
 
-export default class SelectControl extends React.Component {
-	constructor(props) {
-		super(props);
-		this.props = props;
-	}
+class SelectControl extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-	render() {
-		const { fieldOptions, fieldName, fieldClasses, fieldType, fieldTitle, fieldPlaceholder, fieldState, classNames, handleBlur, handleValueChange, showUISuccess, showUIError, labelClasses } = this.props;
-		const options = fieldOptions.map((option, index) => <option key={index} value={option.valueKey}>{option.valueText}</option>);
-		const validityClass = showUISuccess ? 'has-success ' : showUIError ? 'has-error ': '';
-		const classes = fieldClasses ? fieldClasses : '';
-		return (
-			<div className={classes + ' form-group has-icon ' + validityClass}>
-				<label htmlFor={fieldName} className={labelClasses}>{ fieldTitle }</label>
-				<div className="form-control-wrapper">
-					<select
-						id={fieldName}
-						value={fieldState.value} 
-						name={fieldName}
-						onBlur={handleBlur}
-						onChange={handleValueChange}
-						className="form-control select-control">
-						{ options }
-					</select>
-					{ showUIError ? <Message showError={true} showSuccess={false} message={fieldState.errorMessage}></Message> : '' }
-					{ showUISuccess ? <Message showError={false} showSuccess={true}></Message> : '' }
-				</div>
-			</div>
-		)
-	}
+  componentWillMount() {
+    const {
+      fieldName,
+      fieldValue = "",
+      secondInteraction = false,
+      isValid = false,
+      validators = [],
+      formMethods
+    } = this.props;
+    formMethods.addFieldToState(
+      fieldName,
+      fieldValue,
+      secondInteraction,
+      isValid,
+      validators
+    );
+  }
+
+  render() {
+    const {
+      formMethods,
+
+      fieldOptions,
+      fieldName,
+      fieldId = fieldName,      
+      fieldClasses = '',
+      fieldTitle,
+      fieldPlaceholder,
+      fieldState = formMethods.getFieldState(fieldName),
+      labelClasses,
+
+      handleValueChange = formMethods.handleValueChange,
+      handleBlur = formMethods.handleBlur,
+      showUISuccess = formMethods.showUISuccess(fieldState),
+      showUIError = formMethods.showUIError(fieldState)
+    } = this.props;
+    const options = fieldOptions.map((option, index) => (
+      <option key={index} value={option.valueKey}>
+        {option.valueText}
+      </option>
+    ));
+    const validityClass = showUISuccess
+      ? "has-success "
+      : showUIError ? "has-error " : "";
+    const requiredStar = fieldState.optional == true ? "" : <sup>*</sup>;
+    const fieldValue = fieldState.value || '';
+    const fieldPrimaryClass = `wvus-field-${fieldName}`;
+    
+    return (
+      <div className={`${fieldPrimaryClass} ${fieldClasses} form-group has-icon ${validityClass}`}>
+        <label htmlFor={fieldName} className={labelClasses}>
+          {fieldTitle} {requiredStar}
+        </label>
+        <div className="form-control-wrapper">
+          <select
+            id={fieldName}
+            value={fieldValue}
+            name={fieldName}
+            onBlur={handleBlur}
+            onChange={handleValueChange}
+            className="form-control select-control"
+          >
+            {options}
+          </select>
+          {showUIError ? (
+            <Message
+              showError={true}
+              showSuccess={false}
+              message={fieldState.errorMessage}
+            />
+          ) : (
+            ""
+          )}
+          {showUISuccess ? (
+            <Message showError={false} showSuccess={true} />
+          ) : (
+            ""
+          )}
+        </div>
+      </div>
+    );
+  }
 }
+
+SelectControl.propTypes = {
+  fieldName: PropTypes.string.isRequired,
+
+  formMethods: PropTypes.shape({
+    handleBlur: PropTypes.func.isRequired,
+    handleValueChange: PropTypes.func.isRequired,
+    getFieldState: PropTypes.func.isRequired,
+    showUIError: PropTypes.func.isRequired,
+    showUISuccess: PropTypes.func.isRequired
+  }).isRequired,
+  validators: PropTypes.array
+};
+
+export default SelectControl;
