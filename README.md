@@ -1,7 +1,7 @@
 # VALIDESSA - Defender of Data (WVUS Form Validation Library)
 Custom Donate Widget for placement on WVUS sites. This custom Wordpress Plugin allows a user to configure a custom donation widget, and place it on a page.
 
-[[/validessa.png|alt=Validessa]]
+![Validessa Logo](/validessa.png)
 
 ## How to use in React Project
 
