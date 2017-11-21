@@ -1,32 +1,74 @@
-# Boilerplate for creating React Npm packages with ES2015
+# VALIDESSA - WVUS Form Validation Library Widget
+Custom Donate Widget for placement on WVUS sites. This custom Wordpress Plugin allows a user to configure a custom donation widget, and place it on a page.
 
-The package is based on [npm-base](https://github.com/kadirahq/npm-base) package by [Kadira](https://github.com/kadirahq) which is really great when you want to prepare Npm package. This one is prepared to be used as a starter point for React components which needs to be published on Npm.
+[[/validessa.svg|alt=Validessa]]
 
-It includes linting with [ESLint](http://eslint.org/) and testing with [Mocha](https://mochajs.org/), [Enzyme](http://airbnb.io/enzyme/) and [JSDOM](https://github.com/tmpvar/jsdom).
+## How to use in React Project
 
-Also there is of course ES6 transpilation.
+### Installation via NPM
+Validessa can also installed via NPM. If you want to include it as a dependency for your JS project, follow these steps:
+1. Add `wvus-forms` to your package.json file:
+```
+  "dependencies": {
+    "wvus-forms": "github:wvus-ibu/wvus-forms#[VERSION/BRANCH]"
+  }
+```
+* Example "github:wvus-ibu/wvus-forms#v2.0.0"
+2. Run: `npm install --save wvus-forms`
+3. Import into your project: `import Validessa from 'wvus-forms';`
+3. Now you are ready to use it in your project. See Examples section.
 
-## Usage
+Note: For more information on using Github repos in NPM, see: [Github Urls](https://docs.npmjs.com/files/package.json#github-urls)
 
-1. Clone this repo
-2. Inside cloned repo run `npm install && rm -rf .git && git init` and update `package.json` with your package name.
-3. If you want to run tests: `npm test` or `npm run testonly` or `npm run test-watch`. You need to write tests in `__tests__` folder. You need at least Node 4 on your machine to run tests.
-4. If you want to run linting: `npm test` or `npm run lint`. Fix bugs: `npm run lint-fix`. You can adjust your `.eslintrc` config file.
-5. If you want to run transpilation to ES5 in `dist` folder: `npm run prepublish` (standard npm hook).
+### Examples: How to use
 
-## CSS and preprocessors
 
-For more information check out this thread: [#5](https://github.com/juliancwirko/react-npm-boilerplate/issues/5)
+## How to Develop VALIDESSA (JS app)
 
-## Blog post about it:
+### Install dev dependencies and run script to watch JS files: 
+Install dependencies and start storybook dev server:
+```
+cd app
+npm install
+npm run storybook
+```
 
-- [Creating React NPM packages with ES2015](http://julian.io/creating-react-npm-packages-with-es2015/)
+### Development
+1. Edit files in `src` folder. Upon saving, Storybook will automatically compile and reload the pages.
+2. When adding new features, be sure to add corresponding stories to provide examples of use and for testing purposes.
+Note: When you are finished developing you will run `npm run prepare` to compile the ES5 version for NPM modules use.
 
-## Also check out
+### Versioning
+- When working on Validessa, create a new feature branch with your changes. 
+  - Follow [Semantic Versioning](http://semver.org/) and name branch name with pattern `vX.X.X`
+- To test, use the stories in Storybook by executing `npm run storybook`
+- You can also test with your app by updating the dependency with the branch name:
+```
+  "dependencies": {
+    "wvus-forms": "github:wvus-ibu/wvus-forms#[BRANCH]"
+  }
+```
+- After your feature branch has passed QA, merge to master and tag with next version number (i.e. `vX.X.X`)
+- See 'How to update' section below to update a property to your new version.
 
-- [React Alert UI component](https://github.com/juliancwirko/react-s-alert)
-- [React project boilerplate with Webpack, HMR, React Router](https://github.com/juliancwirko/react-boilerplate)
 
-## License
+## How to update as dependency in a React App
+We use [NPM](https://docs.npmjs.com) with [Github Urls](https://docs.npmjs.com/files/package.json#github-urls) to import this library into our different apps. Below is an example of how to update a react app with a new version of Validessa
+IMPORTANT: Read Versioning section above.
 
-MIT
+### Update Steps
+1. Browse to your app folder containing the package.json file
+2. If you need to update the version, change the following element in your `package.json` file. Tag is in form of vX.X.X (see Versioning above)
+```
+  "dependencies": {
+    "wvus-forms": "github:wvus-ibu/wvus-forms#[TAG_VERSION_NUM]"
+  }
+```
+3. Run: `npm update wvus-forms`
+
+## Release Build Steps
+1. `npm run prepare`
+2. `npm run build-storybook`
+3. Commit and merge to master
+4. Add tag with version number (e.g. v2.8.1)
+
