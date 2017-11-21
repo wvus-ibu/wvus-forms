@@ -1,4 +1,4 @@
-# VALIDESSA - WVUS Form Validation Library Widget
+# VALIDESSA - Defender of Data (WVUS Form Validation Library)
 Custom Donate Widget for placement on WVUS sites. This custom Wordpress Plugin allows a user to configure a custom donation widget, and place it on a page.
 
 [[/validessa.svg|alt=Validessa]]
@@ -16,7 +16,7 @@ Validessa can also installed via NPM. If you want to include it as a dependency 
 * Example "github:wvus-ibu/wvus-forms#v2.0.0"
 2. Run: `npm install --save wvus-forms`
 3. Import into your project: `import Validessa from 'wvus-forms';`
-3. Now you are ready to use it in your project. See Examples section.
+4. Now you are ready to use it in your project. See Examples section.
 
 Note: For more information on using Github repos in NPM, see: [Github Urls](https://docs.npmjs.com/files/package.json#github-urls)
 
@@ -71,4 +71,3 @@ IMPORTANT: Read Versioning section above.
 2. `npm run build-storybook`
 3. Commit and merge to master
 4. Add tag with version number (e.g. v2.8.1)
-
