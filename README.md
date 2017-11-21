@@ -1,12 +1,11 @@
 # VALIDESSA - Defender of Data (WVUS Form Validation Library)
-Custom Donate Widget for placement on WVUS sites. This custom Wordpress Plugin allows a user to configure a custom donation widget, and place it on a page.
-
 ![Validessa Logo](/validessa.png)
+Validessa is a form validation library for WVUS React Apps. Its primary feature is making validating forms easy with a flexible and extendable validation layer. Form fields just work, and can even be modified with custom masks, validators, and more.
 
-## How to use in React Project
+## How to use in a React Project
 
 ### Installation via NPM
-Validessa can also installed via NPM. If you want to include it as a dependency for your JS project, follow these steps:
+Validessa can be installed via NPM. To include it as a dependency for your React project, follow these steps:
 1. Add `wvus-forms` to your package.json file:
 ```
   "dependencies": {
@@ -21,7 +20,6 @@ Validessa can also installed via NPM. If you want to include it as a dependency 
 Note: For more information on using Github repos in NPM, see: [Github Urls](https://docs.npmjs.com/files/package.json#github-urls)
 
 ### Examples: How to use
-
 
 ## How to Develop VALIDESSA (JS app)
 
