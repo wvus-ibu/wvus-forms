@@ -1,8 +1,8 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Message from "./message.js";
 
-class CheckBoxControl extends Component {
+class CheckboxControl extends Component {
   constructor(props) {
     super(props);
   }
@@ -12,8 +12,8 @@ class CheckBoxControl extends Component {
       fieldName,
       fieldValue = false,
       secondInteraction = false,
-      isValid = true,   // Checkboxes are valid by default regardless of choice
-      validators = [],  // Note that validators must validate against boolean to work here
+      isValid = true, // Checkboxes are valid by default regardless of choice
+      validators = [], // Note that validators must validate against boolean to work here
       formMethods
     } = this.props;
     formMethods.addFieldToState(
@@ -30,16 +30,15 @@ class CheckBoxControl extends Component {
       formMethods,
       fieldName,
       fieldId = fieldName,
-      fieldClasses = '',
+      fieldClasses = "",
       fieldTitle,
-      fieldChecked,
       handleValueChange = formMethods.handleValueChange,
-      fieldState = formMethods.getFieldState(fieldName),
+      fieldState = formMethods.getFieldState(fieldName)
     } = this.props;
 
     const fieldPrimaryClass = `wvus-field-${fieldName}`;
-    const fieldValue = fieldState.value || '';
-    
+    const fieldValue = fieldState.value || "";
+
     return (
       <div className={`${fieldPrimaryClass} ${fieldClasses} checkbox-group`}>
         <label className="checkbox-inline">
@@ -57,7 +56,7 @@ class CheckBoxControl extends Component {
   }
 }
 
-CheckBoxControl.propTypes = {
+CheckboxControl.propTypes = {
   fieldName: PropTypes.string.isRequired,
   fieldValue: PropTypes.bool.isRequired,
   formMethods: PropTypes.shape({
@@ -69,4 +68,4 @@ CheckBoxControl.propTypes = {
   validators: PropTypes.array
 };
 
-export default CheckBoxControl;
+export default CheckboxControl;

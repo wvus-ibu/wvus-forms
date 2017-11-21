@@ -1,69 +1,71 @@
-import React from 'react';
-import { createValidationHelper, validateRequired, validateEmail, validateMin, validateMax } from './validation/validation-helpers.js';
-import { merge } from 'lodash';
-
-const validationHelper = {};
+import React from "react";
+import { createValidationHelper } from "./validation/validation-helpers.js";
+import { merge } from "lodash";
 
 export default function WVUSForm(WrapperForm) {
-
   return class extends React.Component {
     constructor(props) {
       super(props);
       this.props = props;
       this.handleNextStep = props.handleNextStep;
       this.state = {
-        fields : {},
+        fields: {},
         formValid: false
       };
-      
+
       this.addFieldToState = this.addFieldToState.bind(this);
     }
 
-    addFieldToState(fieldName, fieldValue = '', secondInteraction = false, isValid = false, validators=[]) {
-      const newState = {'fields': {}};
+    addFieldToState(
+      fieldName,
+      fieldValue = "",
+      secondInteraction = false,
+      isValid = false,
+      validators = [],
+      optional
+    ) {
+      const newState = { fields: {} };
       newState.fields[fieldName] = {
         value: fieldValue,
-        isValid: isValid,
-        secondInteraction: secondInteraction,
-        errorMessage: '',
-        validators: validators
+        isValid,
+        secondInteraction,
+        errorMessage: "",
+        validators,
+        optional
       };
 
-      this.setState((prevState) => {
+      this.setState(prevState => {
         const finalState = merge({}, prevState, newState);
-        this.validationHelper = createValidationHelper(finalState['fields']);
+        this.validationHelper = createValidationHelper(finalState["fields"]);
         return finalState;
       });
-
     }
 
     getFieldState(fieldName) {
       return this.state.fields[fieldName] || {};
     }
 
-    
-
     validateField(fieldName, fieldValue) {
       this.validationHelper.validate(fieldName, fieldValue);
       let isValid = this.validationHelper.fieldIsValid(fieldName);
 
-      const newFieldState = {'fields': {}};
+      const newFieldState = { fields: {} };
       newFieldState.fields[fieldName] = {
-        'isValid': isValid,
-        'errorMessage': this.validationHelper.firstErrorMessage(fieldName)
+        isValid: isValid,
+        errorMessage: this.validationHelper.firstErrorMessage(fieldName)
       };
       return newFieldState;
     }
 
     validateFields() {
-      const fieldStateUpdate = { fields: {}};
-      Object.keys(this.state.fields).map((fieldName)=> {
+      const fieldStateUpdate = { fields: {} };
+      Object.keys(this.state.fields).map(fieldName => {
         let isValid = this.validationHelper.fieldIsValid(fieldName);
         this.validationHelper.firstErrorMessage(fieldName);
-        fieldStateUpdate['fields'][fieldName] = {
-          'isValid': isValid,
-          'errorMessage': this.validationHelper.firstErrorMessage(fieldName),
-          'secondInteraction': true
+        fieldStateUpdate["fields"][fieldName] = {
+          isValid: isValid,
+          errorMessage: this.validationHelper.firstErrorMessage(fieldName),
+          secondInteraction: true
         };
       });
       this.updateFieldsState(fieldStateUpdate);
@@ -75,7 +77,7 @@ export default function WVUSForm(WrapperForm) {
      * validateForm method ignores form names unregistered in the config
      */
     validateForm() {
-      Object.keys(this.state.fields).map((fieldName)=> {
+      Object.keys(this.state.fields).map(fieldName => {
         const fieldValue = this.state.fields[fieldName].value;
         this.validationHelper.validate(fieldName, fieldValue);
       });
@@ -89,24 +91,33 @@ export default function WVUSForm(WrapperForm) {
 
     /**
      * Update Field State
+     * @para
      * @param {Object} fieldsState
      * @param {Function} callback
      */
     updateFieldsState(fieldsState) {
-
       this.setState((prevState, props) => {
-        const newFieldsState = merge({}, prevState.fields, fieldsState['fields']);
+        const newFieldsState = merge(
+          {},
+          prevState.fields,
+          fieldsState["fields"]
+        );
         const formValid = this.getFormValid(newFieldsState);
-        return merge({}, {fields: newFieldsState}, { formValid });
+        return merge({}, { fields: newFieldsState }, { formValid });
       });
     }
+
     /**
      * Determines whether form is valid based on whether
      * any fields have errors
      * @param {Object} newFieldsState
      */
     getFormValid(newFieldsState) {
-      return (Object.keys(newFieldsState).filter(field => !newFieldsState[field].isValid).length < 1);
+      return (
+        Object.keys(newFieldsState).filter(
+          field => !newFieldsState[field].isValid
+        ).length < 1
+      );
     }
 
     isFormValid() {
@@ -114,63 +125,70 @@ export default function WVUSForm(WrapperForm) {
     }
 
     isFormEmpty() {
-      return (Object.keys(this.state.fields).filter(field => !(this.state.fields[field].value === ''))).length < 1;
+      return (
+        Object.keys(this.state.fields).filter(
+          field => !(this.state.fields[field].value === "")
+        ).length < 1
+      );
     }
 
     handleValueChange(e, callback = null) {
       const fieldName = e.target.name;
-      const fieldValue = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
+      const fieldValue =
+        e.target.type === "checkbox" ? e.target.checked : e.target.value;
       this.setValueChange(fieldName, fieldValue, callback);
     }
 
     setValueChange(fieldName, fieldValue, callback = null) {
-      const newState = {'fields': {}};
+      const newState = { fields: {} };
       newState.fields[fieldName] = {
         value: fieldValue
       };
       // Update Value
-      this.setState((prevState) => {
+      this.setState(prevState => {
         return merge({}, prevState, newState);
       });
 
       // Validate Field
-      this.setState((prevState) => {
+      this.setState(prevState => {
         const newFieldState = this.validateField(fieldName, fieldValue);
         return merge({}, prevState, newFieldState);
       });
 
       // Validate Form
-      this.setState((prevState) => {
-        const formValid = this.getFormValid(prevState['fields']);
+      this.setState(prevState => {
+        const formValid = this.getFormValid(prevState["fields"]);
         return merge({}, prevState, { formValid });
       }, callback); //Callback important for validation on Last item
     }
 
-    handleBlur(e){
+    handleBlur(e) {
       const fieldName = e.target.name;
       const fieldValue = e.target.value;
 
-      const secondInteractionState = {'fields': {}};
+      const secondInteractionState = { fields: {} };
 
       // Only add SecondInteraction if not already added
-      if (typeof this.state.fields[e.target.name] !== 'undefined' && !this.state.fields[e.target.name].secondInteraction) {
+      if (
+        typeof this.state.fields[e.target.name] !== "undefined" &&
+        !this.state.fields[e.target.name].secondInteraction
+      ) {
         secondInteractionState.fields[fieldName] = {
           secondInteraction: true
         };
       }
 
       // Validate this field
-      this.setState((prevState) => {
+      this.setState(prevState => {
         const newFieldState = this.validateField(fieldName, fieldValue);
         return merge({}, prevState, newFieldState, secondInteractionState);
       });
 
       // Validate Form
-      this.setState((prevState) => {
-        const formValid = this.getFormValid(prevState['fields']);
+      this.setState(prevState => {
+        const formValid = this.getFormValid(prevState["fields"]);
         return merge({}, prevState, { formValid });
       });
-
     }
     handleStepSubmit(e) {
       e.preventDefault();
@@ -185,7 +203,7 @@ export default function WVUSForm(WrapperForm) {
       }
     }
     showUISuccess(fieldState) {
-      const optionalAndEmpty = (fieldState.optional && fieldState.value === '');
+      const optionalAndEmpty = fieldState.optional && fieldState.value === "";
       return fieldState.isValid && !optionalAndEmpty;
     }
 
@@ -194,7 +212,6 @@ export default function WVUSForm(WrapperForm) {
     }
 
     render() {
-
       this.formMethods = {
         addFieldToState: this.addFieldToState.bind(this),
         getFieldState: this.getFieldState.bind(this),
@@ -210,19 +227,25 @@ export default function WVUSForm(WrapperForm) {
         handleBlur: this.handleBlur.bind(this),
         handleStepSubmit: this.handleStepSubmit.bind(this),
         showUISuccess: this.showUISuccess.bind(this),
-        showUIError: this.showUIError.bind(this),
+        showUIError: this.showUIError.bind(this)
       };
 
       return (
-        <div className={this.props.formWrapperClassName ? this.props.formWrapperClassName : ''}>
+        <div
+          className={
+            this.props.formWrapperClassName
+              ? this.props.formWrapperClassName
+              : ""
+          }
+        >
           <WrapperForm
-            {... this.props}
+            {...this.props}
             formMethods={this.formMethods}
             formState={this.state}
             handleNextStep={this.handleNextStep}
             selectedForm={this.props.selectedForm}
-            updateSubFormValidity={this.props.updateSubFormValidity}>
-          </WrapperForm>
+            updateSubFormValidity={this.props.updateSubFormValidity}
+          />
         </div>
       );
     }

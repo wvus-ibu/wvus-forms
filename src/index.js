@@ -1,6 +1,5 @@
-import React from 'react';
-import WVUSForm from './form.js';
-import CheckBoxControl from './controls/checkbox-control.js';
+import WVUSForm from './form-hoc.js';
+import CheckboxControl from './controls/checkbox-control.js';
 import InputControl from './controls/input-control';
 import InputHiddenControl from './controls/input-hidden-control';
 import Message from './controls/message.js';
@@ -30,7 +29,7 @@ import {
 
 export {
     WVUSForm,
-    CheckBoxControl,
+    CheckboxControl,
     InputControl,
     InputHiddenControl,
     Message,

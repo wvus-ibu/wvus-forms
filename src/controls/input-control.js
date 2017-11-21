@@ -6,7 +6,7 @@ class InputControl extends Component {
   constructor(props) {
     super(props);
   }
-  
+
   componentWillMount() {
     const {
       fieldName,
@@ -14,14 +14,17 @@ class InputControl extends Component {
       secondInteraction = false,
       isValid = false,
       validators = [],
+      optional = false,
       formMethods
     } = this.props;
+
     formMethods.addFieldToState(
       fieldName,
       fieldValue,
       secondInteraction,
       isValid,
-      validators
+      validators,
+      optional
     );
   }
 
@@ -31,7 +34,7 @@ class InputControl extends Component {
 
       fieldName,
       fieldId = fieldName,
-      fieldClasses = '',
+      fieldClasses = "",
       fieldType = "text",
       fieldTitle,
       fieldPlaceholder,
@@ -53,12 +56,14 @@ class InputControl extends Component {
         {fieldTitle} {requiredStar}
       </label>
     ) : null;
-    const fieldValue = fieldState.value || '';
+    const fieldValue = fieldState.value || "";
     const fieldPrimaryClass = `wvus-field-${fieldName}`;
 
     return (
       <div
-        className={`${fieldPrimaryClass} ${fieldClasses} form-group has-icon ${validityClass}`}
+        className={`${fieldPrimaryClass} ${fieldClasses} form-group has-icon ${
+          validityClass
+        }`}
         data-field-container={fieldId}
         data-field-is-valid={fieldState.isValid}
       >
@@ -101,13 +106,13 @@ class InputControl extends Component {
 
 InputControl.propTypes = {
   fieldName: PropTypes.string.isRequired,
-  
   formMethods: PropTypes.shape({
     handleBlur: PropTypes.func.isRequired,
     handleValueChange: PropTypes.func.isRequired,
     getFieldState: PropTypes.func.isRequired,
+    addFieldToState: PropTypes.func.isRequired,
     showUIError: PropTypes.func.isRequired,
-    showUISuccess: PropTypes.func.isRequired,
+    showUISuccess: PropTypes.func.isRequired
   }).isRequired,
   validators: PropTypes.array
 };

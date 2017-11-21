@@ -1,8 +1,17 @@
-import React from 'react';
-import Message from './message.js';
+import React from "react";
+import Message from "./message.js";
 
-
-const RadioControl = ({ fieldId, fieldName, fieldTitle, fieldState, fieldChecked, handleValueChange, classNames, showUISuccess, showUIError }) => {
+const RadioControl = ({
+  fieldId,
+  fieldName,
+  fieldTitle,
+  fieldState,
+  fieldChecked,
+  handleValueChange,
+  classNames,
+  showUISuccess,
+  showUIError
+}) => {
   fieldId = fieldId ? fieldId : fieldName;
   return (
     <div className="radio-group">
@@ -12,10 +21,9 @@ const RadioControl = ({ fieldId, fieldName, fieldTitle, fieldState, fieldChecked
           value={fieldState.value}
           name={fieldName}
           onChange={handleValueChange}
-          type='radio'
+          type="radio"
           checked={fieldChecked}
-          >
-        </input>
+        />
         {fieldTitle}
       </label>
     </div>
