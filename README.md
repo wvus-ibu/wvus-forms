@@ -1,5 +1,10 @@
-# VALIDESSA - Defender of Data (WVUS Form Validation Library)
-![Validessa Logo](/validessa.png)
+# VALIDESSA - Defender of Data 
+## WVUS Form Validation Library
+
+<p align="center">
+  <img src="validessa.png">
+</p>
+
 Validessa is a form validation library for WVUS React Apps. Its primary feature is making validating forms easy with a flexible and extendable validation layer. Form fields just work, and can even be modified with custom masks, validators, and more.
 
 ## How to use in a React Project
