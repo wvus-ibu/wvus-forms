@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot: Radio Form renders correctly 1`] = `
+<div
+  className=""
+>
+  <form>
+    <div
+      className="wvus-field-payment_method wvus-field-payment_method_new_cc  radio-group"
+    >
+      <label
+        className="radio-inline"
+      >
+        <input
+          checked={true}
+          id="payment_method_new_cc"
+          name="payment_method"
+          onChange={[Function]}
+          type="radio"
+          value="payment_method_new_cc"
+        />
+        New Credit Card
+      </label>
+    </div>
+    <div
+      className="wvus-field-payment_method wvus-field-payment_method_existing_cc  radio-group"
+    >
+      <label
+        className="radio-inline"
+      >
+        <input
+          checked={false}
+          id="payment_method_existing_cc"
+          name="payment_method"
+          onChange={[Function]}
+          type="radio"
+          value="payment_method_new_cc"
+        />
+        Existing Credit Card
+      </label>
+    </div>
+    <div
+      className="wvus-field-payment_method wvus-field-payment_method_paypal  radio-group"
+    >
+      <label
+        className="radio-inline"
+      >
+        <input
+          checked={false}
+          id="payment_method_paypal"
+          name="payment_method"
+          onChange={[Function]}
+          type="radio"
+          value="payment_method_new_cc"
+        />
+        Paypal
+      </label>
+    </div>
+  </form>
+</div>
+`;

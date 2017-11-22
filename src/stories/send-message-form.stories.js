@@ -17,16 +17,20 @@ import {
 } from "../index";
 
 const MessageForm = props => {
-  const { getFieldState } = props;
-  const submitDisabled = !props.formMethods.isFormValid();
+  const { isFormValid, getFieldState } = props.formMethods;
+  const submitDisabled = !isFormValid();
   const handleFormSubmit = e => {
     e.preventDefault();
   };
   const MAX_MESSAGE_CHAR = 255;
   // @TODO:
-  // getFieldState('message')
-  // const messageCharacterCount = MAX_MESSAGE_CHAR, .value.length);
-  //
+
+  const messageFieldLength =
+    getFieldState("message").value && !!getFieldState("message").value.length
+      ? getFieldState("message").value.length
+      : 0;
+  const messageCharacterCount =
+    parseInt(MAX_MESSAGE_CHAR, 10) - parseInt(messageFieldLength, 10);
 
   return (
     <form>

@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot:  Textarea control renders correctly with no selection 1`] = `
+<div
+  className=""
+>
+  <form>
+    <div
+      className="form-group has-icon "
+    >
+      <label
+        className="control-label"
+        htmlFor="message"
+      >
+        Message
+         
+        <sup>
+          *
+        </sup>
+      </label>
+      <div
+        className="form-control-wrapper"
+      >
+        <div
+          className="text-area-wrapper"
+        >
+          <textarea
+            className="form-control"
+            id="message"
+            name="message"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Type your message here"
+            rows={6}
+            value=""
+          />
+          <span
+            className="message character-count"
+          >
+            255
+          </span>
+        </div>
+        
+        
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Snapshot:  Textarea control renders correctly with too much text 1`] = `
+<div
+  className=""
+>
+  <form>
+    <div
+      className="form-group has-icon has-error "
+    >
+      <label
+        className="control-label"
+        htmlFor="message"
+      >
+        Message
+         
+        <sup>
+          *
+        </sup>
+      </label>
+      <div
+        className="form-control-wrapper"
+      >
+        <div
+          className="text-area-wrapper"
+        >
+          <textarea
+            className="form-control"
+            id="message"
+            name="message"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Type your message here"
+            rows={6}
+            value="Bacon ipsum dolor amet cow kevin pork chop turducken ball tip chuck sausage strip steak tri-tip alcatra. Shankle landjaeger tenderloin short ribs burgdoggen alcatra corned beef salami ground round porchetta turducken. Short loin rump pork belly, ham hock beef ribs ribeye salami corned beef turducken jerky fatback tenderloin porchetta swine pork loin. Brisket chuck short ribs leberkas shoulder ham hock. Frankfurter buffalo turducken short loin jerky drumstick, andouille bacon. Beef ribs leberkas short loin, andouille ball tip ribeye burgdoggen short ribs. Pork loin venison meatloaf hamburger t-bone. Pork loin pork swine t-bone flank brisket. Beef ribs spare ribs salami drumstick landjaeger ball tip kielbasa pork belly pork meatball short ribs brisket short loin boudin jerky. Meatloaf salami prosciutto flank picanha, beef ribs capicola tenderloin pork chop jowl shoulder swine. Chicken jowl salami, leberkas biltong capicola hamburger filet mignon ball tip ham swine pig pork brisket. Fatback pork belly chicken pastrami leberkas, ribeye porchetta doner sirloin biltong cupim."
+          />
+          <span
+            className="message character-count"
+          >
+            -831
+          </span>
+        </div>
+        <span>
+          <i
+            className="fa fa-exclamation-circle"
+          />
+          <span
+            className="message"
+            data-field-validation-message={true}
+          >
+            
+          </span>
+        </span>
+        
+      </div>
+    </div>
+  </form>
+</div>
+`;

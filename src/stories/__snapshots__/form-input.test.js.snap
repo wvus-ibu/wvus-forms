@@ -1,0 +1,206 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot: Input Form renders correctly 1`] = `
+<div
+  className=""
+>
+  <form>
+    <div
+      className="wvus-field-fname custom-class-field-input form-group has-icon "
+      data-field-container="fname"
+      data-field-is-valid={false}
+    >
+      <label
+        htmlFor="fname"
+      >
+        First Name
+         
+        <sup>
+          *
+        </sup>
+      </label>
+      <div
+        className="form-control-wrapper"
+      >
+        <input
+          className="form-control"
+          id="fname"
+          name="fname"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="Tim Stehlin"
+          type="text"
+          value=""
+        />
+        
+        
+        
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Snapshot: Input renders error state 1`] = `
+<form>
+  <div
+    className="wvus-field-fname custom-class-field-input form-group has-icon has-error "
+    data-field-container="fname"
+    data-field-is-valid={false}
+  >
+    <label
+      htmlFor="fname"
+    >
+      First Name
+       
+      <sup>
+        *
+      </sup>
+    </label>
+    <div
+      className="form-control-wrapper"
+    >
+      <input
+        className="form-control"
+        id="fname"
+        name="fname"
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder="Tim Stehlin"
+        type="text"
+        value=""
+      />
+      
+      <span>
+        <i
+          className="fa fa-exclamation-circle"
+        />
+        <span
+          className="message"
+          data-field-validation-message={true}
+        >
+          Error message displays here
+        </span>
+      </span>
+      
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Snapshot: Input renders success state 1`] = `
+<form>
+  <div
+    className="wvus-field-fname custom-class-field-input form-group has-icon has-success "
+    data-field-container="fname"
+    data-field-is-valid={true}
+  >
+    <label
+      htmlFor="fname"
+    >
+      First Name
+       
+      <sup>
+        *
+      </sup>
+    </label>
+    <div
+      className="form-control-wrapper"
+    >
+      <input
+        className="form-control"
+        id="fname"
+        name="fname"
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder="Tim Stehlin"
+        type="text"
+        value="Scott Rees"
+      />
+      
+      
+      <span>
+        <i
+          className="fa fa-check-circle"
+        />
+        <span
+          className="message"
+          data-field-validation-message={true}
+        />
+      </span>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Snapshot: Input renders untouched state 1`] = `
+<form>
+  <div
+    className="wvus-field-fname custom-class-field-input form-group has-icon "
+    data-field-container="fname"
+    data-field-is-valid={true}
+  >
+    <label
+      htmlFor="fname"
+    >
+      First Name
+       
+      <sup>
+        *
+      </sup>
+    </label>
+    <div
+      className="form-control-wrapper"
+    >
+      <input
+        className="form-control"
+        id="fname"
+        name="fname"
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder="Tim Stehlin"
+        type="text"
+        value=""
+      />
+      
+      
+      
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Snapshot: Input renders with optional/valid ustate 1`] = `
+<form>
+  <div
+    className="wvus-field-fname custom-class-field-input form-group has-icon "
+    data-field-container="fname"
+    data-field-is-valid={true}
+  >
+    <label
+      htmlFor="fname"
+    >
+      First Name
+       
+      
+    </label>
+    <div
+      className="form-control-wrapper"
+    >
+      <input
+        className="form-control"
+        id="fname"
+        name="fname"
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder="Tim Stehlin"
+        type="text"
+        value=""
+      />
+      
+      
+      
+    </div>
+  </div>
+</form>
+`;

@@ -1,5 +1,4 @@
 import React from "react";
-import { action } from "@storybook/addon-actions";
 
 import {
   WVUSForm,
@@ -7,73 +6,27 @@ import {
   SelectControl,
   CheckboxControl
 } from "../../index";
+import { validateRequired } from "../../index";
 import {
-  validateRequired,
-  validateEmail,
-  validatePhone,
-  validateZip,
-  validateMin,
-  validateMax
-} from "../../index";
-
-const formMethodsUnTouched = {
-  addFieldToState: () => {},
-  getFieldState: () => {
-    return {
-      value: "",
-      secondInteraction: false,
-      isValid: true,
-      optional: false,
-      errorMessage: "Error message displays here"
-    };
-  },
-  handleBlur: action("handleblur"),
-  handleValueChange: action("handleValueChange"),
-  showUIError: () => false,
-  showUISuccess: () => false
-};
+  formMethodsUnTouched,
+  formMethodsWithSuccess,
+  formMethodsWithError,
+  formMethodsOptional
+} from "./props-mocks";
 const propsUntouched = {
   formMethods: formMethodsUnTouched
-};
-const formMethodsWithSuccess = {
-  addFieldToState: () => {},
-  getFieldState: () => {
-    return {
-      value: "Scott Rees",
-      secondInteraction: true,
-      isValid: true,
-      optional: false,
-      errorMessage: "Error message displays here"
-    };
-  },
-  handleBlur: action("handleblur"),
-  handleValueChange: action("handleValueChange"),
-  showUIError: () => false,
-  showUISuccess: () => true
 };
 
 const propsWithSuccess = {
   formMethods: formMethodsWithSuccess
 };
 
-const formMethodsWithError = {
-  addFieldToState: () => {},
-  getFieldState: () => {
-    return {
-      value: "",
-      secondInteraction: true,
-      isValid: false,
-      optional: false,
-      errorMessage: "Error message displays here"
-    };
-  },
-  handleBlur: action("handleblur"),
-  handleValueChange: action("handleValueChange"),
-  showUIError: () => true,
-  showUISuccess: () => false
-};
 const propsWithError = {
   formMethods: formMethodsWithError
+};
+
+const propsOptional = {
+  formMethods: formMethodsOptional
 };
 
 const SimpleInputForm = props => {
@@ -110,5 +63,6 @@ export {
   SimpleInputStates,
   propsUntouched,
   propsWithError,
-  propsWithSuccess
+  propsWithSuccess,
+  propsOptional
 };

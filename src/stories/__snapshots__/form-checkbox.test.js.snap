@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot: Checkbox Form renders correctly 1`] = `
+<div
+  className=""
+>
+  <form>
+    <div
+      className="wvus-field-optIn wvus-field-newletter-optin checkbox-group"
+    >
+      <label
+        className="checkbox-inline"
+      >
+        <input
+          checked={true}
+          id="optIn"
+          name="optIn"
+          onChange={[Function]}
+          type="checkbox"
+        />
+        Yes, I would like to receive the email newsletter.
+      </label>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Snapshot: Checkbox renders checked state 1`] = `
+<form>
+  <div
+    className="wvus-field-optIn wvus-field-newletter-optin checkbox-group"
+  >
+    <label
+      className="checkbox-inline"
+    >
+      <input
+        checked={true}
+        id="optIn"
+        name="optIn"
+        onChange={[Function]}
+        type="checkbox"
+      />
+      Yes, I would like to receive the email newsletter.
+    </label>
+  </div>
+</form>
+`;
+
+exports[`Snapshot: Checkbox renders unchecked state 1`] = `
+<form>
+  <div
+    className="wvus-field-optIn wvus-field-newletter-optin checkbox-group"
+  >
+    <label
+      className="checkbox-inline"
+    >
+      <input
+        checked=""
+        id="optIn"
+        name="optIn"
+        onChange={[Function]}
+        type="checkbox"
+      />
+      Yes, I would like to receive the email newsletter.
+    </label>
+  </div>
+</form>
+`;
