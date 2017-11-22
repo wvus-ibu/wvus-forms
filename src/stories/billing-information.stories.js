@@ -1,5 +1,5 @@
 import React from "react";
-import "swing-ui/dist/css/swing.css";
+// import "swing-ui/dist/css/swing.css";
 import { withInfo } from "@storybook/addon-info";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
