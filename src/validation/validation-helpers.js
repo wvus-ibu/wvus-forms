@@ -4,7 +4,7 @@ import { getCreditCardTypeValidity } from './credit-card-helpers';
 
 
 const createValidationHelper = (config) => {
-	const createValidationRunner = (config) => 
+	const createValidationRunner = (config) =>
 		(fieldName, fieldValue) => config[fieldName].validators.map((fn)=> fn(fieldValue));
 	const validationRunner = createValidationRunner(config);
 
@@ -20,7 +20,7 @@ const createValidationHelper = (config) => {
 				this.successBag[fieldName] = validResults;
 
 				// Clear errors if Optional and Empty
-				if (this.fieldIsOptional(fieldName) && this.fieldValueIsEmpty(fieldValue)) {
+				if(this.fieldIsOptional(fieldName) && this.fieldValueIsEmpty(fieldValue)) {
 					this.errorBag[fieldName] = [];
 				}
 
@@ -66,11 +66,11 @@ const createValidationHelper = (config) => {
 				for (let key of Object.keys(data)) {
 					const fieldName = key;
 					const fieldValue = decodeURIComponent(data[key]);
-					
+
 					// Only validate configured fields
 					// This allows for subform/step validation
 					if(!config[fieldName]) continue;
-					
+
 					this.validate(fieldName.toString(), fieldValue.toString());
 				}
 			} catch (error) {
@@ -82,8 +82,8 @@ const createValidationHelper = (config) => {
 }
 
 /**
- * 
- * Validators 
+ *
+ * Validators
  */
 // Documention on validator project helper functions used here:
 // https://github.com/chriso/validator.js
@@ -105,14 +105,14 @@ const validateEmail = (value) => {
 const validateMin = (min) => (value) => {
 	return {
 		valid: isLength(trim(value), {min}),
-		message: `Field must be minimum length of: ${min}`
+		message: `Field must be a minimum length of: ${min}`
 	}
 };
 
 const validateMax = (max) => (value) => {
 	return {
 		valid: isLength(trim(value), {max}),
-		message: `Field must be a maximum length of ${max}`
+		message: `Field must be a maximum length of: ${max}`
 	}
 };
 
@@ -132,7 +132,7 @@ const validateZip = (value) => {
 };
 
 const validatePhone = (value) => {
-	const phoneRegEx = new RegExp(/^\(?[0-9]{3}\)?\s?-?[0-9]{3}\s?-?[0-9]{4}$/, 'g');
+	const phoneRegEx = /^\(?[0-9]{3}\)?\s?-?[0-9]{3}\s?-?[0-9]{4}$/g;
 	return {
 		valid: phoneRegEx.test(trim(value)),
 		message: 'Please enter a valid 10 digit phone number. E.g. (123) 456-7890 or 123-456-7890.'
@@ -156,7 +156,7 @@ const validateIsFutureDate = (month, year, compareMonth = new Date().getMonth(),
 	month = parseInt(month, 10);
 	compareYear = parseInt(compareYear, 10);
 	compareMonth = parseInt(compareMonth, 10) + 1; // adjust up one month due to zero-based months in JS
-	
+
 	return {
 		valid: year > compareYear || month >= compareMonth && year === compareYear,
 		message: 'Please enter a valid expiration date.'
@@ -169,7 +169,7 @@ const validateIsNotPastYearsOut = (yearsOut) => (value = '') => {
 	let year = parseInt(`20${twoDigitYear}`, 10);
 	const compareYear = parseInt(new Date().getFullYear() + yearsOut, 10);
 	const compareMonth = parseInt(new Date().getMonth(), 10) + 1; // adjust up one month due to zero-based months in JS
-	
+
 	return {
 		valid: year <= compareYear || month <= compareMonth && year === compareYear,
 		message: `Please enter a valid expiration date within ${yearsOut} years.`
@@ -181,7 +181,7 @@ const validateNotPast10Years = validateIsNotPastYearsOut(10);
 const validateCreditCardNum = (value) => {
 	return {
 		valid: isCreditCard(trim(value)),
-		message: 'Please enter a valid credit card number.'		
+		message: 'Please enter a valid credit card number.'
 	}
 };
 
@@ -203,4 +203,4 @@ const validateCreditCardNumAndType = (validateCreditCardNum, validateCreditCardT
 
 const validateCreditCard = validateCreditCardNumAndType(validateCreditCardNum, validateCreditCardType);
 
-export { createValidationHelper, validateRequired, validateEmpty, validateEmail, validatePhone, validateZip, validateMin, validateMax, validateExpirationDate, validateNotPast10Years, validateCreditCardNum, validateCreditCardType, validateCreditCard };
+export { createValidationHelper, validateRequired, validateEmpty, validateEmail, validatePhone, validateZip, validateMin, validateMax, validateExpirationDate, validateIsFutureDate, validateIsNotPastYearsOut, validateNotPast10Years, validateCreditCardNum, validateCreditCardType, validateCreditCard };
