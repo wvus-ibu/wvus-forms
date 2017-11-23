@@ -60,10 +60,10 @@
     "react-addons-test-utils": "^15.0.0",
     "react-dom": "^15.6.2",
     "react-test-renderer": "^15.6.2",
-    "sinon": "^1.17.3",
-    "swing-ui": "github:wvus-ibu/swing#v2.8.2"
+    "sinon": "^1.17.3"
   },
   "peerDependencies": {
+    "swing-ui": "github:wvus-ibu/swing#v2.8.2",
     "react": "~0.14.8 || ^15.0.0",
     "react-dom": "~0.14.8 || ^15.0.0"
   },
