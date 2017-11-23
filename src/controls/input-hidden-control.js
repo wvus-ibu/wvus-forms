@@ -41,7 +41,7 @@ class InputHiddenControl extends Component {
     const fieldPrimaryClass = `wvus-field-${fieldName}`;
 
     return (
-      <div
+      <span
         className={`${fieldPrimaryClass} ${
           fieldClasses
         } input-hidden-control-wrapper`}
@@ -50,11 +50,11 @@ class InputHiddenControl extends Component {
         <input
           id={fieldId}
           name={fieldName}
-          value={fieldState.value}
+          value={fieldValue}
           className="input-hidden-control"
           type="hidden"
         />
-      </div>
+      </span>
     );
   }
 }
