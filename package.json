@@ -9,19 +9,24 @@
   "author": "World Vision, US",
   "license": "UNLICENSED",
   "homepage": "https://github.com/wvus-ibu/wvus-forms",
-  "keywords": [
-    "react-component",
-    "react",
-    "forms"
-  ],
+  "keywords": ["react-component", "react", "forms"],
   "scripts": {
-    "prepare": "babel --plugins transform-es2015-modules-umd src --ignore __tests__ --out-dir ./dist",
+    "prepare":
+      "babel --plugins transform-es2015-modules-umd src --ignore __tests__ --out-dir ./dist",
     "lint": "eslint ./src",
     "lintfix": "eslint ./src --fix",
     "test": "jest",
     "test-watch": "jest --watch",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -o docs"
+    "build-storybook": "build-storybook -o docs",
+    "test-storybook": "storyshots"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
+        "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
+    }
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.2.14",
@@ -29,6 +34,7 @@
     "@storybook/addon-links": "^3.2.14",
     "@storybook/addon-storyshots": "^3.2.16",
     "@storybook/addons": "^3.2.16",
+    "@storybook/channels": "^3.2.16",
     "@storybook/react": "^3.2.16",
     "babel-cli": "^6.6.4",
     "babel-core": "^6.26.0",
@@ -40,7 +46,6 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-2": "^6.5.0",
     "chai": "^3.5.0",
-    "enzyme": "^2.2.0",
     "eslint-config-prettier": "^2.8.0",
     "eslint-plugin-babel": "^3.1.0",
     "eslint-plugin-prettier": "^2.3.1",
@@ -63,7 +68,6 @@
     "react-dom": "~0.14.8 || ^15.0.0"
   },
   "dependencies": {
-    "@storybook/channels": "^3.2.16",
     "babel-runtime": "^6.6.1",
     "css-loader": "^0.28.7",
     "eslint": "^4.10.0",

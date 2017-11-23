@@ -1,0 +1,2851 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Example Forms Billing Info 1`] = `
+<div
+  className=""
+>
+  <form>
+    <h2>
+      Billing Info Form
+    </h2>
+    <div
+      className="wvus-field-fname wvus-field-50 form-group has-icon "
+      data-field-container="fname"
+      data-field-is-valid={false}
+    >
+      <label
+        htmlFor="fname"
+      >
+        First Name
+         
+        <sup>
+          *
+        </sup>
+      </label>
+      <div
+        className="form-control-wrapper"
+      >
+        <input
+          className="form-control"
+          id="fname"
+          name="fname"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder={undefined}
+          type="text"
+          value=""
+        />
+        
+        
+        
+      </div>
+    </div>
+    <div
+      className="wvus-field-lname wvus-field-50 wvus-field--end form-group has-icon "
+      data-field-container="lname"
+      data-field-is-valid={false}
+    >
+      <label
+        htmlFor="lname"
+      >
+        Last Name
+         
+        <sup>
+          *
+        </sup>
+      </label>
+      <div
+        className="form-control-wrapper"
+      >
+        <input
+          className="form-control"
+          id="lname"
+          name="lname"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder={undefined}
+          type="text"
+          value=""
+        />
+        
+        
+        
+      </div>
+    </div>
+    <div
+      className="wvus-field-address1  form-group has-icon "
+      data-field-container="address1"
+      data-field-is-valid={false}
+    >
+      <label
+        htmlFor="address1"
+      >
+        Mailing Address Line 1
+         
+        <sup>
+          *
+        </sup>
+      </label>
+      <div
+        className="form-control-wrapper"
+      >
+        <input
+          className="form-control"
+          id="address1"
+          name="address1"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder={undefined}
+          type="text"
+          value=""
+        />
+        
+        
+        
+      </div>
+    </div>
+    <div
+      className="wvus-field-address2  form-group has-icon "
+      data-field-container="address2"
+      data-field-is-valid={true}
+    >
+      <label
+        htmlFor="address2"
+      >
+        Mailing Address Line 2
+         
+        
+      </label>
+      <div
+        className="form-control-wrapper"
+      >
+        <input
+          className="form-control"
+          id="address2"
+          name="address2"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder={undefined}
+          type="text"
+          value=""
+        />
+        
+        
+        
+      </div>
+    </div>
+    <div
+      className="wvus-field-city wvus-field-33 form-group has-icon "
+      data-field-container="city"
+      data-field-is-valid={false}
+    >
+      <label
+        htmlFor="city"
+      >
+        City
+         
+        <sup>
+          *
+        </sup>
+      </label>
+      <div
+        className="form-control-wrapper"
+      >
+        <input
+          className="form-control"
+          id="city"
+          name="city"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder={undefined}
+          type="text"
+          value=""
+        />
+        
+        
+        
+      </div>
+    </div>
+    <div
+      className="wvus-field-state wvus-field-33 form-group has-icon "
+    >
+      <label
+        className={undefined}
+        htmlFor="state"
+      >
+        State
+         
+        <sup>
+          *
+        </sup>
+      </label>
+      <div
+        className="form-control-wrapper"
+      >
+        <select
+          className="form-control select-control"
+          id="state"
+          name="state"
+          onBlur={[Function]}
+          onChange={[Function]}
+          value=""
+        >
+          <option
+            value=""
+          >
+            ▾ Select a state
+          </option>
+          <option
+            value="AL"
+          >
+            Alabama
+          </option>
+          <option
+            value="AK"
+          >
+            Alaska
+          </option>
+          <option
+            value="AS"
+          >
+            American Samoa
+          </option>
+          <option
+            value="AZ"
+          >
+            Arizona
+          </option>
+          <option
+            value="AR"
+          >
+            Arkansas
+          </option>
+          <option
+            value="AF"
+          >
+            Armed Forces Africa
+          </option>
+          <option
+            value="AA"
+          >
+            Armed Forces Americas
+          </option>
+          <option
+            value="AC"
+          >
+            Armed Forces Canada
+          </option>
+          <option
+            value="AE"
+          >
+            Armed Forces Europe
+          </option>
+          <option
+            value="AM"
+          >
+            Armed Forces Middle East
+          </option>
+          <option
+            value="AP"
+          >
+            Armed Forces Pacific
+          </option>
+          <option
+            value="CA"
+          >
+            California
+          </option>
+          <option
+            value="CO"
+          >
+            Colorado
+          </option>
+          <option
+            value="CT"
+          >
+            Connecticut
+          </option>
+          <option
+            value="DE"
+          >
+            Delaware
+          </option>
+          <option
+            value="DC"
+          >
+            District Of Columbia
+          </option>
+          <option
+            value="FM"
+          >
+            Federated States Of Micronesia
+          </option>
+          <option
+            value="FL"
+          >
+            Florida
+          </option>
+          <option
+            value="GA"
+          >
+            Georgia
+          </option>
+          <option
+            value="GU"
+          >
+            Guam
+          </option>
+          <option
+            value="HI"
+          >
+            Hawaii
+          </option>
+          <option
+            value="ID"
+          >
+            Idaho
+          </option>
+          <option
+            value="IL"
+          >
+            Illinois
+          </option>
+          <option
+            value="IN"
+          >
+            Indiana
+          </option>
+          <option
+            value="IA"
+          >
+            Iowa
+          </option>
+          <option
+            value="KS"
+          >
+            Kansas
+          </option>
+          <option
+            value="KY"
+          >
+            Kentucky
+          </option>
+          <option
+            value="LA"
+          >
+            Louisiana
+          </option>
+          <option
+            value="ME"
+          >
+            Maine
+          </option>
+          <option
+            value="MH"
+          >
+            Marshall Islands
+          </option>
+          <option
+            value="MD"
+          >
+            Maryland
+          </option>
+          <option
+            value="MA"
+          >
+            Massachusetts
+          </option>
+          <option
+            value="MI"
+          >
+            Michigan
+          </option>
+          <option
+            value="MN"
+          >
+            Minnesota
+          </option>
+          <option
+            value="MS"
+          >
+            Mississippi
+          </option>
+          <option
+            value="MO"
+          >
+            Missouri
+          </option>
+          <option
+            value="MT"
+          >
+            Montana
+          </option>
+          <option
+            value="NE"
+          >
+            Nebraska
+          </option>
+          <option
+            value="NV"
+          >
+            Nevada
+          </option>
+          <option
+            value="NH"
+          >
+            New Hampshire
+          </option>
+          <option
+            value="NJ"
+          >
+            New Jersey
+          </option>
+          <option
+            value="NM"
+          >
+            New Mexico
+          </option>
+          <option
+            value="NY"
+          >
+            New York
+          </option>
+          <option
+            value="NC"
+          >
+            North Carolina
+          </option>
+          <option
+            value="ND"
+          >
+            North Dakota
+          </option>
+          <option
+            value="MP"
+          >
+            Northern Mariana Islands
+          </option>
+          <option
+            value="OH"
+          >
+            Ohio
+          </option>
+          <option
+            value="OK"
+          >
+            Oklahoma
+          </option>
+          <option
+            value="OR"
+          >
+            Oregon
+          </option>
+          <option
+            value="PW"
+          >
+            Palau
+          </option>
+          <option
+            value="PA"
+          >
+            Pennsylvania
+          </option>
+          <option
+            value="PR"
+          >
+            Puerto Rico
+          </option>
+          <option
+            value="RI"
+          >
+            Rhode Island
+          </option>
+          <option
+            value="SC"
+          >
+            South Carolina
+          </option>
+          <option
+            value="SD"
+          >
+            South Dakota
+          </option>
+          <option
+            value="TN"
+          >
+            Tennessee
+          </option>
+          <option
+            value="TX"
+          >
+            Texas
+          </option>
+          <option
+            value="UT"
+          >
+            Utah
+          </option>
+          <option
+            value="VT"
+          >
+            Vermont
+          </option>
+          <option
+            value="VI"
+          >
+            Virgin Islands
+          </option>
+          <option
+            value="VA"
+          >
+            Virginia
+          </option>
+          <option
+            value="WA"
+          >
+            Washington
+          </option>
+          <option
+            value="WV"
+          >
+            West Virginia
+          </option>
+          <option
+            value="WI"
+          >
+            Wisconsin
+          </option>
+          <option
+            value="WY"
+          >
+            Wyoming
+          </option>
+        </select>
+        
+        
+      </div>
+    </div>
+    <div
+      className="wvus-field-zip wvus-field-33 wvus-field--end form-group has-icon "
+      data-field-container="zip"
+      data-field-is-valid={false}
+    >
+      <label
+        htmlFor="zip"
+      >
+        Zip
+         
+        <sup>
+          *
+        </sup>
+      </label>
+      <div
+        className="form-control-wrapper"
+      >
+        <input
+          className="form-control"
+          id="zip"
+          name="zip"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder={undefined}
+          type="text"
+          value=""
+        />
+        
+        
+        
+      </div>
+    </div>
+    <div
+      className="wvus-field-email wvus-field-newletter form-group has-icon "
+      data-field-container="email"
+      data-field-is-valid={false}
+    >
+      <label
+        htmlFor="email"
+      >
+        Email
+         
+        <sup>
+          *
+        </sup>
+      </label>
+      <div
+        className="form-control-wrapper"
+      >
+        <input
+          className="form-control"
+          id="email"
+          name="email"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder={undefined}
+          type="email"
+          value=""
+        />
+        
+        
+        
+      </div>
+    </div>
+    <div
+      className="wvus-field-phone wvus-field-newletter form-group has-icon "
+      data-field-container="phone"
+      data-field-is-valid={false}
+    >
+      <label
+        htmlFor="phone"
+      >
+        Phone
+         
+        <sup>
+          *
+        </sup>
+      </label>
+      <div
+        className="form-control-wrapper"
+      >
+        <input
+          className="form-control"
+          id="phone"
+          name="phone"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder={undefined}
+          type="tel"
+          value=""
+        />
+        
+        
+        
+      </div>
+    </div>
+    <button
+      className="btn btn-medium btn-secondary"
+      disabled={true}
+      id="wv-login-form-submit"
+      onClick={[Function]}
+      type="submit"
+    >
+      Sign In
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Storyshots Example Forms Login Form 1`] = `
+<div
+  className=""
+>
+  <div
+    className="user-checkout-login wv-flex-child"
+  >
+    <h3
+      className="checkout-step-subheading epsilon text-center"
+    >
+      Sign In
+    </h3>
+    
+    <div>
+      <div
+        className="wvus-field-wv-login-form-user wvus-field-login form-group has-icon "
+        data-field-container="wv-login-form-user"
+        data-field-is-valid={false}
+      >
+        <label
+          htmlFor="wv-login-form-user"
+        >
+          Email
+           
+          <sup>
+            *
+          </sup>
+        </label>
+        <div
+          className="form-control-wrapper"
+        >
+          <input
+            className="form-control"
+            id="wv-login-form-user"
+            name="wv-login-form-user"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="name@example.com"
+            type="text"
+            value=""
+          />
+          
+          
+          
+        </div>
+      </div>
+      <div
+        className="wvus-field-wv-login-form-pass wvus-field-login form-group has-icon "
+        data-field-container="wv-login-form-pass"
+        data-field-is-valid={false}
+      >
+        <label
+          htmlFor="wv-login-form-pass"
+        >
+          Password
+           
+          <sup>
+            *
+          </sup>
+        </label>
+        <div
+          className="form-control-wrapper"
+        >
+          <input
+            className="form-control"
+            id="wv-login-form-pass"
+            name="wv-login-form-pass"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder=""
+            type="password"
+            value=""
+          />
+          
+          
+          
+        </div>
+      </div>
+    </div>
+    <div
+      className="wv-login-form-bottom-row"
+    >
+      <p
+        className="wv-login-form-bottom-child wv-login-submit-group"
+      >
+        <button
+          className="btn btn-medium btn-secondary"
+          disabled={true}
+          id="wv-login-form-submit"
+          onClick={[Function]}
+          type="submit"
+        >
+          <i
+            aria-hidden="true"
+            className="fa fa-lock"
+          />
+           Sign In
+        </button>
+      </p>
+      <div
+        className="wv-login-form-bottom-child wv-login-form-bottom-help"
+      >
+        <p>
+          <a
+            href="#"
+          >
+            Forgot Password?
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Example Forms Newsletter Signup Form 1`] = `
+<div
+  className=""
+>
+  <form>
+    <h2>
+      Sign up for our newsletter
+    </h2>
+    <div
+      className="wvus-field-email wvus-field-newletter-email form-group has-icon "
+      data-field-container="email"
+      data-field-is-valid={false}
+    >
+      <label
+        htmlFor="email"
+      >
+        Email
+         
+        <sup>
+          *
+        </sup>
+      </label>
+      <div
+        className="form-control-wrapper"
+      >
+        <input
+          className="form-control"
+          id="email"
+          name="email"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder={undefined}
+          type="email"
+          value=""
+        />
+        
+        
+        
+      </div>
+    </div>
+    <div
+      className="wvus-field-optIn wvus-field-newletter-optin checkbox-group"
+    >
+      <label
+        className="checkbox-inline"
+      >
+        <input
+          checked={true}
+          id="optIn"
+          name="optIn"
+          onChange={[Function]}
+          type="checkbox"
+        />
+        Yes, I would like to receive the email newsletter.
+      </label>
+    </div>
+    <button
+      className="btn btn-medium btn-secondary"
+      disabled={true}
+      id="wv-login-form-submit"
+      onClick={[Function]}
+      type="submit"
+    >
+      Sign Me Up!
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Storyshots Example Forms Send Email Form 1`] = `
+<div
+  className=""
+>
+  <form>
+    <h2>
+      Send a message!
+    </h2>
+    <div
+      className="wvus-field-recipient_email wvus-field-newletter-email form-group has-icon "
+      data-field-container="recipient_email"
+      data-field-is-valid={false}
+    >
+      <label
+        htmlFor="recipient_email"
+      >
+        Recipient Email
+         
+        <sup>
+          *
+        </sup>
+      </label>
+      <div
+        className="form-control-wrapper"
+      >
+        <input
+          className="form-control"
+          id="recipient_email"
+          name="recipient_email"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder={undefined}
+          type="email"
+          value=""
+        />
+        
+        
+        
+      </div>
+    </div>
+    <div
+      className="form-group has-icon "
+    >
+      <label
+        className="control-label"
+        htmlFor="message"
+      >
+        Message
+         
+        <sup>
+          *
+        </sup>
+      </label>
+      <div
+        className="form-control-wrapper"
+      >
+        <div
+          className="text-area-wrapper"
+        >
+          <textarea
+            className="form-control"
+            id="message"
+            name="message"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Type your message here"
+            rows={6}
+            value=""
+          />
+          <span
+            className="message character-count"
+          >
+            255
+          </span>
+        </div>
+        
+        
+      </div>
+    </div>
+    <div
+      className="wvus-field-optIn wvus-field-newletter-optin checkbox-group"
+    >
+      <label
+        className="checkbox-inline"
+      >
+        <input
+          checked={true}
+          id="optIn"
+          name="optIn"
+          onChange={[Function]}
+          type="checkbox"
+        />
+        Yes, please send me a confirmation message.
+      </label>
+    </div>
+    <button
+      className="btn btn-medium btn-secondary"
+      disabled={true}
+      id="wv-login-form-submit"
+      onClick={[Function]}
+      type="submit"
+    >
+      Sign Me Up!
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Storyshots Example Forms Simple Address Form 1`] = `
+<div
+  className=""
+>
+  <form>
+    <h2>
+      Simple Address Form
+    </h2>
+    <div
+      className="wvus-field-fname wvus-field-50 form-group has-icon "
+      data-field-container="fname"
+      data-field-is-valid={false}
+    >
+      <label
+        htmlFor="fname"
+      >
+        First Name
+         
+        <sup>
+          *
+        </sup>
+      </label>
+      <div
+        className="form-control-wrapper"
+      >
+        <input
+          className="form-control"
+          id="fname"
+          name="fname"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder={undefined}
+          type="text"
+          value=""
+        />
+        
+        
+        
+      </div>
+    </div>
+    <div
+      className="wvus-field-lname wvus-field- wvus-field--end form-group has-icon "
+      data-field-container="lname"
+      data-field-is-valid={false}
+    >
+      <label
+        htmlFor="lname"
+      >
+        Last Name
+         
+        <sup>
+          *
+        </sup>
+      </label>
+      <div
+        className="form-control-wrapper"
+      >
+        <input
+          className="form-control"
+          id="lname"
+          name="lname"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder={undefined}
+          type="text"
+          value=""
+        />
+        
+        
+        
+      </div>
+    </div>
+    <div
+      className="wvus-field-address1  form-group has-icon "
+      data-field-container="address1"
+      data-field-is-valid={false}
+    >
+      <label
+        htmlFor="address1"
+      >
+        Mailing Address
+         
+        <sup>
+          *
+        </sup>
+      </label>
+      <div
+        className="form-control-wrapper"
+      >
+        <input
+          className="form-control"
+          id="address1"
+          name="address1"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder={undefined}
+          type="text"
+          value=""
+        />
+        
+        
+        
+      </div>
+    </div>
+    <div
+      className="wvus-field-city wvus-field-33 form-group has-icon "
+      data-field-container="city"
+      data-field-is-valid={false}
+    >
+      <label
+        htmlFor="city"
+      >
+        City
+         
+        <sup>
+          *
+        </sup>
+      </label>
+      <div
+        className="form-control-wrapper"
+      >
+        <input
+          className="form-control"
+          id="city"
+          name="city"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder={undefined}
+          type="text"
+          value=""
+        />
+        
+        
+        
+      </div>
+    </div>
+    <div
+      className="wvus-field-state wvus-field-33 form-group has-icon "
+    >
+      <label
+        className={undefined}
+        htmlFor="state"
+      >
+        State
+         
+        <sup>
+          *
+        </sup>
+      </label>
+      <div
+        className="form-control-wrapper"
+      >
+        <select
+          className="form-control select-control"
+          id="state"
+          name="state"
+          onBlur={[Function]}
+          onChange={[Function]}
+          value=""
+        >
+          <option
+            value=""
+          >
+            ▾ Select a state
+          </option>
+          <option
+            value="AL"
+          >
+            Alabama
+          </option>
+          <option
+            value="AK"
+          >
+            Alaska
+          </option>
+          <option
+            value="AS"
+          >
+            American Samoa
+          </option>
+          <option
+            value="AZ"
+          >
+            Arizona
+          </option>
+          <option
+            value="AR"
+          >
+            Arkansas
+          </option>
+          <option
+            value="AF"
+          >
+            Armed Forces Africa
+          </option>
+          <option
+            value="AA"
+          >
+            Armed Forces Americas
+          </option>
+          <option
+            value="AC"
+          >
+            Armed Forces Canada
+          </option>
+          <option
+            value="AE"
+          >
+            Armed Forces Europe
+          </option>
+          <option
+            value="AM"
+          >
+            Armed Forces Middle East
+          </option>
+          <option
+            value="AP"
+          >
+            Armed Forces Pacific
+          </option>
+          <option
+            value="CA"
+          >
+            California
+          </option>
+          <option
+            value="CO"
+          >
+            Colorado
+          </option>
+          <option
+            value="CT"
+          >
+            Connecticut
+          </option>
+          <option
+            value="DE"
+          >
+            Delaware
+          </option>
+          <option
+            value="DC"
+          >
+            District Of Columbia
+          </option>
+          <option
+            value="FM"
+          >
+            Federated States Of Micronesia
+          </option>
+          <option
+            value="FL"
+          >
+            Florida
+          </option>
+          <option
+            value="GA"
+          >
+            Georgia
+          </option>
+          <option
+            value="GU"
+          >
+            Guam
+          </option>
+          <option
+            value="HI"
+          >
+            Hawaii
+          </option>
+          <option
+            value="ID"
+          >
+            Idaho
+          </option>
+          <option
+            value="IL"
+          >
+            Illinois
+          </option>
+          <option
+            value="IN"
+          >
+            Indiana
+          </option>
+          <option
+            value="IA"
+          >
+            Iowa
+          </option>
+          <option
+            value="KS"
+          >
+            Kansas
+          </option>
+          <option
+            value="KY"
+          >
+            Kentucky
+          </option>
+          <option
+            value="LA"
+          >
+            Louisiana
+          </option>
+          <option
+            value="ME"
+          >
+            Maine
+          </option>
+          <option
+            value="MH"
+          >
+            Marshall Islands
+          </option>
+          <option
+            value="MD"
+          >
+            Maryland
+          </option>
+          <option
+            value="MA"
+          >
+            Massachusetts
+          </option>
+          <option
+            value="MI"
+          >
+            Michigan
+          </option>
+          <option
+            value="MN"
+          >
+            Minnesota
+          </option>
+          <option
+            value="MS"
+          >
+            Mississippi
+          </option>
+          <option
+            value="MO"
+          >
+            Missouri
+          </option>
+          <option
+            value="MT"
+          >
+            Montana
+          </option>
+          <option
+            value="NE"
+          >
+            Nebraska
+          </option>
+          <option
+            value="NV"
+          >
+            Nevada
+          </option>
+          <option
+            value="NH"
+          >
+            New Hampshire
+          </option>
+          <option
+            value="NJ"
+          >
+            New Jersey
+          </option>
+          <option
+            value="NM"
+          >
+            New Mexico
+          </option>
+          <option
+            value="NY"
+          >
+            New York
+          </option>
+          <option
+            value="NC"
+          >
+            North Carolina
+          </option>
+          <option
+            value="ND"
+          >
+            North Dakota
+          </option>
+          <option
+            value="MP"
+          >
+            Northern Mariana Islands
+          </option>
+          <option
+            value="OH"
+          >
+            Ohio
+          </option>
+          <option
+            value="OK"
+          >
+            Oklahoma
+          </option>
+          <option
+            value="OR"
+          >
+            Oregon
+          </option>
+          <option
+            value="PW"
+          >
+            Palau
+          </option>
+          <option
+            value="PA"
+          >
+            Pennsylvania
+          </option>
+          <option
+            value="PR"
+          >
+            Puerto Rico
+          </option>
+          <option
+            value="RI"
+          >
+            Rhode Island
+          </option>
+          <option
+            value="SC"
+          >
+            South Carolina
+          </option>
+          <option
+            value="SD"
+          >
+            South Dakota
+          </option>
+          <option
+            value="TN"
+          >
+            Tennessee
+          </option>
+          <option
+            value="TX"
+          >
+            Texas
+          </option>
+          <option
+            value="UT"
+          >
+            Utah
+          </option>
+          <option
+            value="VT"
+          >
+            Vermont
+          </option>
+          <option
+            value="VI"
+          >
+            Virgin Islands
+          </option>
+          <option
+            value="VA"
+          >
+            Virginia
+          </option>
+          <option
+            value="WA"
+          >
+            Washington
+          </option>
+          <option
+            value="WV"
+          >
+            West Virginia
+          </option>
+          <option
+            value="WI"
+          >
+            Wisconsin
+          </option>
+          <option
+            value="WY"
+          >
+            Wyoming
+          </option>
+        </select>
+        
+        
+      </div>
+    </div>
+    <div
+      className="wvus-field-zip wvus-field-33 wvus-field--end form-group has-icon "
+      data-field-container="zip"
+      data-field-is-valid={false}
+    >
+      <label
+        htmlFor="zip"
+      >
+        Zip
+         
+        <sup>
+          *
+        </sup>
+      </label>
+      <div
+        className="form-control-wrapper"
+      >
+        <input
+          className="form-control"
+          id="zip"
+          name="zip"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder={undefined}
+          type="text"
+          value=""
+        />
+        
+        
+        
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Storyshots Form Components Checkbox Field States 1`] = `
+<div>
+  <h1>
+    Checkbox Control
+  </h1>
+  <h2>
+    Interactive Form:
+  </h2>
+  <div
+    className=""
+  >
+    <form>
+      <div
+        className="wvus-field-optIn wvus-field-newletter-optin checkbox-group"
+      >
+        <label
+          className="checkbox-inline"
+        >
+          <input
+            checked={true}
+            id="optIn"
+            name="optIn"
+            onChange={[Function]}
+            type="checkbox"
+          />
+          Yes, I would like to receive the email newsletter.
+        </label>
+      </div>
+    </form>
+  </div>
+  <hr />
+  <h2
+    className="text-center"
+  >
+    STATES
+  </h2>
+  <hr />
+  <h2>
+    Checkbox - checked
+  </h2>
+  <form>
+    <div
+      className="wvus-field-optIn wvus-field-newletter-optin checkbox-group"
+    >
+      <label
+        className="checkbox-inline"
+      >
+        <input
+          checked={true}
+          id="optIn"
+          name="optIn"
+          onChange={[Function]}
+          type="checkbox"
+        />
+        Yes, I would like to receive the email newsletter.
+      </label>
+    </div>
+  </form>
+  <p>
+    FieldState:
+    <br />
+    {"value":true,"secondInteraction":false,"isValid":true,"optional":false,"errorMessage":"Error message displays here"}
+  </p>
+  <h2>
+    Checkbox - unchecked
+  </h2>
+  <form>
+    <div
+      className="wvus-field-optIn wvus-field-newletter-optin checkbox-group"
+    >
+      <label
+        className="checkbox-inline"
+      >
+        <input
+          checked=""
+          id="optIn"
+          name="optIn"
+          onChange={[Function]}
+          type="checkbox"
+        />
+        Yes, I would like to receive the email newsletter.
+      </label>
+    </div>
+  </form>
+  <p>
+    FieldState:
+    <br />
+    {"value":false,"secondInteraction":false,"isValid":true,"optional":false,"errorMessage":"Error message displays here"}
+  </p>
+</div>
+`;
+
+exports[`Storyshots Form Components Hidden Field 1`] = `
+<div>
+  <h1>
+    Hidden Field Control
+  </h1>
+  <div
+    className=""
+  >
+    <form>
+      <span
+        className="wvus-field-campaign test-hidden-field input-hidden-control-wrapper"
+        data-field-container="campaign"
+      >
+        <input
+          className="input-hidden-control"
+          id="campaign"
+          name="campaign"
+          type="hidden"
+          value={1234567}
+        />
+      </span>
+      <p>
+        Hidden Field Value:
+         
+        1234567
+      </p>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Form Components Input Field States 1`] = `
+<div>
+  <h1>
+    Input Control
+  </h1>
+  <div
+    className=""
+  >
+    <form>
+      <div
+        className="wvus-field-fname custom-class-field-input form-group has-icon "
+        data-field-container="fname"
+        data-field-is-valid={false}
+      >
+        <label
+          htmlFor="fname"
+        >
+          First Name
+           
+          <sup>
+            *
+          </sup>
+        </label>
+        <div
+          className="form-control-wrapper"
+        >
+          <input
+            className="form-control"
+            id="fname"
+            name="fname"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Tim Stehlin"
+            type="text"
+            value=""
+          />
+          
+          
+          
+        </div>
+      </div>
+    </form>
+  </div>
+  <hr />
+  <h2
+    className="text-center"
+  >
+    STATES
+  </h2>
+  <hr />
+  <div>
+    <h3>
+      Input - untouched
+    </h3>
+    <form>
+      <div
+        className="wvus-field-fname custom-class-field-input form-group has-icon "
+        data-field-container="fname"
+        data-field-is-valid={true}
+      >
+        <label
+          htmlFor="fname"
+        >
+          First Name
+           
+          <sup>
+            *
+          </sup>
+        </label>
+        <div
+          className="form-control-wrapper"
+        >
+          <input
+            className="form-control"
+            id="fname"
+            name="fname"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Tim Stehlin"
+            type="text"
+            value=""
+          />
+          
+          
+          
+        </div>
+      </div>
+    </form>
+    <p>
+      FieldState:
+      <br />
+      {"value":"","secondInteraction":false,"isValid":true,"optional":false,"errorMessage":"Error message displays here"}
+    </p>
+    <hr />
+  </div>
+  <div>
+    <h3>
+      Input - showing success state
+    </h3>
+    <form>
+      <div
+        className="wvus-field-fname custom-class-field-input form-group has-icon has-success "
+        data-field-container="fname"
+        data-field-is-valid={true}
+      >
+        <label
+          htmlFor="fname"
+        >
+          First Name
+           
+          <sup>
+            *
+          </sup>
+        </label>
+        <div
+          className="form-control-wrapper"
+        >
+          <input
+            className="form-control"
+            id="fname"
+            name="fname"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Tim Stehlin"
+            type="text"
+            value="Scott Rees"
+          />
+          
+          
+          <span>
+            <i
+              className="fa fa-check-circle"
+            />
+            <span
+              className="message"
+              data-field-validation-message={true}
+            />
+          </span>
+        </div>
+      </div>
+    </form>
+    <p>
+      FieldState:
+      <br />
+      {"value":"Scott Rees","secondInteraction":true,"isValid":true,"optional":false,"errorMessage":"Error message displays here"}
+    </p>
+    <hr />
+  </div>
+  <div>
+    <h3>
+      Input - showing error state
+    </h3>
+    <form>
+      <div
+        className="wvus-field-fname custom-class-field-input form-group has-icon has-error "
+        data-field-container="fname"
+        data-field-is-valid={false}
+      >
+        <label
+          htmlFor="fname"
+        >
+          First Name
+           
+          <sup>
+            *
+          </sup>
+        </label>
+        <div
+          className="form-control-wrapper"
+        >
+          <input
+            className="form-control"
+            id="fname"
+            name="fname"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Tim Stehlin"
+            type="text"
+            value=""
+          />
+          
+          <span>
+            <i
+              className="fa fa-exclamation-circle"
+            />
+            <span
+              className="message"
+              data-field-validation-message={true}
+            >
+              Error message displays here
+            </span>
+          </span>
+          
+        </div>
+      </div>
+    </form>
+    <p>
+      FieldState:
+      <br />
+      {"value":"","secondInteraction":true,"isValid":false,"optional":false,"errorMessage":"Error message displays here"}
+    </p>
+  </div>
+  <div>
+    <h3>
+      Input - showing optional field state
+    </h3>
+    <form>
+      <div
+        className="wvus-field-fname custom-class-field-input form-group has-icon "
+        data-field-container="fname"
+        data-field-is-valid={true}
+      >
+        <label
+          htmlFor="fname"
+        >
+          First Name
+           
+          
+        </label>
+        <div
+          className="form-control-wrapper"
+        >
+          <input
+            className="form-control"
+            id="fname"
+            name="fname"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Tim Stehlin"
+            type="text"
+            value=""
+          />
+          
+          
+          
+        </div>
+      </div>
+    </form>
+    <p>
+      FieldState:
+      <br />
+      {"value":"","secondInteraction":true,"isValid":true,"optional":true,"errorMessage":"Error message displays here"}
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Form Components Radio Field States 1`] = `
+<div>
+  <h1>
+    Radio Control
+  </h1>
+  <h2>
+    Example: Payment options
+  </h2>
+  <div
+    className=""
+  >
+    <form>
+      <div
+        className="wvus-field-payment_method wvus-field-payment_method_new_cc  radio-group"
+      >
+        <label
+          className="radio-inline"
+        >
+          <input
+            checked={true}
+            id="payment_method_new_cc"
+            name="payment_method"
+            onChange={[Function]}
+            type="radio"
+            value="payment_method_new_cc"
+          />
+          New Credit Card
+        </label>
+      </div>
+      <div
+        className="wvus-field-payment_method wvus-field-payment_method_existing_cc  radio-group"
+      >
+        <label
+          className="radio-inline"
+        >
+          <input
+            checked={false}
+            id="payment_method_existing_cc"
+            name="payment_method"
+            onChange={[Function]}
+            type="radio"
+            value="payment_method_new_cc"
+          />
+          Existing Credit Card
+        </label>
+      </div>
+      <div
+        className="wvus-field-payment_method wvus-field-payment_method_paypal  radio-group"
+      >
+        <label
+          className="radio-inline"
+        >
+          <input
+            checked={false}
+            id="payment_method_paypal"
+            name="payment_method"
+            onChange={[Function]}
+            type="radio"
+            value="payment_method_new_cc"
+          />
+          Paypal
+        </label>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Form Components Select Field States 1`] = `
+<div>
+  <h1>
+    Select Control
+  </h1>
+  <h2>
+    Default (no selected value):
+  </h2>
+  <div
+    className=""
+  >
+    <form>
+      <div
+        className="wvus-field-state wvus-field-33 form-group has-icon "
+      >
+        <label
+          className={undefined}
+          htmlFor="state"
+        >
+          State
+           
+          <sup>
+            *
+          </sup>
+        </label>
+        <div
+          className="form-control-wrapper"
+        >
+          <select
+            className="form-control select-control"
+            id="state"
+            name="state"
+            onBlur={[Function]}
+            onChange={[Function]}
+            value=""
+          >
+            <option
+              value=""
+            >
+              ▾ Select a state
+            </option>
+            <option
+              value="AL"
+            >
+              Alabama
+            </option>
+            <option
+              value="AK"
+            >
+              Alaska
+            </option>
+            <option
+              value="AS"
+            >
+              American Samoa
+            </option>
+            <option
+              value="AZ"
+            >
+              Arizona
+            </option>
+            <option
+              value="AR"
+            >
+              Arkansas
+            </option>
+            <option
+              value="AF"
+            >
+              Armed Forces Africa
+            </option>
+            <option
+              value="AA"
+            >
+              Armed Forces Americas
+            </option>
+            <option
+              value="AC"
+            >
+              Armed Forces Canada
+            </option>
+            <option
+              value="AE"
+            >
+              Armed Forces Europe
+            </option>
+            <option
+              value="AM"
+            >
+              Armed Forces Middle East
+            </option>
+            <option
+              value="AP"
+            >
+              Armed Forces Pacific
+            </option>
+            <option
+              value="CA"
+            >
+              California
+            </option>
+            <option
+              value="CO"
+            >
+              Colorado
+            </option>
+            <option
+              value="CT"
+            >
+              Connecticut
+            </option>
+            <option
+              value="DE"
+            >
+              Delaware
+            </option>
+            <option
+              value="DC"
+            >
+              District Of Columbia
+            </option>
+            <option
+              value="FM"
+            >
+              Federated States Of Micronesia
+            </option>
+            <option
+              value="FL"
+            >
+              Florida
+            </option>
+            <option
+              value="GA"
+            >
+              Georgia
+            </option>
+            <option
+              value="GU"
+            >
+              Guam
+            </option>
+            <option
+              value="HI"
+            >
+              Hawaii
+            </option>
+            <option
+              value="ID"
+            >
+              Idaho
+            </option>
+            <option
+              value="IL"
+            >
+              Illinois
+            </option>
+            <option
+              value="IN"
+            >
+              Indiana
+            </option>
+            <option
+              value="IA"
+            >
+              Iowa
+            </option>
+            <option
+              value="KS"
+            >
+              Kansas
+            </option>
+            <option
+              value="KY"
+            >
+              Kentucky
+            </option>
+            <option
+              value="LA"
+            >
+              Louisiana
+            </option>
+            <option
+              value="ME"
+            >
+              Maine
+            </option>
+            <option
+              value="MH"
+            >
+              Marshall Islands
+            </option>
+            <option
+              value="MD"
+            >
+              Maryland
+            </option>
+            <option
+              value="MA"
+            >
+              Massachusetts
+            </option>
+            <option
+              value="MI"
+            >
+              Michigan
+            </option>
+            <option
+              value="MN"
+            >
+              Minnesota
+            </option>
+            <option
+              value="MS"
+            >
+              Mississippi
+            </option>
+            <option
+              value="MO"
+            >
+              Missouri
+            </option>
+            <option
+              value="MT"
+            >
+              Montana
+            </option>
+            <option
+              value="NE"
+            >
+              Nebraska
+            </option>
+            <option
+              value="NV"
+            >
+              Nevada
+            </option>
+            <option
+              value="NH"
+            >
+              New Hampshire
+            </option>
+            <option
+              value="NJ"
+            >
+              New Jersey
+            </option>
+            <option
+              value="NM"
+            >
+              New Mexico
+            </option>
+            <option
+              value="NY"
+            >
+              New York
+            </option>
+            <option
+              value="NC"
+            >
+              North Carolina
+            </option>
+            <option
+              value="ND"
+            >
+              North Dakota
+            </option>
+            <option
+              value="MP"
+            >
+              Northern Mariana Islands
+            </option>
+            <option
+              value="OH"
+            >
+              Ohio
+            </option>
+            <option
+              value="OK"
+            >
+              Oklahoma
+            </option>
+            <option
+              value="OR"
+            >
+              Oregon
+            </option>
+            <option
+              value="PW"
+            >
+              Palau
+            </option>
+            <option
+              value="PA"
+            >
+              Pennsylvania
+            </option>
+            <option
+              value="PR"
+            >
+              Puerto Rico
+            </option>
+            <option
+              value="RI"
+            >
+              Rhode Island
+            </option>
+            <option
+              value="SC"
+            >
+              South Carolina
+            </option>
+            <option
+              value="SD"
+            >
+              South Dakota
+            </option>
+            <option
+              value="TN"
+            >
+              Tennessee
+            </option>
+            <option
+              value="TX"
+            >
+              Texas
+            </option>
+            <option
+              value="UT"
+            >
+              Utah
+            </option>
+            <option
+              value="VT"
+            >
+              Vermont
+            </option>
+            <option
+              value="VI"
+            >
+              Virgin Islands
+            </option>
+            <option
+              value="VA"
+            >
+              Virginia
+            </option>
+            <option
+              value="WA"
+            >
+              Washington
+            </option>
+            <option
+              value="WV"
+            >
+              West Virginia
+            </option>
+            <option
+              value="WI"
+            >
+              Wisconsin
+            </option>
+            <option
+              value="WY"
+            >
+              Wyoming
+            </option>
+          </select>
+          
+          
+        </div>
+      </div>
+    </form>
+  </div>
+  <h2>
+    Preselected:
+  </h2>
+  <div
+    className=""
+  >
+    <form>
+      <div
+        className="wvus-field-state wvus-field-33 form-group has-icon has-success "
+      >
+        <label
+          className={undefined}
+          htmlFor="state"
+        >
+          State
+           
+          <sup>
+            *
+          </sup>
+        </label>
+        <div
+          className="form-control-wrapper"
+        >
+          <select
+            className="form-control select-control"
+            id="state"
+            name="state"
+            onBlur={[Function]}
+            onChange={[Function]}
+            value="WA"
+          >
+            <option
+              value=""
+            >
+              ▾ Select a state
+            </option>
+            <option
+              value="AL"
+            >
+              Alabama
+            </option>
+            <option
+              value="AK"
+            >
+              Alaska
+            </option>
+            <option
+              value="AS"
+            >
+              American Samoa
+            </option>
+            <option
+              value="AZ"
+            >
+              Arizona
+            </option>
+            <option
+              value="AR"
+            >
+              Arkansas
+            </option>
+            <option
+              value="AF"
+            >
+              Armed Forces Africa
+            </option>
+            <option
+              value="AA"
+            >
+              Armed Forces Americas
+            </option>
+            <option
+              value="AC"
+            >
+              Armed Forces Canada
+            </option>
+            <option
+              value="AE"
+            >
+              Armed Forces Europe
+            </option>
+            <option
+              value="AM"
+            >
+              Armed Forces Middle East
+            </option>
+            <option
+              value="AP"
+            >
+              Armed Forces Pacific
+            </option>
+            <option
+              value="CA"
+            >
+              California
+            </option>
+            <option
+              value="CO"
+            >
+              Colorado
+            </option>
+            <option
+              value="CT"
+            >
+              Connecticut
+            </option>
+            <option
+              value="DE"
+            >
+              Delaware
+            </option>
+            <option
+              value="DC"
+            >
+              District Of Columbia
+            </option>
+            <option
+              value="FM"
+            >
+              Federated States Of Micronesia
+            </option>
+            <option
+              value="FL"
+            >
+              Florida
+            </option>
+            <option
+              value="GA"
+            >
+              Georgia
+            </option>
+            <option
+              value="GU"
+            >
+              Guam
+            </option>
+            <option
+              value="HI"
+            >
+              Hawaii
+            </option>
+            <option
+              value="ID"
+            >
+              Idaho
+            </option>
+            <option
+              value="IL"
+            >
+              Illinois
+            </option>
+            <option
+              value="IN"
+            >
+              Indiana
+            </option>
+            <option
+              value="IA"
+            >
+              Iowa
+            </option>
+            <option
+              value="KS"
+            >
+              Kansas
+            </option>
+            <option
+              value="KY"
+            >
+              Kentucky
+            </option>
+            <option
+              value="LA"
+            >
+              Louisiana
+            </option>
+            <option
+              value="ME"
+            >
+              Maine
+            </option>
+            <option
+              value="MH"
+            >
+              Marshall Islands
+            </option>
+            <option
+              value="MD"
+            >
+              Maryland
+            </option>
+            <option
+              value="MA"
+            >
+              Massachusetts
+            </option>
+            <option
+              value="MI"
+            >
+              Michigan
+            </option>
+            <option
+              value="MN"
+            >
+              Minnesota
+            </option>
+            <option
+              value="MS"
+            >
+              Mississippi
+            </option>
+            <option
+              value="MO"
+            >
+              Missouri
+            </option>
+            <option
+              value="MT"
+            >
+              Montana
+            </option>
+            <option
+              value="NE"
+            >
+              Nebraska
+            </option>
+            <option
+              value="NV"
+            >
+              Nevada
+            </option>
+            <option
+              value="NH"
+            >
+              New Hampshire
+            </option>
+            <option
+              value="NJ"
+            >
+              New Jersey
+            </option>
+            <option
+              value="NM"
+            >
+              New Mexico
+            </option>
+            <option
+              value="NY"
+            >
+              New York
+            </option>
+            <option
+              value="NC"
+            >
+              North Carolina
+            </option>
+            <option
+              value="ND"
+            >
+              North Dakota
+            </option>
+            <option
+              value="MP"
+            >
+              Northern Mariana Islands
+            </option>
+            <option
+              value="OH"
+            >
+              Ohio
+            </option>
+            <option
+              value="OK"
+            >
+              Oklahoma
+            </option>
+            <option
+              value="OR"
+            >
+              Oregon
+            </option>
+            <option
+              value="PW"
+            >
+              Palau
+            </option>
+            <option
+              value="PA"
+            >
+              Pennsylvania
+            </option>
+            <option
+              value="PR"
+            >
+              Puerto Rico
+            </option>
+            <option
+              value="RI"
+            >
+              Rhode Island
+            </option>
+            <option
+              value="SC"
+            >
+              South Carolina
+            </option>
+            <option
+              value="SD"
+            >
+              South Dakota
+            </option>
+            <option
+              value="TN"
+            >
+              Tennessee
+            </option>
+            <option
+              value="TX"
+            >
+              Texas
+            </option>
+            <option
+              value="UT"
+            >
+              Utah
+            </option>
+            <option
+              value="VT"
+            >
+              Vermont
+            </option>
+            <option
+              value="VI"
+            >
+              Virgin Islands
+            </option>
+            <option
+              value="VA"
+            >
+              Virginia
+            </option>
+            <option
+              value="WA"
+            >
+              Washington
+            </option>
+            <option
+              value="WV"
+            >
+              West Virginia
+            </option>
+            <option
+              value="WI"
+            >
+              Wisconsin
+            </option>
+            <option
+              value="WY"
+            >
+              Wyoming
+            </option>
+          </select>
+          
+          <span>
+            <i
+              className="fa fa-check-circle"
+            />
+            <span
+              className="message"
+              data-field-validation-message={true}
+            />
+          </span>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Form Components Textarea Field States 1`] = `
+<div>
+  <h1>
+    Textarea Control
+  </h1>
+  <h2>
+    Default (no message content):
+  </h2>
+  <div
+    className=""
+  >
+    <form>
+      <div
+        className="form-group has-icon "
+      >
+        <label
+          className="control-label"
+          htmlFor="message"
+        >
+          Message
+           
+          <sup>
+            *
+          </sup>
+        </label>
+        <div
+          className="form-control-wrapper"
+        >
+          <div
+            className="text-area-wrapper"
+          >
+            <textarea
+              className="form-control"
+              id="message"
+              name="message"
+              onBlur={[Function]}
+              onChange={[Function]}
+              placeholder="Type your message here"
+              rows={6}
+              value=""
+            />
+            <span
+              className="message character-count"
+            >
+              255
+            </span>
+          </div>
+          
+          
+        </div>
+      </div>
+    </form>
+  </div>
+  <h2>
+    Error: too much text
+  </h2>
+  <div
+    className=""
+  >
+    <form>
+      <div
+        className="form-group has-icon has-error "
+      >
+        <label
+          className="control-label"
+          htmlFor="message"
+        >
+          Message
+           
+          <sup>
+            *
+          </sup>
+        </label>
+        <div
+          className="form-control-wrapper"
+        >
+          <div
+            className="text-area-wrapper"
+          >
+            <textarea
+              className="form-control"
+              id="message"
+              name="message"
+              onBlur={[Function]}
+              onChange={[Function]}
+              placeholder="Type your message here"
+              rows={6}
+              value="Bacon ipsum dolor amet cow kevin pork chop turducken ball tip chuck sausage strip steak tri-tip alcatra. Shankle landjaeger tenderloin short ribs burgdoggen alcatra corned beef salami ground round porchetta turducken. Short loin rump pork belly, ham hock beef ribs ribeye salami corned beef turducken jerky fatback tenderloin porchetta swine pork loin. Brisket chuck short ribs leberkas shoulder ham hock. Frankfurter buffalo turducken short loin jerky drumstick, andouille bacon. Beef ribs leberkas short loin, andouille ball tip ribeye burgdoggen short ribs. Pork loin venison meatloaf hamburger t-bone. Pork loin pork swine t-bone flank brisket. Beef ribs spare ribs salami drumstick landjaeger ball tip kielbasa pork belly pork meatball short ribs brisket short loin boudin jerky. Meatloaf salami prosciutto flank picanha, beef ribs capicola tenderloin pork chop jowl shoulder swine. Chicken jowl salami, leberkas biltong capicola hamburger filet mignon ball tip ham swine pig pork brisket. Fatback pork belly chicken pastrami leberkas, ribeye porchetta doner sirloin biltong cupim."
+            />
+            <span
+              className="message character-count"
+            >
+              -831
+            </span>
+          </div>
+          <span>
+            <i
+              className="fa fa-exclamation-circle"
+            />
+            <span
+              className="message"
+              data-field-validation-message={true}
+            >
+              
+            </span>
+          </span>
+          
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Form Validation Input Field 1`] = `
+<div
+  className=""
+>
+  <form>
+    <h2>
+      Input Control - required field
+    </h2>
+    <hr />
+    <h3>
+      Type: Text with validateRequired:
+    </h3>
+    <div
+      className="wvus-field-fname custom-class-field-input form-group has-icon "
+      data-field-container="fname"
+      data-field-is-valid={false}
+    >
+      <label
+        htmlFor="fname"
+      >
+        First Name
+         
+        <sup>
+          *
+        </sup>
+      </label>
+      <div
+        className="form-control-wrapper"
+      >
+        <input
+          className="form-control"
+          id="fname"
+          name="fname"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="Tim Stehlin"
+          type="text"
+          value=""
+        />
+        
+        
+        
+      </div>
+    </div>
+    <h3>
+      Type: Email with validateRequired & validateEmail: 
+    </h3>
+    <div
+      className="wvus-field-email custom-class-field-input form-group has-icon "
+      data-field-container="email"
+      data-field-is-valid={false}
+    >
+      <label
+        htmlFor="email"
+      >
+        Email
+         
+        <sup>
+          *
+        </sup>
+      </label>
+      <div
+        className="form-control-wrapper"
+      >
+        <input
+          className="form-control"
+          id="email"
+          name="email"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="someone@worldvision.org"
+          type="email"
+          value=""
+        />
+        
+        
+        
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Storyshots Welcome to Validessa Form Validation 1`] = `
+<div>
+  Validessa - Form Validation for WVUS sites
+</div>
+`;

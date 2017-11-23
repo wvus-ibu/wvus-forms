@@ -6,12 +6,17 @@ const SimpleInputHiddenForm = props => {
   return (
     <form>
       <InputHiddenControl
-        fieldPlaceholder="Tim Stehlin"
-        fieldName="test-hidden-field"
-        fieldTitle="First Name"
+        fieldName="campaign"
+        fieldValue={1234567}
         fieldClasses="test-hidden-field"
         formMethods={props.formMethods}
       />
+      <p>
+        Hidden Field Value:{" "}
+        {props.formMethods.getFieldState("campaign").value
+          ? props.formMethods.getFieldState("campaign").value
+          : ""}
+      </p>
     </form>
   );
 };
