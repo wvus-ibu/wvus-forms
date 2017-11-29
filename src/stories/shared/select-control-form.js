@@ -36,4 +36,19 @@ const SelectFormPreselected = props => {
   );
 };
 
-export { SelectForm, SelectFormPreselected };
+const SelectFormNoConfig = props => {
+  return (
+    <form>
+      <SelectControl
+        fieldName="state"
+        fieldOptions={props.fieldOptions}
+        fieldTitle="State"
+        fieldClasses="wvus-field-33"
+        formMethods={props.formMethods}
+        validators={[validateRequired]}
+      />
+    </form>
+  );
+};
+
+export { SelectForm, SelectFormPreselected, SelectFormNoConfig };

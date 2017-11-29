@@ -170,7 +170,7 @@ exports[`Snapshot: Input renders untouched state 1`] = `
 </form>
 `;
 
-exports[`Snapshot: Input renders with optional/valid ustate 1`] = `
+exports[`Snapshot: Input renders with optional/valid state 1`] = `
 <form>
   <div
     className="wvus-field-fname custom-class-field-input form-group has-icon "

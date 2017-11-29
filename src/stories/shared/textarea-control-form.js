@@ -62,4 +62,20 @@ const TextAreaFormTooMuchText = props => {
   );
 };
 
-export { TextAreaForm, TextAreaFormTooMuchText };
+const TextAreaFormNoConfig = props => {
+  return (
+    <form>
+      <TextAreaControl
+        fieldName="message"
+        fieldRows={6}
+        fieldPlaceholder="Type your message here"
+        fieldTitle="Message"
+        fieldClasses="wvus-field-newletter-message"
+        formMethods={props.formMethods}
+        characterCount={50}
+      />
+    </form>
+  );
+};
+
+export { TextAreaForm, TextAreaFormTooMuchText, TextAreaFormNoConfig };
