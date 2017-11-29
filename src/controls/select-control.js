@@ -14,6 +14,7 @@ class SelectControl extends React.Component {
       secondInteraction = false,
       isValid = false,
       validators = [],
+      optional = false,
       formMethods
     } = this.props;
     formMethods.addFieldToState(
@@ -21,7 +22,8 @@ class SelectControl extends React.Component {
       fieldValue,
       secondInteraction,
       isValid,
-      validators
+      validators,
+      optional
     );
   }
 
@@ -31,8 +33,8 @@ class SelectControl extends React.Component {
 
       fieldOptions,
       fieldName,
-      fieldId = fieldName,      
-      fieldClasses = '',
+      fieldId = fieldName,
+      fieldClasses = "",
       fieldTitle,
       fieldPlaceholder,
       fieldState = formMethods.getFieldState(fieldName),
@@ -52,11 +54,15 @@ class SelectControl extends React.Component {
       ? "has-success "
       : showUIError ? "has-error " : "";
     const requiredStar = fieldState.optional == true ? "" : <sup>*</sup>;
-    const fieldValue = fieldState.value || '';
+    const fieldValue = fieldState.value || "";
     const fieldPrimaryClass = `wvus-field-${fieldName}`;
-    
+
     return (
-      <div className={`${fieldPrimaryClass} ${fieldClasses} form-group has-icon ${validityClass}`}>
+      <div
+        className={`${fieldPrimaryClass} ${fieldClasses} form-group has-icon ${
+          validityClass
+        }`}
+      >
         <label htmlFor={fieldName} className={labelClasses}>
           {fieldTitle} {requiredStar}
         </label>
@@ -93,7 +99,7 @@ class SelectControl extends React.Component {
 
 SelectControl.propTypes = {
   fieldName: PropTypes.string.isRequired,
-
+  fieldOptions: PropTypes.array.isRequired,
   formMethods: PropTypes.shape({
     handleBlur: PropTypes.func.isRequired,
     handleValueChange: PropTypes.func.isRequired,
