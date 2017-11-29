@@ -269,7 +269,7 @@ test("validateCreditCardNum can validate future date", () => {
   expect(resultInvalidCard2.message).toBe(message);
 });
 
-test("validateCreditCard can validate future date", () => {
+test("validateCreditCard can validate a credit card", () => {
   const message = "Please enter a valid credit card number.";
 
   // Supported VISA, and Valid CC Num
