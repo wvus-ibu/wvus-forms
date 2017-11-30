@@ -6,6 +6,7 @@ import Message from "./controls/message.js";
 import RadioControl from "./controls/radio-control.js";
 import SelectControl from "./controls/select-control.js";
 import TextAreaControl from "./controls/textarea-control.js";
+import USStateFieldOptions from "./misc/us-states";
 import {
   getCreditCardType,
   getCreditCardTypeValidity,
@@ -43,6 +44,7 @@ export {
   tokenXEncrypt,
   expAutoComplete,
   createValidationHelper,
+  USStateFieldOptions,
   validateRequired,
   validateEmpty,
   validateEmail,
@@ -71,6 +73,7 @@ export default {
   tokenXEncrypt,
   expAutoComplete,
   createValidationHelper,
+  USStateFieldOptions,
   validateRequired,
   validateEmpty,
   validateEmail,

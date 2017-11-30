@@ -1,267 +1,267 @@
-const StateFieldOptions = [
+const USStateFieldOptions = [
   {
-    valueKey: '',
-    valueText: '▾ Select a state'
+    valueKey: "",
+    valueText: "▾ Select a state"
   },
   {
-    valueKey:"AL",
-    valueText:"Alabama"
+    valueKey: "AL",
+    valueText: "Alabama"
   },
   {
-    valueKey:"AK",
-    valueText:"Alaska"
+    valueKey: "AK",
+    valueText: "Alaska"
   },
   {
-    valueKey:"AS",
-    valueText:"American Samoa"
+    valueKey: "AS",
+    valueText: "American Samoa"
   },
   {
-    valueKey:"AZ",
-    valueText:"Arizona"
+    valueKey: "AZ",
+    valueText: "Arizona"
   },
   {
-    valueKey:"AR",
-    valueText:"Arkansas"
+    valueKey: "AR",
+    valueText: "Arkansas"
   },
   {
-    valueKey:"AF",
-    valueText:"Armed Forces Africa"
+    valueKey: "AF",
+    valueText: "Armed Forces Africa"
   },
   {
-    valueKey:"AA",
-    valueText:"Armed Forces Americas"
+    valueKey: "AA",
+    valueText: "Armed Forces Americas"
   },
   {
-    valueKey:"AC",
-    valueText:"Armed Forces Canada"
+    valueKey: "AC",
+    valueText: "Armed Forces Canada"
   },
   {
-    valueKey:"AE",
-    valueText:"Armed Forces Europe"
+    valueKey: "AE",
+    valueText: "Armed Forces Europe"
   },
   {
-    valueKey:"AM",
-    valueText:"Armed Forces Middle East"
+    valueKey: "AM",
+    valueText: "Armed Forces Middle East"
   },
   {
-    valueKey:"AP",
-    valueText:"Armed Forces Pacific"
+    valueKey: "AP",
+    valueText: "Armed Forces Pacific"
   },
   {
-    valueKey:"CA",
-    valueText:"California"
+    valueKey: "CA",
+    valueText: "California"
   },
   {
-    valueKey:"CO",
-    valueText:"Colorado"
+    valueKey: "CO",
+    valueText: "Colorado"
   },
   {
-    valueKey:"CT",
-    valueText:"Connecticut"
+    valueKey: "CT",
+    valueText: "Connecticut"
   },
   {
-    valueKey:"DE",
-    valueText:"Delaware"
+    valueKey: "DE",
+    valueText: "Delaware"
   },
   {
-    valueKey:"DC",
-    valueText:"District Of Columbia"
+    valueKey: "DC",
+    valueText: "District Of Columbia"
   },
   {
-    valueKey:"FM",
-    valueText:"Federated States Of Micronesia"
+    valueKey: "FM",
+    valueText: "Federated States Of Micronesia"
   },
   {
-    valueKey:"FL",
-    valueText:"Florida"
+    valueKey: "FL",
+    valueText: "Florida"
   },
   {
-    valueKey:"GA",
-    valueText:"Georgia"
+    valueKey: "GA",
+    valueText: "Georgia"
   },
   {
-    valueKey:"GU",
-    valueText:"Guam"
+    valueKey: "GU",
+    valueText: "Guam"
   },
   {
-    valueKey:"HI",
-    valueText:"Hawaii"
+    valueKey: "HI",
+    valueText: "Hawaii"
   },
   {
-    valueKey:"ID",
-    valueText:"Idaho"
+    valueKey: "ID",
+    valueText: "Idaho"
   },
   {
-    valueKey:"IL",
-    valueText:"Illinois"
+    valueKey: "IL",
+    valueText: "Illinois"
   },
   {
-    valueKey:"IN",
-    valueText:"Indiana"
+    valueKey: "IN",
+    valueText: "Indiana"
   },
   {
-    valueKey:"IA",
-    valueText:"Iowa"
+    valueKey: "IA",
+    valueText: "Iowa"
   },
   {
-    valueKey:"KS",
-    valueText:"Kansas"
+    valueKey: "KS",
+    valueText: "Kansas"
   },
   {
-    valueKey:"KY",
-    valueText:"Kentucky"
+    valueKey: "KY",
+    valueText: "Kentucky"
   },
   {
-    valueKey:"LA",
-    valueText:"Louisiana"
+    valueKey: "LA",
+    valueText: "Louisiana"
   },
   {
-    valueKey:"ME",
-    valueText:"Maine"
+    valueKey: "ME",
+    valueText: "Maine"
   },
   {
-    valueKey:"MH",
-    valueText:"Marshall Islands"
+    valueKey: "MH",
+    valueText: "Marshall Islands"
   },
   {
-    valueKey:"MD",
-    valueText:"Maryland"
+    valueKey: "MD",
+    valueText: "Maryland"
   },
   {
-    valueKey:"MA",
-    valueText:"Massachusetts"
+    valueKey: "MA",
+    valueText: "Massachusetts"
   },
   {
-    valueKey:"MI",
-    valueText:"Michigan"
+    valueKey: "MI",
+    valueText: "Michigan"
   },
   {
-    valueKey:"MN",
-    valueText:"Minnesota"
+    valueKey: "MN",
+    valueText: "Minnesota"
   },
   {
-    valueKey:"MS",
-    valueText:"Mississippi"
+    valueKey: "MS",
+    valueText: "Mississippi"
   },
   {
-    valueKey:"MO",
-    valueText:"Missouri"
+    valueKey: "MO",
+    valueText: "Missouri"
   },
   {
-    valueKey:"MT",
-    valueText:"Montana"
+    valueKey: "MT",
+    valueText: "Montana"
   },
   {
-    valueKey:"NE",
-    valueText:"Nebraska"
+    valueKey: "NE",
+    valueText: "Nebraska"
   },
   {
-    valueKey:"NV",
-    valueText:"Nevada"
+    valueKey: "NV",
+    valueText: "Nevada"
   },
   {
-    valueKey:"NH",
-    valueText:"New Hampshire"
+    valueKey: "NH",
+    valueText: "New Hampshire"
   },
   {
-    valueKey:"NJ",
-    valueText:"New Jersey"
+    valueKey: "NJ",
+    valueText: "New Jersey"
   },
   {
-    valueKey:"NM",
-    valueText:"New Mexico"
+    valueKey: "NM",
+    valueText: "New Mexico"
   },
   {
-    valueKey:"NY",
-    valueText:"New York"
+    valueKey: "NY",
+    valueText: "New York"
   },
   {
-    valueKey:"NC",
-    valueText:"North Carolina"
+    valueKey: "NC",
+    valueText: "North Carolina"
   },
   {
-    valueKey:"ND",
-    valueText:"North Dakota"
+    valueKey: "ND",
+    valueText: "North Dakota"
   },
   {
-    valueKey:"MP",
-    valueText:"Northern Mariana Islands"
+    valueKey: "MP",
+    valueText: "Northern Mariana Islands"
   },
   {
-    valueKey:"OH",
-    valueText:"Ohio"
+    valueKey: "OH",
+    valueText: "Ohio"
   },
   {
-    valueKey:"OK",
-    valueText:"Oklahoma"
+    valueKey: "OK",
+    valueText: "Oklahoma"
   },
   {
-    valueKey:"OR",
-    valueText:"Oregon"
+    valueKey: "OR",
+    valueText: "Oregon"
   },
   {
-    valueKey:"PW",
-    valueText:"Palau"
+    valueKey: "PW",
+    valueText: "Palau"
   },
   {
-    valueKey:"PA",
-    valueText:"Pennsylvania"
+    valueKey: "PA",
+    valueText: "Pennsylvania"
   },
   {
-    valueKey:"PR",
-    valueText:"Puerto Rico"
+    valueKey: "PR",
+    valueText: "Puerto Rico"
   },
   {
-    valueKey:"RI",
-    valueText:"Rhode Island"
+    valueKey: "RI",
+    valueText: "Rhode Island"
   },
   {
-    valueKey:"SC",
-    valueText:"South Carolina"
+    valueKey: "SC",
+    valueText: "South Carolina"
   },
   {
-    valueKey:"SD",
-    valueText:"South Dakota"
+    valueKey: "SD",
+    valueText: "South Dakota"
   },
   {
-    valueKey:"TN",
-    valueText:"Tennessee"
+    valueKey: "TN",
+    valueText: "Tennessee"
   },
   {
-    valueKey:"TX",
-    valueText:"Texas"
+    valueKey: "TX",
+    valueText: "Texas"
   },
   {
-    valueKey:"UT",
-    valueText:"Utah"
+    valueKey: "UT",
+    valueText: "Utah"
   },
   {
-    valueKey:"VT",
-    valueText:"Vermont"
+    valueKey: "VT",
+    valueText: "Vermont"
   },
   {
-    valueKey:"VI",
-    valueText:"Virgin Islands"
+    valueKey: "VI",
+    valueText: "Virgin Islands"
   },
   {
-    valueKey:"VA",
-    valueText:"Virginia"
+    valueKey: "VA",
+    valueText: "Virginia"
   },
   {
-    valueKey:"WA",
-    valueText:"Washington"
+    valueKey: "WA",
+    valueText: "Washington"
   },
   {
-    valueKey:"WV",
-    valueText:"West Virginia"
+    valueKey: "WV",
+    valueText: "West Virginia"
   },
   {
-    valueKey:"WI",
-    valueText:"Wisconsin"
+    valueKey: "WI",
+    valueText: "Wisconsin"
   },
   {
-    valueKey:"WY",
-    valueText:"Wyoming"
+    valueKey: "WY",
+    valueText: "Wyoming"
   }
 ];
-export default StateFieldOptions;
+export default USStateFieldOptions;
