@@ -46,7 +46,7 @@
     "array-bracket-spacing": [2, "never"],
     "space-in-parens": [2, "never"],
     "strict": [0],
-    "valid-jsdoc": 2,
+    "valid-jsdoc": ["error", { "requireReturn": false }],
     "wrap-iife": [2, "any"],
     "yoda": [1, "never"],
     "prettier/prettier": "error"
