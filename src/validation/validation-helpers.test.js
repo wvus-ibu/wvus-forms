@@ -1,4 +1,5 @@
 import QSToObject from "./query-string-parser";
+import sinon from "sinon";
 import {
   createValidationHelper,
   validateRequired,
@@ -16,6 +17,162 @@ import {
   validateCreditCardType,
   validateCreditCard
 } from "./validation-helpers.js";
+
+describe("createValidationHelper", () => {
+  it("can create a new helper with all required properties", () => {
+    const config = {
+      fname: {
+        validators: [validateRequired],
+        optional: false
+      },
+      lname: {
+        validators: [validateRequired],
+        optional: false
+      }
+    };
+    const validationHelper = createValidationHelper(config);
+    expect(validationHelper).toHaveProperty("errorBag", []);
+    expect(validationHelper).toHaveProperty("successBag", []);
+    expect(validationHelper).toHaveProperty("validate");
+    expect(validationHelper).toHaveProperty("hasErrors");
+    expect(validationHelper).toHaveProperty("formIsValid");
+    expect(validationHelper).toHaveProperty("hasSuccess");
+    expect(validationHelper).toHaveProperty("fieldIsOptional");
+    expect(validationHelper).toHaveProperty("fieldValueIsEmpty");
+    expect(validationHelper).toHaveProperty("firstErrorMessage");
+    expect(validationHelper).toHaveProperty("fieldIsValid");
+  });
+
+  it("can run validate function on a fieldname and fieldvalue", () => {
+    const config = {
+      fname: {
+        validators: [validateRequired],
+        optional: false
+      }
+    };
+    const validationHelper = createValidationHelper(config);
+    sinon.spy(validationHelper, "validate");
+    validationHelper.validate("fname", "");
+    expect(validationHelper.validate.calledWith("fname", "")).toBe(true);
+  });
+
+  it("can store error in errorBag on invalid field", () => {
+    const config = {
+      fname: {
+        validators: [validateRequired],
+        optional: false
+      }
+    };
+    const validationHelper = createValidationHelper(config);
+    validationHelper.validate("fname", "");
+    expect(validationHelper.errorBag["fname"].length).toBe(1);
+    expect(validationHelper.successBag["fname"].length).toBe(0);
+    expect(validationHelper.hasErrors("fname")).toBe(true);
+    expect(validationHelper.hasSuccess("fname")).toBe(false);
+  });
+
+  it("can store success on valid field value", () => {
+    const config = {
+      fname: {
+        validators: [validateRequired],
+        optional: false
+      }
+    };
+    const validationHelper = createValidationHelper(config);
+    validationHelper.validate("fname", "Scott");
+    expect(validationHelper.fieldIsOptional("fname")).toBe(false);
+    expect(validationHelper.errorBag["fname"].length).toBe(0);
+    expect(validationHelper.successBag["fname"].length).toBe(1);
+    expect(validationHelper.hasErrors("fname")).toBe(false);
+    expect(validationHelper.hasSuccess("fname")).toBe(true);
+  });
+
+  it(" - optional fields with empty values have no errors despite validators", () => {
+    // Optional fields will store no error nor success if they have empty value
+    const alwayReturnInvalid = () => false; //tests that option
+    const config = {
+      fname: {
+        validators: [alwayReturnInvalid],
+        optional: true
+      }
+    };
+    const validationHelper = createValidationHelper(config);
+    validationHelper.validate("fname", "");
+    expect(validationHelper.fieldIsOptional("fname")).toBe(true);
+    expect(validationHelper.errorBag["fname"].length).toBe(0);
+    expect(validationHelper.successBag["fname"].length).toBe(0);
+    expect(validationHelper.hasErrors("fname")).toBe(false);
+    expect(validationHelper.hasSuccess("fname")).toBe(false);
+  });
+
+  it(" - optional fields can be validated", () => {
+    // Optional fields will store no error nor success if they have empty value
+    const config = {
+      fname: {
+        validators: [validateMin(3)],
+        optional: true
+      }
+    };
+    const validationHelper = createValidationHelper(config);
+    validationHelper.validate("fname", "123");
+    expect(validationHelper.fieldIsOptional("fname")).toBe(true);
+    expect(validationHelper.errorBag["fname"].length).toBe(0);
+    expect(validationHelper.successBag["fname"].length).toBe(1);
+    expect(validationHelper.hasErrors("fname")).toBe(false);
+    expect(validationHelper.hasSuccess("fname")).toBe(true);
+
+    validationHelper.validate("fname", "12");
+    expect(validationHelper.errorBag["fname"].length).toBe(1);
+    expect(validationHelper.successBag["fname"].length).toBe(0);
+    expect(validationHelper.hasErrors("fname")).toBe(true);
+    expect(validationHelper.hasSuccess("fname")).toBe(false);
+  });
+
+  it(" - formIsValid works as expected", () => {
+    const config = {
+      fname: {
+        validators: [validateMin(3)],
+        optional: false
+      },
+      lname: {
+        validators: [validateMin(3)],
+        optional: false
+      }
+    };
+    const validationHelper = createValidationHelper(config);
+
+    // test with one invalid field, on valid field
+    validationHelper.validate("fname", "123");
+    validationHelper.validate("lname", "12");
+    expect(validationHelper.formIsValid()).toBe(false);
+
+    // test with two valid fields
+    validationHelper.validate("fname", "123");
+    validationHelper.validate("lname", "123");
+    expect(validationHelper.formIsValid()).toBe(true);
+
+    // test with two invalid fields
+    validationHelper.validate("fname", "12");
+    validationHelper.validate("lname", "12");
+    expect(validationHelper.formIsValid()).toBe(false);
+  });
+
+  it("can get firstErrorMessage", () => {
+    const config = {
+      fname: {
+        validators: [validateRequired, validateMin(3)],
+        optional: false
+      }
+    };
+    const validationHelper = createValidationHelper(config);
+    // test with string value that fails both validators, that
+    // firstErrorMessage only returns the first one
+    validationHelper.validate("fname", "");
+    expect(validationHelper.firstErrorMessage("fname")).toBe(
+      "This field is required."
+    );
+  });
+});
 
 test("Query String Parser can convert query string to object", () => {
   const formObj = {
