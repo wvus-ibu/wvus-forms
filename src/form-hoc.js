@@ -16,6 +16,15 @@ export default function WVUSForm(WrapperForm) {
       this.addFieldToState = this.addFieldToState.bind(this);
     }
 
+    /**
+     * Sets initial state of a field
+     * @param {string} fieldName name of field
+     * @param {string} fieldValue initial value
+     * @param {bool} secondInteraction whether field is initially touched
+     * @param {bool} isValid whether field is initially valid
+     * @param {array} validators list of validation functions
+     * @param {bool} optional whether field is optional
+     */
     addFieldToState(
       fieldName,
       fieldValue = "",
@@ -75,6 +84,7 @@ export default function WVUSForm(WrapperForm) {
      * Validates a form/subform
      * Note: This works for a subform because the Validation Helper's
      * validateForm method ignores form names unregistered in the config
+     * @returns {bool} validity of form
      */
     validateForm() {
       Object.keys(this.state.fields).map(fieldName => {
@@ -92,8 +102,8 @@ export default function WVUSForm(WrapperForm) {
     /**
      * Update Field State
      * @para
-     * @param {Object} fieldsState
-     * @param {Function} callback
+     * @param {Object} fieldsState new state object to merge w/ existing
+     * @returns {undefined}
      */
     updateFieldsState(fieldsState) {
       this.setState((prevState, props) => {
@@ -110,7 +120,8 @@ export default function WVUSForm(WrapperForm) {
     /**
      * Determines whether form is valid based on whether
      * any fields have errors
-     * @param {Object} newFieldsState
+     * @param {Object} newFieldsState field state to validate
+     * @returns {undefined}
      */
     getFormValid(newFieldsState) {
       return (
@@ -190,18 +201,7 @@ export default function WVUSForm(WrapperForm) {
         return merge({}, prevState, { formValid });
       });
     }
-    handleStepSubmit(e) {
-      e.preventDefault();
-      const formElement = e.target.form;
-      const formValid = this.validateForm(formElement);
 
-      // Change Steps
-      if (formValid) {
-        //@TODO: Makes sure CC field is erased before submitting step.
-        // $( document.body ).trigger( 'update_checkout' );
-        this.props.handleNextStep(e, this.props.stepNum, this.state.fields);
-      }
-    }
     showUISuccess(fieldState) {
       const optionalAndEmpty = fieldState.optional && fieldState.value === "";
       return fieldState.isValid && !optionalAndEmpty;
@@ -225,7 +225,6 @@ export default function WVUSForm(WrapperForm) {
         handleValueChange: this.handleValueChange.bind(this),
         setValueChange: this.setValueChange.bind(this),
         handleBlur: this.handleBlur.bind(this),
-        handleStepSubmit: this.handleStepSubmit.bind(this),
         showUISuccess: this.showUISuccess.bind(this),
         showUIError: this.showUIError.bind(this)
       };
