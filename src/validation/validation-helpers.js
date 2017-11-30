@@ -63,24 +63,6 @@ const createValidationHelper = config => {
     },
     fieldIsValid(fieldName) {
       return this.hasErrors(fieldName) ? false : true;
-    },
-    validateForm(formElement) {
-      try {
-        const formDataQS = jQuery(formElement).serialize();
-        const data = QSToObject(formDataQS);
-        for (let key of Object.keys(data)) {
-          const fieldName = key;
-          const fieldValue = decodeURIComponent(data[key]);
-
-          // Only validate configured fields
-          // This allows for subform/step validation
-          if (!config[fieldName]) continue;
-
-          this.validate(fieldName.toString(), fieldValue.toString());
-        }
-      } catch (error) {
-        console.log("Error validating data from form.");
-      }
     }
   };
 };
