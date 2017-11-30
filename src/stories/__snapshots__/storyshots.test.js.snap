@@ -621,6 +621,22 @@ exports[`Storyshots Example Forms Billing Info 1`] = `
         
       </div>
     </div>
+    <div
+      className="wvus-field-optIn wvus-field-newletter-optin checkbox-group"
+    >
+      <label
+        className="checkbox-inline"
+      >
+        <input
+          checked={true}
+          id="optIn"
+          name="optIn"
+          onChange={[Function]}
+          type="checkbox"
+        />
+        Yes, please add me to your email newsletter
+      </label>
+    </div>
     <button
       className="btn btn-medium btn-secondary"
       disabled={true}
@@ -628,7 +644,7 @@ exports[`Storyshots Example Forms Billing Info 1`] = `
       onClick={[Function]}
       type="submit"
     >
-      Sign In
+      Submit
     </button>
   </form>
 </div>
@@ -920,7 +936,7 @@ exports[`Storyshots Example Forms Send Email Form 1`] = `
       onClick={[Function]}
       type="submit"
     >
-      Sign Me Up!
+      Send
     </button>
   </form>
 </div>

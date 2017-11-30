@@ -38,7 +38,20 @@ const SimpleInputForm = props => {
         fieldTitle="First Name"
         fieldClasses="custom-class-field-input"
         formMethods={props.formMethods}
-        validation={[validateRequired]}
+      />
+    </form>
+  );
+};
+const SimpleInputFormRequired = props => {
+  return (
+    <form>
+      <InputControl
+        fieldPlaceholder="Tim Stehlin"
+        fieldName="fname"
+        fieldTitle="First Name"
+        fieldClasses="custom-class-field-input"
+        formMethods={props.formMethods}
+        validators={[validateRequired]}
       />
     </form>
   );
@@ -61,6 +74,7 @@ const SimpleInputStates = props => {
 export {
   SimpleInputForm,
   SimpleInputStates,
+  SimpleInputFormRequired,
   propsUntouched,
   propsWithError,
   propsWithSuccess,

@@ -67,7 +67,7 @@ const MessageForm = props => {
         disabled={submitDisabled}
         onClick={handleFormSubmit}
       >
-        Sign Me Up!
+        Send
       </button>
     </form>
   );
