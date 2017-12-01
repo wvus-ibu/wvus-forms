@@ -28,12 +28,16 @@ project, follow these steps:
 
 * Example "github:wvus-ibu/wvus-forms#v2.0.0"
 
-2. Run: `npm install --save wvus-forms`
-3. Import into your project: `import Validessa from 'wvus-forms';`
-4. Now you are ready to use it in your project. See Examples section.
+2. Run: `npm install`
+3. Import into your project: `import { WVUSForm, etc... } from 'wvus-forms';`
+   See `Field Controls` section in Storybook documentation for available field
+   types.
+4. Ensure you are using a current version of
+   [Swing](https://github.com/wvus-ibu/swing) for the styling.
+5. Now you are ready to use it in your project. See Examples section.
 
 Note: For more information on using Github repos in NPM, see:
-[Github Urls](https://docs.npmjs.com/files/package.json#github-urls)
+[Github Urls](https://docs.npmjs.com/files/package.json#git-urls-as-dependencies)
 
 ### Examples: How to use
 
@@ -158,15 +162,16 @@ export { BillingInfoForm };
 // @file: App.js
 import React, { Component } from "React";
 import { WVUSForm } from "wvus-forms";
+import { BillingInfoForm } from "./BillingInfoForm";
 
-export default App extends Component {
+export default class App extends Component {
   constructor(props) {
     super(props);
   }
   render() {
     // WVForm is a Higher Order Component that wraps your custom form
     // with form validation and state functionality.
-    const MyBillingForm = WVForm(BillingInfoForm);
+    const MyBillingForm = WVUSForm(BillingInfoForm);
 
     return (
       <div class="form-wrapper">
@@ -177,7 +182,12 @@ export default App extends Component {
 }
 ```
 
-For more examples, see the `/stories` folder.
+For more examples, see the `/stories` folder and run StoryBook:
+
+```
+npm install
+npm run storybook
+```
 
 ## How to Develop VALIDESSA (JS app)
 
@@ -186,7 +196,6 @@ For more examples, see the `/stories` folder.
 Install dependencies and start storybook dev server:
 
 ```
-cd app
 npm install
 npm run storybook #run storybook
 npm run test-watch #run unit tests
