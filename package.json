@@ -9,13 +9,11 @@
   "author": "World Vision, US",
   "license": "UNLICENSED",
   "homepage": "https://github.com/wvus-ibu/wvus-forms",
-  "keywords": [
-    "react-component",
-    "react",
-    "forms"
-  ],
+  "keywords": ["react-component", "react", "forms"],
+  "engines": { "node": ">=8" },
   "scripts": {
-    "prepare": "babel --plugins transform-es2015-modules-umd src --ignore __tests__ --out-dir ./dist",
+    "prepare":
+      "babel --plugins transform-es2015-modules-umd src --ignore __tests__ --out-dir ./dist",
     "lint": "eslint ./src",
     "lintfix": "eslint ./src --fix",
     "test": "jest",
@@ -26,7 +24,8 @@
   },
   "jest": {
     "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
+        "<rootDir>/__mocks__/fileMock.js",
       "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
     }
   },
