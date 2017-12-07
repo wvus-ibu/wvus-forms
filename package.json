@@ -13,10 +13,11 @@
   "engines": { "node": ">=8" },
   "scripts": {
     "prepare":
-      "babel --plugins transform-es2015-modules-umd src --ignore __tests__ --out-dir ./dist",
+      "babel --plugins transform-es2015-modules-umd src --ignore __tests__,test.js,.stories.js --out-dir ./dist",
     "lint": "eslint ./src",
     "lintfix": "eslint ./src --fix",
     "test": "jest",
+    "test-ci": "jest --ci",
     "test-watch": "jest --watch",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -o docs",
