@@ -1,6 +1,6 @@
 import React from "react";
 import { createValidationHelper } from "./validation/validation-helpers.js";
-import { merge } from "lodash";
+import merge from "lodash.merge";
 
 export default function WVUSForm(WrapperForm) {
   return class extends React.Component {

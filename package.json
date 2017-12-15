@@ -1,6 +1,6 @@
 {
   "name": "wvus-forms",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Validessa - Defender of Data (WVUS Form Validation Library)",
   "repository": {
     "type": "git",
@@ -9,11 +9,16 @@
   "author": "World Vision, US",
   "license": "UNLICENSED",
   "homepage": "https://github.com/wvus-ibu/wvus-forms",
-  "keywords": ["react-component", "react", "forms"],
-  "engines": { "node": ">=8" },
+  "keywords": [
+    "react-component",
+    "react",
+    "forms"
+  ],
+  "engines": {
+    "node": ">=8"
+  },
   "scripts": {
-    "prepare":
-      "babel --plugins transform-es2015-modules-umd src --ignore __tests__,test.js,.stories.js --out-dir ./dist",
+    "prepare": "babel --plugins transform-es2015-modules-umd src --ignore __tests__,test.js,.stories.js --out-dir ./dist",
     "lint": "eslint ./src",
     "lintfix": "eslint ./src --fix",
     "test": "jest",
@@ -25,8 +30,7 @@
   },
   "jest": {
     "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
-        "<rootDir>/__mocks__/fileMock.js",
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
     }
   },
@@ -70,7 +74,7 @@
     "babel-runtime": "^6.6.1",
     "css-loader": "^0.28.7",
     "eslint": "^4.10.0",
-    "lodash": "^4.17.4",
+    "lodash.merge": "^4.6.0",
     "validator": "^7.0.0"
   }
 }
