@@ -22,6 +22,29 @@ const SimpleInputForm = props => {
   );
 };
 
+const SimpleInputFormTwoFields = props => {
+  return (
+    <form>
+      <InputControl
+        fieldValue="Tim"
+        fieldName="fname"
+        fieldTitle="First Name"
+        fieldClasses="custom-class-field-input"
+        formMethods={props.formMethods}
+        validators={[validateRequired]}
+      />
+      <InputControl
+        fieldValue="Stehlin"
+        fieldName="lname"
+        fieldTitle="Last Name"
+        fieldClasses="custom-class-field-input"
+        formMethods={props.formMethods}
+        validators={[validateRequired]}
+      />
+    </form>
+  );
+};
+
 describe("WVUSForm", () => {
   it("should be able to wrap a custom form component", () => {
     const MyForm = props => {
@@ -30,6 +53,113 @@ describe("WVUSForm", () => {
     const Form = WVUSForm(MyForm);
     const wrapper = mount(<Form />);
     expect(wrapper.contains(<form>Hello Form</form>)).toBe(true);
+  });
+
+  it("should have required methods", () => {
+    const Form = WVUSForm(SimpleInputForm);
+    const wrapper = mount(<Form />);
+    const formNode = wrapper.getNode();
+
+    expect(typeof formNode.addFieldToState).toBe("function");
+    expect(typeof formNode.getFieldState).toBe("function");
+    expect(typeof formNode.getFormState).toBe("function");
+    expect(typeof formNode.resetField).toBe("function");
+    expect(typeof formNode.validateField).toBe("function");
+    expect(typeof formNode.validateFields).toBe("function");
+    expect(typeof formNode.validateForm).toBe("function");
+    expect(typeof formNode.updateFieldsState).toBe("function");
+    expect(typeof formNode.getFormValid).toBe("function");
+    expect(typeof formNode.isFormEmpty).toBe("function");
+    expect(typeof formNode.isFormValid).toBe("function");
+    expect(typeof formNode.handleValueChange).toBe("function");
+    expect(typeof formNode.setValueChange).toBe("function");
+    expect(typeof formNode.showUISuccess).toBe("function");
+    expect(typeof formNode.showUIError).toBe("function");
+  });
+
+  it("getFormState should be able to return form state", () => {
+    const Form = WVUSForm(SimpleInputForm);
+    const wrapper = mount(<Form />);
+    const formNode = wrapper.getNode();
+    const formState = formNode.getFormState();
+    expect(typeof formState).toBe("object");
+    expect(formState).toEqual(
+      expect.objectContaining({
+        fields: expect.objectContaining({
+          fname: expect.any(Object)
+        }),
+        formValid: expect.any(Boolean)
+      })
+    );
+  });
+
+  it("getFieldState should be able to return a field's state", () => {
+    const Form = WVUSForm(SimpleInputForm);
+    const wrapper = mount(<Form />);
+    const formNode = wrapper.getNode();
+    const formState = formNode.getFieldState("fname");
+    expect(typeof formState).toBe("object");
+    expect(formState).toEqual(
+      expect.objectContaining({
+        value: expect.any(String),
+        isValid: expect.any(Boolean),
+        secondInteraction: expect.any(Boolean),
+        errorMessage: expect.any(String),
+        validators: expect.any(Array),
+        optional: expect.any(Boolean)
+      })
+    );
+  });
+
+  it("resetField should be able to reset a field", () => {
+    const Form = WVUSForm(SimpleInputFormTwoFields);
+    const wrapper = mount(<Form />);
+    const formNode = wrapper.getNode();
+    const formStateFirst = formNode.getFieldState("fname");
+    const formStateLast = formNode.getFieldState("lname");
+    // Should not throw an error, and simply return
+    formNode.resetField("fakefieldname");
+
+    // Reset First Name
+    formNode.resetField("fname");
+    const formStateResetFName = formNode.getFieldState("fname");
+    const formStateLName = formNode.getFieldState("lname");
+    expect(typeof formStateResetFName).toBe("object");
+    expect(typeof formStateLName).toBe("object");
+    expect(formStateResetFName).toEqual(
+      expect.objectContaining({
+        value: "",
+        isValid: false,
+        secondInteraction: false,
+        errorMessage: expect.any(String),
+        validators: expect.any(Array),
+        optional: expect.any(Boolean)
+      })
+    );
+    expect(formStateLName).toEqual(
+      expect.objectContaining({
+        value: "Stehlin",
+        isValid: false,
+        secondInteraction: false,
+        errorMessage: expect.any(String),
+        validators: expect.any(Array),
+        optional: expect.any(Boolean)
+      })
+    );
+    // Reset Last Name
+    formNode.resetField("lname");
+    const formStateResetLName = formNode.getFieldState("lname");
+    expect(formStateResetLName).toEqual(
+      expect.objectContaining({
+        value: "",
+        isValid: false,
+        secondInteraction: false,
+        errorMessage: expect.any(String),
+        validators: expect.any(Array),
+        optional: expect.any(Boolean)
+      })
+    );
+    expect(formNode.getFormState().formValid).toBe(false);
   });
 
   it("should be able to set and validate a field", () => {
