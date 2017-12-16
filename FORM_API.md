@@ -4,12 +4,10 @@
 
 * [WVUSForm](#module_WVUSForm)
     * [WVUSForm(WrapperForm)](#exp_module_WVUSForm--WVUSForm) ⇒ <code>Object</code> ⏏
-        * [.addFieldToState(fieldName, fieldValue, secondInteraction, isValid, validators, optional)](#module_WVUSForm--WVUSForm+addFieldToState)
         * [.getFieldState(fieldName)](#module_WVUSForm--WVUSForm+getFieldState) ⇒ <code>object</code>
         * [.getFormState()](#module_WVUSForm--WVUSForm+getFormState) ⇒ <code>object</code>
         * [.resetField(fieldName, fieldValue)](#module_WVUSForm--WVUSForm+resetField)
         * [.validateForm()](#module_WVUSForm--WVUSForm+validateForm) ⇒ <code>bool</code>
-        * [.getFormValid(newFieldsState)](#module_WVUSForm--WVUSForm+getFormValid) ⇒ <code>bool</code>
         * [.isFormValid()](#module_WVUSForm--WVUSForm+isFormValid) ⇒ <code>bool</code>
         * [.isFormEmpty()](#module_WVUSForm--WVUSForm+isFormEmpty) ⇒ <code>bool</code>
         * [.handleValueChange(e, callback)](#module_WVUSForm--WVUSForm+handleValueChange)
@@ -30,23 +28,6 @@ and keeps track of form state and validity
 | Param | Type | Description |
 | --- | --- | --- |
 | WrapperForm | <code>Object</code> | Custom form to be wrapped |
-
-<a name="module_WVUSForm--WVUSForm+addFieldToState"></a>
-
-#### wvusForm.addFieldToState(fieldName, fieldValue, secondInteraction, isValid, validators, optional)
-Sets initial state of a field,
-used by all controls for state setup
-
-**Kind**: instance method of [<code>WVUSForm</code>](#exp_module_WVUSForm--WVUSForm)  
-
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| fieldName | <code>string</code> |  | name of field |
-| fieldValue | <code>string</code> |  | initial value |
-| secondInteraction | <code>bool</code> | <code>false</code> | whether field is initially touched |
-| isValid | <code>bool</code> | <code>false</code> | whether field is initially valid |
-| validators | <code>array</code> |  | list of validation functions |
-| optional | <code>bool</code> |  | whether field is optional |
 
 <a name="module_WVUSForm--WVUSForm+getFieldState"></a>
 
@@ -86,23 +67,12 @@ you need to pass the original default value
 
 #### wvusForm.validateForm() ⇒ <code>bool</code>
 Validates a form/subform
-Note: This works for a subform because the Validation Helper's
+Note: Can be used to trigger validation of an entire form based
+on some other interaction. This works for a subform because the Validation Helper's
 validateForm method ignores form names unregistered in the config
 
 **Kind**: instance method of [<code>WVUSForm</code>](#exp_module_WVUSForm--WVUSForm)  
 **Returns**: <code>bool</code> - validity of form  
-<a name="module_WVUSForm--WVUSForm+getFormValid"></a>
-
-#### wvusForm.getFormValid(newFieldsState) ⇒ <code>bool</code>
-Get validity of current form
-
-**Kind**: instance method of [<code>WVUSForm</code>](#exp_module_WVUSForm--WVUSForm)  
-**Returns**: <code>bool</code> - validity of entire form  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| newFieldsState | <code>Object</code> | field state to validate |
-
 <a name="module_WVUSForm--WVUSForm+isFormValid"></a>
 
 #### wvusForm.isFormValid() ⇒ <code>bool</code>
