@@ -11,6 +11,10 @@ is making validating forms easy with a flexible and extendable validation layer.
 Form fields just work, and can even be modified with custom masks, validators,
 and more.
 
+## API Documentation:
+
+### [WVUSForms API](FORM_API.md)
+
 ## How to use in a React Project
 
 ### Installation via NPM
@@ -182,14 +186,17 @@ export default class App extends Component {
 }
 ```
 
-For more examples, see the `/stories` folder and run StoryBook:
+For more examples, run Storybook:
 
 ```
 npm install
 npm run storybook
 ```
 
-## How to Develop VALIDESSA (JS app)
+To see how the forms fields are configured for each example, checkout the
+`/stories` folder.
+
+## How to Develop VALIDESSA
 
 ### Install dev dependencies and run script to watch JS files:
 
