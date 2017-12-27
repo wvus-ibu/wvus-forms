@@ -1,8 +1,21 @@
 import React from "react";
 import { createValidationHelper } from "./validation/validation-helpers.js";
-import { merge } from "lodash";
+import merge from "lodash.merge";
 
-export default function WVUSForm(WrapperForm) {
+/**
+ * @module WVUSForm
+ */
+export default WVUSForm;
+
+/**
+ * Form High Order Component
+ * @alias module:WVUSForm
+ * @description attaches functions to a custom form
+ * and keeps track of form state and validity
+ * @param {Object} WrapperForm  Custom form to be wrapped
+ * @returns {Object} Component Wrapped react component
+ */
+function WVUSForm(WrapperForm) {
   return class extends React.Component {
     constructor(props) {
       super(props);
@@ -17,7 +30,9 @@ export default function WVUSForm(WrapperForm) {
     }
 
     /**
-     * Sets initial state of a field
+     * Sets initial state of a field,
+     * used by all controls for state setup
+     * @private
      * @param {string} fieldName name of field
      * @param {string} fieldValue initial value
      * @param {bool} secondInteraction whether field is initially touched
@@ -50,10 +65,59 @@ export default function WVUSForm(WrapperForm) {
       });
     }
 
+    /**
+     * Gets field state for a field
+     * @param {string} fieldName field to get state for
+     * @returns {object} field state
+     */
     getFieldState(fieldName) {
-      return this.state.fields[fieldName] || {};
+      return { ...this.state.fields[fieldName] } || {}; // returns copy to prevent mutation
     }
 
+    /**
+     * Gets all form state
+     * @returns {object} form state
+     */
+    getFormState() {
+      return { ...this.state }; // returns copy to prevent mutation
+    }
+
+    /**
+     * Reset the field state to default for a field
+     * Note: for Checkboxes and Radio controls,
+     * you need to pass the original default value
+     * (as default empty string is not valid for those field types)
+     * @param {string} fieldName field name to reset
+     * @param {string} fieldValue value to reset field to (optional)
+     */
+    resetField(fieldName, fieldValue = "") {
+      if (!this.state.fields[fieldName]) return;
+
+      const newState = {
+        fields: {
+          [fieldName]: {
+            value: fieldValue,
+            secondInteraction: false,
+            isValid: false
+          }
+        },
+        formValid: false
+      };
+
+      // Update Value
+      this.setState(prevState => {
+        return merge({}, prevState, newState);
+      });
+    }
+
+    /**
+     * Validate a field
+     * Primarily used internally by change handlers
+     * @private
+     * @param {string} fieldName fieldname to validate
+     * @param {string} fieldValue fieldvalue to be validate
+     * @returns {object} new fieldstate with validity updated
+     */
     validateField(fieldName, fieldValue) {
       this.validationHelper.validate(fieldName, fieldValue);
       let isValid = this.validationHelper.fieldIsValid(fieldName);
@@ -66,6 +130,11 @@ export default function WVUSForm(WrapperForm) {
       return newFieldState;
     }
 
+    /**
+     * Goes through all fields in state and updates their validity
+     * Primarily used internally by change handlers
+     * @private
+     */
     validateFields() {
       const fieldStateUpdate = { fields: {} };
       Object.keys(this.state.fields).map(fieldName => {
@@ -82,7 +151,8 @@ export default function WVUSForm(WrapperForm) {
 
     /**
      * Validates a form/subform
-     * Note: This works for a subform because the Validation Helper's
+     * Note: Can be used to trigger validation of an entire form based
+     * on some other interaction. This works for a subform because the Validation Helper's
      * validateForm method ignores form names unregistered in the config
      * @returns {bool} validity of form
      */
@@ -101,9 +171,8 @@ export default function WVUSForm(WrapperForm) {
 
     /**
      * Update Field State
-     * @para
-     * @param {Object} fieldsState new state object to merge w/ existing
-     * @returns {undefined}
+     * @private
+     * @param {Object} fieldsState new state object to merge w/ existing stage
      */
     updateFieldsState(fieldsState) {
       this.setState((prevState, props) => {
@@ -118,10 +187,10 @@ export default function WVUSForm(WrapperForm) {
     }
 
     /**
-     * Determines whether form is valid based on whether
-     * any fields have errors
+     * Get validity of current form
+     * @private
      * @param {Object} newFieldsState field state to validate
-     * @returns {undefined}
+     * @returns {bool} validity of entire form
      */
     getFormValid(newFieldsState) {
       return (
@@ -131,10 +200,18 @@ export default function WVUSForm(WrapperForm) {
       );
     }
 
+    /**
+     * Checks if form is valid
+     * @returns {bool} validity of entire form
+     */
     isFormValid() {
       return this.getFormValid(this.state.fields);
     }
 
+    /**
+     * Checks if form is completely empty
+     * @returns {bool} validity of entire form
+     */
     isFormEmpty() {
       return (
         Object.keys(this.state.fields).filter(
@@ -143,6 +220,12 @@ export default function WVUSForm(WrapperForm) {
       );
     }
 
+    /**
+     * Primary value change handler for onChange event
+     * Does NOT update the secondInteraction value
+     * @param {Object} e React event object
+     * @param {Function} callback function to be called after handler
+     */
     handleValueChange(e, callback = null) {
       const fieldName = e.target.name;
       const fieldValue =
@@ -150,6 +233,14 @@ export default function WVUSForm(WrapperForm) {
       this.setValueChange(fieldName, fieldValue, callback);
     }
 
+    /**
+     * Primary value setting handler, called by handleValueChange
+     * Great for use with custom event handlers
+     * Does NOT update the secondInteraction value
+     * @param {string} fieldName name of field to update
+     * @param {string} fieldValue new value of field
+     * @param {string} callback function to call after value update
+     */
     setValueChange(fieldName, fieldValue, callback = null) {
       const newState = { fields: {} };
       newState.fields[fieldName] = {
@@ -173,6 +264,12 @@ export default function WVUSForm(WrapperForm) {
       }, callback); //Callback important for validation on Last item
     }
 
+    /**
+     * Handles blur event on fields
+     * Update the secondInteraction value to true,
+     * since used with onBlur event
+     * @param {Object} e React synthetic event object
+     */
     handleBlur(e) {
       const fieldName = e.target.name;
       const fieldValue = e.target.value;
@@ -202,11 +299,21 @@ export default function WVUSForm(WrapperForm) {
       });
     }
 
+    /**
+     * Determines whether to show success ui states
+     * @param {object} fieldState field's state to check for success
+     * @returns {bool} whether to show success ui states to user
+     */
     showUISuccess(fieldState) {
       const optionalAndEmpty = fieldState.optional && fieldState.value === "";
       return fieldState.isValid && !optionalAndEmpty;
     }
 
+    /**
+     * Determines whether to show error ui states
+     * @param {object} fieldState field's state to check for error
+     * @returns {bool} whether to show error ui states to user
+     */
     showUIError(fieldState) {
       return !fieldState.isValid && fieldState.secondInteraction;
     }
@@ -215,6 +322,8 @@ export default function WVUSForm(WrapperForm) {
       this.formMethods = {
         addFieldToState: this.addFieldToState.bind(this),
         getFieldState: this.getFieldState.bind(this),
+        getFormState: this.getFormState.bind(this),
+        resetField: this.resetField.bind(this),
         validateField: this.validateField.bind(this),
         validateFields: this.validateFields.bind(this),
         validateForm: this.validateForm.bind(this),
