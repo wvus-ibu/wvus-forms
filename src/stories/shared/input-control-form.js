@@ -29,6 +29,29 @@ const propsOptional = {
   formMethods: formMethodsOptional
 };
 
+const propsAttrReadonlyDisabled = {
+  formMethods: formMethodsUnTouched,
+  attributes: {
+    readOnly: true,
+    disabled: true
+  }
+};
+
+const propsAttrReadonlyNotDisabled = {
+  formMethods: formMethodsUnTouched,
+  attributes: {
+    readOnly: true,
+    disabled: false
+  }
+};
+const propsAttrDisabledNotReadonly = {
+  formMethods: formMethodsUnTouched,
+  attributes: {
+    readOnly: false,
+    disabled: true
+  }
+};
+
 const SimpleInputForm = props => {
   return (
     <form>
@@ -71,12 +94,31 @@ const SimpleInputStates = props => {
   );
 };
 
+const SimpleInputFormAttr = props => {
+  return (
+    <form>
+      <InputControl
+        fieldPlaceholder="Tim Stehlin"
+        fieldName="fname"
+        fieldTitle="First Name"
+        fieldClasses="custom-class-field-input"
+        formMethods={props.formMethods}
+        attributes={props.attributes}
+      />
+    </form>
+  );
+};
+
 export {
   SimpleInputForm,
   SimpleInputStates,
   SimpleInputFormRequired,
+  SimpleInputFormAttr,
   propsUntouched,
   propsWithError,
   propsWithSuccess,
-  propsOptional
+  propsOptional,
+  propsAttrReadonlyDisabled,
+  propsAttrReadonlyNotDisabled,
+  propsAttrDisabledNotReadonly
 };

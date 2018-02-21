@@ -27,11 +27,13 @@ exports[`Storyshots Example Forms Billing Info 1`] = `
       >
         <input
           className="form-control"
+          disabled={false}
           id="fname"
           name="fname"
           onBlur={[Function]}
           onChange={[Function]}
           placeholder={undefined}
+          readOnly={false}
           type="text"
           value=""
         />
@@ -59,11 +61,13 @@ exports[`Storyshots Example Forms Billing Info 1`] = `
       >
         <input
           className="form-control"
+          disabled={false}
           id="lname"
           name="lname"
           onBlur={[Function]}
           onChange={[Function]}
           placeholder={undefined}
+          readOnly={false}
           type="text"
           value=""
         />
@@ -91,11 +95,13 @@ exports[`Storyshots Example Forms Billing Info 1`] = `
       >
         <input
           className="form-control"
+          disabled={false}
           id="address1"
           name="address1"
           onBlur={[Function]}
           onChange={[Function]}
           placeholder={undefined}
+          readOnly={false}
           type="text"
           value=""
         />
@@ -121,11 +127,13 @@ exports[`Storyshots Example Forms Billing Info 1`] = `
       >
         <input
           className="form-control"
+          disabled={false}
           id="address2"
           name="address2"
           onBlur={[Function]}
           onChange={[Function]}
           placeholder={undefined}
+          readOnly={false}
           type="text"
           value=""
         />
@@ -153,11 +161,13 @@ exports[`Storyshots Example Forms Billing Info 1`] = `
       >
         <input
           className="form-control"
+          disabled={false}
           id="city"
           name="city"
           onBlur={[Function]}
           onChange={[Function]}
           placeholder={undefined}
+          readOnly={false}
           type="text"
           value=""
         />
@@ -544,11 +554,13 @@ exports[`Storyshots Example Forms Billing Info 1`] = `
       >
         <input
           className="form-control"
+          disabled={false}
           id="zip"
           name="zip"
           onBlur={[Function]}
           onChange={[Function]}
           placeholder={undefined}
+          readOnly={false}
           type="text"
           value=""
         />
@@ -576,11 +588,13 @@ exports[`Storyshots Example Forms Billing Info 1`] = `
       >
         <input
           className="form-control"
+          disabled={false}
           id="email"
           name="email"
           onBlur={[Function]}
           onChange={[Function]}
           placeholder={undefined}
+          readOnly={false}
           type="email"
           value=""
         />
@@ -608,11 +622,13 @@ exports[`Storyshots Example Forms Billing Info 1`] = `
       >
         <input
           className="form-control"
+          disabled={false}
           id="phone"
           name="phone"
           onBlur={[Function]}
           onChange={[Function]}
           placeholder={undefined}
+          readOnly={false}
           type="tel"
           value=""
         />
@@ -683,11 +699,13 @@ exports[`Storyshots Example Forms Login Form 1`] = `
         >
           <input
             className="form-control"
+            disabled={false}
             id="wv-login-form-user"
             name="wv-login-form-user"
             onBlur={[Function]}
             onChange={[Function]}
             placeholder="name@example.com"
+            readOnly={false}
             type="text"
             value=""
           />
@@ -715,11 +733,13 @@ exports[`Storyshots Example Forms Login Form 1`] = `
         >
           <input
             className="form-control"
+            disabled={false}
             id="wv-login-form-pass"
             name="wv-login-form-pass"
             onBlur={[Function]}
             onChange={[Function]}
             placeholder=""
+            readOnly={false}
             type="password"
             value=""
           />
@@ -792,11 +812,13 @@ exports[`Storyshots Example Forms Newsletter Signup Form 1`] = `
       >
         <input
           className="form-control"
+          disabled={false}
           id="email"
           name="email"
           onBlur={[Function]}
           onChange={[Function]}
           placeholder={undefined}
+          readOnly={false}
           type="email"
           value=""
         />
@@ -861,11 +883,13 @@ exports[`Storyshots Example Forms Send Email Form 1`] = `
       >
         <input
           className="form-control"
+          disabled={false}
           id="recipient_email"
           name="recipient_email"
           onBlur={[Function]}
           onChange={[Function]}
           placeholder={undefined}
+          readOnly={false}
           type="email"
           value=""
         />
@@ -969,11 +993,13 @@ exports[`Storyshots Example Forms Simple Address Form 1`] = `
       >
         <input
           className="form-control"
+          disabled={false}
           id="fname"
           name="fname"
           onBlur={[Function]}
           onChange={[Function]}
           placeholder={undefined}
+          readOnly={false}
           type="text"
           value=""
         />
@@ -1001,11 +1027,13 @@ exports[`Storyshots Example Forms Simple Address Form 1`] = `
       >
         <input
           className="form-control"
+          disabled={false}
           id="lname"
           name="lname"
           onBlur={[Function]}
           onChange={[Function]}
           placeholder={undefined}
+          readOnly={false}
           type="text"
           value=""
         />
@@ -1033,11 +1061,13 @@ exports[`Storyshots Example Forms Simple Address Form 1`] = `
       >
         <input
           className="form-control"
+          disabled={false}
           id="address1"
           name="address1"
           onBlur={[Function]}
           onChange={[Function]}
           placeholder={undefined}
+          readOnly={false}
           type="text"
           value=""
         />
@@ -1065,11 +1095,13 @@ exports[`Storyshots Example Forms Simple Address Form 1`] = `
       >
         <input
           className="form-control"
+          disabled={false}
           id="city"
           name="city"
           onBlur={[Function]}
           onChange={[Function]}
           placeholder={undefined}
+          readOnly={false}
           type="text"
           value=""
         />
@@ -1456,11 +1488,13 @@ exports[`Storyshots Example Forms Simple Address Form 1`] = `
       >
         <input
           className="form-control"
+          disabled={false}
           id="zip"
           name="zip"
           onBlur={[Function]}
           onChange={[Function]}
           placeholder={undefined}
+          readOnly={false}
           type="text"
           value=""
         />
@@ -1624,11 +1658,13 @@ exports[`Storyshots Form Components Input Field States 1`] = `
         >
           <input
             className="form-control"
+            disabled={false}
             id="fname"
             name="fname"
             onBlur={[Function]}
             onChange={[Function]}
             placeholder="Tim Stehlin"
+            readOnly={false}
             type="text"
             value=""
           />
@@ -1670,11 +1706,13 @@ exports[`Storyshots Form Components Input Field States 1`] = `
         >
           <input
             className="form-control"
+            disabled={false}
             id="fname"
             name="fname"
             onBlur={[Function]}
             onChange={[Function]}
             placeholder="Tim Stehlin"
+            readOnly={false}
             type="text"
             value=""
           />
@@ -1715,11 +1753,13 @@ exports[`Storyshots Form Components Input Field States 1`] = `
         >
           <input
             className="form-control"
+            disabled={false}
             id="fname"
             name="fname"
             onBlur={[Function]}
             onChange={[Function]}
             placeholder="Tim Stehlin"
+            readOnly={false}
             type="text"
             value="Scott Rees"
           />
@@ -1768,11 +1808,13 @@ exports[`Storyshots Form Components Input Field States 1`] = `
         >
           <input
             className="form-control"
+            disabled={false}
             id="fname"
             name="fname"
             onBlur={[Function]}
             onChange={[Function]}
             placeholder="Tim Stehlin"
+            readOnly={false}
             type="text"
             value=""
           />
@@ -1820,11 +1862,13 @@ exports[`Storyshots Form Components Input Field States 1`] = `
         >
           <input
             className="form-control"
+            disabled={false}
             id="fname"
             name="fname"
             onBlur={[Function]}
             onChange={[Function]}
             placeholder="Tim Stehlin"
+            readOnly={false}
             type="text"
             value=""
           />
@@ -2808,11 +2852,13 @@ exports[`Storyshots Form Validation Input Field 1`] = `
       >
         <input
           className="form-control"
+          disabled={false}
           id="fname"
           name="fname"
           onBlur={[Function]}
           onChange={[Function]}
           placeholder="Tim Stehlin"
+          readOnly={false}
           type="text"
           value=""
         />
@@ -2843,11 +2889,13 @@ exports[`Storyshots Form Validation Input Field 1`] = `
       >
         <input
           className="form-control"
+          disabled={false}
           id="email"
           name="email"
           onBlur={[Function]}
           onChange={[Function]}
           placeholder="someone@worldvision.org"
+          readOnly={false}
           type="email"
           value=""
         />

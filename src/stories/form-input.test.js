@@ -7,10 +7,14 @@ import { WVUSForm, Message } from "../index";
 import {
   SimpleInputForm,
   SimpleInputStates,
+  SimpleInputFormAttr,
   propsUntouched,
   propsWithError,
   propsWithSuccess,
-  propsOptional
+  propsOptional,
+  propsAttrReadonlyDisabled,
+  propsAttrDisabledNotReadonly,
+  propsAttrReadonlyNotDisabled
 } from "./shared/input-control-form";
 
 const Form = WVUSForm(SimpleInputForm);
@@ -48,6 +52,13 @@ test("Snapshot: Input renders error state", () => {
 test("Snapshot: Input renders with optional/valid state", () => {
   const tree = renderer
     .create(<SimpleInputStates {...propsOptional} />)
+    .toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test("Snapshot: Input renders with readonly/disabled attributes", () => {
+  const tree = renderer
+    .create(<SimpleInputFormAttr {...propsAttrReadonlyDisabled} />)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
@@ -143,5 +154,29 @@ describe("InputControl", function() {
     expect(
       wrapper.contains(<Message showError={false} showSuccess={true} />)
     ).toBe(true);
+  });
+
+  it("should be capable of being disabled and readonly", function() {
+    const wrapper = mount(
+      <SimpleInputFormAttr {...propsAttrReadonlyDisabled} />
+    );
+    expect(wrapper.find("input").prop("disabled")).toBe(true);
+    expect(wrapper.find("input").prop("readOnly")).toBe(true);
+  });
+
+  it("should be capable of being readonly but not disabled", function() {
+    const wrapper = mount(
+      <SimpleInputFormAttr {...propsAttrReadonlyNotDisabled} />
+    );
+    expect(wrapper.find("input").prop("disabled")).toBe(false);
+    expect(wrapper.find("input").prop("readOnly")).toBe(true);
+  });
+  it("should be capable of being disabled but not readonly", function() {
+    const wrapper = mount(
+      <SimpleInputFormAttr {...propsAttrDisabledNotReadonly} />
+    );
+
+    expect(wrapper.find("input").prop("disabled")).toBe(true);
+    expect(wrapper.find("input").prop("readOnly")).toBe(false);
   });
 });

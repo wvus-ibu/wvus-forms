@@ -40,12 +40,15 @@ class InputControl extends Component {
       fieldPlaceholder,
       fieldState = formMethods.getFieldState(fieldName),
       characterCount,
+      attributes = {},
 
       handleValueChange = formMethods.handleValueChange,
       handleBlur = formMethods.handleBlur,
       showUISuccess = formMethods.showUISuccess(fieldState),
       showUIError = formMethods.showUIError(fieldState)
     } = this.props;
+    const readOnly = attributes.readOnly ? attributes.readOnly : false;
+    const disabled = attributes.disabled ? attributes.disabled : false;
 
     const validityClass = showUISuccess
       ? "has-success "
@@ -78,6 +81,8 @@ class InputControl extends Component {
             className="form-control"
             type={fieldType}
             placeholder={fieldPlaceholder}
+            readOnly={readOnly}
+            disabled={disabled}
           />
           {typeof characterCount !== "undefined" ? (
             <span className="message character-count">{characterCount}</span>
@@ -114,6 +119,10 @@ InputControl.propTypes = {
     showUIError: PropTypes.func.isRequired,
     showUISuccess: PropTypes.func.isRequired
   }).isRequired,
+  attributes: PropTypes.shape({
+    readonly: PropTypes.bool,
+    disabled: PropTypes.bool
+  }),
   validators: PropTypes.array
 };
 

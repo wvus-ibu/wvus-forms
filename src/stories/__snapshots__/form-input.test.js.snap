@@ -24,11 +24,13 @@ exports[`Snapshot: Input Form renders correctly 1`] = `
       >
         <input
           className="form-control"
+          disabled={false}
           id="fname"
           name="fname"
           onBlur={[Function]}
           onChange={[Function]}
           placeholder="Tim Stehlin"
+          readOnly={false}
           type="text"
           value=""
         />
@@ -62,11 +64,13 @@ exports[`Snapshot: Input renders error state 1`] = `
     >
       <input
         className="form-control"
+        disabled={false}
         id="fname"
         name="fname"
         onBlur={[Function]}
         onChange={[Function]}
         placeholder="Tim Stehlin"
+        readOnly={false}
         type="text"
         value=""
       />
@@ -109,11 +113,13 @@ exports[`Snapshot: Input renders success state 1`] = `
     >
       <input
         className="form-control"
+        disabled={false}
         id="fname"
         name="fname"
         onBlur={[Function]}
         onChange={[Function]}
         placeholder="Tim Stehlin"
+        readOnly={false}
         type="text"
         value="Scott Rees"
       />
@@ -154,11 +160,13 @@ exports[`Snapshot: Input renders untouched state 1`] = `
     >
       <input
         className="form-control"
+        disabled={false}
         id="fname"
         name="fname"
         onBlur={[Function]}
         onChange={[Function]}
         placeholder="Tim Stehlin"
+        readOnly={false}
         type="text"
         value=""
       />
@@ -189,11 +197,52 @@ exports[`Snapshot: Input renders with optional/valid state 1`] = `
     >
       <input
         className="form-control"
+        disabled={false}
         id="fname"
         name="fname"
         onBlur={[Function]}
         onChange={[Function]}
         placeholder="Tim Stehlin"
+        readOnly={false}
+        type="text"
+        value=""
+      />
+      
+      
+      
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Snapshot: Input renders with readonly/disabled attributes 1`] = `
+<form>
+  <div
+    className="wvus-field-fname custom-class-field-input form-group has-icon "
+    data-field-container="fname"
+    data-field-is-valid={true}
+  >
+    <label
+      htmlFor="fname"
+    >
+      First Name
+       
+      <sup>
+        *
+      </sup>
+    </label>
+    <div
+      className="form-control-wrapper"
+    >
+      <input
+        className="form-control"
+        disabled={true}
+        id="fname"
+        name="fname"
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder="Tim Stehlin"
+        readOnly={true}
         type="text"
         value=""
       />

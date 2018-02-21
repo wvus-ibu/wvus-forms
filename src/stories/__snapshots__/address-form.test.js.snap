@@ -27,11 +27,13 @@ exports[`Simple Address Form renders correctly 1`] = `
       >
         <input
           className="form-control"
+          disabled={false}
           id="fname"
           name="fname"
           onBlur={[Function]}
           onChange={[Function]}
           placeholder={undefined}
+          readOnly={false}
           type="text"
           value=""
         />
@@ -59,11 +61,13 @@ exports[`Simple Address Form renders correctly 1`] = `
       >
         <input
           className="form-control"
+          disabled={false}
           id="lname"
           name="lname"
           onBlur={[Function]}
           onChange={[Function]}
           placeholder={undefined}
+          readOnly={false}
           type="text"
           value=""
         />
@@ -91,11 +95,13 @@ exports[`Simple Address Form renders correctly 1`] = `
       >
         <input
           className="form-control"
+          disabled={false}
           id="address1"
           name="address1"
           onBlur={[Function]}
           onChange={[Function]}
           placeholder={undefined}
+          readOnly={false}
           type="text"
           value=""
         />
@@ -123,11 +129,13 @@ exports[`Simple Address Form renders correctly 1`] = `
       >
         <input
           className="form-control"
+          disabled={false}
           id="city"
           name="city"
           onBlur={[Function]}
           onChange={[Function]}
           placeholder={undefined}
+          readOnly={false}
           type="text"
           value=""
         />
@@ -514,11 +522,13 @@ exports[`Simple Address Form renders correctly 1`] = `
       >
         <input
           className="form-control"
+          disabled={false}
           id="zip"
           name="zip"
           onBlur={[Function]}
           onChange={[Function]}
           placeholder={undefined}
+          readOnly={false}
           type="text"
           value=""
         />
