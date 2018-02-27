@@ -102,6 +102,41 @@ const validateMax = max => value => {
   };
 };
 
+const validateNoSpaces = value => {
+  return {
+    valid: !value.includes(" "),
+    message: "Field must not contain spaces"
+  };
+};
+
+const validateHasLetter = value => {
+  const letterRegEx = /[a-zA-Z]/g;
+  return {
+    valid: letterRegEx.test(value),
+    message: "Field must have at least one letter."
+  };
+};
+
+const validateHasNumber = value => {
+  const numRegEx = /[\d]/g;
+  return {
+    valid: numRegEx.test(value),
+    message: "Field must have at least one number."
+  };
+};
+
+const validatePassword = value => {
+  return {
+    valid:
+      validateMin(8)(value).valid &&
+      validateHasNumber(value).valid &&
+      validateHasLetter(value).valid &&
+      validateNoSpaces(value).valid,
+    message:
+      "Minimum 8 characters with at least 1 number, 1 letter, and no spaces."
+  };
+};
+
 const validateEmpty = value => {
   return {
     valid: isEmpty(trim(value)),
@@ -212,6 +247,10 @@ export {
   validateZip,
   validateMin,
   validateMax,
+  validateNoSpaces,
+  validateHasLetter,
+  validateHasNumber,
+  validatePassword,
   validateExpirationDate,
   validateIsFutureDate,
   validateIsNotPastYearsOut,

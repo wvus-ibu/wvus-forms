@@ -9,6 +9,10 @@ import {
   validateZip,
   validateMin,
   validateMax,
+  validateNoSpaces,
+  validateHasLetter,
+  validateHasNumber,
+  validatePassword,
   validateExpirationDate,
   validateIsFutureDate,
   validateIsNotPastYearsOut,
@@ -254,6 +258,85 @@ test("validateMax can validate a string maximum length", () => {
   const resultTooShort = validateMax3("ab");
   expect(resultTooShort.valid).toBe(true);
   expect(resultTooShort.message).toBe(message);
+});
+
+test("validateNoSpaces can validate a string doesn't have a space", () => {
+  const message = "Field must not contain spaces";
+  const result = validateNoSpaces("a b c ");
+  expect(result.valid).toBe(false);
+  expect(result.message).toBe(message);
+
+  const result2 = validateNoSpaces("abc");
+  expect(result2.valid).toBe(true);
+  expect(result2.message).toBe(message);
+});
+
+test("validateHasLetter can validate a string has at least one letter", () => {
+  const message = "Field must have at least one letter.";
+  const result = validateHasLetter("abc");
+  expect(result.valid).toBe(true);
+  expect(result.message).toBe(message);
+
+  const result2 = validateHasLetter("1234");
+  expect(result2.valid).toBe(false);
+  expect(result2.message).toBe(message);
+
+  const result3 = validateHasLetter("12a34");
+  expect(result3.valid).toBe(true);
+  expect(result3.message).toBe(message);
+});
+
+test("validateHasNumber can validate a string has at least one number", () => {
+  const message = "Field must have at least one number.";
+  const result = validateHasNumber("abc");
+  expect(result.valid).toBe(false);
+  expect(result.message).toBe(message);
+
+  const result2 = validateHasNumber("1234");
+  expect(result2.valid).toBe(true);
+  expect(result2.message).toBe(message);
+
+  const result3 = validateHasNumber("ab1cd");
+  expect(result3.valid).toBe(true);
+  expect(result3.message).toBe(message);
+
+  const result4 = validateHasNumber("&*^)#(@_)#($");
+  expect(result4.valid).toBe(false);
+  expect(result4.message).toBe(message);
+});
+
+test("validatePassword can validate a string has all password requirements", () => {
+  const message =
+    "Minimum 8 characters with at least 1 number, 1 letter, and no spaces.";
+  const result = validatePassword("abc");
+  expect(result.valid).toBe(false);
+  expect(result.message).toBe(message);
+
+  const resultNumInvalid1 = validatePassword("1234");
+  const resultNumInvalid2 = validatePassword("123456789");
+  expect(resultNumInvalid1.valid).toBe(false);
+  expect(resultNumInvalid2.valid).toBe(false);
+  expect(resultNumInvalid1.message).toBe(message);
+
+  const result3 = validatePassword("ab1");
+  expect(result3.valid).toBe(false);
+  expect(result3.message).toBe(message);
+
+  const resultvalid1 = validatePassword("a1234567");
+  const resultValid2 = validatePassword("abcdefg6");
+  const resultValid3 = validatePassword("abc12345");
+  expect(resultvalid1.valid).toBe(true);
+  expect(resultValid2.valid).toBe(true);
+  expect(resultValid3.valid).toBe(true);
+  expect(resultvalid1.message).toBe(message);
+
+  const result5 = validatePassword("ab1 23456");
+  expect(result5.valid).toBe(false);
+  expect(result5.message).toBe(message);
+
+  const result6 = validatePassword("abbbbbb b b");
+  expect(result6.valid).toBe(false);
+  expect(result6.message).toBe(message);
 });
 
 test("validateEmpty can validate empty string", () => {
