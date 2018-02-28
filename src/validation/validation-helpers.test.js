@@ -10,7 +10,8 @@ import {
   validateMin,
   validateMax,
   validateNoSpaces,
-  validateHasLetter,
+  validateHasLowerCase,
+  validateHasUpperCase,
   validateHasNumber,
   validatePassword,
   validateExpirationDate,
@@ -271,19 +272,58 @@ test("validateNoSpaces can validate a string doesn't have a space", () => {
   expect(result2.message).toBe(message);
 });
 
-test("validateHasLetter can validate a string has at least one letter", () => {
-  const message = "Field must have at least one letter.";
-  const result = validateHasLetter("abc");
+test("validateHasLowerCase can validate a string has at least one lowercase letter", () => {
+  const message = "Field must have at least one lowercase letter.";
+  const result = validateHasLowerCase("abc");
   expect(result.valid).toBe(true);
   expect(result.message).toBe(message);
 
-  const result2 = validateHasLetter("1234");
+  const result2 = validateHasLowerCase("1234");
   expect(result2.valid).toBe(false);
   expect(result2.message).toBe(message);
 
-  const result3 = validateHasLetter("12a34");
+  const result3 = validateHasLowerCase("12a34");
   expect(result3.valid).toBe(true);
   expect(result3.message).toBe(message);
+
+  const result4 = validateHasLowerCase("12B34");
+  expect(result4.valid).toBe(false);
+  expect(result4.message).toBe(message);
+
+  const result5 = validateHasLowerCase("AABBCC");
+  expect(result5.valid).toBe(false);
+  expect(result5.message).toBe(message);
+
+  const result6 = validateHasLowerCase("AABBcc");
+  expect(result6.valid).toBe(true);
+  expect(result6.message).toBe(message);
+});
+
+test("validateHasUpperCase can validate a string has at least one uppercase letter", () => {
+  const message = "Field must have at least one uppercase letter.";
+  const result = validateHasUpperCase("ABC");
+  expect(result.valid).toBe(true);
+  expect(result.message).toBe(message);
+
+  const result2 = validateHasUpperCase("1234");
+  expect(result2.valid).toBe(false);
+  expect(result2.message).toBe(message);
+
+  const result3 = validateHasUpperCase("12a34");
+  expect(result3.valid).toBe(false);
+  expect(result3.message).toBe(message);
+
+  const result4 = validateHasUpperCase("12B34");
+  expect(result4.valid).toBe(true);
+  expect(result4.message).toBe(message);
+
+  const result5 = validateHasUpperCase("AABBCC");
+  expect(result5.valid).toBe(true);
+  expect(result5.message).toBe(message);
+
+  const result6 = validateHasUpperCase("AABBcc");
+  expect(result6.valid).toBe(true);
+  expect(result6.message).toBe(message);
 });
 
 test("validateHasNumber can validate a string has at least one number", () => {
@@ -305,38 +345,51 @@ test("validateHasNumber can validate a string has at least one number", () => {
   expect(result4.message).toBe(message);
 });
 
-test("validatePassword can validate a string has all password requirements", () => {
+describe("validatePassword", () => {
   const message =
-    "Minimum 8 characters with at least 1 number, 1 letter, and no spaces.";
-  const result = validatePassword("abc");
-  expect(result.valid).toBe(false);
-  expect(result.message).toBe(message);
+    "Minimum 8 characters with at least 1 number, 1 uppercase letter, 1 lowercase letter, and no spaces.";
 
-  const resultNumInvalid1 = validatePassword("1234");
-  const resultNumInvalid2 = validatePassword("123456789");
-  expect(resultNumInvalid1.valid).toBe(false);
-  expect(resultNumInvalid2.valid).toBe(false);
-  expect(resultNumInvalid1.message).toBe(message);
+  it("should be false for password that is too short", () => {
+    const resultNotLongEnough = validatePassword("aBc1234");
+    expect(resultNotLongEnough.valid).toBe(false);
+    expect(resultNotLongEnough.message).toBe(message);
+  });
 
-  const result3 = validatePassword("ab1");
-  expect(result3.valid).toBe(false);
-  expect(result3.message).toBe(message);
+  it("should be false for password with only numbers", () => {
+    const resultNotLongEnough = validatePassword("123456789");
+    expect(resultNotLongEnough.valid).toBe(false);
+    expect(resultNotLongEnough.message).toBe(message);
+  });
 
-  const resultvalid1 = validatePassword("a1234567");
-  const resultValid2 = validatePassword("abcdefg6");
-  const resultValid3 = validatePassword("abc12345");
-  expect(resultvalid1.valid).toBe(true);
-  expect(resultValid2.valid).toBe(true);
-  expect(resultValid3.valid).toBe(true);
-  expect(resultvalid1.message).toBe(message);
+  it("should be false for password without Uppercase", () => {
+    const resultNotLongEnough = validatePassword("ab112345456");
+    expect(resultNotLongEnough.valid).toBe(false);
+    expect(resultNotLongEnough.message).toBe(message);
+  });
 
-  const result5 = validatePassword("ab1 23456");
-  expect(result5.valid).toBe(false);
-  expect(result5.message).toBe(message);
+  it("should be false for password without Lowercase", () => {
+    const resultNotLongEnough = validatePassword("AB112345456");
+    expect(resultNotLongEnough.valid).toBe(false);
+    expect(resultNotLongEnough.message).toBe(message);
+  });
 
-  const result6 = validatePassword("abbbbbb b b");
-  expect(result6.valid).toBe(false);
-  expect(result6.message).toBe(message);
+  it("should be false for password without Numbers", () => {
+    const resultNotLongEnough = validatePassword("ABcdefghiJKLM");
+    expect(resultNotLongEnough.valid).toBe(false);
+    expect(resultNotLongEnough.message).toBe(message);
+  });
+
+  it("should be false for password with Spaces", () => {
+    const resultNotLongEnough = validatePassword("ab1 23456");
+    expect(resultNotLongEnough.valid).toBe(false);
+    expect(resultNotLongEnough.message).toBe(message);
+  });
+
+  it("should be true with valid password", () => {
+    const resultNotLongEnough = validatePassword("abCDE23456");
+    expect(resultNotLongEnough.valid).toBe(true);
+    expect(resultNotLongEnough.message).toBe(message);
+  });
 });
 
 test("validateEmpty can validate empty string", () => {

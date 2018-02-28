@@ -109,11 +109,19 @@ const validateNoSpaces = value => {
   };
 };
 
-const validateHasLetter = value => {
-  const letterRegEx = /[a-zA-Z]/g;
+const validateHasLowerCase = value => {
+  const letterRegEx = /[a-z]/g;
   return {
     valid: letterRegEx.test(value),
-    message: "Field must have at least one letter."
+    message: "Field must have at least one lowercase letter."
+  };
+};
+
+const validateHasUpperCase = value => {
+  const letterRegEx = /[A-Z]/g;
+  return {
+    valid: letterRegEx.test(value),
+    message: "Field must have at least one uppercase letter."
   };
 };
 
@@ -130,10 +138,11 @@ const validatePassword = value => {
     valid:
       validateMin(8)(value).valid &&
       validateHasNumber(value).valid &&
-      validateHasLetter(value).valid &&
+      validateHasLowerCase(value).valid &&
+      validateHasUpperCase(value).valid &&
       validateNoSpaces(value).valid,
     message:
-      "Minimum 8 characters with at least 1 number, 1 letter, and no spaces."
+      "Minimum 8 characters with at least 1 number, 1 uppercase letter, 1 lowercase letter, and no spaces."
   };
 };
 
@@ -248,7 +257,8 @@ export {
   validateMin,
   validateMax,
   validateNoSpaces,
-  validateHasLetter,
+  validateHasLowerCase,
+  validateHasUpperCase,
   validateHasNumber,
   validatePassword,
   validateExpirationDate,
