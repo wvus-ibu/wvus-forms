@@ -15,7 +15,7 @@
   },
   "scripts": {
     "prepare":
-      "babel --plugins transform-es2015-modules-umd src --ignore __tests__,test.js,.stories.js --out-dir ./dist && npm run docs",
+      "npx babel --plugins transform-es2015-modules-umd src --ignore __tests__,test.js,.stories.js --out-dir ./dist",
     "docs": "npx jsdoc2md ./src/form-hoc.js > FORM_API.md",
     "lint": "eslint ./src",
     "lintfix": "eslint ./src --fix",
@@ -24,7 +24,8 @@
     "test-watch": "jest --watch",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -o docs",
-    "test-storybook": "storyshots"
+    "test-storybook": "storyshots",
+    "build:prod": "npm run docs"
   },
   "jest": {
     "moduleNameMapper": {
