@@ -125,7 +125,12 @@ describe("SelectControl", function() {
     const errorMessage = props.formMethods.getFieldState().errorMessage;
     expect(
       wrapper.contains(
-        <Message showError={true} showSuccess={false} message={errorMessage} />
+        <Message
+          visible={true}
+          showError={true}
+          showSuccess={false}
+          message={errorMessage}
+        />
       )
     ).toBe(true);
   });
@@ -136,7 +141,9 @@ describe("SelectControl", function() {
     };
     const wrapper = mount(<TextAreaFormNoConfig {...props} />);
     expect(
-      wrapper.contains(<Message showError={false} showSuccess={true} />)
+      wrapper.contains(
+        <Message visible={true} showError={false} showSuccess={true} />
+      )
     ).toBe(true);
   });
 });

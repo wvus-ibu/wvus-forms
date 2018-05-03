@@ -9,13 +9,16 @@
   "author": "World Vision, US",
   "license": "UNLICENSED",
   "homepage": "https://github.com/wvus-ibu/wvus-forms",
-  "keywords": ["react-component", "react", "forms"],
+  "keywords": [
+    "react-component",
+    "react",
+    "forms"
+  ],
   "engines": {
     "node": ">=8"
   },
   "scripts": {
-    "prepare":
-      "npx babel --plugins transform-es2015-modules-umd src --ignore __tests__,test.js,.stories.js --out-dir ./dist",
+    "prepare": "npx babel --plugins transform-es2015-modules-umd src --ignore __tests__,test.js,.stories.js --out-dir ./dist",
     "docs": "npx jsdoc2md ./src/form-hoc.js > FORM_API.md",
     "lint": "eslint ./src",
     "lintfix": "eslint ./src --fix",
@@ -29,8 +32,7 @@
   },
   "jest": {
     "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
-        "<rootDir>/__mocks__/fileMock.js",
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
     }
   },
@@ -57,6 +59,7 @@
     "eslint-plugin-babel": "^3.1.0",
     "eslint-plugin-prettier": "^2.3.1",
     "eslint-plugin-react": "^4.2.3",
+    "font-awesome": "^4.7.0",
     "jest": "^21.2.1",
     "jest-cli": "^21.2.1",
     "jsdoc-to-markdown": "^3.0.2",
@@ -74,6 +77,7 @@
     "css-loader": "^0.28.7",
     "eslint": "^4.10.0",
     "lodash.merge": "^4.6.0",
+    "react-password-mask": "^3.3.0",
     "validator": "^7.0.0"
   }
 }

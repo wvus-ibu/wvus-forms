@@ -34,9 +34,6 @@ exports[`Snapshot: Input Form renders correctly 1`] = `
           type="text"
           value=""
         />
-        
-        
-        
       </div>
     </div>
   </form>
@@ -74,7 +71,6 @@ exports[`Snapshot: Input renders error state 1`] = `
         type="text"
         value=""
       />
-      
       <span>
         <i
           className="fa fa-exclamation-circle"
@@ -86,7 +82,6 @@ exports[`Snapshot: Input renders error state 1`] = `
           Error message displays here
         </span>
       </span>
-      
     </div>
   </div>
 </form>
@@ -123,8 +118,6 @@ exports[`Snapshot: Input renders success state 1`] = `
         type="text"
         value="Scott Rees"
       />
-      
-      
       <span>
         <i
           className="fa fa-check-circle"
@@ -170,9 +163,6 @@ exports[`Snapshot: Input renders untouched state 1`] = `
         type="text"
         value=""
       />
-      
-      
-      
     </div>
   </div>
 </form>
@@ -207,9 +197,6 @@ exports[`Snapshot: Input renders with optional/valid state 1`] = `
         type="text"
         value=""
       />
-      
-      
-      
     </div>
   </div>
 </form>
@@ -246,9 +233,6 @@ exports[`Snapshot: Input renders with readonly/disabled attributes 1`] = `
         type="text"
         value=""
       />
-      
-      
-      
     </div>
   </div>
 </form>

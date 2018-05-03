@@ -4,14 +4,15 @@ import { withInfo } from "@storybook/addon-info";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import { linkTo } from "@storybook/addon-links";
-import { WVUSForm, InputControl } from "../index.js";
+import { WVUSForm, InputControl, PasswordControl } from "../index.js";
 import {
   validateRequired,
   validateEmail,
   validatePhone,
   validateZip,
   validateMin,
-  validateMax
+  validateMax,
+  validatePassword
 } from "../index";
 
 class LoginForm extends React.Component {
@@ -75,14 +76,13 @@ class LoginForm extends React.Component {
             formMethods={props.formMethods}
             validators={[validateRequired, validateEmail]}
           />
-          <InputControl
+          <PasswordControl
             fieldName="wv-login-form-pass"
             fieldTitle="Password"
-            fieldType="password"
             fieldPlaceholder=""
             fieldClasses="wvus-field-login"
             formMethods={props.formMethods}
-            validators={[validateRequired, validateMin(6)]}
+            validators={[validatePassword]}
           />
         </div>
         <div className="wv-login-form-bottom-row">

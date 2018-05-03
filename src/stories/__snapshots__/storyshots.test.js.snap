@@ -37,9 +37,6 @@ exports[`Storyshots Example Forms Billing Info 1`] = `
           type="text"
           value=""
         />
-        
-        
-        
       </div>
     </div>
     <div
@@ -71,9 +68,6 @@ exports[`Storyshots Example Forms Billing Info 1`] = `
           type="text"
           value=""
         />
-        
-        
-        
       </div>
     </div>
     <div
@@ -105,9 +99,6 @@ exports[`Storyshots Example Forms Billing Info 1`] = `
           type="text"
           value=""
         />
-        
-        
-        
       </div>
     </div>
     <div
@@ -137,9 +128,6 @@ exports[`Storyshots Example Forms Billing Info 1`] = `
           type="text"
           value=""
         />
-        
-        
-        
       </div>
     </div>
     <div
@@ -171,9 +159,6 @@ exports[`Storyshots Example Forms Billing Info 1`] = `
           type="text"
           value=""
         />
-        
-        
-        
       </div>
     </div>
     <div
@@ -531,8 +516,6 @@ exports[`Storyshots Example Forms Billing Info 1`] = `
             Wyoming
           </option>
         </select>
-        
-        
       </div>
     </div>
     <div
@@ -564,9 +547,6 @@ exports[`Storyshots Example Forms Billing Info 1`] = `
           type="text"
           value=""
         />
-        
-        
-        
       </div>
     </div>
     <div
@@ -598,9 +578,6 @@ exports[`Storyshots Example Forms Billing Info 1`] = `
           type="email"
           value=""
         />
-        
-        
-        
       </div>
     </div>
     <div
@@ -632,9 +609,6 @@ exports[`Storyshots Example Forms Billing Info 1`] = `
           type="tel"
           value=""
         />
-        
-        
-        
       </div>
     </div>
     <div
@@ -709,9 +683,6 @@ exports[`Storyshots Example Forms Login Form 1`] = `
             type="text"
             value=""
           />
-          
-          
-          
         </div>
       </div>
       <div
@@ -743,9 +714,13 @@ exports[`Storyshots Example Forms Login Form 1`] = `
             type="password"
             value=""
           />
-          
-          
-          
+          <button>
+            Show Password 
+            <i
+              aria-hidden="true"
+              className="fa fa-eye"
+            />
+          </button>
         </div>
       </div>
     </div>
@@ -822,9 +797,6 @@ exports[`Storyshots Example Forms Newsletter Signup Form 1`] = `
           type="email"
           value=""
         />
-        
-        
-        
       </div>
     </div>
     <div
@@ -893,9 +865,6 @@ exports[`Storyshots Example Forms Send Email Form 1`] = `
           type="email"
           value=""
         />
-        
-        
-        
       </div>
     </div>
     <div
@@ -933,8 +902,6 @@ exports[`Storyshots Example Forms Send Email Form 1`] = `
             255
           </span>
         </div>
-        
-        
       </div>
     </div>
     <div
@@ -1003,9 +970,6 @@ exports[`Storyshots Example Forms Simple Address Form 1`] = `
           type="text"
           value=""
         />
-        
-        
-        
       </div>
     </div>
     <div
@@ -1037,9 +1001,6 @@ exports[`Storyshots Example Forms Simple Address Form 1`] = `
           type="text"
           value=""
         />
-        
-        
-        
       </div>
     </div>
     <div
@@ -1071,9 +1032,6 @@ exports[`Storyshots Example Forms Simple Address Form 1`] = `
           type="text"
           value=""
         />
-        
-        
-        
       </div>
     </div>
     <div
@@ -1105,9 +1063,6 @@ exports[`Storyshots Example Forms Simple Address Form 1`] = `
           type="text"
           value=""
         />
-        
-        
-        
       </div>
     </div>
     <div
@@ -1465,8 +1420,6 @@ exports[`Storyshots Example Forms Simple Address Form 1`] = `
             Wyoming
           </option>
         </select>
-        
-        
       </div>
     </div>
     <div
@@ -1498,9 +1451,6 @@ exports[`Storyshots Example Forms Simple Address Form 1`] = `
           type="text"
           value=""
         />
-        
-        
-        
       </div>
     </div>
   </form>
@@ -1668,9 +1618,6 @@ exports[`Storyshots Form Components Input Field States 1`] = `
             type="text"
             value=""
           />
-          
-          
-          
         </div>
       </div>
     </form>
@@ -1716,9 +1663,6 @@ exports[`Storyshots Form Components Input Field States 1`] = `
             type="text"
             value=""
           />
-          
-          
-          
         </div>
       </div>
     </form>
@@ -1763,8 +1707,6 @@ exports[`Storyshots Form Components Input Field States 1`] = `
             type="text"
             value="Scott Rees"
           />
-          
-          
           <span>
             <i
               className="fa fa-check-circle"
@@ -1818,7 +1760,6 @@ exports[`Storyshots Form Components Input Field States 1`] = `
             type="text"
             value=""
           />
-          
           <span>
             <i
               className="fa fa-exclamation-circle"
@@ -1830,7 +1771,6 @@ exports[`Storyshots Form Components Input Field States 1`] = `
               Error message displays here
             </span>
           </span>
-          
         </div>
       </div>
     </form>
@@ -1872,9 +1812,6 @@ exports[`Storyshots Form Components Input Field States 1`] = `
             type="text"
             value=""
           />
-          
-          
-          
         </div>
       </div>
     </form>
@@ -2322,8 +2259,6 @@ exports[`Storyshots Form Components Select Field States 1`] = `
               Wyoming
             </option>
           </select>
-          
-          
         </div>
       </div>
     </form>
@@ -2690,7 +2625,6 @@ exports[`Storyshots Form Components Select Field States 1`] = `
               Wyoming
             </option>
           </select>
-          
           <span>
             <i
               className="fa fa-check-circle"
@@ -2754,8 +2688,6 @@ exports[`Storyshots Form Components Textarea Field States 1`] = `
               255
             </span>
           </div>
-          
-          
         </div>
       </div>
     </form>
@@ -2813,7 +2745,6 @@ exports[`Storyshots Form Components Textarea Field States 1`] = `
               
             </span>
           </span>
-          
         </div>
       </div>
     </form>
@@ -2862,9 +2793,6 @@ exports[`Storyshots Form Validation Input Field 1`] = `
           type="text"
           value=""
         />
-        
-        
-        
       </div>
     </div>
     <h3>
@@ -2899,9 +2827,6 @@ exports[`Storyshots Form Validation Input Field 1`] = `
           type="email"
           value=""
         />
-        
-        
-        
       </div>
     </div>
   </form>

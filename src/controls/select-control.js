@@ -77,20 +77,18 @@ class SelectControl extends React.Component {
           >
             {options}
           </select>
-          {showUIError ? (
-            <Message
-              showError={true}
-              showSuccess={false}
-              message={fieldState.errorMessage}
-            />
-          ) : (
-            ""
-          )}
-          {showUISuccess ? (
-            <Message showError={false} showSuccess={true} />
-          ) : (
-            ""
-          )}
+          <Message
+            visible={showUIError}
+            showError={true}
+            showSuccess={false}
+            message={fieldState.errorMessage}
+          />
+
+          <Message
+            visible={showUISuccess}
+            showError={false}
+            showSuccess={true}
+          />
         </div>
       </div>
     );

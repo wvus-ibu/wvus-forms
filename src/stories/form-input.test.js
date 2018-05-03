@@ -143,7 +143,12 @@ describe("InputControl", function() {
       .errorMessage;
     expect(
       wrapper.contains(
-        <Message showError={true} showSuccess={false} message={errorMessage} />
+        <Message
+          visible={true}
+          showError={true}
+          showSuccess={false}
+          message={errorMessage}
+        />
       )
     ).toBe(true);
     // expect(wrapper.find(".has-success")).toHaveLength(0);
@@ -152,7 +157,9 @@ describe("InputControl", function() {
   it("should show success Message if has success", function() {
     const wrapper = mount(<SimpleInputForm {...propsWithSuccess} />);
     expect(
-      wrapper.contains(<Message showError={false} showSuccess={true} />)
+      wrapper.contains(
+        <Message visible={true} showError={false} showSuccess={true} />
+      )
     ).toBe(true);
   });
 

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Message from "./message.js";
+import CharacterCount from "./character-count";
 
 class InputControl extends Component {
   constructor(props) {
@@ -84,25 +85,19 @@ class InputControl extends Component {
             readOnly={readOnly}
             disabled={disabled}
           />
-          {typeof characterCount !== "undefined" ? (
-            <span className="message character-count">{characterCount}</span>
-          ) : (
-            ""
-          )}
-          {showUIError ? (
-            <Message
-              showError={true}
-              showSuccess={false}
-              message={fieldState.errorMessage}
-            />
-          ) : (
-            ""
-          )}
-          {showUISuccess ? (
-            <Message showError={false} showSuccess={true} />
-          ) : (
-            ""
-          )}
+          <CharacterCount characterCount={characterCount} />
+          <Message
+            visible={showUIError}
+            showError={true}
+            showSuccess={false}
+            message={fieldState.errorMessage}
+          />
+
+          <Message
+            visible={showUISuccess}
+            showError={false}
+            showSuccess={true}
+          />
         </div>
       </div>
     );

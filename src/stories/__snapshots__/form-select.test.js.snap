@@ -360,8 +360,6 @@ exports[`Snapshot:  Select control renders correctly with no selection 1`] = `
             Wyoming
           </option>
         </select>
-        
-        
       </div>
     </div>
   </form>
@@ -728,7 +726,6 @@ exports[`Snapshot: Select control renders correctly with preselection of WA 1`] 
             Wyoming
           </option>
         </select>
-        
         <span>
           <i
             className="fa fa-check-circle"

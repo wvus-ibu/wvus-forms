@@ -37,9 +37,6 @@ exports[`Simple Address Form renders correctly 1`] = `
           type="text"
           value=""
         />
-        
-        
-        
       </div>
     </div>
     <div
@@ -71,9 +68,6 @@ exports[`Simple Address Form renders correctly 1`] = `
           type="text"
           value=""
         />
-        
-        
-        
       </div>
     </div>
     <div
@@ -105,9 +99,6 @@ exports[`Simple Address Form renders correctly 1`] = `
           type="text"
           value=""
         />
-        
-        
-        
       </div>
     </div>
     <div
@@ -139,9 +130,6 @@ exports[`Simple Address Form renders correctly 1`] = `
           type="text"
           value=""
         />
-        
-        
-        
       </div>
     </div>
     <div
@@ -499,8 +487,6 @@ exports[`Simple Address Form renders correctly 1`] = `
             Wyoming
           </option>
         </select>
-        
-        
       </div>
     </div>
     <div
@@ -532,9 +518,6 @@ exports[`Simple Address Form renders correctly 1`] = `
           type="text"
           value=""
         />
-        
-        
-        
       </div>
     </div>
   </form>

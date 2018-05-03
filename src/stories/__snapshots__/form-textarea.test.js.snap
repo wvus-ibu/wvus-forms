@@ -40,8 +40,6 @@ exports[`Snapshot:  Textarea control renders correctly with no selection 1`] = `
             255
           </span>
         </div>
-        
-        
       </div>
     </div>
   </form>
@@ -99,7 +97,6 @@ exports[`Snapshot:  Textarea control renders correctly with too much text 1`] = 
             
           </span>
         </span>
-        
       </div>
     </div>
   </form>
