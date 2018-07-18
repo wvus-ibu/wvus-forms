@@ -32,10 +32,12 @@ class CheckboxControl extends Component {
       fieldId = fieldName,
       fieldClasses = "",
       fieldTitle,
+      attributes = {},
       handleValueChange = formMethods.handleValueChange,
       fieldState = formMethods.getFieldState(fieldName)
     } = this.props;
 
+    const disabled = attributes.disabled ? attributes.disabled : false;
     const fieldPrimaryClass = `wvus-field-${fieldName}`;
     const fieldValue = fieldState.value || "";
 
@@ -48,6 +50,7 @@ class CheckboxControl extends Component {
             onChange={handleValueChange}
             type="checkbox"
             checked={fieldValue}
+            disabled={disabled}
           />
           {fieldTitle}
         </label>

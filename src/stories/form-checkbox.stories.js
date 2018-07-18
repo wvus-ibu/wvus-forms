@@ -7,7 +7,9 @@ import { action } from "@storybook/addon-actions";
 import {
   propsChecked,
   propsUnchecked,
-  SimpleCheckboxForm
+  propsDisabled,
+  SimpleCheckboxForm,
+  DisabledCheckboxForm
 } from "./shared/checkbox-control-form";
 import { WVUSForm } from "../index";
 
@@ -35,6 +37,12 @@ storiesOf("Form Components", module).add("Checkbox Field States", () => (
     <p>
       FieldState:<br />
       {window.JSON.stringify(propsUnchecked.formMethods.getFieldState())}
+    </p>
+
+    <h2>Checkbox - disabled</h2>
+    <DisabledCheckboxForm {...propsDisabled} />
+    <p>
+      Note: Disabled styling not included in form library. Wrap form in fieldset disabled to get Bootstrap disabled styling as shown here.
     </p>
   </div>
 ));

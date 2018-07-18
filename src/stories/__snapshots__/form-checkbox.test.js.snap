@@ -13,6 +13,7 @@ exports[`Snapshot: Checkbox Form renders correctly 1`] = `
       >
         <input
           checked={true}
+          disabled={false}
           id="optIn"
           name="optIn"
           onChange={[Function]}
@@ -25,6 +26,28 @@ exports[`Snapshot: Checkbox Form renders correctly 1`] = `
 </div>
 `;
 
+exports[`Snapshot: Checkbox can be disabled 1`] = `
+<form>
+  <div
+    className="wvus-field-optIn wvus-field-newletter-optin checkbox-group"
+  >
+    <label
+      className="checkbox-inline"
+    >
+      <input
+        checked={true}
+        disabled={false}
+        id="optIn"
+        name="optIn"
+        onChange={[Function]}
+        type="checkbox"
+      />
+      Yes, I would like to receive the email newsletter.
+    </label>
+  </div>
+</form>
+`;
+
 exports[`Snapshot: Checkbox renders checked state 1`] = `
 <form>
   <div
@@ -35,6 +58,7 @@ exports[`Snapshot: Checkbox renders checked state 1`] = `
     >
       <input
         checked={true}
+        disabled={false}
         id="optIn"
         name="optIn"
         onChange={[Function]}
@@ -56,6 +80,7 @@ exports[`Snapshot: Checkbox renders unchecked state 1`] = `
     >
       <input
         checked=""
+        disabled={false}
         id="optIn"
         name="optIn"
         onChange={[Function]}

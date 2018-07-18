@@ -1,7 +1,7 @@
 import { action } from "@storybook/addon-actions";
 
 const formMethodsUnTouched = {
-  addFieldToState: () => {},
+  addFieldToState: () => { },
   getFieldState: () => {
     return {
       value: "",
@@ -18,7 +18,7 @@ const formMethodsUnTouched = {
 };
 
 const formMethodsWithSuccess = {
-  addFieldToState: () => {},
+  addFieldToState: () => { },
   getFieldState: () => {
     return {
       value: "Scott Rees",
@@ -35,7 +35,7 @@ const formMethodsWithSuccess = {
 };
 
 const formMethodsWithError = {
-  addFieldToState: () => {},
+  addFieldToState: () => { },
   getFieldState: () => {
     return {
       value: "",
@@ -57,7 +57,7 @@ const formMethodsWithError = {
  * optional: true // ensures success state is not shown if field is empty and interacted with (see showUiSuccess function)
  */
 const formMethodsOptional = {
-  addFieldToState: () => {},
+  addFieldToState: () => { },
   getFieldState: () => {
     return {
       value: "",
@@ -78,7 +78,7 @@ const formMethodsOptional = {
  */
 
 const formMethodsChecked = {
-  addFieldToState: () => {},
+  addFieldToState: () => { },
   getFieldState: () => {
     return {
       value: true,
@@ -95,7 +95,7 @@ const formMethodsChecked = {
 };
 
 const formMethodsUnChecked = {
-  addFieldToState: () => {},
+  addFieldToState: () => { },
   getFieldState: () => {
     return {
       value: false,
