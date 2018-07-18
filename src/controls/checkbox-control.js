@@ -68,6 +68,9 @@ CheckboxControl.propTypes = {
     showUIError: PropTypes.func.isRequired,
     showUISuccess: PropTypes.func.isRequired
   }).isRequired,
+  attributes: PropTypes.shape({
+    disabled: PropTypes.bool
+  }),
   validators: PropTypes.array
 };
 
