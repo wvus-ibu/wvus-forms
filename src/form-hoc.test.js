@@ -5,6 +5,9 @@ import {
   InputControl,
   validateRequired
 } from "./index";
+import { configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+configure({ adapter: new Adapter() });
 import { mount } from "enzyme";
 
 const SimpleInputForm = props => {
@@ -58,7 +61,7 @@ describe("WVUSForm", () => {
   it("should have required methods", () => {
     const Form = WVUSForm(SimpleInputForm);
     const wrapper = mount(<Form />);
-    const formNode = wrapper.getNode();
+    const formNode = wrapper.instance();
 
     expect(typeof formNode.addFieldToState).toBe("function");
     expect(typeof formNode.getFieldState).toBe("function");
@@ -80,7 +83,7 @@ describe("WVUSForm", () => {
   it("getFormState should be able to return form state", () => {
     const Form = WVUSForm(SimpleInputForm);
     const wrapper = mount(<Form />);
-    const formNode = wrapper.getNode();
+    const formNode = wrapper.instance();
     const formState = formNode.getFormState();
     expect(typeof formState).toBe("object");
     expect(formState).toEqual(
@@ -96,7 +99,7 @@ describe("WVUSForm", () => {
   it("getFieldState should be able to return a field's state", () => {
     const Form = WVUSForm(SimpleInputForm);
     const wrapper = mount(<Form />);
-    const formNode = wrapper.getNode();
+    const formNode = wrapper.instance();
     const formState = formNode.getFieldState("fname");
     expect(typeof formState).toBe("object");
     expect(formState).toEqual(
@@ -114,7 +117,7 @@ describe("WVUSForm", () => {
   it("resetField should be able to reset a field", () => {
     const Form = WVUSForm(SimpleInputFormTwoFields);
     const wrapper = mount(<Form />);
-    const formNode = wrapper.getNode();
+    const formNode = wrapper.instance();
     const formStateFirst = formNode.getFieldState("fname");
     const formStateLast = formNode.getFieldState("lname");
     // Should not throw an error, and simply return
@@ -165,7 +168,7 @@ describe("WVUSForm", () => {
   it("should be able to set and validate a field", () => {
     const Form = WVUSForm(SimpleInputForm);
     const wrapper = mount(<Form />);
-    const formNode = wrapper.getNode();
+    const formNode = wrapper.instance();
     const expected = {
       value: "",
       isValid: false,
@@ -202,7 +205,7 @@ describe("WVUSForm", () => {
   it("should handleBlur by setting secondInteraction to true, allowing UI Errors to be shown", () => {
     const Form = WVUSForm(SimpleInputForm);
     const wrapper = mount(<Form />);
-    const formNode = wrapper.getNode();
+    const formNode = wrapper.instance();
     const expected = {
       value: "",
       isValid: false,
@@ -221,7 +224,7 @@ describe("WVUSForm", () => {
   it("updateFieldsState should be able to successfully update field state", () => {
     const Form = WVUSForm(SimpleInputForm);
     const wrapper = mount(<Form />);
-    const formNode = wrapper.getNode();
+    const formNode = wrapper.instance();
     const newFieldState = {
       fields: {
         fname: {
@@ -259,7 +262,7 @@ describe("WVUSForm", () => {
   it("should be able to validate a form", () => {
     const Form = WVUSForm(SimpleInputForm);
     const wrapper = mount(<Form />);
-    const formNode = wrapper.getNode();
+    const formNode = wrapper.instance();
 
     expect(formNode.validateForm()).toBe(false);
 
@@ -283,7 +286,7 @@ describe("WVUSForm", () => {
     };
     const Form = WVUSForm(SimpleCheckboxForm);
     const wrapper = mount(<Form />);
-    const formNode = wrapper.getNode();
+    const formNode = wrapper.instance();
     formNode.handleValueChange({
       target: { type: "checkbox", name: "optIn", checked: false }
     });

@@ -9,7 +9,6 @@ exports[`Snapshot:  Select control renders correctly with no selection 1`] = `
       className="wvus-field-state wvus-field-33 form-group has-icon "
     >
       <label
-        className={undefined}
         htmlFor="state"
       >
         State
@@ -377,7 +376,6 @@ exports[`Snapshot: Select control renders correctly with preselection of WA 1`] 
       className="wvus-field-state wvus-field-33 form-group has-icon has-success "
     >
       <label
-        className={undefined}
         htmlFor="state"
       >
         State

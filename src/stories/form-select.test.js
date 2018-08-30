@@ -1,6 +1,9 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import { shallow, mount, render } from "enzyme";
+import { configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+configure({ adapter: new Adapter() });
+import { mount } from "enzyme";
 import sinon from "sinon";
 
 import {
@@ -70,14 +73,14 @@ describe("SelectControl", function() {
 
   it("should take preselected fieldValue", function() {
     const wrapper = mount(<FormPreselected />);
-    const selectedOption = wrapper.getNode().getFieldState("state").value;
+    const selectedOption = wrapper.instance().getFieldState("state").value;
     expect(selectedOption).toBe("WA");
   });
 
   it("getFieldState should return fieldState", () => {
     const wrapper = mount(<Form />);
     const expected = expectedFieldsState.state;
-    const actual = wrapper.getNode().getFieldState("state");
+    const actual = wrapper.instance().getFieldState("state");
     expect(actual).toEqual(expected);
   });
 

@@ -1,6 +1,9 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import { shallow, mount, render } from "enzyme";
+import { configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+configure({ adapter: new Adapter() });
+import { mount } from "enzyme";
 import sinon from "sinon";
 
 import { WVUSForm, Message } from "../index";
@@ -89,7 +92,7 @@ describe("InputControl", function() {
     const wrapper = mount(<Form />);
 
     const expected = expectedFieldsState.fname;
-    const actual = wrapper.getNode().getFieldState("fname");
+    const actual = wrapper.instance().getFieldState("fname");
     expect(expected).toEqual(actual);
   });
 

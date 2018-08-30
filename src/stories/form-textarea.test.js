@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import renderer from "react-test-renderer";
+import { configure } from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
+configure({ adapter: new Adapter() });
 import { shallow, mount, render } from "enzyme";
 import sinon from "sinon";
 
@@ -58,7 +61,7 @@ describe("SelectControl", function() {
   it("getFieldState should return fieldState", () => {
     const wrapper = mount(<FormNoConfig />);
     const expected = expectedFieldsState.message;
-    const actual = wrapper.getNode().getFieldState("message");
+    const actual = wrapper.instance().getFieldState("message");
     expect(actual).toEqual(expected);
   });
 
