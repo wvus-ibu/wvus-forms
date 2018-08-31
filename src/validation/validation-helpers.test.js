@@ -13,6 +13,7 @@ import {
   validateHasLowerCase,
   validateHasUpperCase,
   validateHasNumber,
+  validateIsInt,
   validatePassword,
   validateExpirationDate,
   validateIsFutureDate,
@@ -343,6 +344,29 @@ test("validateHasNumber can validate a string has at least one number", () => {
   const result4 = validateHasNumber("&*^)#(@_)#($");
   expect(result4.valid).toBe(false);
   expect(result4.message).toBe(message);
+});
+
+test("validateIsInt can validate a string is only integer numbers", () => {
+  const message = "Field must have only contain numbers.";
+  const result = validateIsInt("abc");
+  expect(result.valid).toBe(false);
+  expect(result.message).toBe(message);
+
+  const result2 = validateIsInt("1234");
+  expect(result2.valid).toBe(true);
+  expect(result2.message).toBe(message);
+
+  const result3 = validateIsInt("ab1cd");
+  expect(result3.valid).toBe(false);
+  expect(result3.message).toBe(message);
+
+  const result4 = validateIsInt("&*^)#(@_)#($");
+  expect(result4.valid).toBe(false);
+  expect(result4.message).toBe(message);
+
+  const result5 = validateIsInt("10.0");
+  expect(result5.valid).toBe(false);
+  expect(result5.message).toBe(message);
 });
 
 describe("validatePassword", () => {

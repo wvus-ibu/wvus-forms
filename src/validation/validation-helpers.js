@@ -1,4 +1,4 @@
-import { isEmpty, trim, isEmail, isLength, isCreditCard } from "validator";
+import { isEmpty, trim, isEmail, isLength, isCreditCard, isInt } from "validator";
 import QSToObject from "./query-string-parser";
 import { getCreditCardTypeValidity } from "./credit-card-helpers";
 
@@ -133,6 +133,13 @@ const validateHasNumber = value => {
   };
 };
 
+const validateIsInt = value => {
+  return {
+    valid: isInt(value),
+    message: "Field must have only contain numbers."
+  };
+};
+
 const validatePassword = value => {
   return {
     valid:
@@ -260,6 +267,7 @@ export {
   validateHasLowerCase,
   validateHasUpperCase,
   validateHasNumber,
+  validateIsInt,
   validatePassword,
   validateExpirationDate,
   validateIsFutureDate,
