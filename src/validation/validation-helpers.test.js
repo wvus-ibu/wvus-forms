@@ -9,6 +9,7 @@ import {
   validateZip,
   validateMin,
   validateMax,
+  validateExactLength,
   validateNoSpaces,
   validateHasLowerCase,
   validateHasUpperCase,
@@ -259,6 +260,30 @@ test("validateMax can validate a string maximum length", () => {
 
   const resultTooShort = validateMax3("ab");
   expect(resultTooShort.valid).toBe(true);
+  expect(resultTooShort.message).toBe(message);
+});
+
+test("validateExactLength can validate a string length", () => {
+  const message = "Field must be an exact length of: 3";
+  const validateLength = validateExactLength(3);
+  const result = validateLength("abc");
+  expect(result.valid).toBe(true);
+  expect(result.message).toBe(message); 
+
+  const result2 = validateLength("abcdefgh");
+  expect(result2.valid).toBe(false);
+  expect(result2.message).toBe(message);
+
+  const result3 = validateLength("1234");
+  expect(result3.valid).toBe(false);
+  expect(result3.message).toBe(message);
+
+  const result4 = validateLength("123");
+  expect(result4.valid).toBe(true);
+  expect(result4.message).toBe(message);
+
+  const resultTooShort = validateLength("ab");
+  expect(resultTooShort.valid).toBe(false);
   expect(resultTooShort.message).toBe(message);
 });
 

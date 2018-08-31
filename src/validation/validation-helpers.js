@@ -102,6 +102,13 @@ const validateMax = max => value => {
   };
 };
 
+const validateExactLength = length => value => {
+  return {
+    valid: isLength(trim(value), { max: length, min: length }),
+    message: `Field must be an exact length of: ${length}`
+  };
+};
+
 const validateNoSpaces = value => {
   return {
     valid: !value.includes(" "),
@@ -263,6 +270,7 @@ export {
   validateZip,
   validateMin,
   validateMax,
+  validateExactLength,
   validateNoSpaces,
   validateHasLowerCase,
   validateHasUpperCase,
