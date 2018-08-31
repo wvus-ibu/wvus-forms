@@ -50,7 +50,8 @@ class RadioControl extends Component {
       fieldTitle,
 
       fieldState = formMethods.getFieldState(fieldName),
-      characterCount
+      handleValueChange = this.handleValueChange,
+      handleBlur = () => {}
     } = this.props;
 
     const fieldPrimaryClass = `wvus-field-${fieldName} wvus-field-${fieldId}`;
@@ -63,7 +64,8 @@ class RadioControl extends Component {
             id={fieldId}
             value={fieldState.value}
             name={fieldName}
-            onChange={this.handleValueChange}
+            onChange={handleValueChange}
+            onBlur={handleBlur}
             type="radio"
             checked={fieldChecked}
           />
