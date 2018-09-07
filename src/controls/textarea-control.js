@@ -42,6 +42,9 @@ class TextAreaControl extends Component {
       fieldState = formMethods.getFieldState(fieldName),
       characterCount,
 
+      inputClasses = "",
+      labelClasses = "",
+
       handleValueChange = formMethods.handleValueChange,
       handleBlur = formMethods.handleBlur,
       showUISuccess = formMethods.showUISuccess(fieldState),
@@ -57,18 +60,18 @@ class TextAreaControl extends Component {
 
     return (
       <div className={"form-group has-icon " + validityClass}>
-        <label className="control-label" htmlFor={fieldName}>
+        <label className={`${labelClasses} control-label`} htmlFor={fieldName}>
           {fieldTitle} {requiredStar}
         </label>
         <div className="form-control-wrapper">
           <div className="text-area-wrapper">
             <textarea
               id={fieldId}
+              className={`form-control textarea-control ${inputClasses}`}
               value={fieldState.value}
               name={fieldName}
               onBlur={handleBlur}
               onChange={handleValueChange}
-              className="form-control"
               rows={fieldRows}
               placeholder={fieldPlaceholder}
             />

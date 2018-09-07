@@ -37,8 +37,10 @@ class SelectControl extends React.Component {
       fieldClasses = "",
       fieldTitle,
       fieldPlaceholder,
+
       fieldState = formMethods.getFieldState(fieldName),
-      labelClasses,
+      inputClasses = "",
+      labelClasses = "",
 
       handleValueChange = formMethods.handleValueChange,
       handleBlur = formMethods.handleBlur,
@@ -69,11 +71,11 @@ class SelectControl extends React.Component {
         <div className="form-control-wrapper">
           <select
             id={fieldName}
+            className={`form-control select-control ${inputClasses}`}
             value={fieldValue}
             name={fieldName}
             onBlur={handleBlur}
             onChange={handleValueChange}
-            className="form-control select-control"
           >
             {options}
           </select>

@@ -64,4 +64,10 @@ describe("InputControl", function() {
     wrapper.find("input#payment_method_new_cc").simulate("blur");
     expect(Form.prototype.handleBlur.calledOnce).toEqual(false);
   });
+
+  it("should be capable of having custom label and input classes", function() {
+    const wrapper = mount(<Form />);
+    expect(wrapper.find(".wvus-field-payment_method_new_cc label").hasClass("payment-method-new-cc-label")).toBe(true);
+    expect(wrapper.find(".wvus-field-payment_method_new_cc input").hasClass("payment-method-new-cc-input")).toBe(true);
+  });
 });

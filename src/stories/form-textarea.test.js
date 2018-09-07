@@ -142,4 +142,10 @@ describe("SelectControl", function() {
       wrapper.contains(<Message showError={false} showSuccess={true} />)
     ).toBe(true);
   });
+
+  it("should be capable of having custom label and input classes", function() {
+    const wrapper = mount(<Form />);
+    expect(wrapper.find(".default-textarea-example label").hasClass("message-label")).toBe(true);
+    expect(wrapper.find(".default-textarea-example textarea").hasClass("message-input")).toBe(true);
+  });
 });

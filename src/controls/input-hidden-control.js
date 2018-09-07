@@ -34,6 +34,8 @@ class InputHiddenControl extends Component {
       fieldName,
       fieldId = fieldName,
       fieldClasses = "",
+      inputClasses = "",
+
       fieldState = formMethods.getFieldState(fieldName)
     } = this.props;
 
@@ -49,9 +51,9 @@ class InputHiddenControl extends Component {
       >
         <input
           id={fieldId}
+          className={`input-hidden-control ${inputClasses}`}
           name={fieldName}
           value={fieldValue}
-          className="input-hidden-control"
           type="hidden"
         />
       </span>

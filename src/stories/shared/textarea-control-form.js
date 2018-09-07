@@ -18,13 +18,15 @@ const TextAreaForm = props => {
     parseInt(MAX_MESSAGE_CHAR, 10) - parseInt(messageFieldLength, 10);
 
   return (
-    <form>
+    <form className="default-textarea-example">
       <TextAreaControl
         fieldName="message"
         fieldRows={6}
         fieldPlaceholder="Type your message here"
         fieldTitle="Message"
         fieldClasses="wvus-field-newletter-message"
+        labelClasses="message-label"
+        inputClasses="message-input"
         formMethods={props.formMethods}
         validators={[validateRequired, validateMax(MAX_MESSAGE_CHAR)]}
         characterCount={messageCharacterCount}

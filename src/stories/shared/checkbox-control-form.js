@@ -22,6 +22,8 @@ const SimpleCheckboxForm = props => {
   return (
     <form>
       <CheckboxControl
+        labelClasses="opt-in-label"
+        inputClasses="opt-in-input"
         fieldName="optIn"
         fieldValue={true}
         fieldTitle="Yes, I would like to receive the email newsletter."

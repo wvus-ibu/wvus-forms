@@ -9,6 +9,8 @@ const RadioForm = props => {
         fieldId="payment_method_new_cc"
         fieldName="payment_method"
         fieldTitle={"New Credit Card"}
+        labelClasses="payment-method-new-cc-label"
+        inputClasses="payment-method-new-cc-input"
         formMethods={props.formMethods}
         fieldCheckedDefault={true}
       />

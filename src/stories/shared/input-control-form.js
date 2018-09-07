@@ -56,6 +56,8 @@ const SimpleInputForm = props => {
   return (
     <form>
       <InputControl
+        inputClasses="first-name-input"
+        labelClasses="first-name-label"
         fieldPlaceholder="Tim Stehlin"
         fieldName="fname"
         fieldTitle="First Name"
@@ -108,12 +110,29 @@ const SimpleInputFormAttr = props => {
     </form>
   );
 };
+const SimpleInputFormClasses = props => {
+  return (
+    <form>
+      <InputControl
+        inputClasses="first-name-input"
+        labelClasses="first-name-label"
+        fieldPlaceholder="Tim Stehlin"
+        fieldName="fname"
+        fieldTitle="First Name"
+        fieldClasses="custom-class-field-input"
+        formMethods={props.formMethods}
+        attributes={props.attributes}
+      />
+    </form>
+  );
+};
 
 export {
   SimpleInputForm,
   SimpleInputStates,
   SimpleInputFormRequired,
   SimpleInputFormAttr,
+  SimpleInputFormClasses,
   propsUntouched,
   propsWithError,
   propsWithSuccess,

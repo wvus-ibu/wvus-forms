@@ -14,6 +14,7 @@ exports[`Simple Address Form renders correctly 1`] = `
       data-field-is-valid={false}
     >
       <label
+        className="first-name-label"
         htmlFor="fname"
       >
         First Name
@@ -26,7 +27,7 @@ exports[`Simple Address Form renders correctly 1`] = `
         className="form-control-wrapper"
       >
         <input
-          className="form-control"
+          className="form-control first-name-input"
           disabled={false}
           id="fname"
           name="fname"
@@ -47,6 +48,7 @@ exports[`Simple Address Form renders correctly 1`] = `
       data-field-is-valid={false}
     >
       <label
+        className=""
         htmlFor="lname"
       >
         Last Name
@@ -59,7 +61,7 @@ exports[`Simple Address Form renders correctly 1`] = `
         className="form-control-wrapper"
       >
         <input
-          className="form-control"
+          className="form-control "
           disabled={false}
           id="lname"
           name="lname"
@@ -80,6 +82,7 @@ exports[`Simple Address Form renders correctly 1`] = `
       data-field-is-valid={false}
     >
       <label
+        className=""
         htmlFor="address1"
       >
         Mailing Address
@@ -92,7 +95,7 @@ exports[`Simple Address Form renders correctly 1`] = `
         className="form-control-wrapper"
       >
         <input
-          className="form-control"
+          className="form-control "
           disabled={false}
           id="address1"
           name="address1"
@@ -113,6 +116,7 @@ exports[`Simple Address Form renders correctly 1`] = `
       data-field-is-valid={false}
     >
       <label
+        className=""
         htmlFor="city"
       >
         City
@@ -125,7 +129,7 @@ exports[`Simple Address Form renders correctly 1`] = `
         className="form-control-wrapper"
       >
         <input
-          className="form-control"
+          className="form-control "
           disabled={false}
           id="city"
           name="city"
@@ -144,6 +148,7 @@ exports[`Simple Address Form renders correctly 1`] = `
       className="wvus-field-state wvus-field-33 form-group has-icon "
     >
       <label
+        className=""
         htmlFor="state"
       >
         State
@@ -156,7 +161,7 @@ exports[`Simple Address Form renders correctly 1`] = `
         className="form-control-wrapper"
       >
         <select
-          className="form-control select-control"
+          className="form-control select-control "
           id="state"
           name="state"
           onBlur={[Function]}
@@ -504,6 +509,7 @@ exports[`Simple Address Form renders correctly 1`] = `
       data-field-is-valid={false}
     >
       <label
+        className=""
         htmlFor="zip"
       >
         Zip
@@ -516,7 +522,7 @@ exports[`Simple Address Form renders correctly 1`] = `
         className="form-control-wrapper"
       >
         <input
-          className="form-control"
+          className="form-control "
           disabled={false}
           id="zip"
           name="zip"

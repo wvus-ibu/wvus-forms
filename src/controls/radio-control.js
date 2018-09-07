@@ -49,6 +49,9 @@ class RadioControl extends Component {
       fieldClasses = "",
       fieldTitle,
 
+      inputClasses = "",
+      labelClasses = "",
+
       fieldState = formMethods.getFieldState(fieldName),
       handleValueChange = this.handleValueChange,
       handleBlur = () => {}
@@ -58,10 +61,11 @@ class RadioControl extends Component {
     const fieldChecked = fieldState.value === fieldId;
 
     return (
-      <div className={`${fieldPrimaryClass} ${fieldClasses} radio-group`}>
-        <label className="radio-inline">
+      <div className={`radio-group ${fieldPrimaryClass} ${fieldClasses}`}>
+        <label className={`radio-inline ${labelClasses}`}>
           <input
             id={fieldId}
+            className={inputClasses}
             value={fieldState.value}
             name={fieldName}
             onChange={handleValueChange}

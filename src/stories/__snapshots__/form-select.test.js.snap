@@ -9,6 +9,7 @@ exports[`Snapshot:  Select control renders correctly with no selection 1`] = `
       className="wvus-field-state wvus-field-33 form-group has-icon "
     >
       <label
+        className="state-label"
         htmlFor="state"
       >
         State
@@ -21,7 +22,7 @@ exports[`Snapshot:  Select control renders correctly with no selection 1`] = `
         className="form-control-wrapper"
       >
         <select
-          className="form-control select-control"
+          className="form-control select-control state-input"
           id="state"
           name="state"
           onBlur={[Function]}
@@ -376,6 +377,7 @@ exports[`Snapshot: Select control renders correctly with preselection of WA 1`] 
       className="wvus-field-state wvus-field-33 form-group has-icon has-success "
     >
       <label
+        className=""
         htmlFor="state"
       >
         State
@@ -388,7 +390,7 @@ exports[`Snapshot: Select control renders correctly with preselection of WA 1`] 
         className="form-control-wrapper"
       >
         <select
-          className="form-control select-control"
+          className="form-control select-control "
           id="state"
           name="state"
           onBlur={[Function]}

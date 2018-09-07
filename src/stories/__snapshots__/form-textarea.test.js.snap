@@ -4,12 +4,14 @@ exports[`Snapshot:  Textarea control renders correctly with no selection 1`] = `
 <div
   className=""
 >
-  <form>
+  <form
+    className="default-textarea-example"
+  >
     <div
       className="form-group has-icon "
     >
       <label
-        className="control-label"
+        className="message-label control-label"
         htmlFor="message"
       >
         Message
@@ -25,7 +27,7 @@ exports[`Snapshot:  Textarea control renders correctly with no selection 1`] = `
           className="text-area-wrapper"
         >
           <textarea
-            className="form-control"
+            className="form-control textarea-control message-input"
             id="message"
             name="message"
             onBlur={[Function]}
@@ -57,7 +59,7 @@ exports[`Snapshot:  Textarea control renders correctly with too much text 1`] = 
       className="form-group has-icon has-error "
     >
       <label
-        className="control-label"
+        className=" control-label"
         htmlFor="message"
       >
         Message
@@ -73,7 +75,7 @@ exports[`Snapshot:  Textarea control renders correctly with too much text 1`] = 
           className="text-area-wrapper"
         >
           <textarea
-            className="form-control"
+            className="form-control textarea-control "
             id="message"
             name="message"
             onBlur={[Function]}

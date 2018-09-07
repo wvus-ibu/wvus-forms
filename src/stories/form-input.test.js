@@ -11,6 +11,7 @@ import {
   SimpleInputForm,
   SimpleInputStates,
   SimpleInputFormAttr,
+  SimpleInputFormClasses,
   propsUntouched,
   propsWithError,
   propsWithSuccess,
@@ -181,5 +182,12 @@ describe("InputControl", function() {
 
     expect(wrapper.find("input").prop("disabled")).toBe(true);
     expect(wrapper.find("input").prop("readOnly")).toBe(false);
+  });
+
+  it("should be capable of having custom label and input classes", function() {
+    const wrapper = mount(<SimpleInputFormClasses {...propsUntouched} />);
+    wrapper.find("input").debug();
+    expect(wrapper.find("label").hasClass("first-name-label")).toBe(true);
+    expect(wrapper.find("input").hasClass("first-name-input")).toBe(true);
   });
 });

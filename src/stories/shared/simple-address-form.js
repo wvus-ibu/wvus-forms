@@ -21,6 +21,8 @@ const SimpleAddressForm = props => {
     <form>
       <h2>Simple Address Form</h2>
       <InputControl
+        labelClasses="first-name-label"
+        inputClasses="first-name-input"
         fieldName="fname"
         fieldTitle="First Name"
         fieldClasses="wvus-field-50"

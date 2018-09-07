@@ -33,6 +33,10 @@ class CheckboxControl extends Component {
       fieldClasses = "",
       fieldTitle,
       attributes = {},
+
+      inputClasses = "",
+      labelClasses = "",
+
       handleValueChange = formMethods.handleValueChange,
       fieldState = formMethods.getFieldState(fieldName)
     } = this.props;
@@ -43,9 +47,10 @@ class CheckboxControl extends Component {
 
     return (
       <div className={`${fieldPrimaryClass} ${fieldClasses} checkbox-group`}>
-        <label className="checkbox-inline">
+        <label className={`${labelClasses} checkbox-inline`}>
           <input
             id={fieldId}
+            className={inputClasses}
             name={fieldName}
             onChange={handleValueChange}
             type="checkbox"

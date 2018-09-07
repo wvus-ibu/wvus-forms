@@ -11,6 +11,8 @@ const SelectForm = props => {
         fieldName="state"
         fieldOptions={USStateFieldOptions}
         fieldTitle="State"
+        labelClasses="state-label"
+        inputClasses="state-input"
         fieldClasses="wvus-field-33"
         formMethods={props.formMethods}
         validators={[validateRequired]}

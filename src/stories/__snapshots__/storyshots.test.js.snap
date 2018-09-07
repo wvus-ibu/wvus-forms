@@ -14,6 +14,7 @@ exports[`Storyshots Example Forms Billing Info 1`] = `
       data-field-is-valid={false}
     >
       <label
+        className="first-name-label"
         htmlFor="fname"
       >
         First Name
@@ -26,7 +27,7 @@ exports[`Storyshots Example Forms Billing Info 1`] = `
         className="form-control-wrapper"
       >
         <input
-          className="form-control"
+          className="form-control first-name-input"
           disabled={false}
           id="fname"
           name="fname"
@@ -47,6 +48,7 @@ exports[`Storyshots Example Forms Billing Info 1`] = `
       data-field-is-valid={false}
     >
       <label
+        className=""
         htmlFor="lname"
       >
         Last Name
@@ -59,7 +61,7 @@ exports[`Storyshots Example Forms Billing Info 1`] = `
         className="form-control-wrapper"
       >
         <input
-          className="form-control"
+          className="form-control "
           disabled={false}
           id="lname"
           name="lname"
@@ -80,6 +82,7 @@ exports[`Storyshots Example Forms Billing Info 1`] = `
       data-field-is-valid={false}
     >
       <label
+        className=""
         htmlFor="address1"
       >
         Mailing Address Line 1
@@ -92,7 +95,7 @@ exports[`Storyshots Example Forms Billing Info 1`] = `
         className="form-control-wrapper"
       >
         <input
-          className="form-control"
+          className="form-control "
           disabled={false}
           id="address1"
           name="address1"
@@ -113,6 +116,7 @@ exports[`Storyshots Example Forms Billing Info 1`] = `
       data-field-is-valid={true}
     >
       <label
+        className=""
         htmlFor="address2"
       >
         Mailing Address Line 2
@@ -123,7 +127,7 @@ exports[`Storyshots Example Forms Billing Info 1`] = `
         className="form-control-wrapper"
       >
         <input
-          className="form-control"
+          className="form-control "
           disabled={false}
           id="address2"
           name="address2"
@@ -144,6 +148,7 @@ exports[`Storyshots Example Forms Billing Info 1`] = `
       data-field-is-valid={false}
     >
       <label
+        className=""
         htmlFor="city"
       >
         City
@@ -156,7 +161,7 @@ exports[`Storyshots Example Forms Billing Info 1`] = `
         className="form-control-wrapper"
       >
         <input
-          className="form-control"
+          className="form-control "
           disabled={false}
           id="city"
           name="city"
@@ -175,6 +180,7 @@ exports[`Storyshots Example Forms Billing Info 1`] = `
       className="wvus-field-state wvus-field-33 form-group has-icon "
     >
       <label
+        className=""
         htmlFor="state"
       >
         State
@@ -187,7 +193,7 @@ exports[`Storyshots Example Forms Billing Info 1`] = `
         className="form-control-wrapper"
       >
         <select
-          className="form-control select-control"
+          className="form-control select-control "
           id="state"
           name="state"
           onBlur={[Function]}
@@ -535,6 +541,7 @@ exports[`Storyshots Example Forms Billing Info 1`] = `
       data-field-is-valid={false}
     >
       <label
+        className=""
         htmlFor="zip"
       >
         Zip
@@ -547,7 +554,7 @@ exports[`Storyshots Example Forms Billing Info 1`] = `
         className="form-control-wrapper"
       >
         <input
-          className="form-control"
+          className="form-control "
           disabled={false}
           id="zip"
           name="zip"
@@ -568,6 +575,7 @@ exports[`Storyshots Example Forms Billing Info 1`] = `
       data-field-is-valid={false}
     >
       <label
+        className=""
         htmlFor="email"
       >
         Email
@@ -580,7 +588,7 @@ exports[`Storyshots Example Forms Billing Info 1`] = `
         className="form-control-wrapper"
       >
         <input
-          className="form-control"
+          className="form-control "
           disabled={false}
           id="email"
           name="email"
@@ -601,6 +609,7 @@ exports[`Storyshots Example Forms Billing Info 1`] = `
       data-field-is-valid={false}
     >
       <label
+        className=""
         htmlFor="phone"
       >
         Phone
@@ -613,7 +622,7 @@ exports[`Storyshots Example Forms Billing Info 1`] = `
         className="form-control-wrapper"
       >
         <input
-          className="form-control"
+          className="form-control "
           disabled={false}
           id="phone"
           name="phone"
@@ -632,10 +641,11 @@ exports[`Storyshots Example Forms Billing Info 1`] = `
       className="wvus-field-optIn wvus-field-newletter-optin checkbox-group"
     >
       <label
-        className="checkbox-inline"
+        className="optIn-label checkbox-inline"
       >
         <input
           checked={true}
+          className="optIn-input"
           disabled={false}
           id="optIn"
           name="optIn"
@@ -678,6 +688,7 @@ exports[`Storyshots Example Forms Login Form 1`] = `
         data-field-is-valid={false}
       >
         <label
+          className=""
           htmlFor="wv-login-form-user"
         >
           Email
@@ -690,7 +701,7 @@ exports[`Storyshots Example Forms Login Form 1`] = `
           className="form-control-wrapper"
         >
           <input
-            className="form-control"
+            className="form-control "
             disabled={false}
             id="wv-login-form-user"
             name="wv-login-form-user"
@@ -712,6 +723,7 @@ exports[`Storyshots Example Forms Login Form 1`] = `
         data-field-is-valid={false}
       >
         <label
+          className=""
           htmlFor="wv-login-form-pass"
         >
           Password
@@ -724,7 +736,7 @@ exports[`Storyshots Example Forms Login Form 1`] = `
           className="form-control-wrapper"
         >
           <input
-            className="form-control"
+            className="form-control "
             disabled={false}
             id="wv-login-form-pass"
             name="wv-login-form-pass"
@@ -791,6 +803,7 @@ exports[`Storyshots Example Forms Newsletter Signup Form 1`] = `
       data-field-is-valid={false}
     >
       <label
+        className=""
         htmlFor="email"
       >
         Email
@@ -803,7 +816,7 @@ exports[`Storyshots Example Forms Newsletter Signup Form 1`] = `
         className="form-control-wrapper"
       >
         <input
-          className="form-control"
+          className="form-control "
           disabled={false}
           id="email"
           name="email"
@@ -822,10 +835,11 @@ exports[`Storyshots Example Forms Newsletter Signup Form 1`] = `
       className="wvus-field-optIn wvus-field-newletter-optin checkbox-group"
     >
       <label
-        className="checkbox-inline"
+        className=" checkbox-inline"
       >
         <input
           checked={true}
+          className=""
           disabled={false}
           id="optIn"
           name="optIn"
@@ -862,6 +876,7 @@ exports[`Storyshots Example Forms Send Email Form 1`] = `
       data-field-is-valid={false}
     >
       <label
+        className=""
         htmlFor="recipient_email"
       >
         Recipient Email
@@ -874,7 +889,7 @@ exports[`Storyshots Example Forms Send Email Form 1`] = `
         className="form-control-wrapper"
       >
         <input
-          className="form-control"
+          className="form-control "
           disabled={false}
           id="recipient_email"
           name="recipient_email"
@@ -893,7 +908,7 @@ exports[`Storyshots Example Forms Send Email Form 1`] = `
       className="form-group has-icon "
     >
       <label
-        className="control-label"
+        className=" control-label"
         htmlFor="message"
       >
         Message
@@ -909,7 +924,7 @@ exports[`Storyshots Example Forms Send Email Form 1`] = `
           className="text-area-wrapper"
         >
           <textarea
-            className="form-control"
+            className="form-control textarea-control "
             id="message"
             name="message"
             onBlur={[Function]}
@@ -932,10 +947,11 @@ exports[`Storyshots Example Forms Send Email Form 1`] = `
       className="wvus-field-optIn wvus-field-newletter-optin checkbox-group"
     >
       <label
-        className="checkbox-inline"
+        className=" checkbox-inline"
       >
         <input
           checked={true}
+          className=""
           disabled={false}
           id="optIn"
           name="optIn"
@@ -972,6 +988,7 @@ exports[`Storyshots Example Forms Simple Address Form 1`] = `
       data-field-is-valid={false}
     >
       <label
+        className="first-name-label"
         htmlFor="fname"
       >
         First Name
@@ -984,7 +1001,7 @@ exports[`Storyshots Example Forms Simple Address Form 1`] = `
         className="form-control-wrapper"
       >
         <input
-          className="form-control"
+          className="form-control first-name-input"
           disabled={false}
           id="fname"
           name="fname"
@@ -1005,6 +1022,7 @@ exports[`Storyshots Example Forms Simple Address Form 1`] = `
       data-field-is-valid={false}
     >
       <label
+        className=""
         htmlFor="lname"
       >
         Last Name
@@ -1017,7 +1035,7 @@ exports[`Storyshots Example Forms Simple Address Form 1`] = `
         className="form-control-wrapper"
       >
         <input
-          className="form-control"
+          className="form-control "
           disabled={false}
           id="lname"
           name="lname"
@@ -1038,6 +1056,7 @@ exports[`Storyshots Example Forms Simple Address Form 1`] = `
       data-field-is-valid={false}
     >
       <label
+        className=""
         htmlFor="address1"
       >
         Mailing Address
@@ -1050,7 +1069,7 @@ exports[`Storyshots Example Forms Simple Address Form 1`] = `
         className="form-control-wrapper"
       >
         <input
-          className="form-control"
+          className="form-control "
           disabled={false}
           id="address1"
           name="address1"
@@ -1071,6 +1090,7 @@ exports[`Storyshots Example Forms Simple Address Form 1`] = `
       data-field-is-valid={false}
     >
       <label
+        className=""
         htmlFor="city"
       >
         City
@@ -1083,7 +1103,7 @@ exports[`Storyshots Example Forms Simple Address Form 1`] = `
         className="form-control-wrapper"
       >
         <input
-          className="form-control"
+          className="form-control "
           disabled={false}
           id="city"
           name="city"
@@ -1102,6 +1122,7 @@ exports[`Storyshots Example Forms Simple Address Form 1`] = `
       className="wvus-field-state wvus-field-33 form-group has-icon "
     >
       <label
+        className=""
         htmlFor="state"
       >
         State
@@ -1114,7 +1135,7 @@ exports[`Storyshots Example Forms Simple Address Form 1`] = `
         className="form-control-wrapper"
       >
         <select
-          className="form-control select-control"
+          className="form-control select-control "
           id="state"
           name="state"
           onBlur={[Function]}
@@ -1462,6 +1483,7 @@ exports[`Storyshots Example Forms Simple Address Form 1`] = `
       data-field-is-valid={false}
     >
       <label
+        className=""
         htmlFor="zip"
       >
         Zip
@@ -1474,7 +1496,7 @@ exports[`Storyshots Example Forms Simple Address Form 1`] = `
         className="form-control-wrapper"
       >
         <input
-          className="form-control"
+          className="form-control "
           disabled={false}
           id="zip"
           name="zip"
@@ -1509,10 +1531,11 @@ exports[`Storyshots Form Components Checkbox Field States 1`] = `
         className="wvus-field-optIn wvus-field-newletter-optin checkbox-group"
       >
         <label
-          className="checkbox-inline"
+          className="opt-in-label checkbox-inline"
         >
           <input
             checked={true}
+            className="opt-in-input"
             disabled={false}
             id="optIn"
             name="optIn"
@@ -1539,10 +1562,11 @@ exports[`Storyshots Form Components Checkbox Field States 1`] = `
       className="wvus-field-optIn wvus-field-newletter-optin checkbox-group"
     >
       <label
-        className="checkbox-inline"
+        className="opt-in-label checkbox-inline"
       >
         <input
           checked={true}
+          className="opt-in-input"
           disabled={false}
           id="optIn"
           name="optIn"
@@ -1566,10 +1590,11 @@ exports[`Storyshots Form Components Checkbox Field States 1`] = `
       className="wvus-field-optIn wvus-field-newletter-optin checkbox-group"
     >
       <label
-        className="checkbox-inline"
+        className="opt-in-label checkbox-inline"
       >
         <input
           checked=""
+          className="opt-in-input"
           disabled={false}
           id="optIn"
           name="optIn"
@@ -1596,10 +1621,11 @@ exports[`Storyshots Form Components Checkbox Field States 1`] = `
         className="wvus-field-optIn wvus-field-newletter-optin checkbox-group"
       >
         <label
-          className="checkbox-inline"
+          className=" checkbox-inline"
         >
           <input
             checked={true}
+            className=""
             disabled={false}
             id="optIn"
             name="optIn"
@@ -1631,7 +1657,7 @@ exports[`Storyshots Form Components Hidden Field 1`] = `
         data-field-container="campaign"
       >
         <input
-          className="input-hidden-control"
+          className="input-hidden-control "
           id="campaign"
           name="campaign"
           type="hidden"
@@ -1663,6 +1689,7 @@ exports[`Storyshots Form Components Input Field States 1`] = `
         data-field-is-valid={false}
       >
         <label
+          className="first-name-label"
           htmlFor="fname"
         >
           First Name
@@ -1675,7 +1702,7 @@ exports[`Storyshots Form Components Input Field States 1`] = `
           className="form-control-wrapper"
         >
           <input
-            className="form-control"
+            className="form-control first-name-input"
             disabled={false}
             id="fname"
             name="fname"
@@ -1711,6 +1738,7 @@ exports[`Storyshots Form Components Input Field States 1`] = `
         data-field-is-valid={true}
       >
         <label
+          className="first-name-label"
           htmlFor="fname"
         >
           First Name
@@ -1723,7 +1751,7 @@ exports[`Storyshots Form Components Input Field States 1`] = `
           className="form-control-wrapper"
         >
           <input
-            className="form-control"
+            className="form-control first-name-input"
             disabled={false}
             id="fname"
             name="fname"
@@ -1758,6 +1786,7 @@ exports[`Storyshots Form Components Input Field States 1`] = `
         data-field-is-valid={true}
       >
         <label
+          className="first-name-label"
           htmlFor="fname"
         >
           First Name
@@ -1770,7 +1799,7 @@ exports[`Storyshots Form Components Input Field States 1`] = `
           className="form-control-wrapper"
         >
           <input
-            className="form-control"
+            className="form-control first-name-input"
             disabled={false}
             id="fname"
             name="fname"
@@ -1813,6 +1842,7 @@ exports[`Storyshots Form Components Input Field States 1`] = `
         data-field-is-valid={false}
       >
         <label
+          className="first-name-label"
           htmlFor="fname"
         >
           First Name
@@ -1825,7 +1855,7 @@ exports[`Storyshots Form Components Input Field States 1`] = `
           className="form-control-wrapper"
         >
           <input
-            className="form-control"
+            className="form-control first-name-input"
             disabled={false}
             id="fname"
             name="fname"
@@ -1869,6 +1899,7 @@ exports[`Storyshots Form Components Input Field States 1`] = `
         data-field-is-valid={true}
       >
         <label
+          className="first-name-label"
           htmlFor="fname"
         >
           First Name
@@ -1879,7 +1910,7 @@ exports[`Storyshots Form Components Input Field States 1`] = `
           className="form-control-wrapper"
         >
           <input
-            className="form-control"
+            className="form-control first-name-input"
             disabled={false}
             id="fname"
             name="fname"
@@ -1918,15 +1949,17 @@ exports[`Storyshots Form Components Radio Field States 1`] = `
   >
     <form>
       <div
-        className="wvus-field-payment_method wvus-field-payment_method_new_cc  radio-group"
+        className="radio-group wvus-field-payment_method wvus-field-payment_method_new_cc "
       >
         <label
-          className="radio-inline"
+          className="radio-inline payment-method-new-cc-label"
         >
           <input
             checked={true}
+            className="payment-method-new-cc-input"
             id="payment_method_new_cc"
             name="payment_method"
+            onBlur={[Function]}
             onChange={[Function]}
             type="radio"
             value="payment_method_new_cc"
@@ -1935,15 +1968,17 @@ exports[`Storyshots Form Components Radio Field States 1`] = `
         </label>
       </div>
       <div
-        className="wvus-field-payment_method wvus-field-payment_method_existing_cc  radio-group"
+        className="radio-group wvus-field-payment_method wvus-field-payment_method_existing_cc "
       >
         <label
-          className="radio-inline"
+          className="radio-inline "
         >
           <input
             checked={false}
+            className=""
             id="payment_method_existing_cc"
             name="payment_method"
+            onBlur={[Function]}
             onChange={[Function]}
             type="radio"
             value="payment_method_new_cc"
@@ -1952,15 +1987,17 @@ exports[`Storyshots Form Components Radio Field States 1`] = `
         </label>
       </div>
       <div
-        className="wvus-field-payment_method wvus-field-payment_method_paypal  radio-group"
+        className="radio-group wvus-field-payment_method wvus-field-payment_method_paypal "
       >
         <label
-          className="radio-inline"
+          className="radio-inline "
         >
           <input
             checked={false}
+            className=""
             id="payment_method_paypal"
             name="payment_method"
+            onBlur={[Function]}
             onChange={[Function]}
             type="radio"
             value="payment_method_new_cc"
@@ -1989,6 +2026,7 @@ exports[`Storyshots Form Components Select Field States 1`] = `
         className="wvus-field-state wvus-field-33 form-group has-icon "
       >
         <label
+          className="state-label"
           htmlFor="state"
         >
           State
@@ -2001,7 +2039,7 @@ exports[`Storyshots Form Components Select Field States 1`] = `
           className="form-control-wrapper"
         >
           <select
-            className="form-control select-control"
+            className="form-control select-control state-input"
             id="state"
             name="state"
             onBlur={[Function]}
@@ -2356,6 +2394,7 @@ exports[`Storyshots Form Components Select Field States 1`] = `
         className="wvus-field-state wvus-field-33 form-group has-icon has-success "
       >
         <label
+          className=""
           htmlFor="state"
         >
           State
@@ -2368,7 +2407,7 @@ exports[`Storyshots Form Components Select Field States 1`] = `
           className="form-control-wrapper"
         >
           <select
-            className="form-control select-control"
+            className="form-control select-control "
             id="state"
             name="state"
             onBlur={[Function]}
@@ -2734,12 +2773,14 @@ exports[`Storyshots Form Components Textarea Field States 1`] = `
   <div
     className=""
   >
-    <form>
+    <form
+      className="default-textarea-example"
+    >
       <div
         className="form-group has-icon "
       >
         <label
-          className="control-label"
+          className="message-label control-label"
           htmlFor="message"
         >
           Message
@@ -2755,7 +2796,7 @@ exports[`Storyshots Form Components Textarea Field States 1`] = `
             className="text-area-wrapper"
           >
             <textarea
-              className="form-control"
+              className="form-control textarea-control message-input"
               id="message"
               name="message"
               onBlur={[Function]}
@@ -2787,7 +2828,7 @@ exports[`Storyshots Form Components Textarea Field States 1`] = `
         className="form-group has-icon has-error "
       >
         <label
-          className="control-label"
+          className=" control-label"
           htmlFor="message"
         >
           Message
@@ -2803,7 +2844,7 @@ exports[`Storyshots Form Components Textarea Field States 1`] = `
             className="text-area-wrapper"
           >
             <textarea
-              className="form-control"
+              className="form-control textarea-control "
               id="message"
               name="message"
               onBlur={[Function]}
@@ -2855,6 +2896,7 @@ exports[`Storyshots Form Validation Input Field 1`] = `
       data-field-is-valid={false}
     >
       <label
+        className=""
         htmlFor="fname"
       >
         First Name
@@ -2867,7 +2909,7 @@ exports[`Storyshots Form Validation Input Field 1`] = `
         className="form-control-wrapper"
       >
         <input
-          className="form-control"
+          className="form-control "
           disabled={false}
           id="fname"
           name="fname"
@@ -2892,6 +2934,7 @@ exports[`Storyshots Form Validation Input Field 1`] = `
       data-field-is-valid={false}
     >
       <label
+        className=""
         htmlFor="email"
       >
         Email
@@ -2904,7 +2947,7 @@ exports[`Storyshots Form Validation Input Field 1`] = `
         className="form-control-wrapper"
       >
         <input
-          className="form-control"
+          className="form-control "
           disabled={false}
           id="email"
           name="email"

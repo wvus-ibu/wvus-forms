@@ -9,10 +9,11 @@ exports[`Snapshot: Checkbox Form renders correctly 1`] = `
       className="wvus-field-optIn wvus-field-newletter-optin checkbox-group"
     >
       <label
-        className="checkbox-inline"
+        className="opt-in-label checkbox-inline"
       >
         <input
           checked={true}
+          className="opt-in-input"
           disabled={false}
           id="optIn"
           name="optIn"
@@ -32,10 +33,11 @@ exports[`Snapshot: Checkbox can be disabled 1`] = `
     className="wvus-field-optIn wvus-field-newletter-optin checkbox-group"
   >
     <label
-      className="checkbox-inline"
+      className="opt-in-label checkbox-inline"
     >
       <input
         checked={true}
+        className="opt-in-input"
         disabled={false}
         id="optIn"
         name="optIn"
@@ -54,10 +56,11 @@ exports[`Snapshot: Checkbox renders checked state 1`] = `
     className="wvus-field-optIn wvus-field-newletter-optin checkbox-group"
   >
     <label
-      className="checkbox-inline"
+      className="opt-in-label checkbox-inline"
     >
       <input
         checked={true}
+        className="opt-in-input"
         disabled={false}
         id="optIn"
         name="optIn"
@@ -76,10 +79,11 @@ exports[`Snapshot: Checkbox renders unchecked state 1`] = `
     className="wvus-field-optIn wvus-field-newletter-optin checkbox-group"
   >
     <label
-      className="checkbox-inline"
+      className="opt-in-label checkbox-inline"
     >
       <input
         checked=""
+        className="opt-in-input"
         disabled={false}
         id="optIn"
         name="optIn"

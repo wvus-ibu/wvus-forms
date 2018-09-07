@@ -42,6 +42,9 @@ class InputControl extends Component {
       characterCount,
       attributes = {},
 
+      inputClasses = "",
+      labelClasses = "",
+
       handleValueChange = formMethods.handleValueChange,
       handleBlur = formMethods.handleBlur,
       showUISuccess = formMethods.showUISuccess(fieldState),
@@ -55,7 +58,7 @@ class InputControl extends Component {
       : showUIError ? "has-error " : "";
     const requiredStar = fieldState.optional == true ? "" : <sup>*</sup>;
     const label = !(fieldType === "hidden") ? (
-      <label htmlFor={fieldName}>
+      <label htmlFor={fieldName} className={labelClasses}>
         {fieldTitle} {requiredStar}
       </label>
     ) : null;
@@ -74,11 +77,11 @@ class InputControl extends Component {
         <div className="form-control-wrapper">
           <input
             id={fieldId || fieldName}
+            className={`form-control ${inputClasses}`}
             value={fieldValue}
             name={fieldName}
             onBlur={handleBlur}
             onChange={handleValueChange}
-            className="form-control"
             type={fieldType}
             placeholder={fieldPlaceholder}
             readOnly={readOnly}

@@ -34,6 +34,8 @@ class BillingInfoForm extends Component {
       <form>
         <h2>Billing Info Form</h2>
         <InputControl
+          labelClasses="first-name-label"
+          inputClasses="first-name-input"
           fieldName="fname"
           fieldTitle="First Name"
           fieldClasses="wvus-field-50"
@@ -111,6 +113,8 @@ class BillingInfoForm extends Component {
           fieldName="optIn"
           fieldValue={true}
           fieldTitle="Yes, please add me to your email newsletter"
+          labelClasses="optIn-label"
+          inputClasses="optIn-input"
           fieldClasses="wvus-field-newletter-optin"
           formMethods={formMethods}
         />

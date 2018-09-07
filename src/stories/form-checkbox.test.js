@@ -1,5 +1,9 @@
 import React from "react";
 import renderer from "react-test-renderer";
+import { configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+configure({ adapter: new Adapter() });
+import { mount } from "enzyme";
 
 import {
   propsChecked,
@@ -39,4 +43,10 @@ test("Snapshot: Checkbox can be disabled", () => {
     .create(<SimpleCheckboxForm {...propsDisabled} />)
     .toJSON();
   expect(tree).toMatchSnapshot();
+});
+
+test("should be capable of having custom label and input classes", function() {
+  const wrapper = mount(<SimpleCheckboxForm {...propsChecked} />);
+  expect(wrapper.find("label").hasClass("opt-in-label")).toBe(true);
+  expect(wrapper.find("input").hasClass("opt-in-input")).toBe(true);
 });

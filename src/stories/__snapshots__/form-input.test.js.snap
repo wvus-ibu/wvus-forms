@@ -11,6 +11,7 @@ exports[`Snapshot: Input Form renders correctly 1`] = `
       data-field-is-valid={false}
     >
       <label
+        className="first-name-label"
         htmlFor="fname"
       >
         First Name
@@ -23,7 +24,7 @@ exports[`Snapshot: Input Form renders correctly 1`] = `
         className="form-control-wrapper"
       >
         <input
-          className="form-control"
+          className="form-control first-name-input"
           disabled={false}
           id="fname"
           name="fname"
@@ -51,6 +52,7 @@ exports[`Snapshot: Input renders error state 1`] = `
     data-field-is-valid={false}
   >
     <label
+      className=""
       htmlFor="fname"
     >
       First Name
@@ -63,7 +65,7 @@ exports[`Snapshot: Input renders error state 1`] = `
       className="form-control-wrapper"
     >
       <input
-        className="form-control"
+        className="form-control "
         disabled={false}
         id="fname"
         name="fname"
@@ -100,6 +102,7 @@ exports[`Snapshot: Input renders success state 1`] = `
     data-field-is-valid={true}
   >
     <label
+      className=""
       htmlFor="fname"
     >
       First Name
@@ -112,7 +115,7 @@ exports[`Snapshot: Input renders success state 1`] = `
       className="form-control-wrapper"
     >
       <input
-        className="form-control"
+        className="form-control "
         disabled={false}
         id="fname"
         name="fname"
@@ -147,6 +150,7 @@ exports[`Snapshot: Input renders untouched state 1`] = `
     data-field-is-valid={true}
   >
     <label
+      className=""
       htmlFor="fname"
     >
       First Name
@@ -159,7 +163,7 @@ exports[`Snapshot: Input renders untouched state 1`] = `
       className="form-control-wrapper"
     >
       <input
-        className="form-control"
+        className="form-control "
         disabled={false}
         id="fname"
         name="fname"
@@ -186,6 +190,7 @@ exports[`Snapshot: Input renders with optional/valid state 1`] = `
     data-field-is-valid={true}
   >
     <label
+      className=""
       htmlFor="fname"
     >
       First Name
@@ -196,7 +201,7 @@ exports[`Snapshot: Input renders with optional/valid state 1`] = `
       className="form-control-wrapper"
     >
       <input
-        className="form-control"
+        className="form-control "
         disabled={false}
         id="fname"
         name="fname"
@@ -223,6 +228,7 @@ exports[`Snapshot: Input renders with readonly/disabled attributes 1`] = `
     data-field-is-valid={true}
   >
     <label
+      className=""
       htmlFor="fname"
     >
       First Name
@@ -235,7 +241,7 @@ exports[`Snapshot: Input renders with readonly/disabled attributes 1`] = `
       className="form-control-wrapper"
     >
       <input
-        className="form-control"
+        className="form-control "
         disabled={true}
         id="fname"
         name="fname"

@@ -175,4 +175,10 @@ describe("SelectControl", function() {
       wrapper.contains(<Message showError={false} showSuccess={true} />)
     ).toBe(true);
   });
+
+  it("should be capable of having custom label and input classes", function() {
+    const wrapper = mount(<Form />);
+    expect(wrapper.find(".wvus-field-state label").hasClass("state-label")).toBe(true);
+    expect(wrapper.find(".wvus-field-state select").hasClass("state-input")).toBe(true);
+  });
 });
