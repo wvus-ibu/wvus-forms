@@ -143,7 +143,7 @@ const validateHasNumber = value => {
 const validateIsInt = value => {
   return {
     valid: isInt(value),
-    message: "Field must have only contain numbers."
+    message: "Field must only contain numbers."
   };
 };
 

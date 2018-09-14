@@ -372,7 +372,7 @@ test("validateHasNumber can validate a string has at least one number", () => {
 });
 
 test("validateIsInt can validate a string is only integer numbers", () => {
-  const message = "Field must have only contain numbers.";
+  const message = "Field must only contain numbers.";
   const result = validateIsInt("abc");
   expect(result.valid).toBe(false);
   expect(result.message).toBe(message);
