@@ -67,6 +67,22 @@ const SimpleInputForm = props => {
     </form>
   );
 };
+const SimpleInputFormHiddenMessage = props => {
+  return (
+    <form>
+      <InputControl
+        inputClasses="first-name-input"
+        labelClasses="first-name-label"
+        fieldPlaceholder="Tim Stehlin"
+        fieldName="fname"
+        fieldTitle="First Name"
+        fieldClasses="custom-class-field-input"
+        formMethods={props.formMethods}
+        hideMessage={true}
+      />
+    </form>
+  );
+};
 const SimpleInputFormRequired = props => {
   return (
     <form>
@@ -130,6 +146,7 @@ const SimpleInputFormClasses = props => {
 export {
   SimpleInputForm,
   SimpleInputStates,
+  SimpleInputFormHiddenMessage,
   SimpleInputFormRequired,
   SimpleInputFormAttr,
   SimpleInputFormClasses,

@@ -9,6 +9,7 @@ import sinon from "sinon";
 import { WVUSForm, Message } from "../index";
 import {
   SimpleInputForm,
+  SimpleInputFormHiddenMessage,
   SimpleInputStates,
   SimpleInputFormAttr,
   SimpleInputFormClasses,
@@ -153,11 +154,31 @@ describe("InputControl", function() {
     // expect(wrapper.find(".has-success")).toHaveLength(0);
   });
 
+  it("should NOT show error Message if hiddenMessage enabled", function() {
+    const wrapper = mount(<SimpleInputFormHiddenMessage {...propsWithError} />);
+    const errorMessage = propsWithError.formMethods.getFieldState()
+      .errorMessage;
+    expect(
+      wrapper.contains(
+        <Message showError={true} showSuccess={false} message={errorMessage} />
+      )
+    ).toBe(false);
+    // expect(wrapper.find(".has-success")).toHaveLength(0);
+  });
+
   it("should show success Message if has success", function() {
     const wrapper = mount(<SimpleInputForm {...propsWithSuccess} />);
     expect(
       wrapper.contains(<Message showError={false} showSuccess={true} />)
     ).toBe(true);
+  });
+
+  it("should NOT show success Message if hiddenMessage enabled", function() {
+    const wrapper = mount(<SimpleInputFormHiddenMessage {...propsWithSuccess} />);
+    expect(
+      wrapper.contains(<Message showError={false} showSuccess={true} />)
+    ).toBe(false);
+    // expect(wrapper.find(".has-success")).toHaveLength(0);
   });
 
   it("should be capable of being disabled and readonly", function() {

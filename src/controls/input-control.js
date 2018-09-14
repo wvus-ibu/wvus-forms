@@ -48,7 +48,8 @@ class InputControl extends Component {
       handleValueChange = formMethods.handleValueChange,
       handleBlur = formMethods.handleBlur,
       showUISuccess = formMethods.showUISuccess(fieldState),
-      showUIError = formMethods.showUIError(fieldState)
+      showUIError = formMethods.showUIError(fieldState),
+      hideMessage = false
     } = this.props;
     const readOnly = attributes.readOnly ? attributes.readOnly : false;
     const disabled = attributes.disabled ? attributes.disabled : false;
@@ -92,7 +93,7 @@ class InputControl extends Component {
           ) : (
             ""
           )}
-          {showUIError ? (
+          {!hideMessage && showUIError ? (
             <Message
               showError={true}
               showSuccess={false}
@@ -101,7 +102,7 @@ class InputControl extends Component {
           ) : (
             ""
           )}
-          {showUISuccess ? (
+          {!hideMessage && showUISuccess ? (
             <Message showError={false} showSuccess={true} />
           ) : (
             ""

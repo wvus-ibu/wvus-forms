@@ -11,7 +11,8 @@ import {
   propsWithError,
   propsOptional,
   SimpleInputStates,
-  SimpleInputForm
+  SimpleInputForm,
+  SimpleInputFormHiddenMessage
 } from "./shared/input-control-form";
 
 const Form = WVUSForm(SimpleInputForm);
@@ -60,6 +61,11 @@ storiesOf("Form Components", module).add("Input Field States", () => (
         FieldState:<br />
         {window.JSON.stringify(propsOptional.formMethods.getFieldState())}
       </p>
+    </div>
+
+    <div>
+      <h3>Input - hidden message, errored field</h3>
+      <SimpleInputFormHiddenMessage {...propsWithError} />
     </div>
   </div>
 ));
