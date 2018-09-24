@@ -1,6 +1,7 @@
 import React from "react";
 import { createValidationHelper } from "./validation/validation-helpers.js";
 import merge from "lodash.merge";
+import {checkForNewFormErrorsAndFireAnalytics} from "./misc/analytics-helpers";
 
 /**
  * @module WVUSForm
@@ -25,8 +26,14 @@ function WVUSForm(WrapperForm) {
         fields: {},
         formValid: false
       };
+      this.formName = this.props.formName || 'WVUSForm';
 
       this.addFieldToState = this.addFieldToState.bind(this);
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+      // Fires wvusClientMessage error event on every unique form error message show to user
+      checkForNewFormErrorsAndFireAnalytics(this.formName, this.state, prevState);
     }
 
     /**

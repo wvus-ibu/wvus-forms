@@ -75,7 +75,7 @@ const fieldHasNewErrorMessage = (fieldState, prevFieldState) => {
  * @param {Object} state 
  * @param {Object} prevState 
  */
-const checkForNewFormErrorsAndFireAnalytics = (state, prevState, appName) => {
+const checkForNewFormErrorsAndFireAnalytics = (appName, state, prevState) => {
   if (!state || !state.fields || !prevState || !prevState.fields) {
     return;
   }

@@ -175,7 +175,7 @@ describe("checkForNewFormErrorsAndFireAnalytics", () => {
     const formState = {};
     const prevFormState = {};
 
-    checkForNewFormErrorsAndFireAnalytics(formState, prevFormState, 'testApp');
+    checkForNewFormErrorsAndFireAnalytics('testApp', formState, prevFormState);
     expect(document.dispatchEvent.mock.calls.length).toBe(0);
     
   });
@@ -190,7 +190,7 @@ describe("checkForNewFormErrorsAndFireAnalytics", () => {
       fields: {} // missing billing_first from prev state
     };
 
-    checkForNewFormErrorsAndFireAnalytics(formState, prevFormState, 'testApp');
+    checkForNewFormErrorsAndFireAnalytics('testApp', formState, prevFormState);
     expect(document.dispatchEvent.mock.calls.length).toBe(0);
   });
 
@@ -238,7 +238,7 @@ describe("checkForNewFormErrorsAndFireAnalytics", () => {
       }
     }
 
-    checkForNewFormErrorsAndFireAnalytics(formState, prevFormState, eventDataFirst.app_name);
+    checkForNewFormErrorsAndFireAnalytics(eventDataFirst.app_name, formState, prevFormState);
     expect(document.dispatchEvent.mock.calls.length).toBe(2);
     expect(document.dispatchEvent.mock.calls[0][0].detail).toEqual(eventDataFirst);
     expect(document.dispatchEvent.mock.calls[1][0].detail).toEqual(eventDataLast);

@@ -5,4 +5,4 @@ import { WVUSForm } from "../index";
 
 const Form = WVUSForm(SimpleAddressForm);
 
-storiesOf("Example Forms", module).add("Simple Address Form", () => <Form />);
+storiesOf("Example Forms", module).add("Simple Address Form", () => <Form formName="SimpleAddressForm" />);
