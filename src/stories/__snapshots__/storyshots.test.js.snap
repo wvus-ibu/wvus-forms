@@ -1933,6 +1933,48 @@ exports[`Storyshots Form Components Input Field States 1`] = `
       {"value":"","secondInteraction":true,"isValid":true,"optional":true,"errorMessage":"Error message displays here"}
     </p>
   </div>
+  <div>
+    <h3>
+      Input - hidden message, errored field
+    </h3>
+    <form>
+      <div
+        className="wvus-field-fname custom-class-field-input form-group has-icon has-error "
+        data-field-container="fname"
+        data-field-is-valid={false}
+      >
+        <label
+          className="first-name-label"
+          htmlFor="fname"
+        >
+          First Name
+           
+          <sup>
+            *
+          </sup>
+        </label>
+        <div
+          className="form-control-wrapper"
+        >
+          <input
+            className="form-control first-name-input"
+            disabled={false}
+            id="fname"
+            name="fname"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Tim Stehlin"
+            readOnly={false}
+            type="text"
+            value=""
+          />
+          
+          
+          
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
 `;
 
