@@ -476,15 +476,19 @@ test("validateZip can validate zip codes", () => {
 
 test("validatePhone can validate U.S. phone numbers", () => {
   const message =
-    "Please enter a valid 10 digit phone number. E.g. (123) 456-7890 or 123-456-7890.";
+    "Please enter a valid 10 digit phone number. E.g. 123-456-7890.";
 
   const resultWithDashes = validatePhone("253-855-5555");
   expect(resultWithDashes.valid).toBe(true);
   expect(resultWithDashes.message).toBe(message);
 
   const resultWithParens = validatePhone("(123) 456-7890");
-  expect(resultWithParens.valid).toBe(true);
+  expect(resultWithParens.valid).toBe(false);
   expect(resultWithParens.message).toBe(message);
+
+  const resultWithParens2 = validatePhone("(123) 4567890");
+  expect(resultWithParens2.valid).toBe(false);
+  expect(resultWithParens2.message).toBe(message);
 
   const resultNoDashesNoParens = validatePhone("1234567890");
   expect(resultNoDashesNoParens.valid).toBe(true);

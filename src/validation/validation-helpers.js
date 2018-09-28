@@ -176,11 +176,11 @@ const validateZip = value => {
 };
 
 const validatePhone = value => {
-  const phoneRegEx = /^\(?[0-9]{3}\)?\s?-?[0-9]{3}\s?-?[0-9]{4}$/g;
+  const phoneRegEx = /^[0-9]{3}-?[0-9]{3}\s?-?[0-9]{4}$/g;
   return {
     valid: phoneRegEx.test(trim(value)),
     message:
-      "Please enter a valid 10 digit phone number. E.g. (123) 456-7890 or 123-456-7890."
+      "Please enter a valid 10 digit phone number. E.g. 123-456-7890."
   };
 };
 
