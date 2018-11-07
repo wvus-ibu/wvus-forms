@@ -139,10 +139,12 @@ function WVUSForm(WrapperForm) {
 
     /**
      * Goes through all fields in state and updates their validity
-     * Primarily used internally by change handlers
+     * Primarily used internally by validateForm
+     * @param {bool} forceSecondInteraction force all fields to have secondInteraction of true,
+     * which makes all error messages show. (Defaults to true)
      * @private
      */
-    validateFields() {
+    validateFields(forceSecondInteraction = true) {
       const fieldStateUpdate = { fields: {} };
       Object.keys(this.state.fields).map(fieldName => {
         let isValid = this.validationHelper.fieldIsValid(fieldName);
@@ -150,8 +152,10 @@ function WVUSForm(WrapperForm) {
         fieldStateUpdate["fields"][fieldName] = {
           isValid: isValid,
           errorMessage: this.validationHelper.firstErrorMessage(fieldName),
-          secondInteraction: true
         };
+        if (forceSecondInteraction) {
+          fieldStateUpdate["fields"][fieldName]['secondInteraction'] = true;
+        }
       });
       this.updateFieldsState(fieldStateUpdate);
     }
@@ -159,11 +163,14 @@ function WVUSForm(WrapperForm) {
     /**
      * Validates a form/subform
      * Note: Can be used to trigger validation of an entire form based
-     * on some other interaction. This works for a subform because the Validation Helper's
-     * validateForm method ignores form names unregistered in the config
+     * on some other interaction. By default will show all error messages, unless forceSecondInteraction is false.
+     * This works for a subform because the Validation Helper's
+     * validate method ignores form names unregistered in the config
+     * @param {bool} forceSecondInteraction force all fields to have secondInteraction of true,
+     * which makes all error messages show. (Defaults to true)
      * @returns {bool} validity of form
      */
-    validateForm() {
+    validateForm(forceSecondInteraction = true) {
       Object.keys(this.state.fields).map(fieldName => {
         const fieldValue = this.state.fields[fieldName].value;
         this.validationHelper.validate(fieldName, fieldValue);
@@ -171,7 +178,7 @@ function WVUSForm(WrapperForm) {
 
       const formValid = this.validationHelper.formIsValid();
 
-      this.validateFields();
+      this.validateFields(forceSecondInteraction);
 
       return formValid;
     }
