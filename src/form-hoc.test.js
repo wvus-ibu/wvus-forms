@@ -48,6 +48,10 @@ const SimpleInputFormTwoFields = props => {
   );
 };
 
+test('fake-test for codeship', () => {
+  expect(true).toBe(false);
+});
+
 describe("WVUSForm", () => {
   it("should be able to wrap a custom form component", () => {
     const MyForm = props => {
