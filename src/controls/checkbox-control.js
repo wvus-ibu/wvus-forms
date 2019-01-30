@@ -38,6 +38,7 @@ class CheckboxControl extends Component {
       labelClasses = "",
 
       handleValueChange = formMethods.handleValueChange,
+      handleFocus = ()=> {},
       fieldState = formMethods.getFieldState(fieldName)
     } = this.props;
 
@@ -53,6 +54,7 @@ class CheckboxControl extends Component {
             className={inputClasses}
             name={fieldName}
             onChange={handleValueChange}
+            onFocus={handleFocus}
             type="checkbox"
             checked={fieldValue}
             disabled={disabled}

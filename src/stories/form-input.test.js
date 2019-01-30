@@ -6,7 +6,7 @@ configure({ adapter: new Adapter() });
 import { mount } from "enzyme";
 import sinon from "sinon";
 
-import { WVUSForm, Message } from "../index";
+import { WVUSForm, Message, InputControl } from "../index";
 import {
   SimpleInputForm,
   SimpleInputFormHiddenMessage,
@@ -112,6 +112,34 @@ describe("InputControl", function() {
     const wrapper = mount(<Form />);
     wrapper.find("input").simulate("blur");
     expect(Form.prototype.handleBlur.calledOnce).toEqual(true);
+  });
+
+  it("should call handleFocus if input is focus", function() {
+    const handleFocus =  sinon.spy();
+ 
+    const InputForm = props => {
+      return (
+        <form>
+          <InputControl
+            inputClasses="first-name-input"
+            labelClasses="first-name-label"
+            fieldPlaceholder="Tim Stehlin"
+            fieldName="fname"
+            fieldTitle="First Name"
+            fieldClasses="custom-class-field-input"
+            handleFocus={handleFocus}
+            formMethods={props.formMethods}
+          />
+        </form>
+      );
+    };
+
+    const Form = WVUSForm(InputForm);
+    
+    const wrapper = mount(<Form />);
+    wrapper.find("input").simulate("focus");
+ 
+    expect(handleFocus.calledOnce).toEqual(true);
   });
 
   it("should show required star if required field", function() {

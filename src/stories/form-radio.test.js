@@ -7,7 +7,7 @@ import { mount } from "enzyme";
 import sinon from "sinon";
 
 import { RadioForm } from "./shared/radio-control-form";
-import { WVUSForm } from "../index";
+import { WVUSForm, RadioControl } from "../index";
 
 const Form = WVUSForm(RadioForm);
 
@@ -64,6 +64,49 @@ describe("InputControl", function() {
     wrapper.find("input#payment_method_new_cc").simulate("blur");
     expect(Form.prototype.handleBlur.calledOnce).toEqual(false);
   });
+
+  it("should call handleFocus if input is focus", function() {
+    const handleFocus =  sinon.spy();
+ 
+    const RadioForm = props => {
+      return (
+        <form>
+        <RadioControl
+          fieldId="payment_method_new_cc"
+          fieldName="payment_method"
+          fieldTitle={"New Credit Card"}
+          labelClasses="payment-method-new-cc-label"
+          inputClasses="payment-method-new-cc-input"
+          handleFocus={handleFocus}
+          formMethods={props.formMethods}
+          fieldCheckedDefault={true}
+        />
+        <RadioControl
+          fieldId="payment_method_existing_cc"
+          fieldName="payment_method"
+          fieldTitle={"Existing Credit Card"}
+          handleFocus={handleFocus}
+          formMethods={props.formMethods}
+        />
+        <RadioControl
+          fieldId="payment_method_paypal"
+          fieldName="payment_method"
+          fieldTitle={"Paypal"}
+          handleFocus={handleFocus}
+          formMethods={props.formMethods}
+        />
+      </form>
+      );
+    };
+
+    const Form = WVUSForm(RadioForm);
+    
+    const wrapper = mount(<Form />);
+    wrapper.find("input#payment_method_new_cc").simulate("focus");
+ 
+    expect(handleFocus.calledOnce).toEqual(true);
+  });
+
 
   it("should be capable of having custom label and input classes", function() {
     const wrapper = mount(<Form />);

@@ -44,6 +44,7 @@ class SelectControl extends React.Component {
 
       handleValueChange = formMethods.handleValueChange,
       handleBlur = formMethods.handleBlur,
+      handleFocus = ()=> {},
       showUISuccess = formMethods.showUISuccess(fieldState),
       showUIError = formMethods.showUIError(fieldState)
     } = this.props;
@@ -75,6 +76,7 @@ class SelectControl extends React.Component {
             value={fieldValue}
             name={fieldName}
             onBlur={handleBlur}
+            onFocus={handleFocus}
             onChange={handleValueChange}
           >
             {options}

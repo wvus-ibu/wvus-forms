@@ -27,6 +27,7 @@ exports[`Snapshot:  Select control renders correctly with no selection 1`] = `
           name="state"
           onBlur={[Function]}
           onChange={[Function]}
+          onFocus={[Function]}
           value=""
         >
           <option
@@ -395,6 +396,7 @@ exports[`Snapshot: Select control renders correctly with preselection of WA 1`] 
           name="state"
           onBlur={[Function]}
           onChange={[Function]}
+          onFocus={[Function]}
           value="WA"
         >
           <option

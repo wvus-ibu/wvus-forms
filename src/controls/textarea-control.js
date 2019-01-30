@@ -47,6 +47,7 @@ class TextAreaControl extends Component {
 
       handleValueChange = formMethods.handleValueChange,
       handleBlur = formMethods.handleBlur,
+      handleFocus = ()=> {},
       showUISuccess = formMethods.showUISuccess(fieldState),
       showUIError = formMethods.showUIError(fieldState)
     } = this.props;
@@ -71,6 +72,7 @@ class TextAreaControl extends Component {
               value={fieldState.value}
               name={fieldName}
               onBlur={handleBlur}
+              onFocus={handleFocus}
               onChange={handleValueChange}
               rows={fieldRows}
               placeholder={fieldPlaceholder}

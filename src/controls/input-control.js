@@ -47,6 +47,7 @@ class InputControl extends Component {
 
       handleValueChange = formMethods.handleValueChange,
       handleBlur = formMethods.handleBlur,
+      handleFocus = ()=> {},
       showUISuccess = formMethods.showUISuccess(fieldState),
       showUIError = formMethods.showUIError(fieldState),
       hideMessage = false
@@ -83,6 +84,7 @@ class InputControl extends Component {
             name={fieldName}
             onBlur={handleBlur}
             onChange={handleValueChange}
+            onFocus={handleFocus}
             type={fieldType}
             placeholder={fieldPlaceholder}
             readOnly={readOnly}

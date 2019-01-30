@@ -7,7 +7,7 @@
         * [.getFieldState(fieldName)](#module_WVUSForm--WVUSForm+getFieldState) ⇒ <code>object</code>
         * [.getFormState()](#module_WVUSForm--WVUSForm+getFormState) ⇒ <code>object</code>
         * [.resetField(fieldName, fieldValue)](#module_WVUSForm--WVUSForm+resetField)
-        * [.validateForm()](#module_WVUSForm--WVUSForm+validateForm) ⇒ <code>bool</code>
+        * [.validateForm(forceSecondInteraction)](#module_WVUSForm--WVUSForm+validateForm) ⇒ <code>bool</code>
         * [.isFormValid()](#module_WVUSForm--WVUSForm+isFormValid) ⇒ <code>bool</code>
         * [.isFormEmpty()](#module_WVUSForm--WVUSForm+isFormEmpty) ⇒ <code>bool</code>
         * [.handleValueChange(e, callback)](#module_WVUSForm--WVUSForm+handleValueChange)
@@ -65,14 +65,20 @@ you need to pass the original default value
 
 <a name="module_WVUSForm--WVUSForm+validateForm"></a>
 
-#### wvusForm.validateForm() ⇒ <code>bool</code>
+#### wvusForm.validateForm(forceSecondInteraction) ⇒ <code>bool</code>
 Validates a form/subform
 Note: Can be used to trigger validation of an entire form based
-on some other interaction. This works for a subform because the Validation Helper's
-validateForm method ignores form names unregistered in the config
+on some other interaction. By default will show all error messages, unless forceSecondInteraction is false.
+This works for a subform because the Validation Helper's
+validate method ignores form names unregistered in the config
 
 **Kind**: instance method of [<code>WVUSForm</code>](#exp_module_WVUSForm--WVUSForm)  
 **Returns**: <code>bool</code> - validity of form  
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| forceSecondInteraction | <code>bool</code> | <code>true</code> | force all fields to have secondInteraction of true, which makes all error messages show. (Defaults to true) |
+
 <a name="module_WVUSForm--WVUSForm+isFormValid"></a>
 
 #### wvusForm.isFormValid() ⇒ <code>bool</code>

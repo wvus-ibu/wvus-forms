@@ -18,6 +18,7 @@ exports[`Snapshot: Checkbox Form renders correctly 1`] = `
           id="optIn"
           name="optIn"
           onChange={[Function]}
+          onFocus={[Function]}
           type="checkbox"
         />
         Yes, I would like to receive the email newsletter.
@@ -42,6 +43,7 @@ exports[`Snapshot: Checkbox can be disabled 1`] = `
         id="optIn"
         name="optIn"
         onChange={[Function]}
+        onFocus={[Function]}
         type="checkbox"
       />
       Yes, I would like to receive the email newsletter.
@@ -65,6 +67,7 @@ exports[`Snapshot: Checkbox renders checked state 1`] = `
         id="optIn"
         name="optIn"
         onChange={[Function]}
+        onFocus={[Function]}
         type="checkbox"
       />
       Yes, I would like to receive the email newsletter.
@@ -88,6 +91,7 @@ exports[`Snapshot: Checkbox renders unchecked state 1`] = `
         id="optIn"
         name="optIn"
         onChange={[Function]}
+        onFocus={[Function]}
         type="checkbox"
       />
       Yes, I would like to receive the email newsletter.

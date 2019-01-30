@@ -17,7 +17,7 @@ import {
   formMethodsWithError,
   formMethodsOptional
 } from "./shared/props-mocks";
-import { WVUSForm, Message, validateRequired } from "../index";
+import { WVUSForm, Message, validateRequired, SelectControl } from "../index";
 
 const Form = WVUSForm(SelectForm);
 const FormPreselected = WVUSForm(SelectFormPreselected);
@@ -98,6 +98,44 @@ describe("SelectControl", function() {
     const wrapper = mount(<Form />);
     wrapper.find("select").simulate("blur");
     expect(Form.prototype.handleBlur.calledOnce).toEqual(true);
+  });
+
+  it("should call handleFocus if input is focus", function() {
+    const handleFocus =  sinon.spy();
+
+    const USStateFieldOptions = [
+      {
+        valueKey: "AL",
+        valueText: "Alabama"
+      },
+      {
+        valueKey: "AK",
+        valueText: "Alaska"
+      }];
+ 
+    const SelectForm = props => {
+      return (
+        <form>
+          <SelectControl
+            fieldName="state"
+            fieldOptions={USStateFieldOptions}
+            fieldTitle="State"
+            fieldClasses="wvus-field-33"
+            formMethods={props.formMethods}
+            handleFocus={handleFocus}
+            validators={[validateRequired]}
+          />
+        </form>
+      );
+    };
+
+    const Form = WVUSForm(SelectForm);
+    
+    const wrapper = mount(<Form />);
+   // console.log(wrapper);
+    wrapper.find("select").simulate("focus");
+ 
+    expect(handleFocus.calledOnce).toEqual(true);
   });
 
   it("should show required star if required field", function() {

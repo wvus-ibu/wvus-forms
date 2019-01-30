@@ -18,6 +18,7 @@ exports[`Snapshot: Radio Form renders correctly 1`] = `
           name="payment_method"
           onBlur={[Function]}
           onChange={[Function]}
+          onFocus={[Function]}
           type="radio"
           value="payment_method_new_cc"
         />
@@ -37,6 +38,7 @@ exports[`Snapshot: Radio Form renders correctly 1`] = `
           name="payment_method"
           onBlur={[Function]}
           onChange={[Function]}
+          onFocus={[Function]}
           type="radio"
           value="payment_method_new_cc"
         />
@@ -56,6 +58,7 @@ exports[`Snapshot: Radio Form renders correctly 1`] = `
           name="payment_method"
           onBlur={[Function]}
           onChange={[Function]}
+          onFocus={[Function]}
           type="radio"
           value="payment_method_new_cc"
         />
