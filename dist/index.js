@@ -1,68 +1,16 @@
-(function(global, factory) {
+(function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define([
-      "exports",
-      "./form-hoc.js",
-      "./controls/checkbox-control.js",
-      "./controls/input-control",
-      "./controls/input-hidden-control",
-      "./controls/message.js",
-      "./controls/radio-control.js",
-      "./controls/select-control.js",
-      "./controls/textarea-control.js",
-      "./misc/us-states",
-      "./validation/credit-card-helpers",
-      "./validation/validation-helpers"
-    ], factory);
+    define(["exports", "./form-hoc.js", "./controls/checkbox-control.js", "./controls/input-control", "./controls/input-hidden-control", "./controls/message.js", "./controls/radio-control.js", "./controls/select-control.js", "./controls/textarea-control.js", "./misc/us-states", "./validation/credit-card-helpers", "./validation/validation-helpers"], factory);
   } else if (typeof exports !== "undefined") {
-    factory(
-      exports,
-      require("./form-hoc.js"),
-      require("./controls/checkbox-control.js"),
-      require("./controls/input-control"),
-      require("./controls/input-hidden-control"),
-      require("./controls/message.js"),
-      require("./controls/radio-control.js"),
-      require("./controls/select-control.js"),
-      require("./controls/textarea-control.js"),
-      require("./misc/us-states"),
-      require("./validation/credit-card-helpers"),
-      require("./validation/validation-helpers")
-    );
+    factory(exports, require("./form-hoc.js"), require("./controls/checkbox-control.js"), require("./controls/input-control"), require("./controls/input-hidden-control"), require("./controls/message.js"), require("./controls/radio-control.js"), require("./controls/select-control.js"), require("./controls/textarea-control.js"), require("./misc/us-states"), require("./validation/credit-card-helpers"), require("./validation/validation-helpers"));
   } else {
     var mod = {
       exports: {}
     };
-    factory(
-      mod.exports,
-      global.formHoc,
-      global.checkboxControl,
-      global.inputControl,
-      global.inputHiddenControl,
-      global.message,
-      global.radioControl,
-      global.selectControl,
-      global.textareaControl,
-      global.usStates,
-      global.creditCardHelpers,
-      global.validationHelpers
-    );
+    factory(mod.exports, global.formHoc, global.checkboxControl, global.inputControl, global.inputHiddenControl, global.message, global.radioControl, global.selectControl, global.textareaControl, global.usStates, global.creditCardHelpers, global.validationHelpers);
     global.index = mod.exports;
   }
-})(this, function(
-  exports,
-  _formHoc,
-  _checkboxControl,
-  _inputControl,
-  _inputHiddenControl,
-  _message,
-  _radioControl,
-  _selectControl,
-  _textareaControl,
-  _usStates,
-  _creditCardHelpers,
-  _validationHelpers
-) {
+})(this, function (exports, _formHoc, _checkboxControl, _inputControl, _inputHiddenControl, _message, _radioControl, _selectControl, _textareaControl, _usStates, _creditCardHelpers, _validationHelpers) {
   "use strict";
 
   Object.defineProperty(exports, "__esModule", {
@@ -89,11 +37,9 @@
   var _usStates2 = _interopRequireDefault(_usStates);
 
   function _interopRequireDefault(obj) {
-    return obj && obj.__esModule
-      ? obj
-      : {
-          default: obj
-        };
+    return obj && obj.__esModule ? obj : {
+      default: obj
+    };
   }
 
   exports.WVUSForm = _formHoc2.default;
@@ -105,8 +51,7 @@
   exports.SelectControl = _selectControl2.default;
   exports.TextAreaControl = _textareaControl2.default;
   exports.getCreditCardType = _creditCardHelpers.getCreditCardType;
-  exports.getCreditCardTypeValidity =
-    _creditCardHelpers.getCreditCardTypeValidity;
+  exports.getCreditCardTypeValidity = _creditCardHelpers.getCreditCardTypeValidity;
   exports.tokenXEncrypt = _creditCardHelpers.tokenXEncrypt;
   exports.expAutoComplete = _creditCardHelpers.expAutoComplete;
   exports.createValidationHelper = _validationHelpers.createValidationHelper;
