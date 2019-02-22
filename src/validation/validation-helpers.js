@@ -88,6 +88,25 @@ const validateEmail = value => {
   };
 };
 
+const validateEmailPeriods = value => {
+  var testValid = true;
+  const PeriodAtRegEx = new RegExp("^(?!.*\\.@).*$");
+  const DoubleDotRegex = new RegExp("^([\\.])|(\\.\\.)");
+  if (
+      DoubleDotRegex.test(value) === true ||
+      PeriodAtRegEx.test(value) === false
+  ) {
+    console.log("condition true");
+    testValid = false;
+  }
+
+  return {
+    valid: testValid,
+    message:
+        "Email Addresses that begin or end with a . (period) are not valid, as well as email Addresses with two periods in a row, "
+  };
+};
+
 const validateMin = min => value => {
   return {
     valid: isLength(trim(value), { min }),

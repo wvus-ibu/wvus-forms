@@ -206,6 +206,24 @@
     };
   };
 
+  var validateEmailPeriods = function validateEmailPeriods(value) {
+    var testValid = true;
+    const PeriodAtRegEx = new RegExp("^(?!.*\\.@).*$");
+    const DoubleDotRegex = new RegExp("^([\\.])|(\\.\\.)");
+    if (
+        DoubleDotRegex.test(value) === true ||
+        PeriodAtRegEx.test(value) === false
+    ) {
+      testValid = false;
+    }
+
+    return {
+      valid: testValid,
+      message:
+          "Email Addresses that begin or end with a . (period) are not valid, as well as email Addresses with two periods in a row, "
+    };
+  };
+
   var validateMin = function validateMin(min) {
     return function(value) {
       return {
