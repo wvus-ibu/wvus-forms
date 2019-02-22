@@ -16,7 +16,7 @@
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.validateCreditCard = exports.validateCreditCardType = exports.validateCreditCardNum = exports.validateNotPast10Years = exports.validateExpirationDate = exports.validatePassword = exports.validateIsInt = exports.validateHasNumber = exports.validateHasUpperCase = exports.validateHasLowerCase = exports.validateNoSpaces = exports.validateExactLength = exports.validateMax = exports.validateMin = exports.validateZip = exports.validatePhone = exports.validateEmail = exports.validateEmpty = exports.validateRequired = exports.USStateFieldOptions = exports.createValidationHelper = exports.expAutoComplete = exports.tokenXEncrypt = exports.getCreditCardTypeValidity = exports.getCreditCardType = exports.TextAreaControl = exports.SelectControl = exports.RadioControl = exports.Message = exports.InputHiddenControl = exports.InputControl = exports.CheckboxControl = exports.WVUSForm = undefined;
+  exports.validateCreditCard = exports.validateCreditCardType = exports.validateCreditCardNum = exports.validateNotPast10Years = exports.validateExpirationDate = exports.validatePassword = exports.validateIsInt = exports.validateHasNumber = exports.validateHasUpperCase = exports.validateHasLowerCase = exports.validateNoSpaces = exports.validateExactLength = exports.validateMax = exports.validateMin = exports.validateZip = exports.validatePhone = exports.validateEmailPeriods = exports.validateEmail = exports.validateEmpty = exports.validateRequired = exports.USStateFieldOptions = exports.createValidationHelper = exports.expAutoComplete = exports.tokenXEncrypt = exports.getCreditCardTypeValidity = exports.getCreditCardType = exports.TextAreaControl = exports.SelectControl = exports.RadioControl = exports.Message = exports.InputHiddenControl = exports.InputControl = exports.CheckboxControl = exports.WVUSForm = undefined;
 
   var _formHoc2 = _interopRequireDefault(_formHoc);
 
@@ -59,6 +59,7 @@
   exports.validateRequired = _validationHelpers.validateRequired;
   exports.validateEmpty = _validationHelpers.validateEmpty;
   exports.validateEmail = _validationHelpers.validateEmail;
+  exports.validateEmailPeriods = _validationHelpers.validateEmailPeriods;
   exports.validatePhone = _validationHelpers.validatePhone;
   exports.validateZip = _validationHelpers.validateZip;
   exports.validateMin = _validationHelpers.validateMin;
@@ -93,6 +94,7 @@
     validateRequired: _validationHelpers.validateRequired,
     validateEmpty: _validationHelpers.validateEmpty,
     validateEmail: _validationHelpers.validateEmail,
+    validateEmailPeriods: _validationHelpers.validateEmailPeriods,
     validatePhone: _validationHelpers.validatePhone,
     validateZip: _validationHelpers.validateZip,
     validateMin: _validationHelpers.validateMin,

@@ -89,6 +89,7 @@ const validateEmail = value => {
 };
 
 const validateEmailPeriods = value => {
+  console.log("validateEmailPeriods");
   var testValid = true;
   const PeriodAtRegEx = new RegExp("^(?!.*\\.@).*$");
   const DoubleDotRegex = new RegExp("^([\\.])|(\\.\\.)");
