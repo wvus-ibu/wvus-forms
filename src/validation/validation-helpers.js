@@ -285,6 +285,7 @@ export {
   validateRequired,
   validateEmpty,
   validateEmail,
+  validateEmailPeriods,
   validatePhone,
   validateZip,
   validateMin,

@@ -439,6 +439,7 @@
   exports.validateRequired = validateRequired;
   exports.validateEmpty = validateEmpty;
   exports.validateEmail = validateEmail;
+  exports.validateEmailPeriods = validateEmailPeriods;
   exports.validatePhone = validatePhone;
   exports.validateZip = validateZip;
   exports.validateMin = validateMin;
