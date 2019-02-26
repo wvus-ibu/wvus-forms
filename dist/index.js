@@ -16,7 +16,7 @@
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.validateCreditCard = exports.validateCreditCardType = exports.validateCreditCardNum = exports.validateNotPast10Years = exports.validateExpirationDate = exports.validatePassword = exports.validateIsInt = exports.validateHasNumber = exports.validateHasUpperCase = exports.validateHasLowerCase = exports.validateNoSpaces = exports.validateExactLength = exports.validateMax = exports.validateMin = exports.validateZip = exports.validatePhone = exports.validateEmailPeriods = exports.validateEmail = exports.validateEmpty = exports.validateRequired = exports.USStateFieldOptions = exports.createValidationHelper = exports.expAutoComplete = exports.tokenXEncrypt = exports.getCreditCardTypeValidity = exports.getCreditCardType = exports.TextAreaControl = exports.SelectControl = exports.RadioControl = exports.Message = exports.InputHiddenControl = exports.InputControl = exports.CheckboxControl = exports.WVUSForm = undefined;
+  exports.validateCreditCard = exports.validateCreditCardType = exports.validateCreditCardNum = exports.validateNotPast10Years = exports.validateExpirationDate = exports.validatePassword = exports.validateIsInt = exports.validateHasNumber = exports.validateHasUpperCase = exports.validateHasLowerCase = exports.validateNoSpaces = exports.validateExactLength = exports.validateMax = exports.validateMin = exports.validateZip = exports.validatePhone = exports.validateEmailDoublePeriods = exports.validateEmailEndPeriods = exports.validateEmailStartPeriods = exports.validateEmail = exports.validateEmpty = exports.validateRequired = exports.USStateFieldOptions = exports.createValidationHelper = exports.expAutoComplete = exports.tokenXEncrypt = exports.getCreditCardTypeValidity = exports.getCreditCardType = exports.TextAreaControl = exports.SelectControl = exports.RadioControl = exports.Message = exports.InputHiddenControl = exports.InputControl = exports.CheckboxControl = exports.WVUSForm = undefined;
 
   var _formHoc2 = _interopRequireDefault(_formHoc);
 
@@ -59,7 +59,9 @@
   exports.validateRequired = _validationHelpers.validateRequired;
   exports.validateEmpty = _validationHelpers.validateEmpty;
   exports.validateEmail = _validationHelpers.validateEmail;
-  exports.validateEmailPeriods = validateEmailPeriods;
+  exports.validateEmailStartPeriods = _validationHelpers.validateEmailStartPeriods;
+  exports.validateEmailEndPeriods = _validationHelpers.validateEmailEndPeriods;
+  exports.validateEmailDoublePeriods = _validationHelpers.validateEmailDoublePeriods;
   exports.validatePhone = _validationHelpers.validatePhone;
   exports.validateZip = _validationHelpers.validateZip;
   exports.validateMin = _validationHelpers.validateMin;
