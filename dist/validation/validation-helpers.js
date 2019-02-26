@@ -208,7 +208,7 @@
 
     return {
       valid: testValid,
-      message: "Email addresses cannot end with a . (period) character"
+      message: "Email addresses cannot use two .. (periods) in a row"
     };
   };
 
