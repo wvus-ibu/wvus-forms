@@ -88,12 +88,27 @@ const validateEmail = value => {
   };
 };
 
-const validateEmailPeriods = value => {
+const validateEmailStartPeriods = value => {
+  var testValid = true;
+  const periodStartRegex = new RegExp("^([\\.])");
+  if (
+      periodStartRegex.test(value) === true
+
+  ) {
+    testValid = false;
+  }
+
+  return {
+    valid: testValid,
+    message:
+        "Email addresses cannot begin with a . (period) character"
+  };
+};
+
+const validateEmailEndPeriods = value => {
   var testValid = true;
   const PeriodAtRegEx = new RegExp("^(?!.*\\.@).*$");
-  const DoubleDotRegex = new RegExp("^([\\.])|(\\.\\.)");
   if (
-      DoubleDotRegex.test(value) === true ||
       PeriodAtRegEx.test(value) === false
   ) {
     testValid = false;
@@ -102,7 +117,23 @@ const validateEmailPeriods = value => {
   return {
     valid: testValid,
     message:
-        "Email Addresses that begin or end with a . (period) are not valid, as well as email Addresses with two periods in a row, "
+        "Email addresses may not use a . (period) character followed by an @ symbol"
+  };
+};
+
+const validateEmailDoublePeriods = value => {
+  var testValid = true;
+  const DoubleDotRegex = new RegExp("(\\.\\.)");
+  if (
+      DoubleDotRegex.test(value) === true
+  ) {
+    testValid = false;
+  }
+
+  return {
+    valid: testValid,
+    message:
+        "Email addresses cannot end with a . (period) character"
   };
 };
 

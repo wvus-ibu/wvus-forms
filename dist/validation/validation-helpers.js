@@ -173,17 +173,42 @@
     };
   };
 
-  var validateEmailPeriods = function validateEmailPeriods(value) {
+  var validateEmailStartPeriods = function validateEmailStartPeriods(value) {
     var testValid = true;
-    var PeriodAtRegEx = new RegExp("^(?!.*\\.@).*$");
-    var DoubleDotRegex = new RegExp("^([\\.])|(\\.\\.)");
-    if (DoubleDotRegex.test(value) === true || PeriodAtRegEx.test(value) === false) {
+    var periodStartRegex = new RegExp("^([\\.])");
+    if (periodStartRegex.test(value) === true) {
       testValid = false;
     }
 
     return {
       valid: testValid,
-      message: "Email Addresses that begin or end with a . (period) are not valid, as well as email Addresses with two periods in a row, "
+      message: "Email addresses cannot begin with a . (period) character"
+    };
+  };
+
+  var validateEmailEndPeriods = function validateEmailEndPeriods(value) {
+    var testValid = true;
+    var PeriodAtRegEx = new RegExp("^(?!.*\\.@).*$");
+    if (PeriodAtRegEx.test(value) === false) {
+      testValid = false;
+    }
+
+    return {
+      valid: testValid,
+      message: "Email addresses may not use a . (period) character followed by an @ symbol"
+    };
+  };
+
+  var validateEmailDoublePeriods = function validateEmailDoublePeriods(value) {
+    var testValid = true;
+    var DoubleDotRegex = new RegExp("(\\.\\.)");
+    if (DoubleDotRegex.test(value) === true) {
+      testValid = false;
+    }
+
+    return {
+      valid: testValid,
+      message: "Email addresses cannot end with a . (period) character"
     };
   };
 
