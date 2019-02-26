@@ -174,12 +174,10 @@
   };
 
   var validateEmailPeriods = function validateEmailPeriods(value) {
-    console.log("validateEmailPeriods");
     var testValid = true;
     var PeriodAtRegEx = new RegExp("^(?!.*\\.@).*$");
     var DoubleDotRegex = new RegExp("^([\\.])|(\\.\\.)");
     if (DoubleDotRegex.test(value) === true || PeriodAtRegEx.test(value) === false) {
-      console.log("condition true");
       testValid = false;
     }
 

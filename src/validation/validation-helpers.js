@@ -89,7 +89,6 @@ const validateEmail = value => {
 };
 
 const validateEmailPeriods = value => {
-  console.log("validateEmailPeriods");
   var testValid = true;
   const PeriodAtRegEx = new RegExp("^(?!.*\\.@).*$");
   const DoubleDotRegex = new RegExp("^([\\.])|(\\.\\.)");
@@ -97,7 +96,6 @@ const validateEmailPeriods = value => {
       DoubleDotRegex.test(value) === true ||
       PeriodAtRegEx.test(value) === false
   ) {
-    console.log("condition true");
     testValid = false;
   }
 
