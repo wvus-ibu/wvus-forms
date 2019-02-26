@@ -16,7 +16,7 @@
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.validateCreditCard = exports.validateCreditCardType = exports.validateCreditCardNum = exports.validateNotPast10Years = exports.validateIsNotPastYearsOut = exports.validateIsFutureDate = exports.validateExpirationDate = exports.validatePassword = exports.validateIsInt = exports.validateHasNumber = exports.validateHasUpperCase = exports.validateHasLowerCase = exports.validateNoSpaces = exports.validateExactLength = exports.validateMax = exports.validateMin = exports.validateZip = exports.validatePhone = exports.validateEmailPeriods = exports.validateEmail = exports.validateEmpty = exports.validateRequired = exports.createValidationHelper = undefined;
+  exports.validateCreditCard = exports.validateCreditCardType = exports.validateCreditCardNum = exports.validateNotPast10Years = exports.validateIsNotPastYearsOut = exports.validateIsFutureDate = exports.validateExpirationDate = exports.validatePassword = exports.validateIsInt = exports.validateHasNumber = exports.validateHasUpperCase = exports.validateHasLowerCase = exports.validateNoSpaces = exports.validateExactLength = exports.validateMax = exports.validateMin = exports.validateZip = exports.validatePhone = exports.validateEmailDoublePeriods = exports.validateEmailEndPeriods = exports.validateEmailStartPeriods = exports.validateEmail = exports.validateEmpty = exports.validateRequired = exports.createValidationHelper = undefined;
 
   var _queryStringParser2 = _interopRequireDefault(_queryStringParser);
 
@@ -391,7 +391,9 @@
   exports.validateRequired = validateRequired;
   exports.validateEmpty = validateEmpty;
   exports.validateEmail = validateEmail;
-  exports.validateEmailPeriods = validateEmailPeriods;
+  exports.validateEmailStartPeriods = validateEmailStartPeriods;
+  exports.validateEmailEndPeriods = validateEmailEndPeriods;
+  exports.validateEmailDoublePeriods = validateEmailDoublePeriods;
   exports.validatePhone = validatePhone;
   exports.validateZip = validateZip;
   exports.validateMin = validateMin;
