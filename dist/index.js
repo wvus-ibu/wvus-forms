@@ -59,7 +59,7 @@
   exports.validateRequired = _validationHelpers.validateRequired;
   exports.validateEmpty = _validationHelpers.validateEmpty;
   exports.validateEmail = _validationHelpers.validateEmail;
-  exports.validateEmailPeriods = _validationHelpers.validateEmailPeriods;
+  exports.validateEmailPeriods = validateEmailPeriods;
   exports.validatePhone = _validationHelpers.validatePhone;
   exports.validateZip = _validationHelpers.validateZip;
   exports.validateMin = _validationHelpers.validateMin;
@@ -94,7 +94,7 @@
     validateRequired: _validationHelpers.validateRequired,
     validateEmpty: _validationHelpers.validateEmpty,
     validateEmail: _validationHelpers.validateEmail,
-    validateEmailPeriods: _validationHelpers.validateEmailPeriods,
+    validateEmailPeriods: validateEmailPeriods,
     validatePhone: _validationHelpers.validatePhone,
     validateZip: _validationHelpers.validateZip,
     validateMin: _validationHelpers.validateMin,
