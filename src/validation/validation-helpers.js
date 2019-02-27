@@ -88,6 +88,47 @@ const validateEmail = value => {
   };
 };
 
+
+const validateEmailStartPeriods = value => {
+  var testValid = true;
+  const periodStartRegex = new RegExp("^([\\.])");
+  if (periodStartRegex.test(value) === true) {
+    testValid = false;
+  }
+
+  return {
+    valid: testValid,
+    message: "Email addresses cannot begin with a . (period) character"
+  };
+};
+
+const validateEmailEndPeriods = value => {
+  var testValid = true;
+  const PeriodAtRegEx = new RegExp("^(?!.*\\.@).*$");
+  if (PeriodAtRegEx.test(value) === false) {
+    testValid = false;
+  }
+
+  return {
+    valid: testValid,
+    message:
+        "Email addresses may not use a . (period) character followed by an @ symbol"
+  };
+};
+
+const validateEmailDoublePeriods = value => {
+  var testValid = true;
+  const DoubleDotRegex = new RegExp("(\\.\\.)");
+  if (DoubleDotRegex.test(value) === true) {
+    testValid = false;
+  }
+
+  return {
+    valid: testValid,
+    message: "Email addresses cannot use two .. (periods) in a row"
+  };
+};
+
 const validateMin = min => value => {
   return {
     valid: isLength(trim(value), { min }),
@@ -266,6 +307,9 @@ export {
   validateRequired,
   validateEmpty,
   validateEmail,
+  validateEmailStartPeriods,
+  validateEmailEndPeriods,
+  validateEmailDoublePeriods,
   validatePhone,
   validateZip,
   validateMin,

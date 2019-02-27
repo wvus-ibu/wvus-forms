@@ -1,4 +1,4 @@
-(function(global, factory) {
+(function (global, factory) {
   if (typeof define === "function" && define.amd) {
     define(["exports"], factory);
   } else if (typeof exports !== "undefined") {
@@ -10,7 +10,7 @@
     factory(mod.exports);
     global.creditCardHelpers = mod.exports;
   }
-})(this, function(exports) {
+})(this, function (exports) {
   "use strict";
 
   Object.defineProperty(exports, "__esModule", {
@@ -22,9 +22,7 @@
    */
   var creditCardTypesBeginnings = {
     VISA: [/^4[0-9]/],
-    MAST: [
-      /^(?:5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)/
-    ],
+    MAST: [/^(?:5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)/],
     AMEX: [/^3(4|7){1}/],
     DSCV: [/^6(?:011|5[0-9]{2})/]
   };
@@ -35,9 +33,7 @@
    */
   var creditCardTypesValidity = {
     VISA: [/^4[0-9]{12}([0-9]{3})?$/],
-    MAST: [
-      /^5[1-5]\d{14}$|^2(?:2(?:2[1-9]|[3-9]\d)|[3-6]\d\d|7(?:[01]\d|20))\d{12}$/
-    ],
+    MAST: [/^5[1-5]\d{14}$|^2(?:2(?:2[1-9]|[3-9]\d)|[3-6]\d\d|7(?:[01]\d|20))\d{12}$/],
     AMEX: [/^3[47][0-9]{13}$/],
     DSCV: [/^6(?:011|5[0-9]{2})[0-9]{12}$/]
   };
@@ -49,8 +45,8 @@
   function getCreditCardType(ccNum) {
     ccNum = removeWhiteSpace(ccNum);
     var matchingCCType = "";
-    Object.keys(creditCardTypesBeginnings).forEach(function(cardType) {
-      creditCardTypesBeginnings[cardType].forEach(function(regex) {
+    Object.keys(creditCardTypesBeginnings).forEach(function (cardType) {
+      creditCardTypesBeginnings[cardType].forEach(function (regex) {
         if (ccNum.match(regex)) {
           matchingCCType = cardType;
         }
@@ -66,8 +62,8 @@
   function getCreditCardTypeValidity(ccNum) {
     ccNum = removeWhiteSpace(ccNum);
     var validCard = false;
-    Object.keys(creditCardTypesValidity).forEach(function(cardType) {
-      creditCardTypesValidity[cardType].forEach(function(regex) {
+    Object.keys(creditCardTypesValidity).forEach(function (cardType) {
+      creditCardTypesValidity[cardType].forEach(function (regex) {
         if (ccNum.match(regex)) {
           validCard = true;
         }
