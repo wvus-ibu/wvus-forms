@@ -31,12 +31,17 @@ const triggerAnalyticsEvent = (
 
 /**
  * Wrapper function which fires the wvusClientMessage event
- * @param {*} appName 
- * @param {*} componentName 
- * @param {*} message 
- * @param {*} messageType 
+ * @param {*} appName
+ * @param {*} componentName
+ * @param {*} message
+ * @param {*} messageType
  */
-const triggerWVUSClientMessageEvent = (appName, componentName, message, messageType = "error") => {
+const triggerWVUSClientMessageEvent = (
+  appName,
+  componentName,
+  message,
+  messageType = "error"
+) => {
   triggerAnalyticsEvent("wvusClientMessage", {
     app_name: appName,
     component_name: componentName,
@@ -45,16 +50,15 @@ const triggerWVUSClientMessageEvent = (appName, componentName, message, messageT
   });
 };
 
-
 /**
  * Checks whether state has new error message not shown to donor before
  * @param {Object} fieldState
  * @param {Object} prevFieldState
  */
 const fieldHasNewErrorMessage = (fieldState, prevFieldState) => {
-  // To determine if message has been shown before, 
+  // To determine if message has been shown before,
   // check for second interaction, failed validation,
-  // and either new error message text or previously wasn't shown 
+  // and either new error message text or previously wasn't shown
   // due to fact that secondinteraction hadn't occurred till now
   // (field was invalid but message not shown to user while interacting
   // with the field )
@@ -66,14 +70,13 @@ const fieldHasNewErrorMessage = (fieldState, prevFieldState) => {
   );
 };
 
-
 /**
  * Fire analytics if new form error has occurred on any fields
- * in the form. Used in the componentDidUpdate lifecycle method of 
+ * in the form. Used in the componentDidUpdate lifecycle method of
  * form component.
  *
- * @param {Object} state 
- * @param {Object} prevState 
+ * @param {Object} state
+ * @param {Object} prevState
  */
 const checkForNewFormErrorsAndFireAnalytics = (appName, state, prevState) => {
   if (!state || !state.fields || !prevState || !prevState.fields) {
@@ -90,15 +93,20 @@ const checkForNewFormErrorsAndFireAnalytics = (appName, state, prevState) => {
     }
     const fieldState = fields[fieldName];
     const prevFieldState = prevStateFields[fieldName];
-    checkForNewFieldErrorAndFireAnalytics(appName, fieldName, fieldState, prevFieldState);
+    checkForNewFieldErrorAndFireAnalytics(
+      appName,
+      fieldName,
+      fieldState,
+      prevFieldState
+    );
   }
 };
 
 /**
  * Fire analytics if new form error has occurred on specific field.
  *
- * @param {Object} state 
- * @param {Object} prevState 
+ * @param {Object} state
+ * @param {Object} prevState
  */
 const checkForNewFieldErrorAndFireAnalytics = (
   appName,

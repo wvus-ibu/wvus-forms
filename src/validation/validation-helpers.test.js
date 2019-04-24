@@ -269,7 +269,7 @@ test("validateExactLength can validate a string length", () => {
   const validateLength = validateExactLength(3);
   const result = validateLength("abc");
   expect(result.valid).toBe(true);
-  expect(result.message).toBe(message); 
+  expect(result.message).toBe(message);
 
   const result2 = validateLength("abcdefgh");
   expect(result2.valid).toBe(false);
@@ -372,22 +372,31 @@ test("validateHasNumber can validate a string has at least one number", () => {
   expect(result4.message).toBe(message);
 });
 
-test('validateContainChars can validate a clean message', () => {
-  const resultValidMessageNoHTMLTags = validateContainChars('this message contains no html tags');
+test("validateContainChars can validate a clean message", () => {
+  const resultValidMessageNoHTMLTags = validateContainChars(
+    "this message contains no html tags"
+  );
   expect(resultValidMessageNoHTMLTags.valid).toBe(true);
 });
-test('validateContainChars cannot validate a dirty message', () => {
-	const message = 'Please do not use any of the following invalid characters: ),(,>,<,~,%';
+test("validateContainChars cannot validate a dirty message", () => {
+  const message =
+    "Please do not use any of the following invalid characters: ),(,>,<,~,%";
 
-  const resultValidMessageNoHTMLTags = validateContainChars('this message contains html tags < >');
+  const resultValidMessageNoHTMLTags = validateContainChars(
+    "this message contains html tags < >"
+  );
   expect(resultValidMessageNoHTMLTags.valid).toBe(false);
   expect(resultValidMessageNoHTMLTags.message).toBe(message);
 
-  const resultValidMessageNoParens = validateContainChars('this message contains parens )(');
+  const resultValidMessageNoParens = validateContainChars(
+    "this message contains parens )("
+  );
   expect(resultValidMessageNoParens.valid).toBe(false);
   expect(resultValidMessageNoParens.message).toBe(message);
 
-  const resultValidMessageNoTildePercent = validateContainChars('this message contains tilde and percent %,~');
+  const resultValidMessageNoTildePercent = validateContainChars(
+    "this message contains tilde and percent %,~"
+  );
   expect(resultValidMessageNoTildePercent.valid).toBe(false);
   expect(resultValidMessageNoTildePercent.message).toBe(message);
 });
@@ -591,9 +600,7 @@ test("validateIsFutureDate can validate future date", () => {
 test("validateIsNotPastYearsOut can validate future date not past limit", () => {
   const yearsOut = 10;
   const validateIsNotPast10Years = validateIsNotPastYearsOut(yearsOut);
-  const message = `Please enter a valid expiration date within ${
-    yearsOut
-  } years.`;
+  const message = `Please enter a valid expiration date within ${yearsOut} years.`;
 
   const currentMonth = (parseInt(new Date().getMonth(), 10) + 1).toString(); // adjust up one month due to zero-based months in JS, value as entered by user
 

@@ -1,7 +1,7 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { configure } from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
 configure({ adapter: new Adapter() });
 import { mount } from "enzyme";
 import sinon from "sinon";
@@ -66,51 +66,58 @@ describe("InputControl", function() {
   });
 
   it("should call handleFocus if input is focus", function() {
-    const handleFocus =  sinon.spy();
- 
+    const handleFocus = sinon.spy();
+
     const RadioForm = props => {
       return (
         <form>
-        <RadioControl
-          fieldId="payment_method_new_cc"
-          fieldName="payment_method"
-          fieldTitle={"New Credit Card"}
-          labelClasses="payment-method-new-cc-label"
-          inputClasses="payment-method-new-cc-input"
-          handleFocus={handleFocus}
-          formMethods={props.formMethods}
-          fieldCheckedDefault={true}
-        />
-        <RadioControl
-          fieldId="payment_method_existing_cc"
-          fieldName="payment_method"
-          fieldTitle={"Existing Credit Card"}
-          handleFocus={handleFocus}
-          formMethods={props.formMethods}
-        />
-        <RadioControl
-          fieldId="payment_method_paypal"
-          fieldName="payment_method"
-          fieldTitle={"Paypal"}
-          handleFocus={handleFocus}
-          formMethods={props.formMethods}
-        />
-      </form>
+          <RadioControl
+            fieldId="payment_method_new_cc"
+            fieldName="payment_method"
+            fieldTitle={"New Credit Card"}
+            labelClasses="payment-method-new-cc-label"
+            inputClasses="payment-method-new-cc-input"
+            handleFocus={handleFocus}
+            formMethods={props.formMethods}
+            fieldCheckedDefault={true}
+          />
+          <RadioControl
+            fieldId="payment_method_existing_cc"
+            fieldName="payment_method"
+            fieldTitle={"Existing Credit Card"}
+            handleFocus={handleFocus}
+            formMethods={props.formMethods}
+          />
+          <RadioControl
+            fieldId="payment_method_paypal"
+            fieldName="payment_method"
+            fieldTitle={"Paypal"}
+            handleFocus={handleFocus}
+            formMethods={props.formMethods}
+          />
+        </form>
       );
     };
 
     const Form = WVUSForm(RadioForm);
-    
+
     const wrapper = mount(<Form />);
     wrapper.find("input#payment_method_new_cc").simulate("focus");
- 
+
     expect(handleFocus.calledOnce).toEqual(true);
   });
 
-
   it("should be capable of having custom label and input classes", function() {
     const wrapper = mount(<Form />);
-    expect(wrapper.find(".wvus-field-payment_method_new_cc label").hasClass("payment-method-new-cc-label")).toBe(true);
-    expect(wrapper.find(".wvus-field-payment_method_new_cc input").hasClass("payment-method-new-cc-input")).toBe(true);
+    expect(
+      wrapper
+        .find(".wvus-field-payment_method_new_cc label")
+        .hasClass("payment-method-new-cc-label")
+    ).toBe(true);
+    expect(
+      wrapper
+        .find(".wvus-field-payment_method_new_cc input")
+        .hasClass("payment-method-new-cc-input")
+    ).toBe(true);
   });
 });

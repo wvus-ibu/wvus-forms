@@ -47,14 +47,16 @@ class TextAreaControl extends Component {
 
       handleValueChange = formMethods.handleValueChange,
       handleBlur = formMethods.handleBlur,
-      handleFocus = ()=> {},
+      handleFocus = () => {},
       showUISuccess = formMethods.showUISuccess(fieldState),
       showUIError = formMethods.showUIError(fieldState)
     } = this.props;
 
     const validityClass = showUISuccess
       ? "has-success "
-      : showUIError ? "has-error " : "";
+      : showUIError
+      ? "has-error "
+      : "";
     const requiredStar = fieldState.optional == true ? "" : <sup>*</sup>;
     const fieldValue = fieldState.value || "";
     const fieldPrimaryClass = `wvus-field-${fieldName}`;

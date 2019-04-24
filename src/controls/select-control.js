@@ -44,7 +44,7 @@ class SelectControl extends React.Component {
 
       handleValueChange = formMethods.handleValueChange,
       handleBlur = formMethods.handleBlur,
-      handleFocus = ()=> {},
+      handleFocus = () => {},
       showUISuccess = formMethods.showUISuccess(fieldState),
       showUIError = formMethods.showUIError(fieldState)
     } = this.props;
@@ -55,16 +55,16 @@ class SelectControl extends React.Component {
     ));
     const validityClass = showUISuccess
       ? "has-success "
-      : showUIError ? "has-error " : "";
+      : showUIError
+      ? "has-error "
+      : "";
     const requiredStar = fieldState.optional == true ? "" : <sup>*</sup>;
     const fieldValue = fieldState.value || "";
     const fieldPrimaryClass = `wvus-field-${fieldName}`;
 
     return (
       <div
-        className={`${fieldPrimaryClass} ${fieldClasses} form-group has-icon ${
-          validityClass
-        }`}
+        className={`${fieldPrimaryClass} ${fieldClasses} form-group has-icon ${validityClass}`}
       >
         <label htmlFor={fieldName} className={labelClasses}>
           {fieldTitle} {requiredStar}

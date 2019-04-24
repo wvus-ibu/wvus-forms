@@ -28,21 +28,24 @@ storiesOf("Form Components", module).add("Checkbox Field States", () => (
     <h2>Checkbox - checked</h2>
     <SimpleCheckboxForm {...propsChecked} />
     <p>
-      FieldState:<br />
+      FieldState:
+      <br />
       {window.JSON.stringify(propsChecked.formMethods.getFieldState())}
     </p>
 
     <h2>Checkbox - unchecked</h2>
     <SimpleCheckboxForm {...propsUnchecked} />
     <p>
-      FieldState:<br />
+      FieldState:
+      <br />
       {window.JSON.stringify(propsUnchecked.formMethods.getFieldState())}
     </p>
 
     <h2>Checkbox - disabled</h2>
     <DisabledCheckboxForm {...propsDisabled} />
     <p>
-      Note: Disabled styling not included in form library. Wrap form in fieldset disabled to get Bootstrap disabled styling as shown here.
+      Note: Disabled styling not included in form library. Wrap form in fieldset
+      disabled to get Bootstrap disabled styling as shown here.
     </p>
   </div>
 ));

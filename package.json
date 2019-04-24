@@ -28,7 +28,9 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -o docs",
     "test-storybook": "storyshots",
-    "build:prod": "npm run docs"
+    "build:prod": "npm run docs",
+    "pretty:check": "prettier --check 'src/**/*js'",
+    "pretty": "prettier --config .prettierrc --write .src/**/*.js"
   },
   "jest": {
     "moduleNameMapper": {

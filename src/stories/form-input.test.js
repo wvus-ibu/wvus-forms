@@ -1,7 +1,7 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { configure } from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
 configure({ adapter: new Adapter() });
 import { mount } from "enzyme";
 import sinon from "sinon";
@@ -115,8 +115,8 @@ describe("InputControl", function() {
   });
 
   it("should call handleFocus if input is focus", function() {
-    const handleFocus =  sinon.spy();
- 
+    const handleFocus = sinon.spy();
+
     const InputForm = props => {
       return (
         <form>
@@ -135,10 +135,10 @@ describe("InputControl", function() {
     };
 
     const Form = WVUSForm(InputForm);
-    
+
     const wrapper = mount(<Form />);
     wrapper.find("input").simulate("focus");
- 
+
     expect(handleFocus.calledOnce).toEqual(true);
   });
 
@@ -202,7 +202,9 @@ describe("InputControl", function() {
   });
 
   it("should NOT show success Message if hiddenMessage enabled", function() {
-    const wrapper = mount(<SimpleInputFormHiddenMessage {...propsWithSuccess} />);
+    const wrapper = mount(
+      <SimpleInputFormHiddenMessage {...propsWithSuccess} />
+    );
     expect(
       wrapper.contains(<Message showError={false} showSuccess={true} />)
     ).toBe(false);

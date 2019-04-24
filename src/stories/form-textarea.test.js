@@ -17,7 +17,13 @@ import {
   formMethodsWithError,
   formMethodsOptional
 } from "./shared/props-mocks";
-import { WVUSForm, Message, validateRequired, validateMax, TextAreaControl } from "../index";
+import {
+  WVUSForm,
+  Message,
+  validateRequired,
+  validateMax,
+  TextAreaControl
+} from "../index";
 
 const Form = WVUSForm(TextAreaForm);
 const FormNoConfig = WVUSForm(TextAreaFormNoConfig);
@@ -82,36 +88,35 @@ describe("SelectControl", function() {
   });
 
   it("should call handleFocus if input is focus", function() {
-    const handleFocus =  sinon.spy();
- 
+    const handleFocus = sinon.spy();
+
     const TextAreaForm = props => {
       return (
         <form className="default-textarea-example">
-        <TextAreaControl
-          fieldName="message"
-          fieldRows={6}
-          fieldPlaceholder="Type your message here"
-          fieldTitle="Message"
-          fieldClasses="wvus-field-newletter-message"
-          labelClasses="message-label"
-          inputClasses="message-input"
-          handleFocus={handleFocus}
-          formMethods={props.formMethods}
-          validators={[validateRequired, validateMax("50")]}
-          characterCount="50"
-        />
-      </form>
+          <TextAreaControl
+            fieldName="message"
+            fieldRows={6}
+            fieldPlaceholder="Type your message here"
+            fieldTitle="Message"
+            fieldClasses="wvus-field-newletter-message"
+            labelClasses="message-label"
+            inputClasses="message-input"
+            handleFocus={handleFocus}
+            formMethods={props.formMethods}
+            validators={[validateRequired, validateMax("50")]}
+            characterCount="50"
+          />
+        </form>
       );
     };
 
     const Form = WVUSForm(TextAreaForm);
-    
+
     const wrapper = mount(<Form />);
     wrapper.find("textarea").simulate("focus");
- 
+
     expect(handleFocus.calledOnce).toEqual(true);
   });
-
 
   it("should show required star if required field", function() {
     const props = { formMethods: formMethodsUnTouched };
@@ -177,7 +182,13 @@ describe("SelectControl", function() {
 
   it("should be capable of having custom label and input classes", function() {
     const wrapper = mount(<Form />);
-    expect(wrapper.find(".default-textarea-example label").hasClass("message-label")).toBe(true);
-    expect(wrapper.find(".default-textarea-example textarea").hasClass("message-input")).toBe(true);
+    expect(
+      wrapper.find(".default-textarea-example label").hasClass("message-label")
+    ).toBe(true);
+    expect(
+      wrapper
+        .find(".default-textarea-example textarea")
+        .hasClass("message-input")
+    ).toBe(true);
   });
 });

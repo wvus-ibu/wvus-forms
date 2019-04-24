@@ -47,7 +47,7 @@ class InputControl extends Component {
 
       handleValueChange = formMethods.handleValueChange,
       handleBlur = formMethods.handleBlur,
-      handleFocus = ()=> {},
+      handleFocus = () => {},
       showUISuccess = formMethods.showUISuccess(fieldState),
       showUIError = formMethods.showUIError(fieldState),
       hideMessage = false
@@ -57,7 +57,9 @@ class InputControl extends Component {
 
     const validityClass = showUISuccess
       ? "has-success "
-      : showUIError ? "has-error " : "";
+      : showUIError
+      ? "has-error "
+      : "";
     const requiredStar = fieldState.optional == true ? "" : <sup>*</sup>;
     const label = !(fieldType === "hidden") ? (
       <label htmlFor={fieldName} className={labelClasses}>
@@ -69,9 +71,7 @@ class InputControl extends Component {
 
     return (
       <div
-        className={`${fieldPrimaryClass} ${fieldClasses} form-group has-icon ${
-          validityClass
-        }`}
+        className={`${fieldPrimaryClass} ${fieldClasses} form-group has-icon ${validityClass}`}
         data-field-container={fieldId}
         data-field-is-valid={fieldState.isValid}
       >

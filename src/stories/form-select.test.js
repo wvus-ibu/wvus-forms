@@ -1,7 +1,7 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { configure } from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
 configure({ adapter: new Adapter() });
 import { mount } from "enzyme";
 import sinon from "sinon";
@@ -101,7 +101,7 @@ describe("SelectControl", function() {
   });
 
   it("should call handleFocus if input is focus", function() {
-    const handleFocus =  sinon.spy();
+    const handleFocus = sinon.spy();
 
     const USStateFieldOptions = [
       {
@@ -111,8 +111,9 @@ describe("SelectControl", function() {
       {
         valueKey: "AK",
         valueText: "Alaska"
-      }];
- 
+      }
+    ];
+
     const SelectForm = props => {
       return (
         <form>
@@ -130,11 +131,11 @@ describe("SelectControl", function() {
     };
 
     const Form = WVUSForm(SelectForm);
-    
+
     const wrapper = mount(<Form />);
-   // console.log(wrapper);
+    // console.log(wrapper);
     wrapper.find("select").simulate("focus");
- 
+
     expect(handleFocus.calledOnce).toEqual(true);
   });
 
@@ -216,7 +217,11 @@ describe("SelectControl", function() {
 
   it("should be capable of having custom label and input classes", function() {
     const wrapper = mount(<Form />);
-    expect(wrapper.find(".wvus-field-state label").hasClass("state-label")).toBe(true);
-    expect(wrapper.find(".wvus-field-state select").hasClass("state-input")).toBe(true);
+    expect(
+      wrapper.find(".wvus-field-state label").hasClass("state-label")
+    ).toBe(true);
+    expect(
+      wrapper.find(".wvus-field-state select").hasClass("state-input")
+    ).toBe(true);
   });
 });
