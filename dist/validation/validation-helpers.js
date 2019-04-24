@@ -16,7 +16,7 @@
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.validateCreditCard = exports.validateCreditCardType = exports.validateCreditCardNum = exports.validateNotPast10Years = exports.validateIsNotPastYearsOut = exports.validateIsFutureDate = exports.validateExpirationDate = exports.validatePassword = exports.validateIsInt = exports.validateHasNumber = exports.validateHasUpperCase = exports.validateHasLowerCase = exports.validateNoSpaces = exports.validateExactLength = exports.validateMax = exports.validateMin = exports.validateZip = exports.validatePhone = exports.validateEmailDoublePeriods = exports.validateEmailEndPeriods = exports.validateEmailStartPeriods = exports.validateEmail = exports.validateEmpty = exports.validateRequired = exports.createValidationHelper = undefined;
+  exports.validateCreditCard = exports.validateCreditCardType = exports.validateCreditCardNum = exports.validateNotPast10Years = exports.validateIsNotPastYearsOut = exports.validateIsFutureDate = exports.validateExpirationDate = exports.validatePassword = exports.validateIsInt = exports.validateContainChars = exports.validateHasNumber = exports.validateHasUpperCase = exports.validateHasLowerCase = exports.validateNoSpaces = exports.validateExactLength = exports.validateMax = exports.validateMin = exports.validateZip = exports.validatePhone = exports.validateEmailDoublePeriods = exports.validateEmailEndPeriods = exports.validateEmailStartPeriods = exports.validateEmail = exports.validateEmpty = exports.validateRequired = exports.createValidationHelper = undefined;
 
   var _queryStringParser2 = _interopRequireDefault(_queryStringParser);
 
@@ -284,6 +284,14 @@
     };
   };
 
+  var validateContainChars = function validateContainChars(value) {
+    var containsCharsRegEx = /[)(~%<>]/;
+    return {
+      valid: !containsCharsRegEx.test((0, _validator.trim)(value)),
+      message: "Please do not use any of the following invalid characters: ),(,>,<,~,%"
+    };
+  };
+
   var validateEmpty = function validateEmpty(value) {
     return {
       valid: (0, _validator.isEmpty)((0, _validator.trim)(value)),
@@ -403,6 +411,7 @@
   exports.validateHasLowerCase = validateHasLowerCase;
   exports.validateHasUpperCase = validateHasUpperCase;
   exports.validateHasNumber = validateHasNumber;
+  exports.validateContainChars = validateContainChars;
   exports.validateIsInt = validateIsInt;
   exports.validatePassword = validatePassword;
   exports.validateExpirationDate = validateExpirationDate;
