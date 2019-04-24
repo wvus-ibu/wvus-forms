@@ -201,6 +201,15 @@ const validatePassword = value => {
   };
 };
 
+const validateContainChars = value => {
+  const containsCharsRegEx = /[)(~%<>]/;
+  return {
+    valid: !containsCharsRegEx.test(trim(value)),
+    message:
+      "Please do not use any of the following invalid characters: ),(,>,<,~,%"
+  };
+};
+
 const validateEmpty = value => {
   return {
     valid: isEmpty(trim(value)),
@@ -319,6 +328,7 @@ export {
   validateHasLowerCase,
   validateHasUpperCase,
   validateHasNumber,
+  validateContainChars,
   validateIsInt,
   validatePassword,
   validateExpirationDate,
