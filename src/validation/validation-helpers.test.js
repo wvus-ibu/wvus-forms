@@ -14,6 +14,7 @@ import {
   validateHasLowerCase,
   validateHasUpperCase,
   validateHasNumber,
+  validateContainChars,
   validateIsInt,
   validatePassword,
   validateExpirationDate,
@@ -369,6 +370,26 @@ test("validateHasNumber can validate a string has at least one number", () => {
   const result4 = validateHasNumber("&*^)#(@_)#($");
   expect(result4.valid).toBe(false);
   expect(result4.message).toBe(message);
+});
+
+test('validateContainChars can validate a clean message', () => {
+  const resultValidMessageNoHTMLTags = validateContainChars('this message contains no html tags');
+  expect(resultValidMessageNoHTMLTags.valid).toBe(true);
+});
+test('validateContainChars cannot validate a dirty message', () => {
+	const message = 'Please do not use any of the following invalid characters: ),(,>,<,~,%';
+
+  const resultValidMessageNoHTMLTags = validateContainChars('this message contains html tags < >');
+  expect(resultValidMessageNoHTMLTags.valid).toBe(false);
+  expect(resultValidMessageNoHTMLTags.message).toBe(message);
+
+  const resultValidMessageNoParens = validateContainChars('this message contains parens )(');
+  expect(resultValidMessageNoParens.valid).toBe(false);
+  expect(resultValidMessageNoParens.message).toBe(message);
+
+  const resultValidMessageNoTildePercent = validateContainChars('this message contains tilde and percent %,~');
+  expect(resultValidMessageNoTildePercent.valid).toBe(false);
+  expect(resultValidMessageNoTildePercent.message).toBe(message);
 });
 
 test("validateIsInt can validate a string is only integer numbers", () => {
