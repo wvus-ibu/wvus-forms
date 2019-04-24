@@ -1,4 +1,11 @@
-import { isEmpty, trim, isEmail, isLength, isCreditCard, isInt } from "validator";
+import {
+  isEmpty,
+  trim,
+  isEmail,
+  isLength,
+  isCreditCard,
+  isInt
+} from "validator";
 import QSToObject from "./query-string-parser";
 import { getCreditCardTypeValidity } from "./credit-card-helpers";
 
@@ -88,7 +95,6 @@ const validateEmail = value => {
   };
 };
 
-
 const validateEmailStartPeriods = value => {
   var testValid = true;
   const periodStartRegex = new RegExp("^([\\.])");
@@ -112,7 +118,7 @@ const validateEmailEndPeriods = value => {
   return {
     valid: testValid,
     message:
-        "Email addresses may not use a . (period) character followed by an @ symbol"
+      "Email addresses may not use a . (period) character followed by an @ symbol"
   };
 };
 
@@ -229,8 +235,7 @@ const validatePhone = value => {
   const phoneRegEx = /^[0-9]{3}-?[0-9]{3}\s?-?[0-9]{4}$/g;
   return {
     valid: phoneRegEx.test(trim(value)),
-    message:
-      "Please enter a valid 10 digit phone number. E.g. 123-456-7890."
+    message: "Please enter a valid 10 digit phone number. E.g. 123-456-7890."
   };
 };
 

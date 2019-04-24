@@ -5,14 +5,14 @@ import {
   checkForNewFieldErrorAndFireAnalytics
 } from "./analytics-helpers";
 
-beforeEach(()=> {
+beforeEach(() => {
   document.dispatchEvent = jest.fn();
 });
 describe("triggerAnalyticsEvent", () => {
   it("should trigger an event on document", () => {
     document.dispatchEvent = jest.fn();
-    const eventData = {hello: "world"};
-    triggerAnalyticsEvent("testEvent", {hello: "world"});
+    const eventData = { hello: "world" };
+    triggerAnalyticsEvent("testEvent", { hello: "world" });
     expect(document.dispatchEvent.mock.calls.length).toBe(1);
     expect(document.dispatchEvent.mock.calls[0][0].detail).toEqual(eventData);
   });
@@ -26,17 +26,20 @@ describe("triggerWVUSClientMessageEvent", () => {
       component_name: "testComp",
       message: "Error message goes here.",
       message_type: "error"
-    }
+    };
 
-    triggerWVUSClientMessageEvent(eventData.app_name, eventData.component_name, eventData.message);
+    triggerWVUSClientMessageEvent(
+      eventData.app_name,
+      eventData.component_name,
+      eventData.message
+    );
     expect(document.dispatchEvent.mock.calls.length).toBe(1);
     expect(document.dispatchEvent.mock.calls[0][0].detail).toEqual(eventData);
   });
-  
 });
 
 describe("checkForNewFieldErrorAndFireAnalytics", () => {
-  beforeAll(()=> {
+  beforeAll(() => {
     document.dispatchEvent = jest.fn();
   });
 
@@ -44,9 +47,24 @@ describe("checkForNewFieldErrorAndFireAnalytics", () => {
     const fieldState = {};
     const prevFieldState = {};
 
-    checkForNewFieldErrorAndFireAnalytics("appTest", "field", fieldState, prevFieldState);
-    checkForNewFieldErrorAndFireAnalytics("", "field", fieldState, prevFieldState);
-    checkForNewFieldErrorAndFireAnalytics("appTest", "", fieldState, prevFieldState);
+    checkForNewFieldErrorAndFireAnalytics(
+      "appTest",
+      "field",
+      fieldState,
+      prevFieldState
+    );
+    checkForNewFieldErrorAndFireAnalytics(
+      "",
+      "field",
+      fieldState,
+      prevFieldState
+    );
+    checkForNewFieldErrorAndFireAnalytics(
+      "appTest",
+      "",
+      fieldState,
+      prevFieldState
+    );
     expect(document.dispatchEvent.mock.calls.length).toBe(0);
   });
 
@@ -56,7 +74,7 @@ describe("checkForNewFieldErrorAndFireAnalytics", () => {
       component_name: "testComp",
       message: "Error message goes here.",
       message_type: "error"
-    }
+    };
 
     // Previously unseen message hidden from user due to secondInteraction being false
     const newErroredStateInteractionComplete = {
@@ -72,23 +90,26 @@ describe("checkForNewFieldErrorAndFireAnalytics", () => {
       }
     };
 
-    const {fieldState, prevFieldState} = newErroredStateInteractionComplete;
-    checkForNewFieldErrorAndFireAnalytics(eventData.app_name, eventData.component_name, fieldState, prevFieldState);
+    const { fieldState, prevFieldState } = newErroredStateInteractionComplete;
+    checkForNewFieldErrorAndFireAnalytics(
+      eventData.app_name,
+      eventData.component_name,
+      fieldState,
+      prevFieldState
+    );
     expect(document.dispatchEvent.mock.calls.length).toBe(1);
     expect(document.dispatchEvent.mock.calls[0][0].detail).toEqual(eventData);
-    
   });
-  
+
   it("should NOT trigger an event if same error message previously shown to user", () => {
-    
     const eventData = {
       app_name: "testApp",
       component_name: "testComp",
       message: "Error message goes here.",
       message_type: "error"
-    }
-    
-    //Same Error message already shown to user 
+    };
+
+    //Same Error message already shown to user
     const alreadyShownErroredStateInteractionComplete = {
       fieldState: {
         secondInteraction: true,
@@ -102,19 +123,27 @@ describe("checkForNewFieldErrorAndFireAnalytics", () => {
       }
     };
     // test already shown fieldState doesn't trigger new event
-    const {fieldState: alreadyShownFieldState, prevFieldState: alreadyShownPrevFieldState} = alreadyShownErroredStateInteractionComplete;
-    checkForNewFieldErrorAndFireAnalytics(eventData.app_name, eventData.component_name, alreadyShownFieldState, alreadyShownPrevFieldState);
+    const {
+      fieldState: alreadyShownFieldState,
+      prevFieldState: alreadyShownPrevFieldState
+    } = alreadyShownErroredStateInteractionComplete;
+    checkForNewFieldErrorAndFireAnalytics(
+      eventData.app_name,
+      eventData.component_name,
+      alreadyShownFieldState,
+      alreadyShownPrevFieldState
+    );
     expect(document.dispatchEvent.mock.calls.length).toBe(0);
   });
-  
+
   it("should trigger an event when new error message never before shown to user", () => {
     const eventData = {
       app_name: "testApp",
       component_name: "testComp",
       message: "Error message goes here.",
       message_type: "error"
-    }
-    
+    };
+
     // New error message text
     const newMessageErroredState = {
       fieldState: {
@@ -128,23 +157,27 @@ describe("checkForNewFieldErrorAndFireAnalytics", () => {
         errorMessage: "Old error message"
       }
     };
-    
-    const {fieldState, prevFieldState} = newMessageErroredState;
-    checkForNewFieldErrorAndFireAnalytics(eventData.app_name, eventData.component_name, fieldState, prevFieldState);
+
+    const { fieldState, prevFieldState } = newMessageErroredState;
+    checkForNewFieldErrorAndFireAnalytics(
+      eventData.app_name,
+      eventData.component_name,
+      fieldState,
+      prevFieldState
+    );
     expect(document.dispatchEvent.mock.calls.length).toBe(1);
     expect(document.dispatchEvent.mock.calls[0][0].detail).toEqual(eventData);
   });
 
   it("should NOT trigger an event if field is valid", () => {
-    
     const eventData = {
       app_name: "testApp",
       component_name: "testComp",
       message: "Error message goes here.",
       message_type: "error"
-    }
-    
-    //Same Error message already shown to user 
+    };
+
+    //Same Error message already shown to user
     const validFieldState = {
       fieldState: {
         secondInteraction: true,
@@ -158,26 +191,28 @@ describe("checkForNewFieldErrorAndFireAnalytics", () => {
       }
     };
     // test already shown fieldState doesn't trigger new event
-    const {fieldState, prevFieldState} = validFieldState;
-    checkForNewFieldErrorAndFireAnalytics(eventData.app_name, eventData.component_name, fieldState, prevFieldState);
+    const { fieldState, prevFieldState } = validFieldState;
+    checkForNewFieldErrorAndFireAnalytics(
+      eventData.app_name,
+      eventData.component_name,
+      fieldState,
+      prevFieldState
+    );
     expect(document.dispatchEvent.mock.calls.length).toBe(0);
   });
-  
 });
 
 describe("checkForNewFormErrorsAndFireAnalytics", () => {
-  beforeAll(()=> {
+  beforeAll(() => {
     document.dispatchEvent = jest.fn();
   });
 
   it("should should NOT trigger an event if passed empty state", () => {
-
     const formState = {};
     const prevFormState = {};
 
-    checkForNewFormErrorsAndFireAnalytics('testApp', formState, prevFormState);
+    checkForNewFormErrorsAndFireAnalytics("testApp", formState, prevFormState);
     expect(document.dispatchEvent.mock.calls.length).toBe(0);
-    
   });
 
   it("should should NOT trigger an event if field missing from prevState", () => {
@@ -190,7 +225,7 @@ describe("checkForNewFormErrorsAndFireAnalytics", () => {
       fields: {} // missing billing_first from prev state
     };
 
-    checkForNewFormErrorsAndFireAnalytics('testApp', formState, prevFormState);
+    checkForNewFormErrorsAndFireAnalytics("testApp", formState, prevFormState);
     expect(document.dispatchEvent.mock.calls.length).toBe(0);
   });
 
@@ -200,13 +235,13 @@ describe("checkForNewFormErrorsAndFireAnalytics", () => {
       component_name: "billing_first",
       message: "Error message goes here.",
       message_type: "error"
-    }
+    };
     const eventDataLast = {
       app_name: "testApp",
       component_name: "billing_last",
       message: "Error message goes here.",
       message_type: "error"
-    }
+    };
 
     // Previously unseen message hidden from user due to secondInteraction being false
     const formState = {
@@ -222,7 +257,7 @@ describe("checkForNewFormErrorsAndFireAnalytics", () => {
           errorMessage: eventDataLast.message
         }
       }
-    }
+    };
     const prevFormState = {
       fields: {
         billing_first: {
@@ -236,13 +271,20 @@ describe("checkForNewFormErrorsAndFireAnalytics", () => {
           errorMessage: eventDataLast.message
         }
       }
-    }
+    };
 
-    checkForNewFormErrorsAndFireAnalytics(eventDataFirst.app_name, formState, prevFormState);
+    checkForNewFormErrorsAndFireAnalytics(
+      eventDataFirst.app_name,
+      formState,
+      prevFormState
+    );
     expect(document.dispatchEvent.mock.calls.length).toBe(2);
-    expect(document.dispatchEvent.mock.calls[0][0].detail).toEqual(eventDataFirst);
-    expect(document.dispatchEvent.mock.calls[1][0].detail).toEqual(eventDataLast);
+    expect(document.dispatchEvent.mock.calls[0][0].detail).toEqual(
+      eventDataFirst
+    );
+    expect(document.dispatchEvent.mock.calls[1][0].detail).toEqual(
+      eventDataLast
+    );
   });
 });
-checkForNewFormErrorsAndFireAnalytics
-
+checkForNewFormErrorsAndFireAnalytics;

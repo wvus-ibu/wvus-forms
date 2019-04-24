@@ -29,7 +29,8 @@ storiesOf("Form Components", module).add("Input Field States", () => (
       <h3>Input - untouched</h3>
       <SimpleInputForm {...propsUntouched} />
       <p>
-        FieldState:<br />
+        FieldState:
+        <br />
         {window.JSON.stringify(propsUntouched.formMethods.getFieldState())}
       </p>
       <hr />
@@ -39,7 +40,8 @@ storiesOf("Form Components", module).add("Input Field States", () => (
       <h3>Input - showing success state</h3>
       <SimpleInputForm {...propsWithSuccess} />
       <p>
-        FieldState:<br />
+        FieldState:
+        <br />
         {window.JSON.stringify(propsWithSuccess.formMethods.getFieldState())}
       </p>
       <hr />
@@ -49,7 +51,8 @@ storiesOf("Form Components", module).add("Input Field States", () => (
       <h3>Input - showing error state</h3>
       <SimpleInputForm {...propsWithError} />
       <p>
-        FieldState:<br />
+        FieldState:
+        <br />
         {window.JSON.stringify(propsWithError.formMethods.getFieldState())}
       </p>
     </div>
@@ -58,7 +61,8 @@ storiesOf("Form Components", module).add("Input Field States", () => (
       <h3>Input - showing optional field state</h3>
       <SimpleInputForm {...propsOptional} />
       <p>
-        FieldState:<br />
+        FieldState:
+        <br />
         {window.JSON.stringify(propsOptional.formMethods.getFieldState())}
       </p>
     </div>

@@ -44,9 +44,7 @@ class InputHiddenControl extends Component {
 
     return (
       <span
-        className={`${fieldPrimaryClass} ${
-          fieldClasses
-        } input-hidden-control-wrapper`}
+        className={`${fieldPrimaryClass} ${fieldClasses} input-hidden-control-wrapper`}
         data-field-container={fieldId}
       >
         <input

@@ -1,7 +1,7 @@
 import React from "react";
 import { createValidationHelper } from "./validation/validation-helpers.js";
 import merge from "lodash.merge";
-import {checkForNewFormErrorsAndFireAnalytics} from "./misc/analytics-helpers";
+import { checkForNewFormErrorsAndFireAnalytics } from "./misc/analytics-helpers";
 
 /**
  * @module WVUSForm
@@ -26,14 +26,18 @@ function WVUSForm(WrapperForm) {
         fields: {},
         formValid: false
       };
-      this.formName = this.props.formName || 'WVUSForm';
+      this.formName = this.props.formName || "WVUSForm";
 
       this.addFieldToState = this.addFieldToState.bind(this);
     }
 
     componentDidUpdate(prevProps, prevState) {
       // Fires wvusClientMessage error event on every unique form error message show to user
-      checkForNewFormErrorsAndFireAnalytics(this.formName, this.state, prevState);
+      checkForNewFormErrorsAndFireAnalytics(
+        this.formName,
+        this.state,
+        prevState
+      );
     }
 
     /**
@@ -151,10 +155,10 @@ function WVUSForm(WrapperForm) {
         this.validationHelper.firstErrorMessage(fieldName);
         fieldStateUpdate["fields"][fieldName] = {
           isValid: isValid,
-          errorMessage: this.validationHelper.firstErrorMessage(fieldName),
+          errorMessage: this.validationHelper.firstErrorMessage(fieldName)
         };
         if (forceSecondInteraction) {
-          fieldStateUpdate["fields"][fieldName]['secondInteraction'] = true;
+          fieldStateUpdate["fields"][fieldName]["secondInteraction"] = true;
         }
       });
       this.updateFieldsState(fieldStateUpdate);
