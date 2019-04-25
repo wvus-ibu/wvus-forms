@@ -44,10 +44,10 @@
 
   /**
    * Wrapper function which fires the wvusClientMessage event
-   * @param {*} appName 
-   * @param {*} componentName 
-   * @param {*} message 
-   * @param {*} messageType 
+   * @param {*} appName
+   * @param {*} componentName
+   * @param {*} message
+   * @param {*} messageType
    */
   var triggerWVUSClientMessageEvent = function triggerWVUSClientMessageEvent(appName, componentName, message) {
     var messageType = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : "error";
@@ -66,9 +66,9 @@
    * @param {Object} prevFieldState
    */
   var fieldHasNewErrorMessage = function fieldHasNewErrorMessage(fieldState, prevFieldState) {
-    // To determine if message has been shown before, 
+    // To determine if message has been shown before,
     // check for second interaction, failed validation,
-    // and either new error message text or previously wasn't shown 
+    // and either new error message text or previously wasn't shown
     // due to fact that secondinteraction hadn't occurred till now
     // (field was invalid but message not shown to user while interacting
     // with the field )
@@ -77,11 +77,11 @@
 
   /**
    * Fire analytics if new form error has occurred on any fields
-   * in the form. Used in the componentDidUpdate lifecycle method of 
+   * in the form. Used in the componentDidUpdate lifecycle method of
    * form component.
    *
-   * @param {Object} state 
-   * @param {Object} prevState 
+   * @param {Object} state
+   * @param {Object} prevState
    */
   var checkForNewFormErrorsAndFireAnalytics = function checkForNewFormErrorsAndFireAnalytics(appName, state, prevState) {
     if (!state || !state.fields || !prevState || !prevState.fields) {
@@ -106,8 +106,8 @@
   /**
    * Fire analytics if new form error has occurred on specific field.
    *
-   * @param {Object} state 
-   * @param {Object} prevState 
+   * @param {Object} state
+   * @param {Object} prevState
    */
   var checkForNewFieldErrorAndFireAnalytics = function checkForNewFieldErrorAndFireAnalytics(appName, fieldName, fieldState, prevFieldState) {
     if (!appName || !fieldName || !fieldState || !prevFieldState) {
