@@ -130,7 +130,7 @@
           fields: {},
           formValid: false
         };
-        _this.formName = _this.props.formName || 'WVUSForm';
+        _this.formName = _this.props.formName || "WVUSForm";
 
         _this.addFieldToState = _this.addFieldToState.bind(_this);
         return _this;
@@ -230,7 +230,7 @@
               errorMessage: _this3.validationHelper.firstErrorMessage(fieldName)
             };
             if (forceSecondInteraction) {
-              fieldStateUpdate["fields"][fieldName]['secondInteraction'] = true;
+              fieldStateUpdate["fields"][fieldName]["secondInteraction"] = true;
             }
           });
           this.updateFieldsState(fieldStateUpdate);
