@@ -188,7 +188,7 @@
 
   var validateAlphaNumeric = function validateAlphaNumeric(value) {
     var testValid = true;
-    var AlphaNumericRegEx = new RegExp("^[a-zA-Z0-9]+$");
+    var AlphaNumericRegEx = new RegExp("^[a-z]+$");
     if (AlphaNumericRegEx.test(value) === false) {
       testValid = false;
     }
