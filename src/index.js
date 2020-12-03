@@ -17,6 +17,7 @@ import {
 import {
   createValidationHelper,
   validateRequired,
+  validateAlphaNumeric,
   validateEmpty,
   validateEmail,
   validateEmailStartPeriods,
@@ -57,6 +58,7 @@ export {
   createValidationHelper,
   USStateFieldOptions,
   validateRequired,
+  validateAlphaNumeric,
   validateEmpty,
   validateEmail,
   validateEmailStartPeriods,
@@ -97,6 +99,7 @@ export default {
   createValidationHelper,
   USStateFieldOptions,
   validateRequired,
+  validateAlphaNumeric,
   validateEmpty,
   validateEmail,
   validateEmailStartPeriods,
