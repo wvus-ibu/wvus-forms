@@ -16,7 +16,7 @@
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.validateCreditCard = exports.validateCreditCardType = exports.validateCreditCardNum = exports.validateNotPast10Years = exports.validateIsNotPastYearsOut = exports.validateIsFutureDate = exports.validateExpirationDate = exports.validatePassword = exports.validateIsInt = exports.validateContainChars = exports.validateHasNumber = exports.validateHasUpperCase = exports.validateHasLowerCase = exports.validateNoSpaces = exports.validateExactLength = exports.validateMax = exports.validateMin = exports.validateZip = exports.validatePhone = exports.validateEmailDoublePeriods = exports.validateEmailEndPeriods = exports.validateEmailStartPeriods = exports.validateEmail = exports.validateEmpty = exports.validateRequired = exports.createValidationHelper = undefined;
+  exports.validateCreditCard = exports.validateCreditCardType = exports.validateCreditCardNum = exports.validateNotPast10Years = exports.validateIsNotPastYearsOut = exports.validateIsFutureDate = exports.validateExpirationDate = exports.validatePassword = exports.validateIsInt = exports.validateContainChars = exports.validateHasNumber = exports.validateHasUpperCase = exports.validateHasLowerCase = exports.validateNoSpaces = exports.validateExactLength = exports.validateMax = exports.validateMin = exports.validateZip = exports.validatePhone = exports.validateEmailDoublePeriods = exports.validateEmailEndPeriods = exports.validateAlphaNumeric = exports.validateEmailStartPeriods = exports.validateEmail = exports.validateEmpty = exports.validateRequired = exports.createValidationHelper = undefined;
 
   var _queryStringParser2 = _interopRequireDefault(_queryStringParser);
 
@@ -183,6 +183,19 @@
     return {
       valid: testValid,
       message: "Email addresses cannot begin with a . (period) character"
+    };
+  };
+
+  var validateAlphaNumeric = function validateAlphaNumeric(value) {
+    var testValid = true;
+    var AlphaNumericRegEx = new RegExp("^[a-zA-Z0-9]+$");
+    if (AlphaNumericRegEx.test(value) === false) {
+      testValid = false;
+    }
+
+    return {
+      valid: testValid,
+      message: "All characters entered into EFT field must be alphanumeric (numbers and letters)"
     };
   };
 
@@ -400,6 +413,7 @@
   exports.validateEmpty = validateEmpty;
   exports.validateEmail = validateEmail;
   exports.validateEmailStartPeriods = validateEmailStartPeriods;
+  exports.validateAlphaNumeric = validateAlphaNumeric;
   exports.validateEmailEndPeriods = validateEmailEndPeriods;
   exports.validateEmailDoublePeriods = validateEmailDoublePeriods;
   exports.validatePhone = validatePhone;

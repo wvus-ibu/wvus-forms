@@ -108,6 +108,21 @@ const validateEmailStartPeriods = value => {
   };
 };
 
+
+const validateAlphaNumeric = value => {
+  var testValid = true;
+  const AlphaNumericRegEx = new RegExp("^[a-zA-Z0-9]+$");
+  if (AlphaNumericRegEx.test(value) === false) {
+    testValid = false;
+  }
+
+  return {
+    valid: testValid,
+    message:
+      "All characters entered into EFT field must be alphanumeric (numbers and letters)"
+  };
+};
+
 const validateEmailEndPeriods = value => {
   var testValid = true;
   const PeriodAtRegEx = new RegExp("^(?!.*\\.@).*$");
@@ -322,6 +337,7 @@ export {
   validateEmpty,
   validateEmail,
   validateEmailStartPeriods,
+  validateAlphaNumeric,
   validateEmailEndPeriods,
   validateEmailDoublePeriods,
   validatePhone,
