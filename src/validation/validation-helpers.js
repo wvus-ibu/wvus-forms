@@ -110,6 +110,7 @@ const validateEmailStartPeriods = value => {
 
 
 const validateAlphaNumeric = value => {
+  console.log("validateAlphaNumeric");
   var testValid = true;
   const AlphaNumericRegEx = new RegExp("^[a-z]+$");
   if (AlphaNumericRegEx.test(value) === false) {
