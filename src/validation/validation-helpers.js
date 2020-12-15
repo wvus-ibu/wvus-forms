@@ -119,7 +119,7 @@ const validateAlphaNumeric = value => {
   return {
     valid: testValid,
     message:
-      "All characters entered into EFT field must be alphanumeric (numbers and letters)"
+      "All characters entered into this field must be alphanumeric (numbers and letters, no spaces)"
   };
 };
 
