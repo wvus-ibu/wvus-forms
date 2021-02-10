@@ -83,57 +83,55 @@
     function SelectControl(props) {
       _classCallCheck(this, SelectControl);
 
-      return _possibleConstructorReturn(this, (SelectControl.__proto__ || Object.getPrototypeOf(SelectControl)).call(this, props));
+      var _this = _possibleConstructorReturn(this, (SelectControl.__proto__ || Object.getPrototypeOf(SelectControl)).call(this, props));
+
+      var _this$props = _this.props,
+          fieldName = _this$props.fieldName,
+          _this$props$fieldValu = _this$props.fieldValue,
+          fieldValue = _this$props$fieldValu === undefined ? "" : _this$props$fieldValu,
+          _this$props$secondInt = _this$props.secondInteraction,
+          secondInteraction = _this$props$secondInt === undefined ? false : _this$props$secondInt,
+          _this$props$isValid = _this$props.isValid,
+          isValid = _this$props$isValid === undefined ? false : _this$props$isValid,
+          _this$props$validator = _this$props.validators,
+          validators = _this$props$validator === undefined ? [] : _this$props$validator,
+          _this$props$optional = _this$props.optional,
+          optional = _this$props$optional === undefined ? false : _this$props$optional,
+          formMethods = _this$props.formMethods;
+
+      formMethods.addFieldToState(fieldName, fieldValue, secondInteraction, isValid, validators, optional);
+      return _this;
     }
 
     _createClass(SelectControl, [{
-      key: "componentWillMount",
-      value: function componentWillMount() {
-        var _props = this.props,
-            fieldName = _props.fieldName,
-            _props$fieldValue = _props.fieldValue,
-            fieldValue = _props$fieldValue === undefined ? "" : _props$fieldValue,
-            _props$secondInteract = _props.secondInteraction,
-            secondInteraction = _props$secondInteract === undefined ? false : _props$secondInteract,
-            _props$isValid = _props.isValid,
-            isValid = _props$isValid === undefined ? false : _props$isValid,
-            _props$validators = _props.validators,
-            validators = _props$validators === undefined ? [] : _props$validators,
-            _props$optional = _props.optional,
-            optional = _props$optional === undefined ? false : _props$optional,
-            formMethods = _props.formMethods;
-
-        formMethods.addFieldToState(fieldName, fieldValue, secondInteraction, isValid, validators, optional);
-      }
-    }, {
       key: "render",
       value: function render() {
-        var _props2 = this.props,
-            formMethods = _props2.formMethods,
-            fieldOptions = _props2.fieldOptions,
-            fieldName = _props2.fieldName,
-            _props2$fieldId = _props2.fieldId,
-            fieldId = _props2$fieldId === undefined ? fieldName : _props2$fieldId,
-            _props2$fieldClasses = _props2.fieldClasses,
-            fieldClasses = _props2$fieldClasses === undefined ? "" : _props2$fieldClasses,
-            fieldTitle = _props2.fieldTitle,
-            fieldPlaceholder = _props2.fieldPlaceholder,
-            _props2$fieldState = _props2.fieldState,
-            fieldState = _props2$fieldState === undefined ? formMethods.getFieldState(fieldName) : _props2$fieldState,
-            _props2$inputClasses = _props2.inputClasses,
-            inputClasses = _props2$inputClasses === undefined ? "" : _props2$inputClasses,
-            _props2$labelClasses = _props2.labelClasses,
-            labelClasses = _props2$labelClasses === undefined ? "" : _props2$labelClasses,
-            _props2$handleValueCh = _props2.handleValueChange,
-            handleValueChange = _props2$handleValueCh === undefined ? formMethods.handleValueChange : _props2$handleValueCh,
-            _props2$handleBlur = _props2.handleBlur,
-            handleBlur = _props2$handleBlur === undefined ? formMethods.handleBlur : _props2$handleBlur,
-            _props2$handleFocus = _props2.handleFocus,
-            handleFocus = _props2$handleFocus === undefined ? function () {} : _props2$handleFocus,
-            _props2$showUISuccess = _props2.showUISuccess,
-            showUISuccess = _props2$showUISuccess === undefined ? formMethods.showUISuccess(fieldState) : _props2$showUISuccess,
-            _props2$showUIError = _props2.showUIError,
-            showUIError = _props2$showUIError === undefined ? formMethods.showUIError(fieldState) : _props2$showUIError;
+        var _props = this.props,
+            formMethods = _props.formMethods,
+            fieldOptions = _props.fieldOptions,
+            fieldName = _props.fieldName,
+            _props$fieldId = _props.fieldId,
+            fieldId = _props$fieldId === undefined ? fieldName : _props$fieldId,
+            _props$fieldClasses = _props.fieldClasses,
+            fieldClasses = _props$fieldClasses === undefined ? "" : _props$fieldClasses,
+            fieldTitle = _props.fieldTitle,
+            fieldPlaceholder = _props.fieldPlaceholder,
+            _props$fieldState = _props.fieldState,
+            fieldState = _props$fieldState === undefined ? formMethods.getFieldState(fieldName) : _props$fieldState,
+            _props$inputClasses = _props.inputClasses,
+            inputClasses = _props$inputClasses === undefined ? "" : _props$inputClasses,
+            _props$labelClasses = _props.labelClasses,
+            labelClasses = _props$labelClasses === undefined ? "" : _props$labelClasses,
+            _props$handleValueCha = _props.handleValueChange,
+            handleValueChange = _props$handleValueCha === undefined ? formMethods.handleValueChange : _props$handleValueCha,
+            _props$handleBlur = _props.handleBlur,
+            handleBlur = _props$handleBlur === undefined ? formMethods.handleBlur : _props$handleBlur,
+            _props$handleFocus = _props.handleFocus,
+            handleFocus = _props$handleFocus === undefined ? function () {} : _props$handleFocus,
+            _props$showUISuccess = _props.showUISuccess,
+            showUISuccess = _props$showUISuccess === undefined ? formMethods.showUISuccess(fieldState) : _props$showUISuccess,
+            _props$showUIError = _props.showUIError,
+            showUIError = _props$showUIError === undefined ? formMethods.showUIError(fieldState) : _props$showUIError;
 
         var options = fieldOptions.map(function (option, index) {
           return _react2.default.createElement(

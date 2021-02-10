@@ -83,49 +83,47 @@
     function CheckboxControl(props) {
       _classCallCheck(this, CheckboxControl);
 
-      return _possibleConstructorReturn(this, (CheckboxControl.__proto__ || Object.getPrototypeOf(CheckboxControl)).call(this, props));
+      var _this = _possibleConstructorReturn(this, (CheckboxControl.__proto__ || Object.getPrototypeOf(CheckboxControl)).call(this, props));
+
+      var _this$props = _this.props,
+          fieldName = _this$props.fieldName,
+          _this$props$fieldValu = _this$props.fieldValue,
+          fieldValue = _this$props$fieldValu === undefined ? false : _this$props$fieldValu,
+          _this$props$secondInt = _this$props.secondInteraction,
+          secondInteraction = _this$props$secondInt === undefined ? false : _this$props$secondInt,
+          _this$props$isValid = _this$props.isValid,
+          isValid = _this$props$isValid === undefined ? true : _this$props$isValid,
+          _this$props$validator = _this$props.validators,
+          validators = _this$props$validator === undefined ? [] : _this$props$validator,
+          formMethods = _this$props.formMethods;
+
+      formMethods.addFieldToState(fieldName, fieldValue, secondInteraction, isValid, validators);
+      return _this;
     }
 
     _createClass(CheckboxControl, [{
-      key: "componentWillMount",
-      value: function componentWillMount() {
-        var _props = this.props,
-            fieldName = _props.fieldName,
-            _props$fieldValue = _props.fieldValue,
-            fieldValue = _props$fieldValue === undefined ? false : _props$fieldValue,
-            _props$secondInteract = _props.secondInteraction,
-            secondInteraction = _props$secondInteract === undefined ? false : _props$secondInteract,
-            _props$isValid = _props.isValid,
-            isValid = _props$isValid === undefined ? true : _props$isValid,
-            _props$validators = _props.validators,
-            validators = _props$validators === undefined ? [] : _props$validators,
-            formMethods = _props.formMethods;
-
-        formMethods.addFieldToState(fieldName, fieldValue, secondInteraction, isValid, validators);
-      }
-    }, {
       key: "render",
       value: function render() {
-        var _props2 = this.props,
-            formMethods = _props2.formMethods,
-            fieldName = _props2.fieldName,
-            _props2$fieldId = _props2.fieldId,
-            fieldId = _props2$fieldId === undefined ? fieldName : _props2$fieldId,
-            _props2$fieldClasses = _props2.fieldClasses,
-            fieldClasses = _props2$fieldClasses === undefined ? "" : _props2$fieldClasses,
-            fieldTitle = _props2.fieldTitle,
-            _props2$attributes = _props2.attributes,
-            attributes = _props2$attributes === undefined ? {} : _props2$attributes,
-            _props2$inputClasses = _props2.inputClasses,
-            inputClasses = _props2$inputClasses === undefined ? "" : _props2$inputClasses,
-            _props2$labelClasses = _props2.labelClasses,
-            labelClasses = _props2$labelClasses === undefined ? "" : _props2$labelClasses,
-            _props2$handleValueCh = _props2.handleValueChange,
-            handleValueChange = _props2$handleValueCh === undefined ? formMethods.handleValueChange : _props2$handleValueCh,
-            _props2$handleFocus = _props2.handleFocus,
-            handleFocus = _props2$handleFocus === undefined ? function () {} : _props2$handleFocus,
-            _props2$fieldState = _props2.fieldState,
-            fieldState = _props2$fieldState === undefined ? formMethods.getFieldState(fieldName) : _props2$fieldState;
+        var _props = this.props,
+            formMethods = _props.formMethods,
+            fieldName = _props.fieldName,
+            _props$fieldId = _props.fieldId,
+            fieldId = _props$fieldId === undefined ? fieldName : _props$fieldId,
+            _props$fieldClasses = _props.fieldClasses,
+            fieldClasses = _props$fieldClasses === undefined ? "" : _props$fieldClasses,
+            fieldTitle = _props.fieldTitle,
+            _props$attributes = _props.attributes,
+            attributes = _props$attributes === undefined ? {} : _props$attributes,
+            _props$inputClasses = _props.inputClasses,
+            inputClasses = _props$inputClasses === undefined ? "" : _props$inputClasses,
+            _props$labelClasses = _props.labelClasses,
+            labelClasses = _props$labelClasses === undefined ? "" : _props$labelClasses,
+            _props$handleValueCha = _props.handleValueChange,
+            handleValueChange = _props$handleValueCha === undefined ? formMethods.handleValueChange : _props$handleValueCha,
+            _props$handleFocus = _props.handleFocus,
+            handleFocus = _props$handleFocus === undefined ? function () {} : _props$handleFocus,
+            _props$fieldState = _props.fieldState,
+            fieldState = _props$fieldState === undefined ? formMethods.getFieldState(fieldName) : _props$fieldState;
 
 
         var disabled = attributes.disabled ? attributes.disabled : false;

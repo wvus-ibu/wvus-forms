@@ -86,36 +86,32 @@
       var _this = _possibleConstructorReturn(this, (RadioControl.__proto__ || Object.getPrototypeOf(RadioControl)).call(this, props));
 
       _this.handleValueChange = _this.handleValueChange.bind(_this);
+      var _this$props = _this.props,
+          fieldId = _this$props.fieldId,
+          fieldName = _this$props.fieldName,
+          _this$props$fieldChec = _this$props.fieldCheckedDefault,
+          fieldCheckedDefault = _this$props$fieldChec === undefined ? false : _this$props$fieldChec,
+          _this$props$secondInt = _this$props.secondInteraction,
+          secondInteraction = _this$props$secondInt === undefined ? false : _this$props$secondInt,
+          _this$props$isValid = _this$props.isValid,
+          isValid = _this$props$isValid === undefined ? false : _this$props$isValid,
+          _this$props$validator = _this$props.validators,
+          validators = _this$props$validator === undefined ? [] : _this$props$validator,
+          _this$props$optional = _this$props.optional,
+          optional = _this$props$optional === undefined ? false : _this$props$optional,
+          formMethods = _this$props.formMethods;
+
+
+      // Only setup state if initally checked radio button
+      if (fieldCheckedDefault) {
+        // Set value to fieldId
+        var fieldValue = fieldId;
+        formMethods.addFieldToState(fieldName, fieldValue, secondInteraction, isValid, validators, optional);
+      }
       return _this;
     }
 
     _createClass(RadioControl, [{
-      key: "componentWillMount",
-      value: function componentWillMount() {
-        var _props = this.props,
-            fieldId = _props.fieldId,
-            fieldName = _props.fieldName,
-            _props$fieldCheckedDe = _props.fieldCheckedDefault,
-            fieldCheckedDefault = _props$fieldCheckedDe === undefined ? false : _props$fieldCheckedDe,
-            _props$secondInteract = _props.secondInteraction,
-            secondInteraction = _props$secondInteract === undefined ? false : _props$secondInteract,
-            _props$isValid = _props.isValid,
-            isValid = _props$isValid === undefined ? false : _props$isValid,
-            _props$validators = _props.validators,
-            validators = _props$validators === undefined ? [] : _props$validators,
-            _props$optional = _props.optional,
-            optional = _props$optional === undefined ? false : _props$optional,
-            formMethods = _props.formMethods;
-
-
-        // Only setup state if initally checked radio button
-        if (fieldCheckedDefault) {
-          // Set value to fieldId
-          var fieldValue = fieldId;
-          formMethods.addFieldToState(fieldName, fieldValue, secondInteraction, isValid, validators, optional);
-        }
-      }
-    }, {
       key: "handleValueChange",
       value: function handleValueChange(e) {
         var setValueChange = this.props.formMethods.setValueChange;
@@ -125,25 +121,25 @@
     }, {
       key: "render",
       value: function render() {
-        var _props2 = this.props,
-            formMethods = _props2.formMethods,
-            fieldId = _props2.fieldId,
-            fieldName = _props2.fieldName,
-            _props2$fieldClasses = _props2.fieldClasses,
-            fieldClasses = _props2$fieldClasses === undefined ? "" : _props2$fieldClasses,
-            fieldTitle = _props2.fieldTitle,
-            _props2$inputClasses = _props2.inputClasses,
-            inputClasses = _props2$inputClasses === undefined ? "" : _props2$inputClasses,
-            _props2$labelClasses = _props2.labelClasses,
-            labelClasses = _props2$labelClasses === undefined ? "" : _props2$labelClasses,
-            _props2$fieldState = _props2.fieldState,
-            fieldState = _props2$fieldState === undefined ? formMethods.getFieldState(fieldName) : _props2$fieldState,
-            _props2$handleValueCh = _props2.handleValueChange,
-            handleValueChange = _props2$handleValueCh === undefined ? this.handleValueChange : _props2$handleValueCh,
-            _props2$handleBlur = _props2.handleBlur,
-            handleBlur = _props2$handleBlur === undefined ? function () {} : _props2$handleBlur,
-            _props2$handleFocus = _props2.handleFocus,
-            handleFocus = _props2$handleFocus === undefined ? function () {} : _props2$handleFocus;
+        var _props = this.props,
+            formMethods = _props.formMethods,
+            fieldId = _props.fieldId,
+            fieldName = _props.fieldName,
+            _props$fieldClasses = _props.fieldClasses,
+            fieldClasses = _props$fieldClasses === undefined ? "" : _props$fieldClasses,
+            fieldTitle = _props.fieldTitle,
+            _props$inputClasses = _props.inputClasses,
+            inputClasses = _props$inputClasses === undefined ? "" : _props$inputClasses,
+            _props$labelClasses = _props.labelClasses,
+            labelClasses = _props$labelClasses === undefined ? "" : _props$labelClasses,
+            _props$fieldState = _props.fieldState,
+            fieldState = _props$fieldState === undefined ? formMethods.getFieldState(fieldName) : _props$fieldState,
+            _props$handleValueCha = _props.handleValueChange,
+            handleValueChange = _props$handleValueCha === undefined ? this.handleValueChange : _props$handleValueCha,
+            _props$handleBlur = _props.handleBlur,
+            handleBlur = _props$handleBlur === undefined ? function () {} : _props$handleBlur,
+            _props$handleFocus = _props.handleFocus,
+            handleFocus = _props$handleFocus === undefined ? function () {} : _props$handleFocus;
 
 
         var fieldPrimaryClass = "wvus-field-" + fieldName + " wvus-field-" + fieldId;

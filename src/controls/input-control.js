@@ -5,9 +5,6 @@ import Message from "./message.js";
 class InputControl extends Component {
   constructor(props) {
     super(props);
-  }
-
-  componentWillMount() {
     const {
       fieldName,
       fieldValue = "",
