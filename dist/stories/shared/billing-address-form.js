@@ -122,7 +122,12 @@
             fieldTitle: "Last Name",
             fieldClasses: "wvus-field-50 wvus-field--end",
             formMethods: formMethods,
-            validators: [_index.validateRequired]
+            validators: [_index.validateRequired],
+            renderFieldPrefix: _react2.default.createElement(
+              "div",
+              null,
+              "party"
+            )
           }),
           _react2.default.createElement(_index.InputControl, {
             fieldName: "address1",

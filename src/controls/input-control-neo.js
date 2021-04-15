@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Message from "./message.js";
 
-class InputControl extends Component {
+class InputControlNeo extends Component {
   constructor(props) {
     super(props);
     const {
@@ -12,8 +12,7 @@ class InputControl extends Component {
       isValid = false,
       validators = [],
       optional = false,
-      formMethods,
-      renderFieldPrefix = ''
+      formMethods
     } = this.props;
 
     formMethods.addFieldToState(
@@ -71,52 +70,54 @@ class InputControl extends Component {
 
     return (
       <div
-        className={`${fieldPrimaryClass} ${fieldClasses} form-group has-icon ${validityClass}`}
+        className={`${fieldPrimaryClass} ${fieldClasses} form-group form-group--neo ${validityClass}`}
         data-field-container={fieldId}
         data-field-is-valid={fieldState.isValid}
       >
         {!hideLabel && label}
         <div className="form-control-wrapper">
-          {renderFieldPrefix && (renderFieldPrefix)}
-          <input
-            id={fieldId || fieldName}
-            className={`form-control ${inputClasses}`}
-            value={fieldValue}
-            name={fieldName}
-            onBlur={handleBlur}
-            onChange={handleValueChange}
-            onFocus={handleFocus}
-            type={fieldType}
-            placeholder={fieldPlaceholder}
-            readOnly={readOnly}
-            disabled={disabled}
-          />
-          {typeof characterCount !== "undefined" ? (
-            <span className="message character-count">{characterCount}</span>
-          ) : (
-            ""
-          )}
-          {!hideMessage && showUIError ? (
-            <Message
-              showError={true}
-              showSuccess={false}
-              message={fieldState.errorMessage}
+          <div className="input-group input-group--neo">
+            {renderFieldPrefix && (renderFieldPrefix)}
+            <input
+              id={fieldId || fieldName}
+              className={`form-control ${renderFieldPrefix && 'giving-form__form-control widget-price'} ${inputClasses}`}
+              value={fieldValue}
+              name={fieldName}
+              onBlur={handleBlur}
+              onChange={handleValueChange}
+              onFocus={handleFocus}
+              type={fieldType}
+              placeholder={fieldPlaceholder}
+              readOnly={readOnly}
+              disabled={disabled}
             />
-          ) : (
-            ""
-          )}
-          {!hideMessage && showUISuccess ? (
-            <Message showError={false} showSuccess={true} />
-          ) : (
-            ""
-          )}
+          </div>
         </div>
+        {typeof characterCount !== "undefined" ? (
+          <span className="message character-count">{characterCount}</span>
+        ) : (
+          ""
+        )}
+        {!hideMessage && showUIError ? (
+          <Message
+            showError={true}
+            showSuccess={false}
+            message={fieldState.errorMessage}
+          />
+        ) : (
+          ""
+        )}
+        {!hideMessage && showUISuccess ? (
+          <Message showError={false} showSuccess={true} />
+        ) : (
+          ""
+        )}
       </div>
     );
   }
 }
 
-InputControl.propTypes = {
+InputControlNeo.propTypes = {
   fieldName: PropTypes.string.isRequired,
   renderFieldPrefix: PropTypes.element,
   formMethods: PropTypes.shape({
@@ -134,4 +135,4 @@ InputControl.propTypes = {
   validators: PropTypes.array
 };
 
-export default InputControl;
+export default InputControlNeo;

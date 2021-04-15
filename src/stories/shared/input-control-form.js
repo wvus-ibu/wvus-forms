@@ -3,6 +3,7 @@ import React from "react";
 import {
   WVUSForm,
   InputControl,
+  InputControlNeo,
   SelectControl,
   CheckboxControl
 } from "../../index";
@@ -143,6 +144,60 @@ const SimpleInputFormClasses = props => {
   );
 };
 
+const SimpleInputNeo = props => {
+  return (
+    <form>
+      <InputControlNeo
+        inputClasses="first-name-input"
+        labelClasses="first-name-label"
+        fieldPlaceholder="Tim Stehlin"
+        fieldName="fname"
+        fieldTitle="First Name"
+        fieldClasses="custom-class-field-input"
+        formMethods={props.formMethods}
+        attributes={props.attributes}
+      />
+    </form>
+  );
+};
+
+const SimpleInputPrefixNeo = props => {
+  return (
+    <form>
+      <InputControlNeo
+        inputClasses="first-name-input"
+        labelClasses="first-name-label"
+        fieldPlaceholder="55"
+        fieldName="fname"
+        fieldTitle="Price"
+        fieldClasses="custom-class-field-input"
+        formMethods={props.formMethods}
+        attributes={props.attributes}
+        renderFieldPrefix={<span class="giving-form__currency">$</span>}
+      />
+    </form>
+  );
+};
+
+const SimpleInputNoLabelNeo = props => {
+  return (
+    <form>
+      <InputControlNeo
+        inputClasses="first-name-input"
+        labelClasses="first-name-label"
+        fieldPlaceholder="Enter a value"
+        fieldName="fname"
+        fieldTitle="Price"
+        fieldClasses="custom-class-field-input"
+        formMethods={props.formMethods}
+        attributes={props.attributes}
+        renderFieldPrefix={<span class="giving-form__currency">$</span>}
+        hideLabel={true}
+      />
+    </form>
+  );
+};
+
 export {
   SimpleInputForm,
   SimpleInputStates,
@@ -150,6 +205,9 @@ export {
   SimpleInputFormRequired,
   SimpleInputFormAttr,
   SimpleInputFormClasses,
+  SimpleInputNeo,
+  SimpleInputPrefixNeo,
+  SimpleInputNoLabelNeo,
   propsUntouched,
   propsWithError,
   propsWithSuccess,
