@@ -1,6 +1,6 @@
 {
   "name": "wvus-forms",
-  "version": "3.4.7",
+  "version": "4.0.1",
   "description": "Validessa - Defender of Data (WVUS Form Validation Library)",
   "repository": {
     "type": "git",
@@ -76,12 +76,8 @@
     "css-loader": "^3.2.1",
     "eslint": "^6.7.2",
     "lodash.merge": "^4.6.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
+    "react": "17.*",
+    "react-dom": "17.*",
     "validator": "^12.1.0"
-  },
-  "peerDependencies": {
-    "react": "16.*",
-    "react-dom": "16.*"
   }
 }
