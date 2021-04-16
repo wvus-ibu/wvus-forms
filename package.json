@@ -1,6 +1,6 @@
 {
   "name": "wvus-forms",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "description": "Validessa - Defender of Data (WVUS Form Validation Library)",
   "repository": {
     "type": "git",
@@ -69,7 +69,7 @@
     "prettier": "^1.14.2",
     "react-test-renderer": "^16.4.2",
     "sinon": "^1.17.7",
-    "swing-ui": "github:wvus-ibu/swing#v2.8.2"
+    "swing-ui": "github:wvus-ibu/swing#v2.23.1"
   },
   "dependencies": {
     "babel-runtime": "^6.26.0",

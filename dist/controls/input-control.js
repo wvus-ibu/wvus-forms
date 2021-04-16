@@ -97,7 +97,9 @@
           validators = _this$props$validator === undefined ? [] : _this$props$validator,
           _this$props$optional = _this$props.optional,
           optional = _this$props$optional === undefined ? false : _this$props$optional,
-          formMethods = _this$props.formMethods;
+          formMethods = _this$props.formMethods,
+          _this$props$renderFie = _this$props.renderFieldPrefix,
+          renderFieldPrefix = _this$props$renderFie === undefined ? '' : _this$props$renderFie;
 
 
       formMethods.addFieldToState(fieldName, fieldValue, secondInteraction, isValid, validators, optional);
@@ -138,7 +140,9 @@
             _props$showUIError = _props.showUIError,
             showUIError = _props$showUIError === undefined ? formMethods.showUIError(fieldState) : _props$showUIError,
             _props$hideMessage = _props.hideMessage,
-            hideMessage = _props$hideMessage === undefined ? false : _props$hideMessage;
+            hideMessage = _props$hideMessage === undefined ? false : _props$hideMessage,
+            _props$renderFieldPre = _props.renderFieldPrefix,
+            renderFieldPrefix = _props$renderFieldPre === undefined ? '' : _props$renderFieldPre;
 
         var readOnly = attributes.readOnly ? attributes.readOnly : false;
         var disabled = attributes.disabled ? attributes.disabled : false;
@@ -170,6 +174,7 @@
           _react2.default.createElement(
             "div",
             { className: "form-control-wrapper" },
+            renderFieldPrefix && renderFieldPrefix,
             _react2.default.createElement("input", {
               id: fieldId || fieldName,
               className: "form-control " + inputClasses,
@@ -204,6 +209,7 @@
 
   InputControl.propTypes = {
     fieldName: _propTypes2.default.string.isRequired,
+    renderFieldPrefix: _propTypes2.default.element,
     formMethods: _propTypes2.default.shape({
       handleBlur: _propTypes2.default.func.isRequired,
       handleValueChange: _propTypes2.default.func.isRequired,

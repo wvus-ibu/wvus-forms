@@ -12,6 +12,9 @@ import {
   propsOptional,
   SimpleInputStates,
   SimpleInputForm,
+  SimpleInputNeo,
+  SimpleInputPrefixNeo,
+  SimpleInputNoLabelNeo,
   SimpleInputFormHiddenMessage
 } from "./shared/input-control-form";
 
@@ -70,6 +73,31 @@ storiesOf("Form Components", module).add("Input Field States", () => (
     <div>
       <h3>Input - hidden message, errored field</h3>
       <SimpleInputFormHiddenMessage {...propsWithError} />
+    </div>
+
+    <div>
+      <h3>Input - Neo</h3>
+      <SimpleInputNeo {...propsUntouched} />
+    </div>
+
+    <div>
+      <h3>Input Success - Neo</h3>
+      <SimpleInputNeo {...propsWithSuccess} />
+    </div>
+
+    <div>
+      <h3>Input Error - Neo</h3>
+      <SimpleInputNeo {...propsWithError} />
+    </div>
+    
+    <div>
+      <h3>Input - Neo - with prefix</h3>
+      <SimpleInputPrefixNeo {...propsUntouched} />
+    </div>
+    
+    <div>
+      <h3>Input - Neo - no label</h3>
+      <SimpleInputNoLabelNeo {...propsUntouched} />
     </div>
   </div>
 ));
