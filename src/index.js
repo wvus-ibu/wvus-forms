@@ -1,7 +1,6 @@
 import WVUSForm from "./form-hoc.js";
 import CheckboxControl from "./controls/checkbox-control.js";
 import InputControl from "./controls/input-control";
-import InputControlNeo from "./controls/input-control-neo";
 import InputHiddenControl from "./controls/input-hidden-control";
 import Message from "./controls/message.js";
 import RadioControl from "./controls/radio-control.js";
@@ -47,7 +46,6 @@ export {
   WVUSForm,
   CheckboxControl,
   InputControl,
-  InputControlNeo,
   InputHiddenControl,
   Message,
   RadioControl,
@@ -89,7 +87,6 @@ export default {
   WVUSForm,
   CheckboxControl,
   InputControl,
-  InputControlNeo,
   InputHiddenControl,
   Message,
   RadioControl,

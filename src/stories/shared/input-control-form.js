@@ -3,7 +3,6 @@ import React from "react";
 import {
   WVUSForm,
   InputControl,
-  InputControlNeo,
   SelectControl,
   CheckboxControl
 } from "../../index";
@@ -147,15 +146,17 @@ const SimpleInputFormClasses = props => {
 const SimpleInputNeo = props => {
   return (
     <form>
-      <InputControlNeo
+      <InputControl
         inputClasses="first-name-input"
         labelClasses="first-name-label"
+        inputWrapperClasses="input-group input-group--neo"
         fieldPlaceholder="Tim Stehlin"
         fieldName="fname"
         fieldTitle="First Name"
-        fieldClasses="custom-class-field-input"
+        fieldClasses="custom-class-field-input form-group form-group--neo"
         formMethods={props.formMethods}
         attributes={props.attributes}
+        hideMessage={true}
       />
     </form>
   );
@@ -164,16 +165,18 @@ const SimpleInputNeo = props => {
 const SimpleInputPrefixNeo = props => {
   return (
     <form>
-      <InputControlNeo
-        inputClasses="first-name-input"
+      <InputControl
+        inputClasses="first-name-input giving-form__form-control widget-price"
         labelClasses="first-name-label"
+        inputWrapperClasses="input-group input-group--neo"
         fieldPlaceholder="55"
         fieldName="fname"
         fieldTitle="Price"
-        fieldClasses="custom-class-field-input"
+        fieldClasses="custom-class-field-input form-group form-group--neo"
         formMethods={props.formMethods}
         attributes={props.attributes}
         renderFieldPrefix={<span class="giving-form__currency">$</span>}
+        hideMessage={true}
       />
     </form>
   );
@@ -182,9 +185,10 @@ const SimpleInputPrefixNeo = props => {
 const SimpleInputNoLabelNeo = props => {
   return (
     <form>
-      <InputControlNeo
-        inputClasses="first-name-input"
+      <InputControl
+        inputClasses="first-name-input giving-form__form-control widget-price"
         labelClasses="first-name-label"
+        inputWrapperClasses="input-group input-group--neo"
         fieldPlaceholder="Enter a value"
         fieldName="fname"
         fieldTitle="Price"
@@ -193,6 +197,7 @@ const SimpleInputNoLabelNeo = props => {
         attributes={props.attributes}
         renderFieldPrefix={<span class="giving-form__currency">$</span>}
         hideLabel={true}
+        hideMessage={true}
       />
     </form>
   );

@@ -41,6 +41,7 @@ class InputControl extends Component {
       attributes = {},
 
       inputClasses = "",
+      inputWrapperClasses = "",
       labelClasses = "",
 
       handleValueChange = formMethods.handleValueChange,
@@ -49,8 +50,9 @@ class InputControl extends Component {
       showUISuccess = formMethods.showUISuccess(fieldState),
       showUIError = formMethods.showUIError(fieldState),
       hideMessage = false,
-      renderFieldPrefix = '',
-      hideLabel = false
+      successIcon,
+      errorIcon,
+      renderFieldPrefix = ''
     } = this.props;
     const readOnly = attributes.readOnly ? attributes.readOnly : false;
     const disabled = attributes.disabled ? attributes.disabled : false;
@@ -75,8 +77,8 @@ class InputControl extends Component {
         data-field-container={fieldId}
         data-field-is-valid={fieldState.isValid}
       >
-        {!hideLabel && label}
-        <div className="form-control-wrapper">
+        {label}
+        <div className={`form-control-wrapper ${inputWrapperClasses}`}>
           {renderFieldPrefix && (renderFieldPrefix)}
           <input
             id={fieldId || fieldName}
@@ -96,17 +98,24 @@ class InputControl extends Component {
           ) : (
             ""
           )}
-          {!hideMessage && showUIError ? (
+          {showUIError ? (
             <Message
               showError={true}
               showSuccess={false}
               message={fieldState.errorMessage}
+              errorIcon={errorIcon}
+              hideMessage={hideMessage}
             />
           ) : (
             ""
           )}
-          {!hideMessage && showUISuccess ? (
-            <Message showError={false} showSuccess={true} />
+          {showUISuccess ? (
+            <Message 
+              showError={false} 
+              showSuccess={true} 
+              successIcon={successIcon} 
+              hideMessage={hideMessage} 
+            />
           ) : (
             ""
           )}
