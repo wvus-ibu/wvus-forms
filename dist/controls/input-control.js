@@ -127,6 +127,8 @@
             attributes = _props$attributes === undefined ? {} : _props$attributes,
             _props$inputClasses = _props.inputClasses,
             inputClasses = _props$inputClasses === undefined ? "" : _props$inputClasses,
+            _props$inputWrapperCl = _props.inputWrapperClasses,
+            inputWrapperClasses = _props$inputWrapperCl === undefined ? "" : _props$inputWrapperCl,
             _props$labelClasses = _props.labelClasses,
             labelClasses = _props$labelClasses === undefined ? "" : _props$labelClasses,
             _props$handleValueCha = _props.handleValueChange,
@@ -141,6 +143,8 @@
             showUIError = _props$showUIError === undefined ? formMethods.showUIError(fieldState) : _props$showUIError,
             _props$hideMessage = _props.hideMessage,
             hideMessage = _props$hideMessage === undefined ? false : _props$hideMessage,
+            successIcon = _props.successIcon,
+            errorIcon = _props.errorIcon,
             _props$renderFieldPre = _props.renderFieldPrefix,
             renderFieldPrefix = _props$renderFieldPre === undefined ? '' : _props$renderFieldPre;
 
@@ -173,7 +177,7 @@
           label,
           _react2.default.createElement(
             "div",
-            { className: "form-control-wrapper" },
+            { className: "form-control-wrapper " + inputWrapperClasses },
             renderFieldPrefix && renderFieldPrefix,
             _react2.default.createElement("input", {
               id: fieldId || fieldName,
@@ -193,12 +197,19 @@
               { className: "message character-count" },
               characterCount
             ) : "",
-            !hideMessage && showUIError ? _react2.default.createElement(_message2.default, {
+            showUIError ? _react2.default.createElement(_message2.default, {
               showError: true,
               showSuccess: false,
-              message: fieldState.errorMessage
+              message: fieldState.errorMessage,
+              errorIcon: errorIcon,
+              hideMessage: hideMessage
             }) : "",
-            !hideMessage && showUISuccess ? _react2.default.createElement(_message2.default, { showError: false, showSuccess: true }) : ""
+            showUISuccess ? _react2.default.createElement(_message2.default, {
+              showError: false,
+              showSuccess: true,
+              successIcon: successIcon,
+              hideMessage: hideMessage
+            }) : ""
           )
         );
       }

@@ -28,14 +28,19 @@
   var Message = function Message(_ref) {
     var showError = _ref.showError,
         showSuccess = _ref.showSuccess,
-        message = _ref.message;
+        message = _ref.message,
+        hideMessage = _ref.hideMessage,
+        _ref$successIcon = _ref.successIcon,
+        successIcon = _ref$successIcon === undefined ? _react2.default.createElement("i", { className: "fa fa-check-circle" }) : _ref$successIcon,
+        _ref$errorIcon = _ref.errorIcon,
+        errorIcon = _ref$errorIcon === undefined ? _react2.default.createElement("i", { className: "fa fa-exclamation-circle" }) : _ref$errorIcon;
 
-    var icon = showError ? _react2.default.createElement("i", { className: "fa fa-exclamation-circle" }) : showSuccess ? _react2.default.createElement("i", { className: "fa fa-check-circle" }) : null;
+    var icon = showError ? errorIcon : showSuccess ? successIcon : null;
     return _react2.default.createElement(
       "span",
       null,
       icon,
-      _react2.default.createElement(
+      !hideMessage && _react2.default.createElement(
         "span",
         { className: "message", "data-field-validation-message": true },
         message

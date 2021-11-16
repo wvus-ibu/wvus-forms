@@ -16,7 +16,7 @@
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.propsAttrDisabledNotReadonly = exports.propsAttrReadonlyNotDisabled = exports.propsAttrReadonlyDisabled = exports.propsOptional = exports.propsWithSuccess = exports.propsWithError = exports.propsUntouched = exports.SimpleInputFormClasses = exports.SimpleInputFormAttr = exports.SimpleInputFormRequired = exports.SimpleInputFormHiddenMessage = exports.SimpleInputStates = exports.SimpleInputForm = undefined;
+  exports.propsAttrDisabledNotReadonly = exports.propsAttrReadonlyNotDisabled = exports.propsAttrReadonlyDisabled = exports.propsOptional = exports.propsWithSuccess = exports.propsWithError = exports.propsUntouched = exports.SimpleInputNoLabelNeo = exports.SimpleInputPrefixNeo = exports.SimpleInputNeo = exports.SimpleInputFormClasses = exports.SimpleInputFormAttr = exports.SimpleInputFormRequired = exports.SimpleInputFormHiddenMessage = exports.SimpleInputStates = exports.SimpleInputForm = undefined;
 
   var _react2 = _interopRequireDefault(_react);
 
@@ -156,12 +156,83 @@
     );
   };
 
+  var SimpleInputNeo = function SimpleInputNeo(props) {
+    return _react2.default.createElement(
+      "form",
+      null,
+      _react2.default.createElement(_index.InputControl, {
+        inputClasses: "first-name-input",
+        labelClasses: "first-name-label",
+        inputWrapperClasses: "input-group input-group--neo",
+        fieldPlaceholder: "Tim Stehlin",
+        fieldName: "fname",
+        fieldTitle: "First Name",
+        fieldClasses: "custom-class-field-input form-group form-group--neo",
+        formMethods: props.formMethods,
+        attributes: props.attributes,
+        hideMessage: true
+      })
+    );
+  };
+
+  var SimpleInputPrefixNeo = function SimpleInputPrefixNeo(props) {
+    return _react2.default.createElement(
+      "form",
+      null,
+      _react2.default.createElement(_index.InputControl, {
+        inputClasses: "first-name-input giving-form__form-control widget-price",
+        labelClasses: "first-name-label",
+        inputWrapperClasses: "input-group input-group--neo",
+        fieldPlaceholder: "55",
+        fieldName: "fname",
+        fieldTitle: "Price",
+        fieldClasses: "custom-class-field-input form-group form-group--neo",
+        formMethods: props.formMethods,
+        attributes: props.attributes,
+        renderFieldPrefix: _react2.default.createElement(
+          "span",
+          { "class": "giving-form__currency" },
+          "$"
+        ),
+        hideMessage: true
+      })
+    );
+  };
+
+  var SimpleInputNoLabelNeo = function SimpleInputNoLabelNeo(props) {
+    return _react2.default.createElement(
+      "form",
+      null,
+      _react2.default.createElement(_index.InputControl, {
+        inputClasses: "first-name-input giving-form__form-control widget-price",
+        labelClasses: "first-name-label",
+        inputWrapperClasses: "input-group input-group--neo",
+        fieldPlaceholder: "Enter a value",
+        fieldName: "fname",
+        fieldTitle: "Price",
+        fieldClasses: "custom-class-field-input",
+        formMethods: props.formMethods,
+        attributes: props.attributes,
+        renderFieldPrefix: _react2.default.createElement(
+          "span",
+          { "class": "giving-form__currency" },
+          "$"
+        ),
+        hideLabel: true,
+        hideMessage: true
+      })
+    );
+  };
+
   exports.SimpleInputForm = SimpleInputForm;
   exports.SimpleInputStates = SimpleInputStates;
   exports.SimpleInputFormHiddenMessage = SimpleInputFormHiddenMessage;
   exports.SimpleInputFormRequired = SimpleInputFormRequired;
   exports.SimpleInputFormAttr = SimpleInputFormAttr;
   exports.SimpleInputFormClasses = SimpleInputFormClasses;
+  exports.SimpleInputNeo = SimpleInputNeo;
+  exports.SimpleInputPrefixNeo = SimpleInputPrefixNeo;
+  exports.SimpleInputNoLabelNeo = SimpleInputNoLabelNeo;
   exports.propsUntouched = propsUntouched;
   exports.propsWithError = propsWithError;
   exports.propsWithSuccess = propsWithSuccess;
