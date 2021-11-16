@@ -78,6 +78,6 @@
     "lodash.merge": "^4.6.2",
     "react": "17.*",
     "react-dom": "17.*",
-    "validator": "^12.1.0"
+    "validator": "^13.7"
   }
 }
