@@ -195,7 +195,7 @@
 
     return {
       valid: testValid,
-      message: "All characters entered into this field must be alphanumeric (numbers and letters only, no spaces)"
+      message: "All characters entered into this field must be alphanumeric (numbers and letters, no spaces)"
     };
   };
 
