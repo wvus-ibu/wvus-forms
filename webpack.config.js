@@ -1,21 +1,23 @@
 const webpack = require('webpack');
 const path = require("path");
 const ESLintPlugin = require('eslint-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const title = require("./package.json").description;
 const name = require("./package.json").name;
-const libName = name.split("-").map((s,i) => i ? s.charAt(0).toUpperCase() + s.slice(1).toLowerCase() : s.toLowerCase()).join("");
+const libName = "WvusForm";
+
+// Variables
+const useAnalyzer = (process.env.USE_ANALYZER && process.env.USE_ANALYZER.toLowerCase() == "true") === true;
 
 module.exports = (env, options) => {
   const { mode } = env;
 
   // Config Object
   const config = {
-    entry: {
-      [name]: [].concat([path.resolve(__dirname, './src/index.js')])
-    },
+    entry: path.resolve(__dirname, './src/index.js'),
     output: {
       path: path.resolve(__dirname, "./dist"),
-      filename: "[name].js",
+      filename: `${name}.js`,
       library: {
         name: libName,
         type: "umd"
@@ -39,6 +41,67 @@ module.exports = (env, options) => {
         }
       ]
     },
+    optimization: {
+      // chunkIds: 'named',  // 
+      // concatenateModules: false, // true
+      // emitOnErrors: false, // false
+      // flagIncludedChunks: false, // true
+      // innerGraph: true, // true
+      // mangleExports: false, // deterministic
+      // mangleWasmImports: false, // false
+      // mergeDuplicateChunks: false, // true
+      // minimize: false, // true
+      // moduleIds: 'natural', // natural
+      // nodeEnv: 'development', // not set
+      // portableRecords: true, // false
+      // providedExports: true, // true
+      // realContentHash: false, // true
+      // removeAvailableModules: false, // false
+      // removeEmptyChunks: false, // true
+      // usedExports: false,
+    },
+    resolve: {
+      extensions: ['.jsx', '.js', '.json'],
+      modules: [path.resolve(__dirname, 'src'), 'node_modules']
+    },
+    externals: {
+      "react": {
+        commonjs: 'react',
+        commonjs2: 'react',
+        amd: 'react',
+        root: 'React',
+      },
+      "react-dom": {
+        commonjs: 'react-dom',
+        commonjs2: 'react-dom',
+        amd: 'react-dom',
+        root: 'ReactDOM',
+      },
+      "validator": {
+        commonjs: 'validator',
+        commonjs2: 'validator',
+        amd: 'validator',
+        root: 'validator',
+      },
+      "lodash.merge": {
+        commonjs: 'lodash.merge',
+        commonjs2: 'lodash.merge',
+        amd: 'lodash.merge',
+        root: '_merge'
+      },
+      "lodash": {
+        commonjs: 'lodash',
+        commonjs2: 'lodash',
+        amd: 'lodash',
+        root: 'lodash'
+      },
+      "prop-types": {
+        commonjs: 'prop-types',
+        commonjs2: 'prop-types',
+        amd: 'prop-types',
+        root: 'PropTypes'
+      }
+    },
     plugins: []
   };
 
@@ -51,6 +114,10 @@ module.exports = (env, options) => {
     extensions: ["js"],
     fix: false, // auto fix
   }));
+
+  if (useAnalyzer) {
+    config.plugins.push(new BundleAnalyzerPlugin());
+  }
 
   if (mode === "development") {
     // Include conditional webpack config for development builds

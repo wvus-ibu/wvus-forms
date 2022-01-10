@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import Message from "./message.js";
 
-class CheckboxControl extends Component {
+class CheckboxControl extends React.Component {
   constructor(props) {
     super(props);
     const {

@@ -13,14 +13,20 @@ module.exports = function (api) {
       },
       "useBuiltIns": "usage",
       "corejs": {
-        "version": "3.15.0",
+        "version": "3.20.2",
         "proposals": true
       }
     }],
     "@babel/preset-react"
   ];
 
+  const plugins = [
+    "@babel/plugin-transform-classes",
+    "@babel/plugin-transform-modules-umd"
+  ]
+
   return {
-    presets
+    presets,
+    plugins
   };
 };
