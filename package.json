@@ -1,6 +1,6 @@
 {
   "name": "wvus-forms",
-  "version": "4.1.1",
+  "version": "5.0.0",
   "description": "Validessa - Defender of Data (WVUS Form Validation Library)",
   "repository": {
     "type": "git",
@@ -22,8 +22,10 @@
   "scripts": {
     "prepare": "npm run build:babel",
     "build:babel": "npx babel --plugins @babel/plugin-transform-modules-umd src --ignore __tests__,test.js,.stories.js --out-dir ./dist",
-    "build": "webpack --mode production",
+    "build": "npm run build:prod",
+    "build:docs": "npm run docs",
     "build:dev": "webpack --mode development --watch --progress --color",
+    "build:prod": "webpack --mode production",
     "build:analyze": "USE_ANALYZER=true npm run build",
     "docs": "npx jsdoc2md ./src/form-hoc.js > FORM_API.md",
     "lint": "eslint ./src",
@@ -34,11 +36,11 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -o docs",
     "test-storybook": "storyshots",
-    "build:prod": "npm run docs",
     "pretty:check": "prettier --check 'src/**/*js'",
     "pretty": "prettier --config .prettierrc --write .src/**/*.js"
   },
   "jest": {
+    "testEnvironment": "jsdom",
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
@@ -51,6 +53,8 @@
     "@babel/plugin-transform-modules-umd": "^7.16.7",
     "@babel/preset-env": "^7.16.7",
     "@babel/preset-react": "^7.16.7",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
     "autoprefixer": "^10.4.1",
     "babel-jest": "^27.4.5",
     "babel-loader": "^8.2.3",
