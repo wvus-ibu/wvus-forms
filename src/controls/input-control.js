@@ -5,9 +5,6 @@ import Message from "./message.js";
 class InputControl extends Component {
   constructor(props) {
     super(props);
-  }
-
-  componentWillMount() {
     const {
       fieldName,
       fieldValue = "",
@@ -15,7 +12,8 @@ class InputControl extends Component {
       isValid = false,
       validators = [],
       optional = false,
-      formMethods
+      formMethods,
+      renderFieldPrefix = ''
     } = this.props;
 
     formMethods.addFieldToState(
@@ -43,6 +41,7 @@ class InputControl extends Component {
       attributes = {},
 
       inputClasses = "",
+      inputWrapperClasses = "",
       labelClasses = "",
 
       handleValueChange = formMethods.handleValueChange,
@@ -50,7 +49,10 @@ class InputControl extends Component {
       handleFocus = () => {},
       showUISuccess = formMethods.showUISuccess(fieldState),
       showUIError = formMethods.showUIError(fieldState),
-      hideMessage = false
+      hideMessage = false,
+      successIcon,
+      errorIcon,
+      renderFieldPrefix = ''
     } = this.props;
     const readOnly = attributes.readOnly ? attributes.readOnly : false;
     const disabled = attributes.disabled ? attributes.disabled : false;
@@ -76,7 +78,8 @@ class InputControl extends Component {
         data-field-is-valid={fieldState.isValid}
       >
         {label}
-        <div className="form-control-wrapper">
+        <div className={`form-control-wrapper ${inputWrapperClasses}`}>
+          {renderFieldPrefix && (renderFieldPrefix)}
           <input
             id={fieldId || fieldName}
             className={`form-control ${inputClasses}`}
@@ -95,17 +98,24 @@ class InputControl extends Component {
           ) : (
             ""
           )}
-          {!hideMessage && showUIError ? (
+          {showUIError ? (
             <Message
               showError={true}
               showSuccess={false}
               message={fieldState.errorMessage}
+              errorIcon={errorIcon}
+              hideMessage={hideMessage}
             />
           ) : (
             ""
           )}
-          {!hideMessage && showUISuccess ? (
-            <Message showError={false} showSuccess={true} />
+          {showUISuccess ? (
+            <Message 
+              showError={false} 
+              showSuccess={true} 
+              successIcon={successIcon} 
+              hideMessage={hideMessage} 
+            />
           ) : (
             ""
           )}
@@ -117,6 +127,7 @@ class InputControl extends Component {
 
 InputControl.propTypes = {
   fieldName: PropTypes.string.isRequired,
+  renderFieldPrefix: PropTypes.element,
   formMethods: PropTypes.shape({
     handleBlur: PropTypes.func.isRequired,
     handleValueChange: PropTypes.func.isRequired,

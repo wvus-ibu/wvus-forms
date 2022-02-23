@@ -5,9 +5,6 @@ import Message from "./message.js";
 class SelectControl extends React.Component {
   constructor(props) {
     super(props);
-  }
-
-  componentWillMount() {
     const {
       fieldName,
       fieldValue = "",

@@ -6,9 +6,6 @@ class RadioControl extends Component {
   constructor(props) {
     super(props);
     this.handleValueChange = this.handleValueChange.bind(this);
-  }
-
-  componentWillMount() {
     const {
       fieldId,
       fieldName,

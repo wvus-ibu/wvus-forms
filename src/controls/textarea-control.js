@@ -5,9 +5,6 @@ import Message from "./message.js";
 class TextAreaControl extends Component {
   constructor(props) {
     super(props);
-  }
-
-  componentWillMount() {
     const {
       fieldName,
       fieldValue = "",
@@ -27,6 +24,7 @@ class TextAreaControl extends Component {
       optional
     );
   }
+  
   render() {
     const {
       formMethods,
