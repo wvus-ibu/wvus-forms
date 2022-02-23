@@ -1,27 +1,30 @@
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define(["core-js/modules/web.url.to-json.js", "react", "react-test-renderer", "./shared/simple-address-form", "../index"], factory);
+    define(["react", "@testing-library/react", "@testing-library/jest-dom", "./shared/simple-address-form", "../index"], factory);
   } else if (typeof exports !== "undefined") {
-    factory(require("core-js/modules/web.url.to-json.js"), require("react"), require("react-test-renderer"), require("./shared/simple-address-form"), require("../index"));
+    factory(require("react"), require("@testing-library/react"), require("@testing-library/jest-dom"), require("./shared/simple-address-form"), require("../index"));
   } else {
     var mod = {
       exports: {}
     };
-    factory(global.webUrlToJson, global.react, global.reactTestRenderer, global.simpleAddressForm, global.index);
+    factory(global.react, global.react, global.jestDom, global.simpleAddressForm, global.index);
     global.addressFormTest = mod.exports;
   }
-})(typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : this, function (_webUrlToJson, _react, _reactTestRenderer, _simpleAddressForm, _index) {
+})(typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : this, function (_react, _react2, _jestDom, _simpleAddressForm, _index) {
   "use strict";
 
   _react = _interopRequireDefault(_react);
-  _reactTestRenderer = _interopRequireDefault(_reactTestRenderer);
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
   const Form = (0, _index.WVUSForm)(_simpleAddressForm.SimpleAddressForm);
   test("Simple Address Form renders correctly", () => {
-    const tree = _reactTestRenderer.default.create( /*#__PURE__*/_react.default.createElement(Form, null)).toJSON();
-
-    expect(tree).toMatchSnapshot();
+    (0, _react2.render)( /*#__PURE__*/_react.default.createElement(Form, null));
+    expect(_react2.screen.getByText('First Name')).toBeInTheDocument();
+    expect(_react2.screen.getByText('Last Name')).toBeInTheDocument();
+    expect(_react2.screen.getByText('Mailing Address')).toBeInTheDocument();
+    expect(_react2.screen.getByText('City')).toBeInTheDocument();
+    expect(_react2.screen.getByText('State')).toBeInTheDocument();
+    expect(_react2.screen.getByText('Zip')).toBeInTheDocument();
   });
 });
