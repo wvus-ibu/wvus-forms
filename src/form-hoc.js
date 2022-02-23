@@ -3,6 +3,7 @@ import { createValidationHelper } from "./validation/validation-helpers.js";
 import merge from "lodash.merge";
 import { checkForNewFormErrorsAndFireAnalytics } from "./misc/analytics-helpers";
 
+/* eslint-disable react/display-name */
 /**
  * @module WVUSForm
  */

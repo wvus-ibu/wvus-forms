@@ -4,9 +4,6 @@ import Message from "./message.js";
 class InputHiddenControl extends Component {
   constructor(props) {
     super(props);
-  }
-
-  componentWillMount() {
     const {
       fieldName,
       fieldValue = "",
