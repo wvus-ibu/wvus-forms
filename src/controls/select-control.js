@@ -34,6 +34,7 @@ class SelectControl extends React.Component {
       fieldClasses = "",
       fieldTitle,
       fieldPlaceholder,
+      attributes = {},
 
       fieldState = formMethods.getFieldState(fieldName),
       inputClasses = "",
@@ -45,6 +46,8 @@ class SelectControl extends React.Component {
       showUISuccess = formMethods.showUISuccess(fieldState),
       showUIError = formMethods.showUIError(fieldState)
     } = this.props;
+    const disabled = attributes.disabled ? attributes.disabled : false;
+
     const options = fieldOptions.map((option, index) => (
       <option key={index} value={option.valueKey}>
         {option.valueText}
@@ -75,6 +78,7 @@ class SelectControl extends React.Component {
             onBlur={handleBlur}
             onFocus={handleFocus}
             onChange={handleValueChange}
+            disabled={disabled}
           >
             {options}
           </select>

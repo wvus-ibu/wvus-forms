@@ -80,6 +80,7 @@ require("core-js/modules/es.reflect.to-string-tag.js");
           fieldClasses = "",
           fieldTitle,
           fieldPlaceholder,
+          attributes = {},
           fieldState = formMethods.getFieldState(fieldName),
           inputClasses = "",
           labelClasses = "",
@@ -89,6 +90,7 @@ require("core-js/modules/es.reflect.to-string-tag.js");
           showUISuccess = formMethods.showUISuccess(fieldState),
           showUIError = formMethods.showUIError(fieldState)
         } = this.props;
+        const disabled = attributes.disabled ? attributes.disabled : false;
         const options = fieldOptions.map((option, index) => /*#__PURE__*/_react.default.createElement("option", {
           key: index,
           value: option.valueKey
@@ -111,7 +113,8 @@ require("core-js/modules/es.reflect.to-string-tag.js");
           name: fieldName,
           onBlur: handleBlur,
           onFocus: handleFocus,
-          onChange: handleValueChange
+          onChange: handleValueChange,
+          disabled: disabled
         }, options), showUIError ? /*#__PURE__*/_react.default.createElement(_message.default, {
           showError: true,
           showSuccess: false,
