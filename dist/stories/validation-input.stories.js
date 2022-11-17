@@ -16,9 +16,7 @@
   _react = _interopRequireDefault(_react);
   _formHoc = _interopRequireDefault(_formHoc);
   _inputControl = _interopRequireDefault(_inputControl);
-
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
   const SimpleInputForm = props => {
     return /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement("h2", null, "Input Control - required field"), /*#__PURE__*/_react.default.createElement("hr", null), /*#__PURE__*/_react.default.createElement("h3", null, "Type: Text with validateRequired:"), /*#__PURE__*/_react.default.createElement(_inputControl.default, {
       fieldPlaceholder: "Tim Stehlin",
@@ -37,9 +35,10 @@
       validators: [_validationHelpers.validateRequired, _validationHelpers.validateEmail]
     }));
   };
-
   const Form = (0, _formHoc.default)(SimpleInputForm);
-  (0, _react2.storiesOf)("Form Validation", module).add("Input Field", () => /*#__PURE__*/_react.default.createElement(Form, null)); // storiesOf("WVUS Form Controls", module).add("Plain Input Field", () => (
+  (0, _react2.storiesOf)("Form Validation", module).add("Input Field", () => /*#__PURE__*/_react.default.createElement(Form, null));
+
+  // storiesOf("WVUS Form Controls", module).add("Plain Input Field", () => (
   //   <InputControl
   //     fieldPlaceholder="Tim Stehlin"
   //     fieldName="recipient_fname"

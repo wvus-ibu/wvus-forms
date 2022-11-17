@@ -14,9 +14,7 @@
   "use strict";
 
   _react = _interopRequireDefault(_react);
-
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
   const Form = (0, _index.WVUSForm)(_simpleAddressForm.SimpleAddressForm);
   (0, _react2.storiesOf)("Example Forms", module).add("Simple Address Form", () => /*#__PURE__*/_react.default.createElement(Form, {
     formName: "SimpleAddressForm"

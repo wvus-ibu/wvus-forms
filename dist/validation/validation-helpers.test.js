@@ -15,9 +15,7 @@
 
   _queryStringParser = _interopRequireDefault(_queryStringParser);
   _sinon = _interopRequireDefault(_sinon);
-
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
   describe("createValidationHelper", () => {
     it("can create a new helper with all required properties", () => {
       const config = {
@@ -50,9 +48,7 @@
         }
       };
       const validationHelper = (0, _validationHelpers.createValidationHelper)(config);
-
       _sinon.default.spy(validationHelper, "validate");
-
       validationHelper.validate("fname", "");
       expect(validationHelper.validate.calledWith("fname", "")).toBe(true);
     });
@@ -88,8 +84,6 @@
     it(" - optional fields with empty values have no errors despite validators", () => {
       // Optional fields will store no error nor success if they have empty value
       const alwayReturnInvalid = () => false; //tests that option
-
-
       const config = {
         fname: {
           validators: [alwayReturnInvalid],
@@ -136,16 +130,19 @@
           optional: false
         }
       };
-      const validationHelper = (0, _validationHelpers.createValidationHelper)(config); // test with one invalid field, on valid field
+      const validationHelper = (0, _validationHelpers.createValidationHelper)(config);
 
+      // test with one invalid field, on valid field
       validationHelper.validate("fname", "123");
       validationHelper.validate("lname", "12");
-      expect(validationHelper.formIsValid()).toBe(false); // test with two valid fields
+      expect(validationHelper.formIsValid()).toBe(false);
 
+      // test with two valid fields
       validationHelper.validate("fname", "123");
       validationHelper.validate("lname", "123");
-      expect(validationHelper.formIsValid()).toBe(true); // test with two invalid fields
+      expect(validationHelper.formIsValid()).toBe(true);
 
+      // test with two invalid fields
       validationHelper.validate("fname", "12");
       validationHelper.validate("lname", "12");
       expect(validationHelper.formIsValid()).toBe(false);
@@ -157,9 +154,9 @@
           optional: false
         }
       };
-      const validationHelper = (0, _validationHelpers.createValidationHelper)(config); // test with string value that fails both validators, that
+      const validationHelper = (0, _validationHelpers.createValidationHelper)(config);
+      // test with string value that fails both validators, that
       // firstErrorMessage only returns the first one
-
       validationHelper.validate("fname", "");
       expect(validationHelper.firstErrorMessage("fname")).toBe("This field is required.");
     });
@@ -441,11 +438,11 @@
     const message = "Please enter a valid expiration date. E.g. 03/22";
     const futureMonth = 12;
     const futureYear = new Date().getFullYear() + 5;
-    const futureDate = "".concat(futureMonth, "/").concat(futureYear.toString().substring(2));
+    const futureDate = `${futureMonth}/${futureYear.toString().substring(2)}`;
     const resultFutureDate = (0, _validationHelpers.validateExpirationDate)(futureDate);
     expect(resultFutureDate.valid).toBe(true);
     expect(resultFutureDate.message).toBe(message);
-    const pastDate = "".concat(futureMonth, "/").concat((new Date().getFullYear() - 10).toString().substring(2));
+    const pastDate = `${futureMonth}/${(new Date().getFullYear() - 10).toString().substring(2)}`;
     const resultPastDate = (0, _validationHelpers.validateExpirationDate)(pastDate);
     expect(resultPastDate.valid).toBe(false);
     expect(resultPastDate.message).toBe(message);
@@ -467,17 +464,17 @@
     const pastYear = (new Date().getFullYear() - 10).toString();
     const resultPastDate = (0, _validationHelpers.validateIsFutureDate)(month, pastYear);
     expect(resultPastDate.valid).toBe(false);
-    expect(resultPastDate.message).toBe(message); //Current month/year allowed for Credit Card validation
+    expect(resultPastDate.message).toBe(message);
 
+    //Current month/year allowed for Credit Card validation
     const currentMonth = parseInt(new Date().getMonth(), 10) + 1; // adjust up one month due to zero-based months in JS, value as entered by user
-
     const currentYear = parseInt(new Date().getFullYear(), 10);
     const resultCurrentMonthYear = (0, _validationHelpers.validateIsFutureDate)(currentMonth, currentYear);
     expect(resultCurrentMonthYear.valid).toBe(true);
-    expect(resultCurrentMonthYear.message).toBe(message); //Past Month / current year not allowed for Credit Card validation
+    expect(resultCurrentMonthYear.message).toBe(message);
 
+    //Past Month / current year not allowed for Credit Card validation
     const pastOneMonth = parseInt(new Date().getMonth(), 10); // don't adjust due to zero-based months in JS because want past month as entered by regular user
-
     const resultPastMonthCurrentYear = (0, _validationHelpers.validateIsFutureDate)(pastOneMonth, currentYear);
     expect(resultPastMonthCurrentYear.valid).toBe(false);
     expect(resultPastMonthCurrentYear.message).toBe(message);
@@ -485,22 +482,20 @@
   test("validateIsNotPastYearsOut can validate future date not past limit", () => {
     const yearsOut = 10;
     const validateIsNotPast10Years = (0, _validationHelpers.validateIsNotPastYearsOut)(yearsOut);
-    const message = "Please enter a valid expiration date within ".concat(yearsOut, " years.");
+    const message = `Please enter a valid expiration date within ${yearsOut} years.`;
     const currentMonth = (parseInt(new Date().getMonth(), 10) + 1).toString(); // adjust up one month due to zero-based months in JS, value as entered by user
 
     const future5Year = (new Date().getFullYear() + 4).toString().substring(2); // YYYY
 
-    const resultFutureDate5Yr = validateIsNotPast10Years("".concat(currentMonth, "/").concat(future5Year));
+    const resultFutureDate5Yr = validateIsNotPast10Years(`${currentMonth}/${future5Year}`);
     expect(resultFutureDate5Yr.valid).toBe(true);
     expect(resultFutureDate5Yr.message).toBe(message);
     const future10Year = (new Date().getFullYear() + 10).toString().substring(2); // YYYY
-
-    const resultFutureDate10Yr = validateIsNotPast10Years("".concat(currentMonth, "/").concat(future10Year));
+    const resultFutureDate10Yr = validateIsNotPast10Years(`${currentMonth}/${future10Year}`);
     expect(resultFutureDate10Yr.valid).toBe(true);
     expect(resultFutureDate10Yr.message).toBe(message);
     const future15Years = (new Date().getFullYear() + 15).toString().substring(2); // YYYY
-
-    const resultFutureDate15Yr = validateIsNotPast10Years("".concat(currentMonth, "/").concat(future15Years));
+    const resultFutureDate15Yr = validateIsNotPast10Years(`${currentMonth}/${future15Years}`);
     expect(resultFutureDate15Yr.valid).toBe(false);
     expect(resultFutureDate15Yr.message).toBe(message);
   });
@@ -517,32 +512,39 @@
     expect(resultInvalidCard2.message).toBe(message);
   });
   test("validateCreditCard can validate a credit card", () => {
-    const message = "Please enter a valid credit card number."; // Supported VISA, and Valid CC Num
+    const message = "Please enter a valid credit card number.";
 
+    // Supported VISA, and Valid CC Num
     const resultValidCardVISA = (0, _validationHelpers.validateCreditCard)("4222222222222");
     expect(resultValidCardVISA.valid).toBe(true);
-    expect(resultValidCardVISA.message).toBe(message); // Supported AMEX
+    expect(resultValidCardVISA.message).toBe(message);
 
+    // Supported AMEX
     const resultValidCardAMEX = (0, _validationHelpers.validateCreditCard)("378282246310005");
     expect(resultValidCardAMEX.valid).toBe(true);
-    expect(resultValidCardAMEX.message).toBe(message); // Supported Discover
+    expect(resultValidCardAMEX.message).toBe(message);
 
+    // Supported Discover
     const resultValidCardDSC = (0, _validationHelpers.validateCreditCard)("6011111111111117");
     expect(resultValidCardDSC.valid).toBe(true);
-    expect(resultValidCardDSC.message).toBe(message); // Supported MasterCard
+    expect(resultValidCardDSC.message).toBe(message);
 
+    // Supported MasterCard
     const resultValidCardMC = (0, _validationHelpers.validateCreditCard)("5555555555554444");
     expect(resultValidCardMC.valid).toBe(true);
-    expect(resultValidCardMC.message).toBe(message); // Supported VISA, and but Invalid CC Num
+    expect(resultValidCardMC.message).toBe(message);
 
+    // Supported VISA, and but Invalid CC Num
     const resultInvalidCard = (0, _validationHelpers.validateCreditCard)("4222212222222");
     expect(resultInvalidCard.valid).toBe(false);
-    expect(resultInvalidCard.message).toBe(message); //Gibberish card
+    expect(resultInvalidCard.message).toBe(message);
 
+    //Gibberish card
     const resultInvalidCard2 = (0, _validationHelpers.validateCreditCard)("flkwajlfijeijf");
     expect(resultInvalidCard2.valid).toBe(false);
-    expect(resultInvalidCard2.message).toBe(message); // Unsupported card: Diner's Club
+    expect(resultInvalidCard2.message).toBe(message);
 
+    // Unsupported card: Diner's Club
     const resultInvalidCardType = (0, _validationHelpers.validateCreditCard)("30569309025904");
     expect(resultInvalidCardType.valid).toBe(false);
     expect(resultInvalidCardType.message).toBe(message);

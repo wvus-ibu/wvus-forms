@@ -14,8 +14,6 @@
   "use strict";
 
   _react = _interopRequireDefault(_react);
-
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
   (0, _react2.storiesOf)("Welcome", module).add("to Validessa Form Validation", () => /*#__PURE__*/_react.default.createElement("div", null, "Validessa - Form Validation for WVUS sites"));
 });

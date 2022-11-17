@@ -19,10 +19,9 @@
   _exports.SelectFormPreselected = _exports.SelectFormNoConfig = _exports.SelectForm = void 0;
   _react = _interopRequireDefault(_react);
   _usStates = _interopRequireDefault(_usStates);
-
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
   // import { formMethodsChecked, formMethodsUnChecked } from "./props-mocks";
+
   const SelectForm = props => {
     return /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement(_index.SelectControl, {
       fieldName: "state",
@@ -35,9 +34,7 @@
       validators: [_index.validateRequired]
     }));
   };
-
   _exports.SelectForm = SelectForm;
-
   const SelectFormPreselected = props => {
     return /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement(_index.SelectControl, {
       fieldName: "state",
@@ -50,9 +47,7 @@
       validators: [_index.validateRequired]
     }));
   };
-
   _exports.SelectFormPreselected = SelectFormPreselected;
-
   const SelectFormNoConfig = props => {
     return /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement(_index.SelectControl, {
       fieldName: "state",
@@ -63,6 +58,5 @@
       validators: [_index.validateRequired]
     }));
   };
-
   _exports.SelectFormNoConfig = SelectFormNoConfig;
 });

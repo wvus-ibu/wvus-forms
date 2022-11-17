@@ -61,8 +61,9 @@
         component_name: "testComp",
         message: "Error message goes here.",
         message_type: "error"
-      }; // Previously unseen message hidden from user due to secondInteraction being false
+      };
 
+      // Previously unseen message hidden from user due to secondInteraction being false
       const newErroredStateInteractionComplete = {
         fieldState: {
           secondInteraction: true,
@@ -90,8 +91,9 @@
         component_name: "testComp",
         message: "Error message goes here.",
         message_type: "error"
-      }; //Same Error message already shown to user
+      };
 
+      //Same Error message already shown to user
       const alreadyShownErroredStateInteractionComplete = {
         fieldState: {
           secondInteraction: true,
@@ -104,8 +106,8 @@
           isValid: false,
           errorMessage: eventData.message
         }
-      }; // test already shown fieldState doesn't trigger new event
-
+      };
+      // test already shown fieldState doesn't trigger new event
       const {
         fieldState: alreadyShownFieldState,
         prevFieldState: alreadyShownPrevFieldState
@@ -119,8 +121,9 @@
         component_name: "testComp",
         message: "Error message goes here.",
         message_type: "error"
-      }; // New error message text
+      };
 
+      // New error message text
       const newMessageErroredState = {
         fieldState: {
           secondInteraction: true,
@@ -148,8 +151,9 @@
         component_name: "testComp",
         message: "Error message goes here.",
         message_type: "error"
-      }; //Same Error message already shown to user
+      };
 
+      //Same Error message already shown to user
       const validFieldState = {
         fieldState: {
           secondInteraction: true,
@@ -162,8 +166,8 @@
           isValid: false,
           errorMessage: eventData.message
         }
-      }; // test already shown fieldState doesn't trigger new event
-
+      };
+      // test already shown fieldState doesn't trigger new event
       const {
         fieldState,
         prevFieldState
@@ -190,8 +194,8 @@
       };
       const prevFormState = {
         fields: {} // missing billing_first from prev state
-
       };
+
       (0, _analyticsHelpers.checkForNewFormErrorsAndFireAnalytics)("testApp", formState, prevFormState);
       expect(document.dispatchEvent.mock.calls.length).toBe(0);
     });
@@ -207,8 +211,9 @@
         component_name: "billing_last",
         message: "Error message goes here.",
         message_type: "error"
-      }; // Previously unseen message hidden from user due to secondInteraction being false
+      };
 
+      // Previously unseen message hidden from user due to secondInteraction being false
       const formState = {
         fields: {
           billing_first: {

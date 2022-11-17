@@ -14,9 +14,7 @@
   "use strict";
 
   _react = _interopRequireDefault(_react);
-
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
   const Form = (0, _index.WVUSForm)(_simpleAddressForm.SimpleAddressForm);
   test("Simple Address Form renders correctly", () => {
     (0, _react2.render)( /*#__PURE__*/_react.default.createElement(Form, null));

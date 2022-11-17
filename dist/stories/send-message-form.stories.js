@@ -14,21 +14,18 @@
   "use strict";
 
   _react = _interopRequireDefault(_react);
-
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
   const MessageForm = props => {
     const {
       isFormValid,
       getFieldState
     } = props.formMethods;
     const submitDisabled = !isFormValid();
-
     const handleFormSubmit = e => {
       e.preventDefault();
     };
-
-    const MAX_MESSAGE_CHAR = 255; // @TODO:
+    const MAX_MESSAGE_CHAR = 255;
+    // @TODO:
 
     const messageFieldLength = getFieldState("message").value && !!getFieldState("message").value.length ? getFieldState("message").value.length : 0;
     const messageCharacterCount = parseInt(MAX_MESSAGE_CHAR, 10) - parseInt(messageFieldLength, 10);
@@ -62,7 +59,6 @@
       onClick: handleFormSubmit
     }, "Send"));
   };
-
   const Form = (0, _index.WVUSForm)(MessageForm);
   (0, _react2.storiesOf)("Example Forms", module).add("Send Email Form", () => /*#__PURE__*/_react.default.createElement(Form, null));
 });

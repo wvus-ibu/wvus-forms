@@ -1,5 +1,5 @@
+require("core-js/modules/es.error.cause.js");
 require("core-js/modules/es.reflect.to-string-tag.js");
-
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
     define(["exports", "core-js/modules/esnext.async-iterator.map.js", "core-js/modules/esnext.iterator.map.js", "core-js/modules/esnext.async-iterator.filter.js", "core-js/modules/esnext.iterator.constructor.js", "core-js/modules/esnext.iterator.filter.js", "react", "./validation/validation-helpers.js", "lodash.merge", "./misc/analytics-helpers"], factory);
@@ -21,33 +21,19 @@ require("core-js/modules/es.reflect.to-string-tag.js");
   _exports.default = void 0;
   _react = _interopRequireDefault(_react);
   _lodash = _interopRequireDefault(_lodash);
-
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-  function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
+  function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
   function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
   function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
-
   function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-  function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
+  function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
   function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-
   function _possibleConstructorReturn(self, call) { if (call && (typeof call === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
-
   function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
   function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
-
-  function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
+  function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
   /* eslint-disable react/display-name */
-
   /**
    * @module WVUSForm
    */
@@ -60,20 +46,14 @@ require("core-js/modules/es.reflect.to-string-tag.js");
    * @param {Object} WrapperForm  Custom form to be wrapped
    * @returns {Object} Component Wrapped react component
    */
-
   _exports.default = _default;
-
   function WVUSForm(WrapperForm) {
     return /*#__PURE__*/function (_React$Component) {
       _inherits(_class, _React$Component);
-
       var _super = _createSuper(_class);
-
       function _class(props) {
         var _this;
-
         _classCallCheck(this, _class);
-
         _this = _super.call(this, props);
         _this.props = props;
         _this.handleNextStep = props.handleNextStep;
@@ -85,13 +65,13 @@ require("core-js/modules/es.reflect.to-string-tag.js");
         _this.addFieldToState = _this.addFieldToState.bind(_assertThisInitialized(_this));
         return _this;
       }
-
       _createClass(_class, [{
         key: "componentDidUpdate",
         value: function componentDidUpdate(prevProps, prevState) {
           // Fires wvusClientMessage error event on every unique form error message show to user
           (0, _analyticsHelpers.checkForNewFormErrorsAndFireAnalytics)(this.formName, this.state, prevState);
         }
+
         /**
          * Sets initial state of a field,
          * used by all controls for state setup
@@ -103,7 +83,6 @@ require("core-js/modules/es.reflect.to-string-tag.js");
          * @param {array} validators list of validation functions
          * @param {bool} optional whether field is optional
          */
-
       }, {
         key: "addFieldToState",
         value: function addFieldToState(fieldName) {
@@ -129,29 +108,32 @@ require("core-js/modules/es.reflect.to-string-tag.js");
             return finalState;
           });
         }
+
         /**
          * Gets field state for a field
          * @param {string} fieldName field to get state for
          * @returns {object} field state
          */
-
       }, {
         key: "getFieldState",
         value: function getFieldState(fieldName) {
-          return { ...this.state.fields[fieldName]
+          return {
+            ...this.state.fields[fieldName]
           } || {}; // returns copy to prevent mutation
         }
+
         /**
          * Gets all form state
          * @returns {object} form state
          */
-
       }, {
         key: "getFormState",
         value: function getFormState() {
-          return { ...this.state
+          return {
+            ...this.state
           }; // returns copy to prevent mutation
         }
+
         /**
          * Reset the field state to default for a field
          * Note: for Checkboxes and Radio controls,
@@ -160,7 +142,6 @@ require("core-js/modules/es.reflect.to-string-tag.js");
          * @param {string} fieldName field name to reset
          * @param {string} fieldValue value to reset field to (optional)
          */
-
       }, {
         key: "resetField",
         value: function resetField(fieldName) {
@@ -175,12 +156,14 @@ require("core-js/modules/es.reflect.to-string-tag.js");
               }
             },
             formValid: false
-          }; // Update Value
+          };
 
+          // Update Value
           this.setState(prevState => {
             return (0, _lodash.default)({}, prevState, newState);
           });
         }
+
         /**
          * Validate a field
          * Primarily used internally by change handlers
@@ -189,7 +172,6 @@ require("core-js/modules/es.reflect.to-string-tag.js");
          * @param {string} fieldValue fieldvalue to be validate
          * @returns {object} new fieldstate with validity updated
          */
-
       }, {
         key: "validateField",
         value: function validateField(fieldName, fieldValue) {
@@ -204,6 +186,7 @@ require("core-js/modules/es.reflect.to-string-tag.js");
           };
           return newFieldState;
         }
+
         /**
          * Goes through all fields in state and updates their validity
          * Primarily used internally by validateForm
@@ -211,7 +194,6 @@ require("core-js/modules/es.reflect.to-string-tag.js");
          * which makes all error messages show. (Defaults to true)
          * @private
          */
-
       }, {
         key: "validateFields",
         value: function validateFields() {
@@ -226,13 +208,13 @@ require("core-js/modules/es.reflect.to-string-tag.js");
               isValid: isValid,
               errorMessage: this.validationHelper.firstErrorMessage(fieldName)
             };
-
             if (forceSecondInteraction) {
               fieldStateUpdate["fields"][fieldName]["secondInteraction"] = true;
             }
           });
           this.updateFieldsState(fieldStateUpdate);
         }
+
         /**
          * Validates a form/subform
          * Note: Can be used to trigger validation of an entire form based
@@ -243,7 +225,6 @@ require("core-js/modules/es.reflect.to-string-tag.js");
          * which makes all error messages show. (Defaults to true)
          * @returns {bool} validity of form
          */
-
       }, {
         key: "validateForm",
         value: function validateForm() {
@@ -256,12 +237,12 @@ require("core-js/modules/es.reflect.to-string-tag.js");
           this.validateFields(forceSecondInteraction);
           return formValid;
         }
+
         /**
          * Update Field State
          * @private
          * @param {Object} fieldsState new state object to merge w/ existing stage
          */
-
       }, {
         key: "updateFieldsState",
         value: function updateFieldsState(fieldsState) {
@@ -275,45 +256,45 @@ require("core-js/modules/es.reflect.to-string-tag.js");
             });
           });
         }
+
         /**
          * Get validity of current form
          * @private
          * @param {Object} newFieldsState field state to validate
          * @returns {bool} validity of entire form
          */
-
       }, {
         key: "getFormValid",
         value: function getFormValid(newFieldsState) {
           return Object.keys(newFieldsState).filter(field => !newFieldsState[field].isValid).length < 1;
         }
+
         /**
          * Checks if form is valid
          * @returns {bool} validity of entire form
          */
-
       }, {
         key: "isFormValid",
         value: function isFormValid() {
           return this.getFormValid(this.state.fields);
         }
+
         /**
          * Checks if form is completely empty
          * @returns {bool} validity of entire form
          */
-
       }, {
         key: "isFormEmpty",
         value: function isFormEmpty() {
           return Object.keys(this.state.fields).filter(field => !(this.state.fields[field].value === "")).length < 1;
         }
+
         /**
          * Primary value change handler for onChange event
          * Does NOT update the secondInteraction value
          * @param {Object} e React event object
          * @param {Function} callback function to be called after handler
          */
-
       }, {
         key: "handleValueChange",
         value: function handleValueChange(e) {
@@ -322,6 +303,7 @@ require("core-js/modules/es.reflect.to-string-tag.js");
           const fieldValue = e.target.type === "checkbox" ? e.target.checked : e.target.value;
           this.setValueChange(fieldName, fieldValue, callback);
         }
+
         /**
          * Primary value setting handler, called by handleValueChange
          * Great for use with custom event handlers
@@ -330,7 +312,6 @@ require("core-js/modules/es.reflect.to-string-tag.js");
          * @param {string} fieldValue new value of field
          * @param {string} callback function to call after value update
          */
-
       }, {
         key: "setValueChange",
         value: function setValueChange(fieldName, fieldValue) {
@@ -340,17 +321,19 @@ require("core-js/modules/es.reflect.to-string-tag.js");
           };
           newState.fields[fieldName] = {
             value: fieldValue
-          }; // Update Value
-
+          };
+          // Update Value
           this.setState(prevState => {
             return (0, _lodash.default)({}, prevState, newState);
-          }); // Validate Field
+          });
 
+          // Validate Field
           this.setState(prevState => {
             const newFieldState = this.validateField(fieldName, fieldValue);
             return (0, _lodash.default)({}, prevState, newFieldState);
-          }); // Validate Form
+          });
 
+          // Validate Form
           this.setState(prevState => {
             const formValid = this.getFormValid(prevState["fields"]);
             return (0, _lodash.default)({}, prevState, {
@@ -358,13 +341,13 @@ require("core-js/modules/es.reflect.to-string-tag.js");
             });
           }, callback); //Callback important for validation on Last item
         }
+
         /**
          * Handles blur event on fields
          * Update the secondInteraction value to true,
          * since used with onBlur event
          * @param {Object} e React synthetic event object
          */
-
       }, {
         key: "handleBlur",
         value: function handleBlur(e) {
@@ -372,20 +355,22 @@ require("core-js/modules/es.reflect.to-string-tag.js");
           const fieldValue = e.target.value;
           const secondInteractionState = {
             fields: {}
-          }; // Only add SecondInteraction if not already added
+          };
 
+          // Only add SecondInteraction if not already added
           if (typeof this.state.fields[e.target.name] !== "undefined" && !this.state.fields[e.target.name].secondInteraction) {
             secondInteractionState.fields[fieldName] = {
               secondInteraction: true
             };
-          } // Validate this field
+          }
 
-
+          // Validate this field
           this.setState(prevState => {
             const newFieldState = this.validateField(fieldName, fieldValue);
             return (0, _lodash.default)({}, prevState, newFieldState, secondInteractionState);
-          }); // Validate Form
+          });
 
+          // Validate Form
           this.setState(prevState => {
             const formValid = this.getFormValid(prevState["fields"]);
             return (0, _lodash.default)({}, prevState, {
@@ -393,24 +378,24 @@ require("core-js/modules/es.reflect.to-string-tag.js");
             });
           });
         }
+
         /**
          * Determines whether to show success ui states
          * @param {object} fieldState field's state to check for success
          * @returns {bool} whether to show success ui states to user
          */
-
       }, {
         key: "showUISuccess",
         value: function showUISuccess(fieldState) {
           const optionalAndEmpty = fieldState.optional && fieldState.value === "";
           return fieldState.isValid && !optionalAndEmpty;
         }
+
         /**
          * Determines whether to show error ui states
          * @param {object} fieldState field's state to check for error
          * @returns {bool} whether to show error ui states to user
          */
-
       }, {
         key: "showUIError",
         value: function showUIError(fieldState) {
@@ -448,7 +433,6 @@ require("core-js/modules/es.reflect.to-string-tag.js");
           })));
         }
       }]);
-
       return _class;
     }(_react.default.Component);
   }

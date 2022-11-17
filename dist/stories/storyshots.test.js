@@ -14,9 +14,7 @@
   "use strict";
 
   _addonStoryshots = _interopRequireDefault(_addonStoryshots);
-
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
   (0, _addonStoryshots.default)({
     /* configuration options */
   });

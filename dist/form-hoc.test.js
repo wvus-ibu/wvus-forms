@@ -15,13 +15,10 @@
 
   _react = _interopRequireDefault(_react);
   _enzymeAdapterReact = _interopRequireDefault(_enzymeAdapterReact);
-
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
   (0, _enzyme.configure)({
     adapter: new _enzymeAdapterReact.default()
   });
-
   const SimpleInputForm = props => {
     return /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement(_index.InputControl, {
       fieldPlaceholder: "Tim Stehlin",
@@ -32,7 +29,6 @@
       validators: [_index.validateRequired]
     }));
   };
-
   const SimpleInputFormTwoFields = props => {
     return /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement(_index.InputControl, {
       fieldValue: "Tim",
@@ -50,13 +46,11 @@
       validators: [_index.validateRequired]
     }));
   };
-
   describe("WVUSForm", () => {
     it("should be able to wrap a custom form component", () => {
       const MyForm = props => {
         return /*#__PURE__*/_react.default.createElement("form", null, "Hello Form");
       };
-
       const Form = (0, _index.WVUSForm)(MyForm);
       const wrapper = (0, _enzyme.mount)( /*#__PURE__*/_react.default.createElement(Form, null));
       expect(wrapper.contains( /*#__PURE__*/_react.default.createElement("form", null, "Hello Form"))).toBe(true);
@@ -114,10 +108,11 @@
       const wrapper = (0, _enzyme.mount)( /*#__PURE__*/_react.default.createElement(Form, null));
       const formNode = wrapper.instance();
       const formStateFirst = formNode.getFieldState("fname");
-      const formStateLast = formNode.getFieldState("lname"); // Should not throw an error, and simply return
+      const formStateLast = formNode.getFieldState("lname");
+      // Should not throw an error, and simply return
+      formNode.resetField("fakefieldname");
 
-      formNode.resetField("fakefieldname"); // Reset First Name
-
+      // Reset First Name
       formNode.resetField("fname");
       const formStateResetFName = formNode.getFieldState("fname");
       const formStateLName = formNode.getFieldState("lname");
@@ -138,8 +133,8 @@
         errorMessage: expect.any(String),
         validators: expect.any(Array),
         optional: expect.any(Boolean)
-      })); // Reset Last Name
-
+      }));
+      // Reset Last Name
       formNode.resetField("lname");
       const formStateResetLName = formNode.getFieldState("lname");
       expect(formStateResetLName).toEqual(expect.objectContaining({
@@ -163,8 +158,8 @@
         errorMessage: "This field is required.",
         validators: [_index.validateRequired],
         optional: false
-      }; // Set a field that does NOT pass validation
-
+      };
+      // Set a field that does NOT pass validation
       formNode.handleValueChange({
         target: {
           name: "fname",
@@ -175,8 +170,9 @@
       expect(formNode.isFormValid()).toBe(false);
       expect(formNode.isFormEmpty()).toBe(true);
       expect(formNode.showUISuccess(formNode.getFieldState("fname"))).toBe(false);
-      expect(formNode.showUIError(formNode.getFieldState("fname"))).toBe(false); // Set a field that does pass validation
+      expect(formNode.showUIError(formNode.getFieldState("fname"))).toBe(false);
 
+      // Set a field that does pass validation
       const expectedValid = {
         value: "Scott",
         isValid: true,
@@ -208,8 +204,8 @@
         errorMessage: "This field is required.",
         validators: [_index.validateRequired],
         optional: false
-      }; // Simulate field blur
-
+      };
+      // Simulate field blur
       formNode.handleBlur({
         target: {
           name: "fname",
@@ -243,14 +239,16 @@
             optional: false
           }
         }
-      }; //Should have one field
+      };
 
+      //Should have one field
       const fieldsBefore = Object.entries(formNode.state.fields);
       expect(fieldsBefore.length).toBe(1);
       formNode.updateFieldsState(newFieldState);
       expect(formNode.getFieldState("fname")).toEqual(newFieldState.fields.fname);
-      expect(formNode.getFieldState("lname")).toEqual(newFieldState.fields.lname); //Should have two fields
+      expect(formNode.getFieldState("lname")).toEqual(newFieldState.fields.lname);
 
+      //Should have two fields
       const fieldsAfter = Object.entries(formNode.state.fields);
       expect(fieldsAfter.length).toBe(2);
     });
@@ -277,7 +275,6 @@
           formMethods: props.formMethods
         }));
       };
-
       const Form = (0, _index.WVUSForm)(SimpleCheckboxForm);
       const wrapper = (0, _enzyme.mount)( /*#__PURE__*/_react.default.createElement(Form, null));
       const formNode = wrapper.instance();

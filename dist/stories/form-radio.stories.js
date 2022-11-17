@@ -14,9 +14,7 @@
   "use strict";
 
   _react = _interopRequireDefault(_react);
-
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
   const Form = (0, _index.WVUSForm)(_radioControlForm.RadioForm);
   (0, _react2.storiesOf)("Form Components", module).add("Radio Field States", () => /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Radio Control"), /*#__PURE__*/_react.default.createElement("h2", null, "Example: Payment options"), /*#__PURE__*/_react.default.createElement(Form, null)));
 });

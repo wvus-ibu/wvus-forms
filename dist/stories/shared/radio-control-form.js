@@ -18,9 +18,7 @@
   });
   _exports.RadioForm = void 0;
   _react = _interopRequireDefault(_react);
-
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
   const RadioForm = props => {
     return /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement(_index.RadioControl, {
       fieldId: "payment_method_new_cc",
@@ -42,6 +40,5 @@
       formMethods: props.formMethods
     }));
   };
-
   _exports.RadioForm = RadioForm;
 });

@@ -19,9 +19,7 @@
   _exports.SimpleAddressForm = void 0;
   _react = _interopRequireDefault(_react);
   _usStates = _interopRequireDefault(_usStates);
-
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
   const SimpleAddressForm = props => {
     return /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement("h2", null, "Simple Address Form"), /*#__PURE__*/_react.default.createElement(_index.InputControl, {
       labelClasses: "first-name-label",
@@ -63,6 +61,5 @@
       validators: [_index.validateRequired, _index.validateZip]
     }));
   };
-
   _exports.SimpleAddressForm = SimpleAddressForm;
 });

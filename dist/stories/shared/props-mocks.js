@@ -67,12 +67,12 @@
     showUIError: () => true,
     showUISuccess: () => false
   };
+
   /**
    * Optional fields should have these defaults:
    * isValid: true // allows form to be submitted without a value (since field is optional)
    * optional: true // ensures success state is not shown if field is empty and interacted with (see showUiSuccess function)
    */
-
   _exports.formMethodsWithError = formMethodsWithError;
   const formMethodsOptional = {
     addFieldToState: () => {},
@@ -90,10 +90,10 @@
     showUIError: () => false,
     showUISuccess: () => false
   };
+
   /**
    * Checkbox props
    */
-
   _exports.formMethodsOptional = formMethodsOptional;
   const formMethodsChecked = {
     addFieldToState: () => {},

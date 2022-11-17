@@ -17,16 +17,12 @@
   _formHoc = _interopRequireDefault(_formHoc);
   _inputControl = _interopRequireDefault(_inputControl);
   _checkboxControl = _interopRequireDefault(_checkboxControl);
-
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
   const NewsletterForm = props => {
     const submitDisabled = !props.formMethods.isFormValid();
-
     const handleFormSubmit = e => {
       e.preventDefault();
     };
-
     return /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement("h2", null, "Sign up for our newsletter"), /*#__PURE__*/_react.default.createElement(_inputControl.default, {
       fieldName: "email",
       fieldTitle: "Email",
@@ -48,7 +44,6 @@
       onClick: handleFormSubmit
     }, "Sign Me Up!"));
   };
-
   const Form = (0, _formHoc.default)(NewsletterForm);
   (0, _react2.storiesOf)("Example Forms", module).add("Newsletter Signup Form", () => /*#__PURE__*/_react.default.createElement(Form, null));
 });

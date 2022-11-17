@@ -1,48 +1,45 @@
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define(["core-js/modules/web.url.to-json.js", "core-js/modules/esnext.async-iterator.find.js", "core-js/modules/esnext.iterator.constructor.js", "core-js/modules/esnext.iterator.find.js", "react", "react-test-renderer", "enzyme", "enzyme-adapter-react-16", "sinon", "./shared/select-control-form", "./shared/props-mocks", "../index"], factory);
+    define(["core-js/modules/esnext.async-iterator.find.js", "core-js/modules/esnext.iterator.constructor.js", "core-js/modules/esnext.iterator.find.js", "react", "react-test-renderer", "enzyme", "enzyme-adapter-react-16", "sinon", "./shared/select-control-form", "./shared/props-mocks", "../index"], factory);
   } else if (typeof exports !== "undefined") {
-    factory(require("core-js/modules/web.url.to-json.js"), require("core-js/modules/esnext.async-iterator.find.js"), require("core-js/modules/esnext.iterator.constructor.js"), require("core-js/modules/esnext.iterator.find.js"), require("react"), require("react-test-renderer"), require("enzyme"), require("enzyme-adapter-react-16"), require("sinon"), require("./shared/select-control-form"), require("./shared/props-mocks"), require("../index"));
+    factory(require("core-js/modules/esnext.async-iterator.find.js"), require("core-js/modules/esnext.iterator.constructor.js"), require("core-js/modules/esnext.iterator.find.js"), require("react"), require("react-test-renderer"), require("enzyme"), require("enzyme-adapter-react-16"), require("sinon"), require("./shared/select-control-form"), require("./shared/props-mocks"), require("../index"));
   } else {
     var mod = {
       exports: {}
     };
-    factory(global.webUrlToJson, global.esnextAsyncIteratorFind, global.esnextIteratorConstructor, global.esnextIteratorFind, global.react, global.reactTestRenderer, global.enzyme, global.enzymeAdapterReact16, global.sinon, global.selectControlForm, global.propsMocks, global.index);
+    factory(global.esnextAsyncIteratorFind, global.esnextIteratorConstructor, global.esnextIteratorFind, global.react, global.reactTestRenderer, global.enzyme, global.enzymeAdapterReact16, global.sinon, global.selectControlForm, global.propsMocks, global.index);
     global.formSelectTest = mod.exports;
   }
-})(typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : this, function (_webUrlToJson, _esnextAsyncIteratorFind, _esnextIteratorConstructor, _esnextIteratorFind, _react, _reactTestRenderer, _enzyme, _enzymeAdapterReact, _sinon, _selectControlForm, _propsMocks, _index) {
+})(typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : this, function (_esnextAsyncIteratorFind, _esnextIteratorConstructor, _esnextIteratorFind, _react, _reactTestRenderer, _enzyme, _enzymeAdapterReact, _sinon, _selectControlForm, _propsMocks, _index) {
   "use strict";
 
   _react = _interopRequireDefault(_react);
   _reactTestRenderer = _interopRequireDefault(_reactTestRenderer);
   _enzymeAdapterReact = _interopRequireDefault(_enzymeAdapterReact);
   _sinon = _interopRequireDefault(_sinon);
-
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
   (0, _enzyme.configure)({
     adapter: new _enzymeAdapterReact.default()
   });
   const Form = (0, _index.WVUSForm)(_selectControlForm.SelectForm);
   const FormPreselected = (0, _index.WVUSForm)(_selectControlForm.SelectFormPreselected);
+
   /**
    * SNAPSHOTS
    */
 
   test("Snapshot:  Select control renders correctly with no selection", () => {
     const tree = _reactTestRenderer.default.create( /*#__PURE__*/_react.default.createElement(Form, null)).toJSON();
-
     expect(tree).toMatchSnapshot();
   });
   test("Snapshot: Select control renders correctly with preselection of WA", () => {
     const tree = _reactTestRenderer.default.create( /*#__PURE__*/_react.default.createElement(FormPreselected, null)).toJSON();
-
     expect(tree).toMatchSnapshot();
   });
+
   /**
    * Interactive - Enzyme tests
    */
-
   describe("SelectControl", function () {
     const expectedFieldsState = {
       state: {
@@ -82,7 +79,6 @@
     });
     it("should call handleValueChange if field has changed", function () {
       _sinon.default.spy(Form.prototype, "handleValueChange");
-
       const wrapper = (0, _enzyme.mount)( /*#__PURE__*/_react.default.createElement(Form, null));
       wrapper.find("select").simulate("change", {
         target: {
@@ -94,14 +90,12 @@
     });
     it("should call handleBlur if field is blurred", function () {
       _sinon.default.spy(Form.prototype, "handleBlur");
-
       const wrapper = (0, _enzyme.mount)( /*#__PURE__*/_react.default.createElement(Form, null));
       wrapper.find("select").simulate("blur");
       expect(Form.prototype.handleBlur.calledOnce).toEqual(true);
     });
     it("should call handleFocus if input is focus", function () {
       const handleFocus = _sinon.default.spy();
-
       const USStateFieldOptions = [{
         valueKey: "AL",
         valueText: "Alabama"
@@ -109,7 +103,6 @@
         valueKey: "AK",
         valueText: "Alaska"
       }];
-
       const SelectForm = props => {
         return /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement(_index.SelectControl, {
           fieldName: "state",
@@ -121,10 +114,9 @@
           validators: [_index.validateRequired]
         }));
       };
-
       const Form = (0, _index.WVUSForm)(SelectForm);
-      const wrapper = (0, _enzyme.mount)( /*#__PURE__*/_react.default.createElement(Form, null)); // console.log(wrapper);
-
+      const wrapper = (0, _enzyme.mount)( /*#__PURE__*/_react.default.createElement(Form, null));
+      // console.log(wrapper);
       wrapper.find("select").simulate("focus");
       expect(handleFocus.calledOnce).toEqual(true);
     });

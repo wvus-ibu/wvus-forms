@@ -18,9 +18,7 @@
   });
   _exports.propsUnchecked = _exports.propsDisabled = _exports.propsChecked = _exports.SimpleCheckboxForm = _exports.DisabledCheckboxForm = void 0;
   _react = _interopRequireDefault(_react);
-
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
   const propsChecked = {
     formMethods: _propsMocks.formMethodsChecked
   };
@@ -36,7 +34,6 @@
     }
   };
   _exports.propsDisabled = propsDisabled;
-
   const SimpleCheckboxForm = props => {
     return /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement(_index.CheckboxControl, {
       labelClasses: "opt-in-label",
@@ -48,9 +45,7 @@
       formMethods: props.formMethods
     }));
   };
-
   _exports.SimpleCheckboxForm = SimpleCheckboxForm;
-
   const DisabledCheckboxForm = props => {
     return /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement("fieldset", {
       disabled: true
@@ -62,6 +57,5 @@
       formMethods: props.formMethods
     })));
   };
-
   _exports.DisabledCheckboxForm = DisabledCheckboxForm;
 });

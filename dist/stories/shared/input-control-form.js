@@ -18,9 +18,7 @@
   });
   _exports.propsWithSuccess = _exports.propsWithError = _exports.propsUntouched = _exports.propsOptional = _exports.propsAttrReadonlyNotDisabled = _exports.propsAttrReadonlyDisabled = _exports.propsAttrDisabledNotReadonly = _exports.SimpleInputStates = _exports.SimpleInputPrefixNeo = _exports.SimpleInputNoLabelNeo = _exports.SimpleInputNeo = _exports.SimpleInputFormRequired = _exports.SimpleInputFormHiddenMessage = _exports.SimpleInputFormClasses = _exports.SimpleInputFormAttr = _exports.SimpleInputForm = void 0;
   _react = _interopRequireDefault(_react);
-
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
   const propsUntouched = {
     formMethods: _propsMocks.formMethodsUnTouched
   };
@@ -61,7 +59,6 @@
     }
   };
   _exports.propsAttrDisabledNotReadonly = propsAttrDisabledNotReadonly;
-
   const SimpleInputForm = props => {
     return /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement(_index.InputControl, {
       inputClasses: "first-name-input",
@@ -73,9 +70,7 @@
       formMethods: props.formMethods
     }));
   };
-
   _exports.SimpleInputForm = SimpleInputForm;
-
   const SimpleInputFormHiddenMessage = props => {
     return /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement(_index.InputControl, {
       inputClasses: "first-name-input",
@@ -88,9 +83,7 @@
       hideMessage: true
     }));
   };
-
   _exports.SimpleInputFormHiddenMessage = SimpleInputFormHiddenMessage;
-
   const SimpleInputFormRequired = props => {
     return /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement(_index.InputControl, {
       fieldPlaceholder: "Tim Stehlin",
@@ -101,9 +94,7 @@
       validators: [_index.validateRequired]
     }));
   };
-
   _exports.SimpleInputFormRequired = SimpleInputFormRequired;
-
   const SimpleInputStates = props => {
     return /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement(_index.InputControl, {
       fieldPlaceholder: "Tim Stehlin",
@@ -113,9 +104,7 @@
       formMethods: props.formMethods
     }));
   };
-
   _exports.SimpleInputStates = SimpleInputStates;
-
   const SimpleInputFormAttr = props => {
     return /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement(_index.InputControl, {
       fieldPlaceholder: "Tim Stehlin",
@@ -126,9 +115,7 @@
       attributes: props.attributes
     }));
   };
-
   _exports.SimpleInputFormAttr = SimpleInputFormAttr;
-
   const SimpleInputFormClasses = props => {
     return /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement(_index.InputControl, {
       inputClasses: "first-name-input",
@@ -141,9 +128,7 @@
       attributes: props.attributes
     }));
   };
-
   _exports.SimpleInputFormClasses = SimpleInputFormClasses;
-
   const SimpleInputNeo = props => {
     return /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement(_index.InputControl, {
       inputClasses: "first-name-input",
@@ -158,9 +143,7 @@
       hideMessage: true
     }));
   };
-
   _exports.SimpleInputNeo = SimpleInputNeo;
-
   const SimpleInputPrefixNeo = props => {
     return /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement(_index.InputControl, {
       inputClasses: "first-name-input giving-form__form-control widget-price",
@@ -178,9 +161,7 @@
       hideMessage: true
     }));
   };
-
   _exports.SimpleInputPrefixNeo = SimpleInputPrefixNeo;
-
   const SimpleInputNoLabelNeo = props => {
     return /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement(_index.InputControl, {
       inputClasses: "first-name-input giving-form__form-control widget-price",
@@ -199,6 +180,5 @@
       hideMessage: true
     }));
   };
-
   _exports.SimpleInputNoLabelNeo = SimpleInputNoLabelNeo;
 });

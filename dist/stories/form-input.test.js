@@ -1,63 +1,57 @@
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define(["core-js/modules/web.url.to-json.js", "core-js/modules/esnext.async-iterator.find.js", "core-js/modules/esnext.iterator.constructor.js", "core-js/modules/esnext.iterator.find.js", "react", "react-test-renderer", "enzyme", "enzyme-adapter-react-16", "sinon", "../index", "./shared/input-control-form"], factory);
+    define(["core-js/modules/esnext.async-iterator.find.js", "core-js/modules/esnext.iterator.constructor.js", "core-js/modules/esnext.iterator.find.js", "react", "react-test-renderer", "enzyme", "enzyme-adapter-react-16", "sinon", "../index", "./shared/input-control-form"], factory);
   } else if (typeof exports !== "undefined") {
-    factory(require("core-js/modules/web.url.to-json.js"), require("core-js/modules/esnext.async-iterator.find.js"), require("core-js/modules/esnext.iterator.constructor.js"), require("core-js/modules/esnext.iterator.find.js"), require("react"), require("react-test-renderer"), require("enzyme"), require("enzyme-adapter-react-16"), require("sinon"), require("../index"), require("./shared/input-control-form"));
+    factory(require("core-js/modules/esnext.async-iterator.find.js"), require("core-js/modules/esnext.iterator.constructor.js"), require("core-js/modules/esnext.iterator.find.js"), require("react"), require("react-test-renderer"), require("enzyme"), require("enzyme-adapter-react-16"), require("sinon"), require("../index"), require("./shared/input-control-form"));
   } else {
     var mod = {
       exports: {}
     };
-    factory(global.webUrlToJson, global.esnextAsyncIteratorFind, global.esnextIteratorConstructor, global.esnextIteratorFind, global.react, global.reactTestRenderer, global.enzyme, global.enzymeAdapterReact16, global.sinon, global.index, global.inputControlForm);
+    factory(global.esnextAsyncIteratorFind, global.esnextIteratorConstructor, global.esnextIteratorFind, global.react, global.reactTestRenderer, global.enzyme, global.enzymeAdapterReact16, global.sinon, global.index, global.inputControlForm);
     global.formInputTest = mod.exports;
   }
-})(typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : this, function (_webUrlToJson, _esnextAsyncIteratorFind, _esnextIteratorConstructor, _esnextIteratorFind, _react, _reactTestRenderer, _enzyme, _enzymeAdapterReact, _sinon, _index, _inputControlForm) {
+})(typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : this, function (_esnextAsyncIteratorFind, _esnextIteratorConstructor, _esnextIteratorFind, _react, _reactTestRenderer, _enzyme, _enzymeAdapterReact, _sinon, _index, _inputControlForm) {
   "use strict";
 
   _react = _interopRequireDefault(_react);
   _reactTestRenderer = _interopRequireDefault(_reactTestRenderer);
   _enzymeAdapterReact = _interopRequireDefault(_enzymeAdapterReact);
   _sinon = _interopRequireDefault(_sinon);
-
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
   (0, _enzyme.configure)({
     adapter: new _enzymeAdapterReact.default()
   });
   const Form = (0, _index.WVUSForm)(_inputControlForm.SimpleInputForm);
+
   /**
    * SNAPSHOTS
    */
 
   test("Snapshot: Input Form renders correctly", () => {
     const tree = _reactTestRenderer.default.create( /*#__PURE__*/_react.default.createElement(Form, null)).toJSON();
-
     expect(tree).toMatchSnapshot();
   });
   test("Snapshot: Input renders untouched state", () => {
     const tree = _reactTestRenderer.default.create( /*#__PURE__*/_react.default.createElement(_inputControlForm.SimpleInputStates, _inputControlForm.propsUntouched)).toJSON();
-
     expect(tree).toMatchSnapshot();
   });
   test("Snapshot: Input renders success state", () => {
     const tree = _reactTestRenderer.default.create( /*#__PURE__*/_react.default.createElement(_inputControlForm.SimpleInputStates, _inputControlForm.propsWithSuccess)).toJSON();
-
     expect(tree).toMatchSnapshot();
   });
   test("Snapshot: Input renders error state", () => {
     const tree = _reactTestRenderer.default.create( /*#__PURE__*/_react.default.createElement(_inputControlForm.SimpleInputStates, _inputControlForm.propsWithError)).toJSON();
-
     expect(tree).toMatchSnapshot();
   });
   test("Snapshot: Input renders with optional/valid state", () => {
     const tree = _reactTestRenderer.default.create( /*#__PURE__*/_react.default.createElement(_inputControlForm.SimpleInputStates, _inputControlForm.propsOptional)).toJSON();
-
     expect(tree).toMatchSnapshot();
   });
   test("Snapshot: Input renders with readonly/disabled attributes", () => {
     const tree = _reactTestRenderer.default.create( /*#__PURE__*/_react.default.createElement(_inputControlForm.SimpleInputFormAttr, _inputControlForm.propsAttrReadonlyDisabled)).toJSON();
-
     expect(tree).toMatchSnapshot();
   });
+
   /**
    * Interactive - Enzyme tests
    */
@@ -86,7 +80,6 @@
     });
     it("should call handleValueChange if input has changed", function () {
       _sinon.default.spy(Form.prototype, "handleValueChange");
-
       const wrapper = (0, _enzyme.mount)( /*#__PURE__*/_react.default.createElement(Form, null));
       wrapper.find("input").simulate("change", {
         target: {
@@ -98,14 +91,12 @@
     });
     it("should call handleBlur if input is blurred", function () {
       _sinon.default.spy(Form.prototype, "handleBlur");
-
       const wrapper = (0, _enzyme.mount)( /*#__PURE__*/_react.default.createElement(Form, null));
       wrapper.find("input").simulate("blur");
       expect(Form.prototype.handleBlur.calledOnce).toEqual(true);
     });
     it("should call handleFocus if input is focus", function () {
       const handleFocus = _sinon.default.spy();
-
       const InputForm = props => {
         return /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement(_index.InputControl, {
           inputClasses: "first-name-input",
@@ -118,7 +109,6 @@
           formMethods: props.formMethods
         }));
       };
-
       const Form = (0, _index.WVUSForm)(InputForm);
       const wrapper = (0, _enzyme.mount)( /*#__PURE__*/_react.default.createElement(Form, null));
       wrapper.find("input").simulate("focus");
@@ -149,26 +139,26 @@
     });
     it("should show error Message if has error", function () {
       const wrapper = (0, _enzyme.mount)( /*#__PURE__*/_react.default.createElement(_inputControlForm.SimpleInputForm, _inputControlForm.propsWithError));
-
       const errorMessage = _inputControlForm.propsWithError.formMethods.getFieldState().errorMessage;
-
       expect(wrapper.contains( /*#__PURE__*/_react.default.createElement(_index.Message, {
         showError: true,
         showSuccess: false,
         message: errorMessage
-      }))).toBe(true); // expect(wrapper.find(".has-success")).toHaveLength(0);
+      }))).toBe(true);
+      // expect(wrapper.find(".has-success")).toHaveLength(0);
     });
+
     it("should NOT show error Message if hiddenMessage enabled", function () {
       const wrapper = (0, _enzyme.mount)( /*#__PURE__*/_react.default.createElement(_inputControlForm.SimpleInputFormHiddenMessage, _inputControlForm.propsWithError));
-
       const errorMessage = _inputControlForm.propsWithError.formMethods.getFieldState().errorMessage;
-
       expect(wrapper.contains( /*#__PURE__*/_react.default.createElement(_index.Message, {
         showError: true,
         showSuccess: false,
         message: errorMessage
-      }))).toBe(false); // expect(wrapper.find(".has-success")).toHaveLength(0);
+      }))).toBe(false);
+      // expect(wrapper.find(".has-success")).toHaveLength(0);
     });
+
     it("should show success Message if has success", function () {
       const wrapper = (0, _enzyme.mount)( /*#__PURE__*/_react.default.createElement(_inputControlForm.SimpleInputForm, _inputControlForm.propsWithSuccess));
       expect(wrapper.contains( /*#__PURE__*/_react.default.createElement(_index.Message, {
@@ -181,8 +171,10 @@
       expect(wrapper.contains( /*#__PURE__*/_react.default.createElement(_index.Message, {
         showError: false,
         showSuccess: true
-      }))).toBe(false); // expect(wrapper.find(".has-success")).toHaveLength(0);
+      }))).toBe(false);
+      // expect(wrapper.find(".has-success")).toHaveLength(0);
     });
+
     it("should be capable of being disabled and readonly", function () {
       const wrapper = (0, _enzyme.mount)( /*#__PURE__*/_react.default.createElement(_inputControlForm.SimpleInputFormAttr, _inputControlForm.propsAttrReadonlyDisabled));
       expect(wrapper.find("input").prop("disabled")).toBe(true);

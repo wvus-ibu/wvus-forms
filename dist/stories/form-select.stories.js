@@ -14,9 +14,7 @@
   "use strict";
 
   _react = _interopRequireDefault(_react);
-
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
   const Form = (0, _index.WVUSForm)(_selectControlForm.SelectForm);
   const FormPreselected = (0, _index.WVUSForm)(_selectControlForm.SelectFormPreselected);
   (0, _react2.storiesOf)("Form Components", module).add("Select Field States", () => /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Select Control"), /*#__PURE__*/_react.default.createElement("h2", null, "Default (no selected value):"), /*#__PURE__*/_react.default.createElement(Form, null), /*#__PURE__*/_react.default.createElement("h2", null, "Preselected:"), /*#__PURE__*/_react.default.createElement(FormPreselected, null)));

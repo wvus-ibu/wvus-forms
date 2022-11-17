@@ -18,9 +18,7 @@
   });
   _exports.default = void 0;
   _react = _interopRequireDefault(_react);
-
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
   const Message = _ref => {
     let {
       showError,
@@ -40,7 +38,6 @@
       "data-field-validation-message": true
     }, message));
   };
-
   var _default = Message;
   _exports.default = _default;
 });

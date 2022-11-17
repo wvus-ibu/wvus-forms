@@ -42,14 +42,12 @@
     });
     it("should return false for valid card types", () => {
       expect((0, _creditCardHelpers.getCreditCardTypeValidity)("3530111333300000")).toBe(false); //JCB
-
       expect((0, _creditCardHelpers.getCreditCardTypeValidity)("3566002020360505")).toBe(false); //JCB
-
       expect((0, _creditCardHelpers.getCreditCardTypeValidity)("30569309025904")).toBe(false); //Diner's club
-
       expect((0, _creditCardHelpers.getCreditCardTypeValidity)("38520000023237")).toBe(false); //Diner's club
     });
   });
+
   describe("expAutoComplete", () => {
     it("should remove whitespace", () => {
       expect((0, _creditCardHelpers.expAutoComplete)(" 1 ", "")).toBe("1");

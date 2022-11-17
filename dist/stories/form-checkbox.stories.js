@@ -14,9 +14,7 @@
   "use strict";
 
   _react = _interopRequireDefault(_react);
-
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
   const Form = (0, _index.WVUSForm)(_checkboxControlForm.SimpleCheckboxForm);
   (0, _react2.storiesOf)("Form Components", module).add("Checkbox Field States", () => /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Checkbox Control"), /*#__PURE__*/_react.default.createElement("h2", null, "Interactive Form:"), /*#__PURE__*/_react.default.createElement(Form, null), /*#__PURE__*/_react.default.createElement("hr", null), /*#__PURE__*/_react.default.createElement("h2", {
     className: "text-center"

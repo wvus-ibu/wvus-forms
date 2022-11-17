@@ -15,10 +15,9 @@
 
   _react = _interopRequireDefault(_react);
   _formHoc = _interopRequireDefault(_formHoc);
-
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
   // import "swing-ui/dist/css/swing.css";
+
   const Form = (0, _formHoc.default)(_billingAddressForm.BillingInfoForm);
   (0, _react2.storiesOf)("Example Forms", module).add("Billing Info", () => /*#__PURE__*/_react.default.createElement(Form, null));
 });

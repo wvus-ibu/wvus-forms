@@ -18,9 +18,7 @@
   });
   _exports.TextAreaFormTooMuchText = _exports.TextAreaFormNoConfig = _exports.TextAreaForm = void 0;
   _react = _interopRequireDefault(_react);
-
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
   const TextAreaForm = props => {
     const {
       getFieldState
@@ -43,9 +41,7 @@
       characterCount: messageCharacterCount
     }));
   };
-
   _exports.TextAreaForm = TextAreaForm;
-
   const TextAreaFormTooMuchText = props => {
     const {
       getFieldState
@@ -67,9 +63,7 @@
       characterCount: messageCharacterCount
     }));
   };
-
   _exports.TextAreaFormTooMuchText = TextAreaFormTooMuchText;
-
   const TextAreaFormNoConfig = props => {
     return /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement(_index.TextAreaControl, {
       fieldName: "message",
@@ -81,6 +75,5 @@
       characterCount: 50
     }));
   };
-
   _exports.TextAreaFormNoConfig = TextAreaFormNoConfig;
 });
