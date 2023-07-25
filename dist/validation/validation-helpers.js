@@ -217,10 +217,10 @@
   };
   _exports.validatePassword = validatePassword;
   const validateContainChars = value => {
-    const containsCharsRegEx = /[)(~%<>]/;
+    const containsCharsRegEx = /[)(~%<">]/;
     return {
       valid: !containsCharsRegEx.test((0, _validator.trim)(value)),
-      message: "Please do not use any of the following invalid characters: ),(,>,<,~,%"
+      message: 'Please do not use any of the following invalid characters: ),(,>,",<,~,%'
     };
   };
   _exports.validateContainChars = validateContainChars;
