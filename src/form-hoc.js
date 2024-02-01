@@ -1,7 +1,8 @@
 import React from "react";
 import { createValidationHelper } from "./validation/validation-helpers.js";
-import merge from "lodash.merge";
+ // import merge from "lodash.merge";
 import { checkForNewFormErrorsAndFireAnalytics } from "./misc/analytics-helpers";
+import { merge } from "./misc/merge";
 
 /* eslint-disable react/display-name */
 /**
@@ -71,6 +72,8 @@ function WVUSForm(WrapperForm) {
       };
 
       this.setState(prevState => {
+        console.log(prevState, "prevState");
+        console.log(newState, "newState");
         const finalState = merge({}, prevState, newState);
         this.validationHelper = createValidationHelper(finalState["fields"]);
         return finalState;
@@ -118,6 +121,8 @@ function WVUSForm(WrapperForm) {
 
       // Update Value
       this.setState(prevState => {
+        console.log(prevState, "prevState");
+        console.log(newState, "newState");
         return merge({}, prevState, newState);
       });
     }
@@ -201,6 +206,9 @@ function WVUSForm(WrapperForm) {
           fieldsState["fields"]
         );
         const formValid = this.getFormValid(newFieldsState);
+        console.log(prevState, "prevState");
+        console.log(newFieldsState, "newFieldsState");
+        console.log(formValid, "formValid");
         return merge({}, { fields: newFieldsState }, { formValid });
       });
     }
