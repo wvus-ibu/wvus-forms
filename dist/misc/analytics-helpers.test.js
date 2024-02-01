@@ -195,7 +195,6 @@
       const prevFormState = {
         fields: {} // missing billing_first from prev state
       };
-
       (0, _analyticsHelpers.checkForNewFormErrorsAndFireAnalytics)("testApp", formState, prevFormState);
       expect(document.dispatchEvent.mock.calls.length).toBe(0);
     });

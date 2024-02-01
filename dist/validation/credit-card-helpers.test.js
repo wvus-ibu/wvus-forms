@@ -47,7 +47,6 @@
       expect((0, _creditCardHelpers.getCreditCardTypeValidity)("38520000023237")).toBe(false); //Diner's club
     });
   });
-
   describe("expAutoComplete", () => {
     it("should remove whitespace", () => {
       expect((0, _creditCardHelpers.expAutoComplete)(" 1 ", "")).toBe("1");

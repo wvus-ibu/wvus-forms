@@ -147,7 +147,6 @@
       }))).toBe(true);
       // expect(wrapper.find(".has-success")).toHaveLength(0);
     });
-
     it("should NOT show error Message if hiddenMessage enabled", function () {
       const wrapper = (0, _enzyme.mount)( /*#__PURE__*/_react.default.createElement(_inputControlForm.SimpleInputFormHiddenMessage, _inputControlForm.propsWithError));
       const errorMessage = _inputControlForm.propsWithError.formMethods.getFieldState().errorMessage;
@@ -158,7 +157,6 @@
       }))).toBe(false);
       // expect(wrapper.find(".has-success")).toHaveLength(0);
     });
-
     it("should show success Message if has success", function () {
       const wrapper = (0, _enzyme.mount)( /*#__PURE__*/_react.default.createElement(_inputControlForm.SimpleInputForm, _inputControlForm.propsWithSuccess));
       expect(wrapper.contains( /*#__PURE__*/_react.default.createElement(_index.Message, {
@@ -174,7 +172,6 @@
       }))).toBe(false);
       // expect(wrapper.find(".has-success")).toHaveLength(0);
     });
-
     it("should be capable of being disabled and readonly", function () {
       const wrapper = (0, _enzyme.mount)( /*#__PURE__*/_react.default.createElement(_inputControlForm.SimpleInputFormAttr, _inputControlForm.propsAttrReadonlyDisabled));
       expect(wrapper.find("input").prop("disabled")).toBe(true);
